@@ -116,37 +116,63 @@
       font-size: 0.9rem;
       color: #aaa;
     }
-  .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+  
 
-    sections.forEach(section => {
-      section.classList.add('fade-in');
-      observer.observe(section);
-    });
-  });
-</script>
+</style>
+
 </head>
 <body>
-  <!-- Content remains the same -->
-  
+  <header>
+    <img src="logo.png" alt="CarHandled Logo">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Stress-Free Car Buying Starts Here</h2>
+      <p>CarHandled gives you expert car leasing, buying, and financing support—without the hassle or pressure.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScqhquJBnqC66vyx4SRItx-GKNsHrD3587VAyBzb2SXFEd-xQ/viewform" target="_blank">
+        <button class="cta-button">Get Started</button>
+      </a>
+    </div>
+  </section>
+
+  <div class="sections" id="services">
+    <div class="section">
+      <h3>Car Match & Budget Strategy</h3>
+      <p><strong>$149 –</strong> Tell us your budget and needs—we’ll shortlist your top 2–3 ideal options, saving you hours of research and mistakes.</p>
+    </div>
+    <div class="section">
+      <h3>Deal Review</h3>
+      <p><strong>$79 flat –</strong> Already have a quote? Send it to us and we’ll verify if it’s competitive, fair, and aligned with your goals.</p>
+    </div>
+    <div class="section">
+      <h3>Concierge Car Buying</h3>
+      <p><strong>Starting at $299 –</strong> We find the perfect options and negotiate the numbers. Once everything is set, we’ll connect you with the dealer to finalize and arrange delivery.</p>
+    </div>
+    <div class="section" id="toolkit">
+      <h3>Car Buyer Toolkit</h3>
+      <p><strong>$29 –</strong> A digital download filled with negotiation scripts, lease/purchase calculators, checklists, and comparison guides to help you buy smart.</p>
+    </div>
+  </div>
+
+  <div class="reviews" id="reviews">
+    <div class="review-track">
+      <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Seamless experience from start to finish.”<br><em>– J.D., Atlanta</em></div>
+      <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Saved me thousands and so much stress.”<br><em>– S.M., Chicago</em></div>
+      <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Professional, fast, and clear.”<br><em>– L.R., Dallas</em></div>
+      <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Highly recommend for busy professionals.”<br><em>– A.C., Miami</em></div>
+      <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Like having a car broker in your pocket.”<br><em>– B.T., NYC</em></div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 CarHandled. All rights reserved.
+  </footer>
 </body>
 </html>
