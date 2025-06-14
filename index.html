@@ -1,1 +1,242 @@
-<Your HTML content from the canvas here>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarHandled – Stress-Free Car Buying</title>
+  <style>
+    body {
+      font-family: 'Optima', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+    }
+    header {
+      background-color: #1a1a1a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    header nav {
+      position: absolute;
+      right: 2rem;
+      top: 1.2rem;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: normal;
+      font-family: 'Optima', sans-serif;
+    }
+    .hero {
+      text-align: center;
+      padding: 2rem 2rem;
+      background: url('background.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-inner {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 4rem 2rem;
+      width: 100%;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .cta-button {
+      padding: 0.8rem 1.6rem;
+      background-color: #e6b800;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .sections {
+      padding: 3rem 2rem;
+      display: grid;
+      gap: 2rem;
+    }
+    .section {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+    .section p strong {
+      font-weight: bold;
+    }
+    .checkout-embed {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .reviews {
+      padding: 2rem;
+      background-color: #141414;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .review-track {
+      display: inline-block;
+      animation: scrollReviews 30s linear infinite;
+    }
+    .review {
+      display: inline-block;
+      width: 300px;
+      margin-right: 1.5rem;
+      background-color: #1f1f1f;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+    @keyframes scrollReviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    footer {
+      background-color: #111;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="CarHandled logo" style="height: 60px;">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="javascript:void(0);" onclick="document.getElementById('contact-modal').style.display='flex'">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Stress-Free Car Buying Starts Here</h2>
+      <p>Expert-level car leasing, buying, and financing guidance—without the overwhelm. CarHandled delivers a professional, premium experience without the dealership pressure.</p>
+      <button class="cta-button" onclick="document.getElementById('contact-modal').style.display='flex'">Get Started</button>
+    </div>
+  </section>
+
+  <section class="sections">
+    <div class="section" style="background-color: #141414; text-align: center;">
+      <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">What We Do</h3>
+      <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+        CarHandled was built for real people who value their time. Whether you're unsure where to start or simply want to avoid confusion and wasted time, we offer unbiased guidance, data-backed strategies, and personalized help that puts you back in control.
+      </p>
+    </div>
+  </section>
+
+  <section class="sections" id="services">
+    <div class="section">
+      <h3>Concierge Car Buying</h3>
+      <p><strong>$299 starting</strong> – We source the right vehicle for your needs, analyze incentives and interest rates, and negotiate the pricing directly with the dealer on your behalf. Once the deal structure is secured, we connect you with the dealership to complete the paperwork and schedule pickup or delivery. A stress-free experience with clarity, speed, and professional negotiation in your corner.</p>
+    </div>
+    <div class="section">
+      <h3>Car Match & Budget Strategy</h3>
+      <p><strong>$149</strong> – Not sure what car to get or what fits your budget? We analyze your goals, lifestyle, and financial comfort zone to identify 2–3 handpicked vehicle options with realistic monthly costs and value. You’ll skip the overwhelm and avoid expensive guesswork.</p>
+    </div>
+    <div class="section">
+      <h3>Deal Review</h3>
+      <p><strong>$79 flat</strong> – Already have a quote? Send it to us and we’ll break it down for you. We’ll verify pricing, terms, incentives, fees, and whether it’s truly a strong deal—or if there’s room for improvement. You’ll get straightforward feedback with recommendations.</p>
+    </div>
+    <div class="section" id="toolkit">
+      <h3>Car Buyer’s Toolkit</h3>
+      <p><strong>$29</strong> – Coming soon. Downloadable guides, worksheets, and negotiation scripts designed to help you buy smart and save money.</p>
+      <div class="checkout-embed">
+        <button class="cta-button" disabled>Coming Soon</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="review-track">
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“I had quotes from three dealers and wasn’t sure who was being honest. CarHandled broke it down for me fast.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– K.T., New York</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“A premium experience without stepping into a dealership. I’ll never shop without them again.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– B.M., California</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“Within 24 hours, they found my exact spec. My lease deal was thousands better than expected.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– F.R., Texas</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“Their toolkit helped me negotiate confidently. First time I felt in control.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– S.L., Illinois</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“Everything from the rate to the fees were explained. CarHandled was the calm in the chaos.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– T.R., Georgia</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“CarHandled’s strategy saved me time, money, and so much stress. Highly recommend.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– D.V., Florida</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“This isn’t a blog or influencer hype. It’s actual deal support from real pros.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– L.E., Colorado</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“The insight I got in 15 minutes was better than hours I spent reading forums.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– M.J., North Carolina</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“Leasing felt like a game. CarHandled gave me the cheat codes.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– R.C., Arizona</div>
+  </div>
+  <div class="review">
+    <div style='margin-bottom: 0.5rem; color: gold;'>★★★★★</div>
+    <div style='font-style: italic;'>“Professional, efficient, and no pressure. I got the best deal of my life.”</div>
+    <div style='margin-top: 0.5rem; font-size: 0.85rem; color: #bbb;'>– N.S., Washington</div>
+  </div>
+</div>
+</section>
+
+  <footer id="contact">
+    <p>&copy; 2025 CarHandled. All rights reserved. | info@carhandled.com</p>
+  </footer>
+
+  <div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:#1a1a1a; padding:2rem; border-radius:1rem; max-width:500px; width:90%;">
+      <h3 style="margin-top:0; color:#f5f5f5;">Contact Us</h3>
+      <form action="https://formspree.io/f/mgejklay" method="POST">
+        <label style="color:#f5f5f5;">Name:</label><br>
+        <input type="text" name="name" required style="width:100%; padding:0.5rem; margin-bottom:1rem;"><br>
+        <label style="color:#f5f5f5;">Email:</label><br>
+        <input type="email" name="email" required style="width:100%; padding:0.5rem; margin-bottom:1rem;"><br>
+        <label style="color:#f5f5f5;">Message:</label><br>
+        <textarea name="message" rows="5" style="width:100%; padding:0.5rem; margin-bottom:1rem;" required></textarea><br>
+        <button type="submit" class="cta-button">Send</button>
+        <button type="button" class="cta-button" style="margin-left:1rem; background:#555;" onclick="document.getElementById('contact-modal').style.display='none'">Cancel</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
