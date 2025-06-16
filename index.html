@@ -88,9 +88,31 @@
     .section p strong {
       font-weight: bold;
     }
-    .checkout-embed {
+    .form-section {
+      padding: 3rem 2rem;
+      background-color: #141414;
       text-align: center;
-      margin-top: 1rem;
+    }
+    .form-section h2 {
+      margin-bottom: 1rem;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-family: 'Optima', sans-serif;
+    }
+    input[type="submit"] {
+      background-color: #e6b800;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
     }
     .reviews {
       padding: 2rem;
@@ -126,6 +148,7 @@
     <nav>
       <a href="#services">Services</a>
       <a href="#toolkit">Toolkit</a>
+      <a href="#form">Get Started</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -135,7 +158,7 @@
       <h1>CarHandled Concierge Service</h1>
       <h2>Stress-Free Car Buying Starts Here</h2>
       <p>CarHandled gives you expert car leasing, buying, and financing support—without the hassle or pressure.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScqhquJBnqC66vyx4SRItx-GKNsHrD3587VAyBzb2SXFEd-xQ/viewform" target="_blank">
+      <a href="#form">
         <button class="cta-button">Get Started</button>
       </a>
     </div>
@@ -156,11 +179,25 @@
     </div>
     <div class="section" id="toolkit">
       <h3>Car Buyer Toolkit – <strong>$39</strong></h3>
-      <p>Our downloadable bundle with calculators, checklists, negotiation scripts, and more.</p>
-      <div class="checkout-embed">
-        <button class="cta-button" disabled>Coming Soon</button>
-      </div>
+      <p>Coming soon: a downloadable bundle with calculators, checklists, negotiation scripts, and more.</p>
     </div>
+  </section>
+
+  <section class="form-section" id="form">
+    <h2>Get Started</h2>
+    <form action="https://formspree.io/f/xanjjggr" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number (optional)">
+      <select name="service">
+        <option value="Concierge">Concierge</option>
+        <option value="Match">Car Match</option>
+        <option value="Review">Deal Review</option>
+        <option value="Toolkit">Toolkit</option>
+      </select>
+      <textarea name="notes" placeholder="What are you looking for? Budget? Vehicle type?" rows="5"></textarea>
+      <input type="submit" value="Submit">
+    </form>
   </section>
 
   <section class="reviews" id="reviews">
