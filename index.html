@@ -84,7 +84,8 @@
       max-width: 600px;
       margin: 0 auto 2rem;
     }
-    .cta-button {
+    .cta-button,
+    .coming-soon-button {
       padding: 0.8rem 1.6rem;
       background-color: #e6b800;
       color: #000;
@@ -93,6 +94,8 @@
       border-radius: 0.5rem;
       font-size: 1rem;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
     .sections {
       padding: 3rem 2rem;
@@ -162,6 +165,64 @@
   </style>
 </head>
 <body>
-  <!-- Body content remains unchanged -->
+  <header>
+    <img src="logo.png" alt="CarHandled logo">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>CarHandled</h1>
+      <h2>Car Buying Made Simple</h2>
+      <p>Zero dealership pressure. Just honest, expert help every step of the way.</p>
+      <a href="#contact"><button class="cta-button">Get Started</button></a>
+    </div>
+  </section>
+
+  <section id="services" class="sections">
+    <div class="section">
+      <h3>Concierge – $1299</h3>
+      <p>We do everything. Search, strategy, negotiation. You sign and drive.</p>
+    </div>
+    <div class="section">
+      <h3>Car Match Strategy – $499</h3>
+      <p>Tell us your budget & goals. We’ll shortlist 2–3 ideal vehicles.</p>
+    </div>
+    <div class="section">
+      <h3>Deal Review – $129</h3>
+      <p>Already have a quote? Send it to us—we’ll break it down and tell you if it’s good—or not.</p>
+    </div>
+    <div class="section">
+      <h3>Toolkit – $49</h3>
+      <p>DIY templates, calculators & scripts.</p>
+      <a class="cta-button" href="#">Coming Soon</a>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <div class="review-track">
+      <div class="review">⭐️⭐️⭐️⭐️⭐️ “Truly seamless and stress-free.” – T.R., NYC</div>
+      <div class="review">⭐️⭐️⭐️⭐️⭐️ “Saved me thousands on my lease.” – L.S., LA</div>
+      <div class="review">⭐️⭐️⭐️⭐️⭐️ “Better than any dealership experience I’ve had.” – J.P., Miami</div>
+    </div>
+  </section>
+
+  <section id="contact" class="form-section">
+    <h2>Contact Us</h2>
+    <form action="mailto:info@carhandled.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+      <input type="submit" value="Send">
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 CarHandled. All rights reserved.
+  </footer>
 </body>
 </html>
