@@ -1,5 +1,13 @@
-<html>
-  <head> <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarHandled Intake</title>
+  <meta name="description" content="Tell us your goals and budget so we can help you get the best deal. CarHandled intake form." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
     body {
       font-family: 'Optima', sans-serif;
       margin: 0;
@@ -9,127 +17,30 @@
     }
     header {
       background-color: #1a1a1a;
-      padding: 0.25rem 2rem;
+      padding: 0.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
-      height: 60px;
     }
     header img {
       height: 50px;
-      position: static;
-      transform: none;
-    }
-    header nav {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
     }
     nav a {
-      margin-left: 1.2rem;
+      margin-left: 1.5rem;
       color: #f5f5f5;
       text-decoration: none;
-      font-family: 'Optima', sans-serif;
       font-size: 0.95rem;
     }
-    .hero {
-      text-align: center;
-      padding: 2rem 2rem;
-      background: url('background.jpg') center/cover no-repeat;
-      height: 100vh;
+    .form-wrapper {
       display: flex;
-      align-items: center;
       justify-content: center;
+      padding: 3rem 1rem;
     }
-    .hero-inner {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 4rem 2rem;
+    iframe {
       width: 100%;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .cta-button,
-    .coming-soon-button {
-      padding: 0.8rem 1.6rem;
-      background-color: #e6b800;
-      color: #000;
-      font-weight: bold;
+      max-width: 768px;
+      height: 2137px;
       border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .sections {
-      padding: 3rem 2rem;
-      display: grid;
-      gap: 2rem;
-    }
-    .section {
-      background-color: #1a1a1a;/transparent/
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-    .section p strong {
-      font-weight: bold;
-    }
-    .form-section {
-      padding: 3rem 2rem;
-      background-color: #141414;
-      text-align: center;
-    }
-    .form-section h2 {
-      margin-bottom: 1rem;
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 0.5rem;
-      font-family: 'Optima', sans-serif;
-    }
-    input[type="submit"] {
-      background-color: #e6b800;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .reviews {
-      padding: 2rem;
-      background-color: #141414;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .review-track {
-      display: flex;
-      gap: 1rem;
-    }
-    .review {
-      flex: 0 0 auto;
-      width: 300px;
-      background-color: #1f1f1f;
-      padding: 1rem;
-      border-radius: 0.75rem;
-      font-size: 0.95rem;
-      color: #ddd;
     }
     footer {
       background-color: #111;
@@ -138,58 +49,62 @@
       font-size: 0.9rem;
       color: #aaa;
     }
-    html {
-  font-size: 100%; /* 16px */
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-size: 1rem; /* 16px */
-  line-height: 1.6;
-  font-family: system-ui, sans-serif;
-}
-
-h1 {
-  font-size: 2.25rem; /* ~36px */
-  margin-bottom: 0.5em;
-}
-
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5em;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5em;
-}
-
-p, li, label, input, select, textarea, button {
-  font-size: 1rem;
-}
-
-footer, .form-section {
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 110%; /* ~17.6px for mobile */
-  }
-}
+    footer a {
+      color: #aaa;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
   </style>
-<iframe data-tally-src="https://tally.so/embed/mR1yZQ?hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="2137" frameborder="0" marginheight="0" marginwidth="0" title="CarHandled Intake Form 🚗So we can help you better."></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+</head>
+<body>
 
+  <header>
+    <a href="index.html"><img src="logo.png" alt="CarHandled logo" /></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
 
+  <div class="form-wrapper">
+    <iframe 
+      data-tally-src="https://tally.so/embed/mR1yZQ?hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      title="CarHandled Intake Form 🚗 So we can help you better.">
+    </iframe>
+  </div>
+
+  <script>
+    var d = document,
+        w = "https://tally.so/widgets/embed.js",
+        v = function () {
+          if (typeof Tally !== "undefined") Tally.loadEmbeds();
+          else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+            e.src = e.dataset.tallySrc;
+          });
+        };
+    if (typeof Tally !== "undefined") v();
+    else if (!d.querySelector('script[src="' + w + '"]')) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  </script>
+
+  <footer>
+    <p><strong>Contact us:</strong> info@carhandled.com</p>
+    <p>
+      <a href="terms-of-use.html" target="_blank">Terms of Use</a>
+      <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+      <a href="refund-policy.html" target="_blank">Refund Policy</a>
+    </p>
+    <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
+  </footer>
+
+</body>
 </html>
- <footer id="contact">
-  <p><strong>Contact us:</strong> info@carhandled.com</p>
-  <p>
-    <a href="terms-of-use.html" target="_blank" style="color: #aaa; margin-right: 1rem;">Terms of Use</a>
-    <a href="privacy-policy.html" target="_blank" style="color: #aaa; margin-right: 1rem;">Privacy Policy</a>
-    <a href="refund-policy.html" target="_blank" style="color: #aaa;">Refund Policy</a>
-  </p>
-  <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
-</footer>
-
