@@ -1,114 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Primary Meta Tags -->
-<title>CarHandled | Premium Car Buying Concierge & Deal Review</title>
-<meta name="title" content="CarHandled | Premium Car Buying Concierge & Deal Review">
-<meta name="description" content="Expert car buying and lease strategy without the dealership pressure. CarHandled offers concierge services, deal reviews, and smart buyer tools.">
-
-<!-- Keywords -->
-<meta name="keywords" content="
-car buying concierge, 
-car deal review, 
-auto concierge service, 
-car match advisor, 
-buying a car smart, 
-lease negotiation expert, 
-transparent car buying, 
-car buying toolkit, 
-luxury car buying service, 
-automotive consultant, 
-independent car advisor, 
-best car deal advice, 
-car lease help, 
-premium auto advisor, 
-buying vs leasing guide
-">
-
-<meta name="author" content="CarHandled">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.carhandled.com/">
-<meta property="og:title" content="CarHandled | Premium Car Buying Concierge & Deal Review">
-<meta property="og:description" content="Say goodbye to dealership pressure. Our concierge car buying service helps you find, negotiate, and finalize the best deal—with confidence.">
-<meta property="og:image" content="https://www.carhandled.com/assets/og-image.jpg">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://www.carhandled.com/">
-<meta name="twitter:title" content="CarHandled | Premium Car Buying Concierge & Deal Review">
-<meta name="twitter:description" content="Smart, pressure-free car buying. CarHandled helps you make the right move—every time.">
-<meta name="twitter:image" content="https://www.carhandled.com/assets/og-image.jpg">
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs – CarHandled</title>
+  <meta name="description" content="Frequently Asked Questions about CarHandled’s car buying services and concierge offerings." />
+  <meta name="robots" content="index, follow" />
   <style>
     body {
-      font-family: 'Optima', sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Optima', sans-serif;
       background-color: #0f0f0f;
-      color: #C6A972;
+      color: #f5f5f5;
     }
     header {
-      background-color: #1a1a1a;
-      padding: 0.25rem 2rem;
+      background-color: #000;
+      padding: 0.5rem 1.5rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       position: relative;
-      height: 60px;
+      z-index: 100;
     }
     header img {
-      height: 50px;
-      position: static;
-      transform: none;
+      height: 48px;
     }
-    header nav {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-    }
-    nav a {
-      margin-left: 1.2rem;
-      color: #f5f5f5;
-      text-decoration: none;
-      font-family: 'Optima', sans-serif;
-      font-size: 0.95rem;
-    }
-    .hero {
-      text-align: center;
-      padding: 2rem 2rem;
-      background: url('background.jpg') center/cover no-repeat;
-      height: 100vh;
+    #hamburger {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
     }
-    .hero-inner {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 4rem 2rem;
+    #hamburger span {
+      background: #C6A972;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+    #mobileNav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #000;
       width: 100%;
+      padding: 1rem 2rem;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+      text-align: right;
     }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+    #mobileNav a {
+      color: #C6A972;
+      margin: 0.8rem 0;
+      text-decoration: none;
+      font-size: 1.1rem;
     }
-    .hero h2 {
-      font-size: 2rem;
+    .faq-section {
+      padding: 3rem 1.5rem;
+    }
+    .faq {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      border-radius: 1rem;
+    }
+    .faq h3 {
+      color: #C6A972;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
     }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
+    .faq p {
+      font-size: 1rem;
+      color: #f5f5f5;
+      margin: 0;
     }
-    .cta-button,
-    .coming-soon-button {
+    .cta-button {
       padding: 0.8rem 1.6rem;
-      background-color: #ec6a972;
-      color: #C6A972;
+      background-color: #C6A972;
+      color: #000;
       font-weight: bold;
       border: none;
       border-radius: 0.5rem;
@@ -117,63 +86,9 @@ buying vs leasing guide
       text-decoration: none;
       display: inline-block;
     }
-    .sections {
-      padding: 3rem 2rem;
-      display: grid;
-      gap: 2rem;
-    }
-    .section {
-      background-color: #1a1a1a;/transparent/
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-    .section p strong {
-      font-weight: bold;
-    }
-    .form-section {
-      padding: 3rem 2rem;
-      background-color: #141414;
+    .cta-wrapper {
       text-align: center;
-    }
-    .form-section h2 {
-      margin-bottom: 1rem;
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 0.5rem;
-      font-family: 'Optima', sans-serif;
-    }
-    input[type="submit"] {
-      background-color: #C6A972;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .reviews {
-      padding: 2rem;
-      background-color: #141414;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .review-track {
-      display: flex;
-      gap: 1rem;
-    }
-    .review {
-      flex: 0 0 auto;
-      width: 300px;
-      background-color: #1f1f1f;
-      padding: 1rem;
-      border-radius: 0.75rem;
-      font-size: 0.95rem;
-      color: #ddd;
+      margin-top: 2.5rem;
     }
     footer {
       background-color: #111;
@@ -182,220 +97,86 @@ buying vs leasing guide
       font-size: 0.9rem;
       color: #aaa;
     }
-    html {
-  font-size: 100%; /* 16px */
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-size: 1rem; /* 16px */
-  line-height: 1.6;
-  font-family: system-ui, sans-serif;
-}
-
-h1 {
-  font-size: 2.25rem; /* ~36px */
-  margin-bottom: 0.5em;
-}
-
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5em;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5em;
-}
-
-p, li, label, input, select, textarea, button {
-  font-size: 1rem;
-}
-
-footer, .form-section {
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 110%; /* ~17.6px for mobile */
-  }
-}
-    @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #000;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    padding: 1rem 2rem;
-    z-index: 10;
-  }
-
-  #nav-toggle:checked + .hamburger + .nav-links {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex !important;
-  }
-}
+    footer a {
+      color: #aaa;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
   </style>
-<header style="background-color: #000; padding: 0.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 100;">
-  <!-- Logo -->
-  <a href="index.html">
-    <img src="logo.png" alt="CarHandled Logo" style="height: 48px;">
-  </a>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="logo.png" alt="CarHandled Logo" />
+    </a>
+    <div id="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="intake.html">Toolkit</a>
+    </nav>
+  </header>
 
-  <!-- Hamburger Icon -->
-  <div id="hamburger" onclick="toggleNav()" style="display: flex; flex-direction: column; cursor: pointer;">
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-  </div>
+  <section class="faq-section">
+    <div class="faq">
+      <h3>What is CarHandled?</h3>
+      <p>CarHandled is a premium auto consulting service offering concierge car buying, deal reviews, and custom vehicle match strategies—designed to save you time, stress, and money.</p>
+    </div>
+    <div class="faq">
+      <h3>How does the Concierge service work?</h3>
+      <p>We handle your car search, compare options, negotiate pricing, and line up the deal. You finalize paperwork directly with the dealer. It’s full-service buying, minus the pressure.</p>
+    </div>
+    <div class="faq">
+      <h3>What if I already have a quote?</h3>
+      <p>Use our Deal Review service. We'll analyze your quote and tell you if it's competitive—or if better options exist.</p>
+    </div>
+    <div class="faq">
+      <h3>Can you help me decide whether to lease or buy?</h3>
+      <p>Absolutely. Our Car Buyer Toolkit (coming soon) includes calculators and worksheets to break down lease vs. buy comparisons. For tailored guidance, our Car Match Strategy service helps you decide based on your budget, lifestyle, and financial goals—then narrows your best-fit options. You get clarity and confidence, no sales pressure.</p>
+    </div>
+    <div class="faq">
+      <h3>Is this service available nationwide?</h3>
+      <p>We are based in the U.S. and operate nationally. We’ve helped clients in nearly every state secure better deals and avoid the games.</p>
+    </div>
+    <div class="faq">
+      <h3>Is CarHandled affiliated with any dealerships?</h3>
+      <p>We have strong relationships in the auto industry. While we are currently in sales for a luxury brand, our loyalty is always to our clients. If a partner dealership offers the best deal, it’s a win-win. We leverage our connections to help you buy smarter—without pressure or bias.</p>
+    </div>
 
-  <!-- Mobile Nav Links -->
-  <nav id="mobileNav" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 0; background-color: #000; width: 100%; padding: 1rem 2rem; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); text-align: right;">
-    <a href="index.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Home</a>
-    <a href="#services" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Services</a>
-    <a href="#reviews" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Reviews</a>
-    <a href="#contact" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Contact</a>
-    <a href="faq.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">FAQ</a>
-    <a href="intake.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Toolkit</a>
-  </nav>
-</header>
-
-<!-- JS to Toggle -->
-<script>
-  function toggleNav() {
-    const nav = document.getElementById("mobileNav");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  }
-</script>
-
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>CarHandled</h1>
-      <h2>Car Buying Made Simple</h2>
-      <p>Zero dealership pressure. Just honest, expert help every step of the way.</p>
-      <a href="https://www.carhandled.com/intake.html">
-  <button class="cta-button">Get Started</button>
-</a>
+    <div class="cta-wrapper">
+      <a href="intake.html" class="cta-button">Get Started</a>
     </div>
   </section>
 
-  <section id="services" class="sections">
-    <div class="section">
-      <h3>Concierge – $1299</h3>
-       <p style="color: #f5f5f5; font-size: 1rem; line-height: 1.6;">
-    We find the right car, craft the strategy, and negotiate the deal—all tailored to your goals.<br>
-    Once terms are secured, we connect you with the dealer to finalize paperwork and delivery.
-  </p>
-  <p style="color: #ccc; font-style: italic; margin-top: 1rem;">
-    Premium guidance. No pressure. Just the right deal—done right.
-  </p>
-    </div>
-    <div class="section">
-      <h3>Car Match Strategy – $499</h3>
-  <p style="color: #f5f5f5; font-size: 1rem; line-height: 1.6;">
-    Share your budget and what matters most—we’ll identify the top 2–3 vehicles that fit your lifestyle, needs, and financial plan.
-  </p>
-  <p style="color: #ccc; font-style: italic; margin-top: 1rem;">
-    No guesswork. Just smart choices from the start.
-  </p>
-    </div>
-    <div class="section">
-      <h3>Deal Review – $129</h3>
-      <p style="color: #f5f5f5; font-size: 1rem; line-height: 1.6;">
-    Got a quote from a dealership? Send it over—we’ll audit the numbers and expose hidden fees, inflated rates, or missed savings.
-  </p>
-  <p style="color: #ccc; font-style: italic; margin-top: 1rem;">
-    We tell you if it’s solid—or if you’re being sold.
-    </div>
-    <div class="section">
-      <h3>Toolkit – $49</h3>
-      <p style="color: #f5f5f5; font-size: 1rem; line-height: 1.6;">
-      <p style="color: #fff;">DIY templates, calculators & scripts.</p>
-     <a class="coming-soon-button" style="
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background-color: transparent;
-  color: #C6A972;
-  font-weight: bold;
-  border: 2px solid #C6A972;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  text-align: center;
-  pointer-events: none;
-">
-  Coming Soon
-</a>
-    </div>
-  </section>
-<section id="about" style="padding: 3rem 2rem; background-color: #141414; text-align: center;">
-  <h2 style="font-size: 1.8rem; color: #C6A972; margin-bottom: 1rem;">💬 About CarHandled</h2>
-  <p style="font-size: 1rem; max-width: 700px; margin: 0 auto 1rem; color: #f5f5f5;">
-    Hi, I’m <strong>Ali</strong>, founder of CarHandled.
-  </p>
-  <p style="font-size: 1rem; max-width: 700px; margin: 0 auto 1rem; color: #f5f5f5;">
-    With years of experience in the <strong>luxury auto industry</strong>—from Jaguar Land Rover to high-stakes dealmaking—I saw the gap: everyday buyers facing a stacked deck at dealerships.
-  </p>
-  <p style="font-size: 1rem; max-width: 700px; margin: 0 auto 1rem; color: #f5f5f5;">
-    So I built CarHandled to change that.
-  </p>
-  <p style="font-size: 1rem; max-width: 700px; margin: 0 auto 1rem; color: #f5f5f5;">
-    This isn’t just a service. It’s <strong>personal concierge-level guidance</strong> built on industry knowledge, insider connections, and a mission:<br />
-    To help smart people buy smarter.
-  </p>
-  <p style="font-size: 1rem; max-width: 700px; margin: 0 auto 1rem; color: #f5f5f5;">
-    From strategy and search to negotiation and delivery—you're backed by a pro, not a pitch.
-  </p>
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById("mobileNav");
+      if (nav.style.display === "flex") {
+        nav.style.opacity = 0;
+        setTimeout(() => nav.style.display = "none", 300);
+      } else {
+        nav.style.display = "flex";
+        nav.style.opacity = 0;
+        setTimeout(() => nav.style.opacity = 1, 10);
+      }
+    }
+  </script>
 
-
-
-<a href="https://www.carhandled.com/intake.html">
-  <button class="cta-button">Get Started</button>
-</a>
-
-
-<section id="promise" style="padding: 3rem 2rem; background-color: #1a1a1a; text-align: center;">
-  <h2 style="font-size: 1.8rem; color: #C6A972; margin-bottom: 1rem;">🔐 The CarHandled Promise</h2>
-  <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; color: #f5f5f5;">
-    We exist to protect your wallet and your time.
-  </p>
-  <p style="font-size: 1rem; max-width: 700px; margin: 0 auto 1rem; color: #f5f5f5;">
-    With us, you’ll never overpay. We dig deeper, negotiate harder, and uncover savings the average buyer misses—often totaling <strong>$2,000 to $6,000 or more</strong>.
-    But it’s not just about the money. It’s about walking away knowing you got the <strong>best possible deal</strong>, handled by insiders—not salespeople.
-  </p>
-  <p style="font-size: 1rem; max-width: 700px; margin: 0 auto 1rem; color: #f5f5f5;">
-    <strong>No stress. No dealership tricks. Just facts, strategy, and results.</strong><br>
-    If we can’t deliver value, we won’t take your money.
-  </p>
-</section>
-    <section id="reviews" style="background: transparent; padding: 2rem 0;">
-  <h2 style="text-align: center; color: #C6A972; font-size: 1.4rem; margin-bottom: 1rem;">Client Reviews</h2>
-  <div style="overflow-x: auto; scroll-snap-type: x mandatory; display: flex; -webkit-overflow-scrolling: touch; padding: 0 1rem;">
-    <div style="display: flex; gap: 1.5rem;">
-      <div style="flex: 0 0 80%; scroll-snap-align: center; background: #1c1c1c; color: #fff; padding: 1rem; border-radius: 8px; text-align: center; font-size: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
-        ⭐️⭐️⭐️⭐️⭐️ “Truly seamless and stress-free.” – T.R., NYC
-      </div>
-      <div style="flex: 0 0 80%; scroll-snap-align: center; background: #1c1c1c; color: #fff; padding: 1rem; border-radius: 8px; text-align: center; font-size: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
-        ⭐️⭐️⭐️⭐️⭐️ “Saved me thousands on my lease.” – L.S., LA
-      </div>
-      <div style="flex: 0 0 80%; scroll-snap-align: center; background: #1c1c1c; color: #fff; padding: 1rem; border-radius: 8px; text-align: center; font-size: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
-        ⭐️⭐️⭐️⭐️⭐️ “Better than any dealership experience I’ve had.” – J.P., Miami
-      </div>
-    </div>
-  </div>
-</section>
-  <footer id="contact">
-  <p><strong>Contact us:</strong> info@carhandled.com</p>
-  <p>
-    <a href="terms-of-use.html" target="_blank" style="color: #aaa; margin-right: 1rem;">Terms of Use</a>
-    <a href="privacy-policy.html" target="_blank" style="color: #aaa; margin-right: 1rem;">Privacy Policy</a>
-    <a href="refund-policy.html" target="_blank" style="color: #aaa;">Refund Policy</a>
-  </p>
-  <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
-</footer>
+  <footer>
+    <p><strong>Contact us:</strong> info@carhandled.com</p>
+    <p>
+      <a href="terms-of-use.html" target="_blank">Terms of Use</a>
+      <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+      <a href="refund-policy.html" target="_blank">Refund Policy</a>
+    </p>
+    <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
+  </footer>
+</body>
+</html>
