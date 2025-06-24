@@ -221,20 +221,47 @@ footer, .form-section {
     font-size: 110%; /* ~17.6px for mobile */
   }
 }
+    @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 10;
+  }
+
+  #nav-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+}
   </style>
-</head>
-<body>
-  <header>
-    <img src="logo.png" alt="CarHandled logo">
-    <nav>
-      <a href="index.html" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">Home</a>
-      <a href="index.html#services" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">Services</a>
-      <a href="index.html#reviews" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">Reviews</a>
-      <a href="index.html#toolkit" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">ToolKit</a>
-      <a href="faq.html" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">FAQ</a>
-      <a href="index.html#contact" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">Contact</a>
-    </nav>
-  </header>
+<header style="background-color: #000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+  <img src="logo.png" alt="CarHandled Logo" style="height: 40px;">
+
+  <input type="checkbox" id="nav-toggle" style="display: none;">
+  <label for="nav-toggle" class="hamburger" style="cursor: pointer; display: none; flex-direction: column;">
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+  </label>
+
+  <nav class="nav-links" style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+    <a href="index.html" style="color: #C6A972; text-decoration: none;">Home</a>
+    <a href="index.html#services" style="color: #C6A972; text-decoration: none;">Services</a>
+    <a href="index.html#reviews" style="color: #C6A972; text-decoration: none;">Reviews</a>
+    <a href="index.html#toolkit" style="color: #C6A972; text-decoration: none;">ToolKit</a>
+    <a href="index.html#contact" style="color: #C6A972; text-decoration: none;">Contact</a>
+    <a href="faq.html" style="color: #C6A972; text-decoration: none;">FAQ</a>
+  </nav>
+</header>
 
   <section class="hero">
     <div class="hero-inner">
