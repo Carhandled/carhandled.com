@@ -16,20 +16,53 @@
       color: #f5f5f5;
     }
     header {
-      background-color: #1a1a1a;
-      padding: 0.5rem 2rem;
+      background-color: #000;
+      padding: 0.5rem 1.5rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 100;
     }
     header img {
-      height: 50px;
+      height: 48px;
     }
-    nav a {
-      margin-left: 1.5rem;
-      color: #f5f5f5;
+    #hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    #hamburger span {
+      background: #C6A972;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+    #mobileNav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #000;
+      width: 100%;
+      padding: 1rem 2rem;
+      text-align: right;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    #mobileNav a {
+      color: #C6A972;
+      margin: 0.8rem 0;
       text-decoration: none;
-      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    #mobileNav a:hover {
+      color: #fff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .form-wrapper {
       display: flex;
@@ -39,7 +72,6 @@
     iframe {
       width: 100%;
       max-width: 768px;
-      height: 2137px;
       border: none;
     }
     footer {
@@ -59,36 +91,24 @@
 <body>
 
   <header>
-    <header style="background-color: #000; padding: 0.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 100;">
-  <!-- Logo -->
-  <a href="index.html">
-    <img src="logo.png" alt="CarHandled Logo" style="height: 48px;">
-  </a>
+    <a href="index.html">
+      <img src="logo.png" alt="CarHandled Logo">
+    </a>
+    <div id="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="intake.html">Toolkit</a>
+    </nav>
+  </header>
 
-  <!-- Hamburger Icon -->
-  <div id="hamburger" onclick="toggleNav()" style="display: flex; flex-direction: column; cursor: pointer;">
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-  </div>
-
-  <!-- Mobile Nav Links -->
-  <nav id="mobileNav" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 0; background-color: #000; width: 100%; padding: 1rem 2rem; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); text-align: right;">
-    <a href="index.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Home</a>
-    <a href="#services" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Services</a>
-    <a href="#reviews" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Reviews</a>
-    <a href="#contact" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Contact</a>
-    <a href="faq.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">FAQ</a>
-    <a href="intake.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Toolkit</a>
-  </nav>
-</header>
-
-<!-- JS to Toggle -->
-<script>
-  function toggleNav() {
-    const nav = document.getElementById("mobileNav");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  }
   <div class="form-wrapper">
     <iframe 
       data-tally-src="https://tally.so/embed/mR1yZQ?hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -98,6 +118,22 @@
   </div>
 
   <script>
+    function toggleNav() {
+      const nav = document.getElementById("mobileNav");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+
+    // Auto-close nav on link click
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('#mobileNav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobileNav').style.display = 'none';
+        });
+      });
+    });
+
+    // Tally auto-resize
     var d = document,
         w = "https://tally.so/widgets/embed.js",
         v = function () {
