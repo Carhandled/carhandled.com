@@ -249,65 +249,31 @@ footer, .form-section {
     <img src="logo.png" alt="CarHandled Logo" style="height: 48px;">
   </a>
 
-  <!-- Hamburger Toggle -->
-  <input type="checkbox" id="nav-toggle" style="display: none;">
-  <label for="nav-toggle" class="hamburger" style="display: none; flex-direction: column; cursor: pointer;">
+  <!-- Hamburger Icon -->
+  <div id="hamburger" onclick="toggleNav()" style="display: flex; flex-direction: column; cursor: pointer;">
     <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
     <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
     <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-  </label>
+  </div>
 
-  <!-- Nav Links -->
-  <nav class="nav-links" style="display: flex; gap: 1.5rem;">
-    <a href="index.html">Home</a>
-    <a href="#services">Services</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
-    <a href="faq.html">FAQ</a>
-    <a href="intake.html">Toolkit</a>
+  <!-- Mobile Nav Links -->
+  <nav id="mobileNav" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 0; background-color: #000; width: 100%; padding: 1rem 2rem; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); text-align: right;">
+    <a href="index.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Home</a>
+    <a href="#services" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Services</a>
+    <a href="#reviews" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Reviews</a>
+    <a href="#contact" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Contact</a>
+    <a href="faq.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">FAQ</a>
+    <a href="intake.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Toolkit</a>
   </nav>
 </header>
 
-<!-- Responsive Nav Style -->
-<style>
-  @media (max-width: 768px) {
-    .hamburger {
-      display: flex !important;
-    }
-
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: #000;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      padding: 1.5rem 2rem;
-      text-align: right;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-    }
-
-    #nav-toggle:checked + .hamburger + .nav-links {
-      display: flex;
-    }
-
-    .nav-links a {
-      color: #C6A972;
-      font-size: 1.2rem;
-      margin: 0.8rem 0;
-      text-decoration: none;
-    }
+<!-- JS to Toggle -->
+<script>
+  function toggleNav() {
+    const nav = document.getElementById("mobileNav");
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
   }
-
-  @media (min-width: 769px) {
-    .nav-links a {
-      color: #C6A972;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-  }
-</style>
+</script>
 
   <section class="hero">
     <div class="hero-inner">
