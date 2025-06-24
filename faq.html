@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +8,13 @@
   <meta name="keywords" content="car concierge, auto broker, lease help, buy a car, car consultant, car buying service, car deals USA" />
   <meta name="author" content="CarHandled" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.carhandled.com/" />
+  <link rel="canonical" href="https://www.carhandled.com/faq.html" />
   <meta property="og:title" content="CarHandled – Smarter Car Decisions" />
   <meta property="og:description" content="Concierge car buying. Deal reviews. Strategy. We help smart people buy smarter." />
   <meta property="og:image" content="https://www.carhandled.com/assets/og-preview.jpg" />
-  <meta property="og:url" content="https://www.carhandled.com/" />
+  <meta property="og:url" content="https://www.carhandled.com/faq.html" />
   <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" />
   <style>
     body {
       margin: 0;
@@ -30,86 +29,131 @@
     h1, h2, h3, h4, h5, h6, p {
       color: #C6A972;
     }
+    header {
+      background-color: #000;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 100;
+    }
+    header img {
+      height: 48px;
+    }
+    #hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    #hamburger span {
+      background: #C6A972;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+    #mobileNav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #000;
+      width: 100%;
+      padding: 1rem 2rem;
+      text-align: right;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    #mobileNav a {
+      color: #C6A972;
+      margin: 0.8rem 0;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    #mobileNav a:hover {
+      color: #fff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .content {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    footer {
+      background-color: #111;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer a {
+      color: #aaa;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
   </style>
 </head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CarHandled FAQ</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body style="background-color: #111; color: #fff; font-family: Optima, sans-serif; margin: 0; padding: 0;">
-  <header style="background-color: #000; padding: 0.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 100;">
-  <!-- Logo -->
-  <a href="index.html">
-    <img src="logo.png" alt="CarHandled Logo" style="height: 48px;">
-  </a>
+<body>
 
-  <!-- Hamburger Icon -->
-  <div id="hamburger" onclick="toggleNav()" style="display: flex; flex-direction: column; cursor: pointer;">
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
-  </div>
-
-  <!-- Mobile Nav Links -->
-  <nav id="mobileNav" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 0; background-color: #000; width: 100%; padding: 1rem 2rem; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); text-align: right;">
-    <a href="index.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Home</a>
-    <a href="#services" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Services</a>
-    <a href="#reviews" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Reviews</a>
-    <a href="#contact" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Contact</a>
-    <a href="faq.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">FAQ</a>
-    <a href="intake.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Toolkit</a>
-  </nav>
-</header>
-
-<!-- JS to Toggle -->
-<script>
-  function toggleNav() {
-    const nav = document.getElementById("mobileNav");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  }
+  <header>
+    <a href="index.html">
+      <img src="logo.png" alt="CarHandled Logo">
+    </a>
+    <div id="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="intake.html">Toolkit</a>
+    </nav>
   </header>
 
-  <section id="faq" style="padding: 3rem 2rem;">
-    <div style="position: relative; text-align: center; margin-bottom: 2rem;">
-      <img src="assets/logo.png" alt="CarHandled Logo" style="width: 20px; opacity: 0.05; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0;">
-      <h2 style="position: relative; z-index: 1; font-size: 2rem; color: #C6A972;">Frequently Asked Questions</h2>
-    </div>
+  <div class="content">
+    <!-- Insert your FAQ content here -->
+    <h2>FAQ</h2>
+    <h3>Can you help me decide whether to lease or buy?</h3>
+    <p>Yes. Our Toolkit includes worksheets, calculators, and guidance to help you make the right choice based on your goals and finances. If you want a faster, hands-on recommendation, our <a href="intake.html">Car Match Strategy</a> service is ideal.</p>
 
-    <div style="max-width: 800px; margin: 0 auto;">
-      <div style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; color: #C6A972;">What is CarHandled?</h3>
-        <p>CarHandled is a premium auto consulting service offering concierge car buying, deal reviews, and custom vehicle match strategies—designed to save you time, stress, and money.</p>
-      </div>
-      <div style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; color: #C6A972;">How does the Concierge service work?</h3>
-        <p>We handle your car search, compare options, negotiate pricing, and line up the deal. You finalize paperwork directly with the dealer. It’s full-service buying, minus the pressure.</p>
-      </div>
-      <div style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; color: #C6A972;">What if I already have a quote?</h3>
-        <p>Use our Deal Review service. We'll analyze your quote and tell you if it's competitive—or if better options exist.</p>
-      </div>
-      <div style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; color: #C6A972;">Can you help me decide whether to lease or buy?</h3>
-        <p>Absolutely. Our Car Buyer Toolkit (coming soon) includes calculators and worksheets to break down lease vs. buy comparisons. For tailored guidance, our Car Match Strategy service helps you decide based on your budget, lifestyle, and financial goals—then narrows your best-fit options. You get clarity and confidence, no sales pressure.</p>
-      </div>
-      <div style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; color: #C6A972;">Is this service available nationwide?</h3>
-        <p>We are based in the U.S. and operate nationally. We’ve helped clients in nearly every state secure better deals and avoid the games.</p>
-      </div>
-      <div style="margin-bottom: 2rem;">
-     <h3 style="font-size: 1.2rem; color: #C6A972;">Is CarHandled affiliated with any dealerships?</h3>
-     <p>We are active professionals in the automotive industry and maintain strong relationships with trusted dealers nationwide. While we understand how the system works from the inside, our loyalty is always to our clients. If a dealer we know offers the best deal—it’s a win-win. We use our connections to your advantage, always with your best interest first.</p>
+    <h3>Is CarHandled affiliated with any dealerships?</h3>
+    <p>We have strong relationships in the auto industry, including trusted dealer partners. That said, our loyalty is always to our clients. If a partner dealership offers the best deal, it’s a win-win. We leverage our connections to help you buy smarter—without pressure or bias.</p>
+  </div>
 
-      </div>
-    </div>
-  </section>
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById("mobileNav");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
 
-  <footer style="background-color: #000; color: #aaa; padding: 2rem; text-align: center; font-size: 0.9rem;">
-    <p>&copy; 2025 CarHandled. All rights reserved.</p>
-    <p><a href="terms-of-use.html" style="color: #aaa; text-decoration: none; margin-right: 1rem;">Terms of Use</a>
-       <a href="privacy-policy.html" style="color: #aaa; text-decoration: none; margin-right: 1rem;">Privacy Policy</a>
-       <a href="refund-policy.html" style="color: #aaa; text-decoration: none;">Refund Policy</a></p>
+    // Auto-close nav on link click
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('#mobileNav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobileNav').style.display = 'none';
+        });
+      });
+    });
+  </script>
+
+  <footer>
+    <p><strong>Contact us:</strong> info@carhandled.com</p>
+    <p>
+      <a href="terms-of-use.html" target="_blank">Terms of Use</a>
+      <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+      <a href="refund-policy.html" target="_blank">Refund Policy</a>
+    </p>
+    <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
   </footer>
+
 </body>
 </html>
