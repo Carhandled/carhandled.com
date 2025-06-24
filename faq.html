@@ -38,16 +38,36 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body style="background-color: #111; color: #fff; font-family: Optima, sans-serif; margin: 0; padding: 0;">
-  <header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: #000;">
-     <a href="index.html" style="display: flex; align-items: center;">
-  <img src="/logo.png" alt="CarHandled Logo" style="height: 45px; width: auto;" />
-</a>
-    <nav>
-      <a href="index.html" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">Home</a>
-      <a href="index.html#services" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">Services</a>
-      <a href="index.html#toolkit" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">ToolKit</a>
-      <a href="index.html#contact" style="color: #C6A972; margin-left: 2rem; text-decoration: none;">Contact</a>
-    </nav>
+  <header style="background-color: #000; padding: 0.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 100;">
+  <!-- Logo -->
+  <a href="index.html">
+    <img src="logo.png" alt="CarHandled Logo" style="height: 48px;">
+  </a>
+
+  <!-- Hamburger Icon -->
+  <div id="hamburger" onclick="toggleNav()" style="display: flex; flex-direction: column; cursor: pointer;">
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+  </div>
+
+  <!-- Mobile Nav Links -->
+  <nav id="mobileNav" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 0; background-color: #000; width: 100%; padding: 1rem 2rem; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); text-align: right;">
+    <a href="index.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Home</a>
+    <a href="#services" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Services</a>
+    <a href="#reviews" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Reviews</a>
+    <a href="#contact" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Contact</a>
+    <a href="faq.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">FAQ</a>
+    <a href="intake.html" style="color: #C6A972; margin: 0.8rem 0; text-decoration: none;">Toolkit</a>
+  </nav>
+</header>
+
+<!-- JS to Toggle -->
+<script>
+  function toggleNav() {
+    const nav = document.getElementById("mobileNav");
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  }
   </header>
 
   <section id="faq" style="padding: 3rem 2rem;">
