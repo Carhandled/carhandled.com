@@ -108,6 +108,39 @@
       margin: 0 0.5rem;
       text-decoration: none;
     }
+    #reviews {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+}
+
+.review-slider {
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.review-track {
+  display: flex;
+  animation: slide 15s infinite linear;
+}
+
+.review {
+  flex: 0 0 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  min-height: 120px;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
   </style>
 </head>
 <body>
@@ -135,23 +168,62 @@
 </section>
 
   <section class="section" id="services">
-    <div class="card">
-      <h3>Concierge – $1299</h3>
-      <p>We find the right car, craft the strategy, and negotiate the deal—all tailored to your goals. Premium guidance. No pressure.</p>
-    </div>
-    <div class="card">
-      <h3>Car Match Strategy – $499</h3>
-      <p>We help you identify top vehicle choices based on budget, lifestyle, and needs. No guesswork. Just clarity.</p>
-    </div>
-    <div class="card">
-      <h3>Deal Review – $129</h3>
-      <p>Already have a quote? We’ll audit it for hidden fees, high rates, and missed savings.</p>
-    </div>
-    <div class="card">
-      <h3>Toolkit – Coming Soon</h3>
-      <p>DIY templates, calculators & scripts.</p>
-    </div>
-  </section>
+  <h2>🚗 Our Services</h2>
+
+  <div class="card">
+    <h3>Smart Concierge – $1,299</h3>
+    <p>Expert guidance from start to finish. We help you identify the right car, craft a negotiation strategy, and support your deal execution. Ideal for buyers who want an edge—without going it alone.</p>
+    <ul>
+      <li>✓ Vehicle shortlisting</li>
+      <li>✓ Market analysis + pricing strategy</li>
+      <li>✓ Deal coaching and review</li>
+      <li>✓ 1:1 strategy call</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Executive Concierge – $2,999</h3>
+    <p>For busy professionals and collectors who want it fully handled. We run the entire process—from sourcing to delivery—with discretion, speed, and precision. Zero stress. Zero legwork.</p>
+    <ul>
+      <li>✓ Full market scan (dealer + private listings)</li>
+      <li>✓ Live dealer outreach and negotiation</li>
+      <li>✓ Trade-in coordination</li>
+      <li>✓ Delivery support & documentation</li>
+      <li>✓ Priority handling + VIP access</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Car Match Strategy – $499</h3>
+    <p>Confused by choices? We help you get clarity fast—with expert input on what fits your life, budget, and long-term goals.</p>
+    <ul>
+      <li>✓ Lifestyle + budget analysis</li>
+      <li>✓ Top 3–5 vehicle picks with pros/cons</li>
+      <li>✓ Vehicle history insight + resale foresight</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Deal Review – $129</h3>
+    <p>Already have a quote? We’ll audit it for hidden fees, inflated rates, and missed savings. One sharp review could save you thousands.</p>
+    <ul>
+      <li>✓ Quote and fee breakdown</li>
+      <li>✓ Interest rate and finance structure review</li>
+      <li>✓ Summary + recommendation report</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Toolkit – Launching Soon</h3>
+    <p>DIY templates, calculators, scripts, and insider shortcuts—so you can outsmart the dealership without hiring anyone.</p>
+    <ul>
+      <li>✓ Deal prep checklist</li>
+      <li>✓ Script library + email templates</li>
+      <li>✓ Trade-in valuation tool</li>
+      <li>✓ Video walkthroughs + bonuses</li>
+    </ul>
+  </div>
+</section>
 
   <section class="section" id="about">
     <h2>💬 About CarHandled</h2>
@@ -166,18 +238,28 @@
 <p>It’s not about selling — it’s about having someone in your corner who knows the game and plays it for you.</p>
   </section>
 
-  <section class="section" id="promise">
-    <h2>🔒 The CarHandled Promise</h2>
-    <p>We exist to protect your wallet and your time.</p>
-    <p>We dig deeper, negotiate harder, and uncover savings others miss—often totaling <strong>$2,000 to $6,000 or more</strong>.</p>
-    <p>It’s about the best possible deal, handled by insiders—not salespeople. <strong>No stress. No tricks. Just facts, strategy, and results.</strong></p>
-    <p>If we can’t deliver value, we won’t take your money.</p>
-  </section>
+ <section class="section" id="promise">
+  <h2>🔒 The CarHandled Promise</h2>
+  <p>We exist to protect your wallet and your time.</p>
+  <p>We go further than Google searches and sales pitches—bringing insider insight, smart negotiation, and relentless detail-checking to the table.</p>
+  <p>Whether it’s spotting fees others miss, timing the market right, or just knowing what’s worth fighting for—we’re here to make smarter car decisions happen.</p>
+  <p>No stress. No tricks. Just facts, strategy, and advocacy on your side.</p>
+  <p><strong>If you follow our process and feel it didn’t help, we’ll make it right. Simple as that.</strong></p>
+</section>
 
-  <section class="section" id="reviews">
-    <h2>Client Reviews</h2>
-    <p>⭐⭐⭐⭐⭐ “Truly seamless and stress-free.” – T.R., NYC</p>
-  </section>
+<section class="section" id="reviews">
+  <h2>Client Reviews</h2>
+  <div class="review-slider">
+    <div class="review-track">
+      <div class="review">⭐⭐⭐⭐⭐ “This is, I believe, the third or fourth Range Rover I have purchased with Ali. Every time, he makes the process extremely easy for me, so I would like to thank him once again.” – Serhat C, PA</div>
+      <div class="review">⭐⭐⭐⭐⭐ “The rep Ali was great to deal with. He knew the product and was very helpful.” – Daryl G, NJ</div>
+      <div class="review">⭐⭐⭐⭐⭐ “Outstanding service – Ali Camur has been incredibly attentive to our challenging requests with prompt communications!” – Maximillian L, PA</div>
+      <div class="review">⭐⭐⭐⭐⭐ “I can’t say enough good things about Ali and the team at CarHandled! They went above and beyond to make this car-buying experience absolutely seamless. From start to finish, it was true white-glove service, with every detail handled to perfection. I felt valued and taken care of every step of the way. Ali, in particular, was outstanding and made sure everything was exactly right. This will definitely be my forever service! Thank you, Ali, for an exceptional experience.” – Anthony G, NJ</div>
+      <div class="review">⭐⭐⭐⭐⭐ “Very pleasant experience. Ali Camur was a key part of my decision to move forward with my deal. He has a good way about him and made the experience easier than normal.” – Matt P, PA</div>
+      <div class="review">⭐⭐⭐⭐⭐ “The whole experience was easy and hassle-free.” – Cyma S, PA</div>
+    </div>
+  </div>
+</section>
 
   <footer class="footer">
     <p><strong>Contact us:</strong> info@carhandled.com</p>
