@@ -1,0 +1,33 @@
+name: Auto-generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Generate sitemap
+      run: |
+        echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+        for file in *.html; do
+          url="https://carhandled.com/${file/index.html/}"
+          echo "  <url><loc>$url</loc><priority>0.80</priority></url>" >> sitemap.xml
+        done
+        echo '</urlset>' >> sitemap.xml
+
+    - name: Commit and push
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add sitemap.xml
+        git diff --quiet || (git commit -m "Auto-update sitemap" && git push)
