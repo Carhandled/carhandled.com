@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The CarHandled Promise</title>
-  <meta name="description" content="Explore the CarHandled Promise — our commitment to smarter, stress-free car buying with strategy, transparency, and trust." />
+  <title>The CarHandled Promise – Trusted Auto Advocacy</title>
+  <meta name="description" content="Explore the CarHandled Promise – our commitment to expert car buying guidance, honest advocacy, and stress-free vehicle decisions. We protect your wallet and your time." />
   <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="The CarHandled Promise – Trusted Auto Advocacy" />
+  <meta property="og:description" content="We go beyond sales talk—CarHandled delivers unbiased help, negotiation strategy, and expert guidance through every step of the car buying journey." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://carhandled.com/promise.html" />
+  <meta property="og:image" content="https://carhandled.com/promise-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The CarHandled Promise – Trusted Auto Advocacy" />
+  <meta name="twitter:description" content="The CarHandled Promise: facts, strategy, and advocacy for smarter car buying. Discover why hundreds trust us to guide their auto decisions." />
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
@@ -19,7 +28,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: relative;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
     header img {
       height: 48px;
@@ -52,33 +64,110 @@
       text-decoration: none;
       font-size: 1.1rem;
     }
+    .hero {
+      background: url('background.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #f5f5f5;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+      color: #dcdcdc;
+    }
+    .hero .cta-button {
+      background: #e6b800;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
     .section {
-      padding: 4rem 1.5rem;
+      padding: 3rem 1.5rem;
       max-width: 800px;
       margin: auto;
     }
-    .section h1 {
+    .card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+    }
+    .card h3 {
       color: #C6A972;
-      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .card p {
+      margin: 0;
+    }
+    .section h2 {
+      color: #C6A972;
       border-bottom: 1px solid #C6A972;
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
     }
-    .section p {
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-    footer {
+    .footer {
       background: #111;
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
       color: #aaa;
     }
-    footer a {
+    .footer a {
       color: #aaa;
       margin: 0 0.5rem;
       text-decoration: none;
+    }
+    #reviews {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+    }
+    .review-slider {
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .review-track {
+      display: flex;
+      animation: slide 15s infinite linear;
+    }
+    .review {
+      flex: 0 0 100%;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      min-height: 120px;
+    }
+    @keyframes slide {
+      0%   { transform: translateX(0%); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+    .cta-button {
+      background: #e6b800;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1.5rem;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #cca300;
+    }
+    .cta-container {
+      text-align: center;
+      margin: 3rem 0;
     }
   </style>
 </head>
