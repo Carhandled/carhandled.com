@@ -5,19 +5,27 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://carhandled.com/#services</loc>
+    <loc>https://carhandled.com/promise.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://carhandled.com/#toolkit</loc>
+    <loc>https://carhandled.com/faq.html</loc>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://carhandled.com/#reviews</loc>
-    <priority>0.60</priority>
+    <loc>https://carhandled.com/intake.html</loc>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://carhandled.com/#form</loc>
-    <priority>0.60</priority>
+    <loc>https://carhandled.com/privacy-policy.html</loc>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://carhandled.com/terms-of-use.html</loc>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://carhandled.com/refund-policy.html</loc>
+    <priority>0.40</priority>
   </url>
 </urlset>
