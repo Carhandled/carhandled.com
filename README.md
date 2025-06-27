@@ -12,22 +12,6 @@ This repository powers the [CarHandled](https://carhandled.com) website and Tool
 
 ## 📁 Structure Overview
 
-/assets/img/ → Hero images, branding visuals, icons
-/style/ → Main CSS file (style.css)
-index.html → Homepage
-faq.html → FAQ page
-promise.html → CarHandled Promise landing
-toolkit.html → Toolkit product landing
-intake.html → Lead intake form
-privacy-policy.html → Privacy policy
-refund-policy.html → Refund terms
-terms-of-use.html → Legal terms
-sitemap.xml → SEO sitemap
-robots.txt → Bot indexing rules
-
-yaml
-Copy
-Edit
 
 ---
 
@@ -48,12 +32,6 @@ Copy
 Edit
 
 For CI/CD and sitemap automation, see:
-
-.github/workflows/sitemap.yml
-
-yaml
-Copy
-Edit
 
 ---
 
