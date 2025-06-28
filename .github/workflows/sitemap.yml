@@ -5,29 +5,43 @@ on:
     branches:
       - main
     paths:
-      - '**.html'
+      - '**/*.html'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Generate sitemap
-      run: |
-        echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
-        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-        for file in *.html; do
-          url="https://carhandled.com/${file/index.html/}"
-          echo "  <url><loc>$url</loc><priority>0.80</priority></url>" >> sitemap.xml
-        done
-        echo '</urlset>' >> sitemap.xml
+      - name: Generate sitemap.xml
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-    - name: Commit and push
-      run: |
-        git config user.name "github-actions"
-        git config user.email "actions@github.com"
-        git add sitemap.xml
-        git diff --quiet || (git commit -m "Auto-update sitemap" && git push)
+          find . -name "*.html" ! -path "./.git/*" ! -path "./assets/*" ! -path "./style/*" | while read -r file; do
+            clean_path="${file#./}"  # remove leading ./
+            if [ "$clean_path" = "index.html" ]; then
+              url="https://carhandled.com/"
+              priority="1.00"
+            else
+              url="https://carhandled.com/${clean_path}"
+              case "$clean_path" in
+                "intake.html"|"promise.html") priority="0.80" ;;
+                "faq.html") priority="0.70" ;;
+                "privacy-policy.html"|"terms-of-use.html"|"refund-policy.html") priority="0.40" ;;
+                *) priority="0.60" ;;
+              esac
+            fi
+            echo "  <url><loc>$url</loc><priority>$priority</priority></url>" >> sitemap.xml
+          done
+
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Commit and push sitemap.xml
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add sitemap.xml
+          git diff --cached --quiet || (git commit -m "Auto-update sitemap" && git push)
