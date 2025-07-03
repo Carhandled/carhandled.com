@@ -425,7 +425,7 @@
   <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
 </footer>
 
-  <script>
+<script>
     function toggleNav() {
       const nav = document.getElementById("mobileNav");
       if (nav.style.display === "flex") {
@@ -437,6 +437,21 @@
         setTimeout(() => nav.style.opacity = 1, 10);
       }
     }
+
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      const scrollAmount = carousel.offsetWidth;
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    // Auto-scroll every 5 seconds
+    let autoScrollInterval = setInterval(() => scrollCarousel(1), 5000);
+
+    // Pause auto-scroll on interaction
+    document.getElementById('carousel').addEventListener('scroll', () => {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = setInterval(() => scrollCarousel(1), 5000);
+    });
   </script>
 </body>
 </html>
