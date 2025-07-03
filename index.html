@@ -188,15 +188,22 @@
     </nav>
   </header>
 
-  <section class="hero" style="background: url('assets/img/toolkitbackground.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #e7d2a8; padding: 2rem;">
-    <h1>Stop Overpaying for Cars. Start Winning Every Deal.</h1>
-    <p>The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
-    <a href="#pricing" class="cta-button">Get the Toolkit — Save $1,000+</a>
+  <section class="hero" style="background: url('assets/img/toolkitbackground.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1 style="font-size: 3rem; color: #C6A972; max-width: 700px;">Stop Overpaying for Cars. Start Winning Every Deal.</h1>
+    <p style="font-size: 1.3rem; color: #eee; max-width: 700px; margin-top: 1rem;">The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
+    <a href="#pricing" class="cta-button" style="margin-top: 2rem;">Get the Toolkit — Save $1,000+</a>
+  </section>
+  <section style="display: flex; justify-content: center; gap: 1rem; padding: 1rem; background: #111; font-size: 0.95rem; color: #C6A972; border-top: 1px solid #444; border-bottom: 1px solid #444;">
+    <div>✔️ Expert-Built Tools</div>
+    <div>✔️ Save $1,000+</div>
+    <div>✔️ Instant Access</div>
+    <div>✔️ No Dealership Games</div>
   </section>
    <section class="section" style="background-color: #111; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
-  <h2 style="color: #C6A972;">Our Promise</h2>
-  <p>We built this Toolkit to make car buying less stressful — and way more effective. If you use it and don’t save at least $500 on your deal, email us. We’ll personally look at your plan and help you fix it. No scripts, no runaround. Just real help, from real experts.</p>
-</section>
+  <section class="section">
+    <h2>Our Promise</h2>
+    <p>We built this Toolkit to make car buying less stressful — and way more effective. If you use it and don’t save at least $500 on your deal, email us. We’ll personally look at your plan and help you fix it. No scripts, no runaround. Just real help, from real experts.</p>
+  </section>
 
 <section class="section">
   <h2>Inside the Toolkit</h2>
@@ -282,41 +289,52 @@
       We’re here. Just reply to your access email and we’ll help you directly — no bots, no fluff.
     </li>
   </ul>
-</section>
+<<div class="toolkit-capture">
+  <h2>Get Early Access</h2>
+  <p>Drop your email and we’ll notify you the moment it’s ready.</p>
+  <iframe id="tallyFrame"
+    data-tally-src="https://tally.so/embed/mVaZON?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    loading="lazy" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0"
+    title="Unlock Your Premium Toolkit"></iframe>
 
+  <script>
+    function getUTMParams() {
+      const params = new URLSearchParams(window.location.search);
+      const utms = ['utm_source', 'utm_medium', 'utm_campaign'];
+      const result = [];
 
-
-
-
-    <div class="toolkit-capture">
-      <h2>Get Early Access</h2>
-      <p>Drop your email and we’ll notify you the moment it’s ready.</p>
-      <iframe data-tally-src="https://tally.so/embed/mVaZON?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-        loading="lazy" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0"
-        title="Unlock Your Premium Toolkit"></iframe>
-      <script>
-        var d = document,
-          w = "https://tally.so/widgets/embed.js",
-          v = function () {
-            if (typeof Tally !== "undefined") {
-              Tally.loadEmbeds();
-            } else {
-              d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
-                e.src = e.dataset.tallySrc;
-              });
-            }
-          };
-        if (typeof Tally !== "undefined") v();
-        else if (!d.querySelector('script[src="' + w + '"]')) {
-          var s = d.createElement("script");
-          s.src = w;
-          s.onload = v;
-          s.onerror = v;
-          d.body.appendChild(s);
+      utms.forEach(key => {
+        if (params.has(key)) {
+          result.push(`${key}=${encodeURIComponent(params.get(key))}`);
         }
-      </script>
-    </div>
-  </section>
+      });
+
+      return result.join('&');
+    }
+
+    const baseSrc = document.getElementById("tallyFrame").dataset.tallySrc;
+    const utmString = getUTMParams();
+    const finalSrc = utmString ? `${baseSrc}&${utmString}` : baseSrc;
+    document.getElementById("tallyFrame").src = finalSrc;
+
+    // Load Tally
+    var d = document,
+      w = "https://tally.so/widgets/embed.js",
+      v = function () {
+        if (typeof Tally !== "undefined") {
+          Tally.loadEmbeds();
+        }
+      };
+    if (typeof Tally !== "undefined") v();
+    else if (!d.querySelector('script[src="' + w + '"]')) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  </script>
+</div>
 
  <footer class="footer">
   <p><strong>Contact us:</strong> info@carhandled.com</p>
