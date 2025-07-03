@@ -20,9 +20,40 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header img {
       height: 48px;
+    }
+    #hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    #hamburger span {
+      background: #C6A972;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+    #mobileNav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #000;
+      width: 100%;
+      padding: 1rem 2rem;
+      text-align: right;
+    }
+    #mobileNav a {
+      color: #C6A972;
+      margin: 0.8rem 0;
+      text-decoration: none;
+      font-size: 1.1rem;
     }
     .hero {
       background: url('assets/img/background.jpg') center/cover no-repeat;
@@ -48,8 +79,10 @@
       color: #C6A972;
       font-size: 1.8rem;
       margin-bottom: 1rem;
+      border-bottom: 1px solid #C6A972;
+      padding-bottom: 0.5rem;
     }
-    .section p {
+    .section p, .section li {
       color: #ccc;
       line-height: 1.6;
     }
@@ -69,6 +102,18 @@
 <body>
   <header>
     <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
+    <div id="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="promise.html">Our Promise</a>
+      <a href="faq.html">FAQ</a>
+      <a href="intake.html">Get Started</a>
+    </nav>
   </header>
 
   <section class="hero">
@@ -94,9 +139,42 @@
   </section>
 
   <section class="section">
+    <h2>Pricing</h2>
+    <p><strong>$1,299 Standard Concierge Package</strong><br>
+    Strategy session, deal review, negotiation scripting, vehicle shortlisting, and up to 1 deal submission.</p>
+    <p><strong>$2,999 Premium Concierge Package</strong><br>
+    Everything in Standard, plus: nationwide sourcing, full negotiation handling, multiple vehicle scenarios, trade-in coordination, and delivery setup.</p>
+  </section>
+
+  <section class="section">
+    <h2>FAQs</h2>
+    <ul>
+      <li><strong>How long does the process take?</strong><br>Typically 3–7 business days depending on availability and vehicle type.</li>
+      <li><strong>Do you guarantee pricing?</strong><br>We guarantee expert negotiation, but pricing varies by market. We aim for $1,000–$5,000+ in client savings.</li>
+      <li><strong>What vehicles do you work with?</strong><br>New, used, and lease options from major brands — nationwide.</li>
+      <li><strong>What if I already have a quote?</strong><br>We can validate, beat, or negotiate that quote further — often saving more.</li>
+      <li><strong>How do I know if I’m a good fit?</strong><br>If you want clarity, better pricing, and don’t want to deal with sales games — you’re in the right place.</li>
+    </ul>
+  </section>
+
+  <section class="section">
     <h2>How to Begin</h2>
     <p>We only take on a limited number of clients each month to ensure results. To request concierge access, complete our brief intake form.</p>
     <a href="intake.html" class="cta-button">Request Concierge Access</a>
   </section>
+
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById("mobileNav");
+      if (nav.style.display === "flex") {
+        nav.style.opacity = 0;
+        setTimeout(() => nav.style.display = "none", 300);
+      } else {
+        nav.style.display = "flex";
+        nav.style.opacity = 0;
+        setTimeout(() => nav.style.opacity = 1, 10);
+      }
+    }
+  </script>
 </body>
 </html>
