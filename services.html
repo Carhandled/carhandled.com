@@ -1,39 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>CarHandled – Smarter Car Decisions</title>
-<meta name="description" content="Expert car buying made simple. CarHandled offers concierge services, deal reviews, and car match strategies to help you buy smarter with confidence." />
-<meta name="robots" content="index, follow" />
-<meta property="og:title" content="CarHandled – Smarter Car Decisions" />
-<meta property="og:description" content="Avoid dealership pressure. Get expert help with buying, reviewing, or planning your next car move. Trusted nationwide." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://carhandled.com/" />
-<meta property="og:image" content="https://carhandled.com/home-preview.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="CarHandled – Smarter Car Decisions" />
-<meta name="twitter:description" content="Concierge car buying, deal reviews, and personalized vehicle strategies. Trusted by smart buyers nationwide." />
-<meta name="keywords" content="car buying help, auto concierge, car negotiation, buy a car expert, dealership help, car consultant, car buying, auto, buying, concierge, car, estimate payments" />
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "CarHandled",
-  "url": "https://carhandled.com",
-  "logo": "https://carhandled.com/assets/img/logo.png",
-  "sameAs": [
-    "https://www.instagram.com/carhandled"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "info@carhandled.com",
-    "contactType": "Customer Support"
-  }
-}
-</script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarHandled Services</title>
+  <meta name="description" content="Concierge car buying services by CarHandled — for clients who want a custom, expert-guided experience.">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -48,306 +20,83 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
     }
     header img {
       height: 48px;
     }
-    #hamburger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    #hamburger span {
-      background: #C6A972;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-    }
-    #mobileNav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #000;
-      width: 100%;
-      padding: 1rem 2rem;
-      text-align: right;
-    }
-    #mobileNav a {
-      color: #C6A972;
-      margin: 0.8rem 0;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
     .hero {
       background: url('assets/img/background.jpg') center/cover no-repeat;
+      padding: 5rem 2rem;
       text-align: center;
-      padding: 8rem 2rem 6rem;
     }
     .hero h1 {
       font-size: 2.5rem;
-      color: #f5f5f5;
+      color: #C6A972;
     }
     .hero p {
       font-size: 1.2rem;
-      margin: 1.5rem 0;
-      color: #dcdcdc;
-    }
-    .hero .cta-button {
-      background: #e6b800;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      color: #ddd;
+      max-width: 700px;
+      margin: 1rem auto;
     }
     .section {
       padding: 3rem 1.5rem;
       max-width: 800px;
       margin: auto;
     }
-    .card {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-    }
-    .card h3 {
-      color: #C6A972;
-      margin-bottom: 1rem;
-    }
-    .card p {
-      margin: 0;
-    }
     .section h2 {
       color: #C6A972;
-      border-bottom: 1px solid #C6A972;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
-    .footer {
-      background: #111;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    .footer a {
-      color: #aaa;
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
-    #reviews {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-    }
-  .review-slider {
-  overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.review-track {
-  display: flex;
-  width: max-content;
-  animation: scroll 150s linear infinite;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-    @keyframes slide {
-      0%   { transform: translateX(0%); }
-      33%  { transform: translateX(-100%); }
-      66%  { transform: translateX(-200%); }
-      100% { transform: translateX(0%); }
+    .section p {
+      color: #ccc;
+      line-height: 1.6;
     }
     .cta-button {
       background: #C6A972;
       color: #000;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
+      padding: 1rem 2rem;
       font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.1rem;
       display: inline-block;
-      margin-top: 1.5rem;
-      transition: background 0.3s ease;
-    }
-    .cta-button:hover {
-      background: #C6A972;
-    }
-    .cta-container {
-      text-align: center;
-      margin: 1.5rem 0;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
   <header>
     <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
-    <div id="hamburger" onclick="toggleNav()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="mobileNav">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="promise.html">Our Promise</a>
-      <a href="faq.html">FAQ</a>
-      <a href="intake.html">Get Started</a>
-      <a href="toolkit.html">ToolKit</a>
-    </nav>
   </header>
 
-  <section class="hero" style="background: url('assets/img/background.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #e7d2a8; padding: 2rem;">
-  <h1 style="font-size: 2.5rem; font-weight: bold; margin: 0 0 1rem;">CarHandled</h1>
-  <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem;">Car Buying Made Simple</h2>
-  <p style="max-width: 90%; font-size: 1.1rem; color: #e0d3b2;">Zero dealership pressure. Just honest, expert help every step of the way.</p>
-  <a href="intake.html" class="cta-button" style="margin-top: 2rem; background: #fff; color: #C6A972; font-weight: bold; padding: 0.8rem 1.5rem; border-radius: 10px; text-decoration: none;">Get Started</a>
-</section>
-
-  <section class="section" id="services">
-  <h2>Our Services</h2>
-
-  <div class="card">
-  <h3 style="border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">Smart Concierge – $1,299</h3>
-  <p>Expert guidance from start to finish. We help you identify the right car, craft a negotiation strategy, and support your deal execution. Ideal for buyers who want an edge—without going it alone.</p>
-  <ul>
-    <li> Vehicle shortlisting</li>
-    <li> Market analysis + pricing strategy</li>
-    <li> Deal coaching and review</li>
-    <li> 1:1 strategy call</li>
-  </ul>
-</div>
-
-
-  <div class="card">
-    <h3 style="border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">Executive Concierge – $2,999</h3>
-    <p>For busy professionals and collectors who want it fully handled. We run the entire process—from sourcing to delivery—with discretion, speed, and precision. Zero stress. Zero legwork.</p>
-    <ul>
-      <li> Full market scan (dealer + private listings)</li>
-      <li> Live dealer outreach and negotiation</li>
-      <li> Trade-in coordination</li>
-      <li> Delivery support & documentation</li>
-      <li> Priority handling + VIP access</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3 style="border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">Car Match Strategy – $499</h3>
-    <p>Confused by choices? We help you get clarity fast—with expert input on what fits your life, budget, and long-term goals.</p>
-    <ul>
-      <li> Lifestyle + budget analysis</li>
-      <li> Top 3–5 vehicle picks with pros/cons</li>
-      <li> Vehicle history insight + resale foresight</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3 style="border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">Deal Review – $129</h3>
-    <p>Already have a quote? We’ll audit it for hidden fees, inflated rates, and missed savings. One sharp review could save you thousands.</p>
-    <ul>
-      <li> Quote and fee breakdown</li>
-      <li> Interest rate and finance structure review</li>
-      <li> Summary + recommendation report</li>
-    </ul>
-  </div>
-
- <div class="card">
-  <h3 style="border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">Toolkit – Launching Soon</h3>
-  <p>DIY templates, calculators, scripts, and insider shortcuts—so you can outsmart the dealership without hiring anyone.</p>
-    <ul>
-    <li> Buying Guide + expert scripts</li>
-    <li> Lease vs Buy Comparison Sheet</li>
-    <li> Lease & Finance Estimators (true cost logic)</li>
-    <li> Deal Comparison Tool</li>
-    <li> PDF Index + ReadMe instructions</li>
-  </ul>
-  <a href="toolkit.html" class="cta-button" style="margin-top: 1.5rem; display: inline-block;">Preview Toolkit</a>
-</div>
-
-  <section class="section" id="about">
-    <h2>About CarHandled</h2>
-    <p>Hey, I’m <strong>Ali</strong> — founder of CarHandled and your car guy behind the scenes.</p>
-
-<p>After years working in luxury auto sales, I noticed something: most buyers are out there on their own, hoping for the best and getting overwhelmed fast. The process can be <strong>confusing, time-consuming, and full of games.</strong></p>
-
-<p>CarHandled is my way of flipping that.</p>
-
-<p>I’m here to help you <strong>make smart moves with zero pressure.</strong> Whether you’re shopping local or nationwide, I use real connections, research, and strategy to help you buy with clarity and confidence.</p>
-
-<p>It’s not about selling — it’s about having someone in your corner who knows the game and plays it for you.</p>
+  <section class="hero">
+    <h1>White-Glove Car Buying Concierge</h1>
+    <p>Want an expert to handle the whole thing for you? Our team secures the best deal, avoids the runaround, and delivers exactly what you want — without the stress.</p>
   </section>
 
-<section class="section" id="reviews">
-  <h2>Client Reviews</h2>
-  <div class="review-slider">
-    <div class="review-track">
-      <div class="review">⭐⭐⭐⭐⭐ “This is, I believe, the third or fourth Range Rover I have purchased with Ali. Every time, he makes the process extremely easy for me, so I would like to thank him once again.” – Serhat C, PA</div>
-      <div class="review">⭐⭐⭐⭐⭐ “The rep Ali was great to deal with. He knew the product and was very helpful.” – Daryl G, NJ</div>
-      <div class="review">⭐⭐⭐⭐⭐ “Outstanding service – Ali has been incredibly attentive to our challenging requests with prompt communications!” – Maximillian L, PA</div>
-      <div class="review">⭐⭐⭐⭐⭐ “I can’t say enough good things about Ali and the team at CarHandled! They went above and beyond to make this car-buying experience absolutely seamless. From start to finish, it was true white-glove service, with every detail handled to perfection. I felt valued and taken care of every step of the way. Ali, in particular, was outstanding and made sure everything was exactly right. This will definitely be my forever service! Thank you, Ali, for an exceptional experience.” – Anthony G, NJ</div>
-      <div class="review">⭐⭐⭐⭐⭐ “Very pleasant experience. Ali was a key part of my decision to move forward with my deal. He has a good way about him and made the experience easier than normal.” – Matt P, PA</div>
-      <div class="review">⭐⭐⭐⭐⭐ “The whole experience was easy and hassle-free.” – Cyma S, PA</div>
-      <div class="review">⭐⭐⭐⭐⭐ “This is, I believe, the third or fourth Range Rover I have purchased with Ali. Every time, he makes the process extremely easy for me, so I would like to thank him once again.” – Serhat C, PA</div>
-      <div class="review">⭐⭐⭐⭐⭐ “The rep Ali was great to deal with. He knew the product and was very helpful.” – Daryl G, NJ</div>
-      <div class="review">⭐⭐⭐⭐⭐ “Outstanding service – Ali has been incredibly attentive to our challenging requests with prompt communications!” – Maximillian L, PA</div>
-      <div class="review">⭐⭐⭐⭐⭐ “I can’t say enough good things about Ali and the team at CarHandled! They went above and beyond to make this car-buying experience absolutely seamless. From start to finish, it was true white-glove service, with every detail handled to perfection. I felt valued and taken care of every step of the way. Ali, in particular, was outstanding and made sure everything was exactly right. This will definitely be my forever service! Thank you, Ali, for an exceptional experience.” – Anthony G, NJ</div>
-      <div class="review">⭐⭐⭐⭐⭐ “Very pleasant experience. Ali was a key part of my decision to move forward with my deal. He has a good way about him and made the experience easier than normal.” – Matt P, PA</div>
-      <div class="review">⭐⭐⭐⭐⭐ “The whole experience was easy and hassle-free.” – Cyma S, PA</div>
-    </div>
-  </div>
-</section>
-<div class="cta-container">
-  <a href="intake.html" class="cta-button">Get Started</a>
-</div>
-<footer class="footer">
-  <p><strong>Contact us:</strong> info@carhandled.com</p>
-  <p>
-    <a href="terms-of-use.html">Terms of Use</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="refund-policy.html">Refund Policy</a>
-  </p>
-  <p>
-    <a href="https://www.instagram.com/carhandled" target="_blank" style="color: #aaa; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-      <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.5.3.9.7 1.2 1.2.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.5-.7.9-1.2 1.2-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.5-.3-.9-.7-1.2-1.2-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.5.7-.9 1.2-1.2.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1c-1.4.1-2.4.3-3.3.7C2.6 1.3 1.8 2 1.2 2.6.6 3.2-.1 4.1 0 5.6-.1 6.9 0 7.3 0 12s-.1 5.1.1 6.4c.1 1.5.7 2.4 1.3 3.1.6.6 1.4 1.3 3.1 1.3 1.3.1 1.7.1 6.4.1s5.1 0 6.4-.1c1.5-.1 2.4-.7 3.1-1.3.6-.6 1.3-1.4 1.3-3.1.1-1.3.1-1.7.1-6.4s0-5.1-.1-6.4c-.1-1.5-.7-2.4-1.3-3.1-.6-.6-1.4-1.3-3.1-1.3C15.7.1 15.3 0 12 0z"/>
-        <path d="M12 5.8A6.2 6.2 0 0 0 5.8 12 6.2 6.2 0 0 0 12 18.2 6.2 6.2 0 0 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8.1 4 4 0 0 1 0 8.1zM18.4 4.9a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/>
-      </svg>
-      Follow us on Instagram 
-    </a>
-  </p>
-  <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
-</footer>
+  <section class="section">
+    <h2>Who It's For</h2>
+    <p>This service is ideal for clients who want:</p>
+    <ul>
+      <li>To avoid negotiating with dealers entirely</li>
+      <li>A trusted expert to find, vet, and secure their next car</li>
+      <li>To save time, money, and headaches — with white-glove service</li>
+    </ul>
+  </section>
 
+  <section class="section">
+    <h2>What's Included</h2>
+    <p>
+      Our concierge service includes personalized consultations, vehicle sourcing, deal analysis, direct negotiation, trade-in assistance, and delivery coordination. Everything you need, nothing you don’t.
+    </p>
+  </section>
 
-
-  <script>
-    function toggleNav() {
-      const nav = document.getElementById("mobileNav");
-      if (nav.style.display === "flex") {
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.display = "none", 300);
-      } else {
-        nav.style.display = "flex";
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.opacity = 1, 10);
-      }
-    }
-  </script>
+  <section class="section">
+    <h2>How to Begin</h2>
+    <p>We only take on a limited number of clients each month to ensure results. To request concierge access, complete our brief intake form.</p>
+    <a href="intake.html" class="cta-button">Request Concierge Access</a>
+  </section>
 </body>
 </html>
