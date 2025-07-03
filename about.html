@@ -1,1 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About CarHandled</title>
+  <meta name="description" content="Get to know CarHandled — the team behind smarter, simpler car buying." />
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="About CarHandled">
+  <meta property="og:description" content="Learn more about the people, values, and purpose behind CarHandled — a smarter way to buy cars." />
+  <meta property="og:image" content="https://www.carhandled.com/assets/img/about-og.jpg">
+  <meta property="og:url" content="https://www.carhandled.com/about.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About CarHandled">
+  <meta name="twitter:description" content="We help car buyers move smarter — with tools, strategy, and real support from start to finish.">
+  <meta name="twitter:image" content="https://www.carhandled.com/assets/img/about-og.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Optima', sans-serif;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+    }
+    header {
+      background-color: #000;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img {
+      height: 48px;
+    }
+    #hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    #hamburger span {
+      background: #C6A972;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+    #mobileNav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #000;
+      width: 100%;
+      padding: 1rem 2rem;
+      text-align: right;
+    }
+    #mobileNav a {
+      color: #C6A972;
+      margin: 0.8rem 0;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    .hero {
+      background: url('assets/img/about-background.jpg') center/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #f5f5f5;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #C6A972;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      color: #ddd;
+    }
+    .section {
+      padding: 4rem 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h1, .section h2 {
+      color: #C6A972;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #C6A972;
+      padding-bottom: 0.5rem;
+    }
+    .section p {
+      color: #ccc;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .founder-section {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .founder-section img {
+      border-radius: 100px;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .cta-button {
+      background: #C6A972;
+      color: #000;
+      padding: 0.8rem 2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
+    <div id="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mobileNav">
+      <a href="services.html">Concierge Services</a>
+      <a href="about.html">About Us</a>
+      <a href="promise.html">Our Promise</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="intake.html">Get Started</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Smarter Car Buying Starts Here</h1>
+    <p>We’re a team of car experts, strategists, and problem-solvers — here to help you feel confident from first quote to final signature.</p>
+  </section>
+
+  <section class="section">
+    <h2>Smart Car Buying, Simplified</h2>
+    <p>We started CarHandled to give people more control, clarity, and confidence during the car buying process. Our goal isn’t to replace salespeople or dealerships — it’s to help buyers come in more prepared, more strategic, and more empowered to get the deal that’s right for them.</p>
+
+    <h2>We're on Your Side</h2>
+    <p>Most people only buy a car every few years. We help buyers tap into the knowledge, tools, and language that make a big difference — from calculators and comparison sheets to full concierge handling.</p>
+
+    <h2>Why We Built This</h2>
+    <p>We’ve worked inside the auto world. We know how the process is — and we know how to win it, respectfully. Our mission is simple: give buyers expert-level confidence without the overwhelm.</p>
+
+    <h2>Human-First, Always</h2>
+    <p>Whether you’re buying your first car or your fifth, CarHandled is here to make sure you feel informed and in control — not rushed, confused, or second-guessed. That’s our promise. That’s our playbook.</p>
+
+    <div class="founder-section">
+      <img src="assets/img/founder-placeholder.jpg" alt="Founder Photo Placeholder">
+      <p><strong>Built by real people who care about real drivers.</strong></p>
+      <a href="intake.html" class="cta-button">Work With Us</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <p><strong>Contact us:</strong> info@carhandled.com</p>
+  <p>
+    <a href="terms-of-use.html">Terms of Use</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="refund-policy.html">Refund Policy</a>
+  </p>
+  <p>
+    <a href="https://www.instagram.com/carhandled" target="_blank" style="color: #aaa; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+      <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.5.3.9.7 1.2 1.2.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.5-.7.9-1.2 1.2-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.5-.3-.9-.7-1.2-1.2-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.5.7-.9 1.2-1.2.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1c-1.4.1-2.4.3-3.3.7C2.6 1.3 1.8 2 1.2 2.6.6 3.2-.1 4.1 0 5.6-.1 6.9 0 7.3 0 12s-.1 5.1.1 6.4c.1 1.5.7 2.4 1.3 3.1.6.6 1.4 1.3 3.1 1.3 1.3.1 1.7.1 6.4.1s5.1 0 6.4-.1c1.5-.1 2.4-.7 3.1-1.3.6-.6 1.3-1.4 1.3-3.1.1-1.3.1-1.7.1-6.4s0-5.1-.1-6.4c-.1-1.5-.7-2.4-1.3-3.1-.6-.6-1.4-1.3-3.1-1.3C15.7.1 15.3 0 12 0z"/>
+        <path d="M12 5.8A6.2 6.2 0 0 0 5.8 12 6.2 6.2 0 0 0 12 18.2 6.2 6.2 0 0 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8.1 4 4 0 0 1 0 8.1zM18.4 4.9a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/>
+      </svg>
+      Follow us on Instagram 
+    </a>
+  </p>
+  <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
+</footer>
+
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById("mobileNav");
+      if (nav.style.display === "flex") {
+        nav.style.opacity = 0;
+        setTimeout(() => nav.style.display = "none", 300);
+      } else {
+        nav.style.display = "flex";
+        nav.style.opacity = 0;
+        setTimeout(() => nav.style.opacity = 1, 10);
+      }
+    }
+  </script>
+</body>
+</html>
 
