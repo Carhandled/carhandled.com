@@ -67,28 +67,29 @@
       letter-spacing: 0.5px;
     }
     .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      border: none;
-      font-size: 2rem;
-      padding: 0.3rem 0.7rem;
-      cursor: pointer;
-      z-index: 10;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .carousel-arrow.left {
+    left: 0.5rem;
+  }
+  .carousel-arrow.right {
+    right: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .carousel-arrow {
+      display: none;
     }
-    .carousel-arrow.left {
-      left: 0.5rem;
-    }
-    .carousel-arrow.right {
-      right: 0.5rem;
-    }
-    @media (max-width: 768px) {
-      .carousel-arrow {
-        display: none;
-      }
-    }
+  }
+
     header {
       background-color: #000;
       padding: 1rem 1.5rem;
@@ -267,15 +268,17 @@
 
 <section class="section">
   <h2>Inside the Toolkit</h2>
-  <div class="carousel-container">
-    <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
-<button class="carousel-arrow right" onclick="scrollCarousel(1)">&#10095;</button>
+  <div class="carousel-container" style="position: relative; overflow: hidden; min-height: 280px;">
     
-  <div class="carousel-wrapper" id="carousel">
+    <!-- Arrows -->
+    <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
+    <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#10095;</button>
 
-
-      <div class="carousel-item">
-        <img src="assets/img/carhandled-buy-calculator.png" alt="Car Purchase Estimator">
+    <!-- Carousel -->
+    <div class="carousel-wrapper" id="carousel" style="display: flex; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+      
+      <div class="carousel-item" style="flex: 0 0 100%; max-width: 100%; scroll-snap-align: center; background: #1a1a1a; border-radius: 20px; padding: 1rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); transition: transform 0.2s ease;">
+        <img src="assets/img/carhandled-buy-calculator.png" alt="Car Purchase Estimator" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; filter: contrast(1.1) saturate(1.05);">
         <p><strong>Purchase Estimator</strong><br> Instantly see what your monthly payment should be — no surprises</p>
       </div>
 
@@ -373,43 +376,81 @@
     loading="lazy" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0"
     title="Unlock Your Premium Toolkit"></iframe>
 
-  <script>
-    function getUTMParams() {
-      const params = new URLSearchParams(window.location.search);
-      const utms = ['utm_source', 'utm_medium', 'utm_campaign'];
-      const result = [];
+<script>
+  // --- Tally + UTM Tracking ---
+  function getUTMParams() {
+    const params = new URLSearchParams(window.location.search);
+    const utms = ['utm_source', 'utm_medium', 'utm_campaign'];
+    const result = [];
 
-      utms.forEach(key => {
-        if (params.has(key)) {
-          result.push(`${key}=${encodeURIComponent(params.get(key))}`);
-        }
-      });
+    utms.forEach(key => {
+      if (params.has(key)) {
+        result.push(`${key}=${encodeURIComponent(params.get(key))}`);
+      }
+    });
 
-      return result.join('&');
-    }
+    return result.join('&');
+  }
 
-    const baseSrc = document.getElementById("tallyFrame").dataset.tallySrc;
-    const utmString = getUTMParams();
-    const finalSrc = utmString ? `${baseSrc}&${utmString}` : baseSrc;
-    document.getElementById("tallyFrame").src = finalSrc;
+  const baseSrc = document.getElementById("tallyFrame").dataset.tallySrc;
+  const utmString = getUTMParams();
+  const finalSrc = utmString ? `${baseSrc}&${utmString}` : baseSrc;
+  document.getElementById("tallyFrame").src = finalSrc;
 
-    // Load Tally
-    var d = document,
+  // Load Tally embed
+  var d = document,
       w = "https://tally.so/widgets/embed.js",
       v = function () {
         if (typeof Tally !== "undefined") {
           Tally.loadEmbeds();
         }
       };
-    if (typeof Tally !== "undefined") v();
-    else if (!d.querySelector('script[src="' + w + '"]')) {
-      var s = d.createElement("script");
-      s.src = w;
-      s.onload = v;
-      s.onerror = v;
-      d.body.appendChild(s);
+  if (typeof Tally !== "undefined") v();
+  else if (!d.querySelector('script[src="' + w + '"]')) {
+    var s = d.createElement("script");
+    s.src = w;
+    s.onload = v;
+    s.onerror = v;
+    d.body.appendChild(s);
+  }
+
+  // --- Carousel Arrows + Swipe + Autoscroll ---
+  const carousel = document.getElementById('carousel');
+  const scrollAmount = carousel.offsetWidth;
+
+  function scrollCarousel(direction) {
+    const scrollMax = carousel.scrollWidth - carousel.clientWidth;
+    if (direction === 1 && carousel.scrollLeft >= scrollMax - 10) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
-  </script>
+  }
+
+  let autoScroll = setInterval(() => scrollCarousel(1), 2000);
+
+  carousel.addEventListener('touchstart', () => clearInterval(autoScroll));
+  carousel.addEventListener('touchend', () => {
+    autoScroll = setInterval(() => scrollCarousel(1), 2000);
+  });
+  carousel.addEventListener('wheel', () => {
+    clearInterval(autoScroll);
+    autoScroll = setInterval(() => scrollCarousel(1), 2000);
+  });
+
+  // --- Mobile Menu Toggle ---
+  function toggleNav() {
+    const nav = document.getElementById("mobileNav");
+    if (nav.style.display === "flex") {
+      nav.style.opacity = 0;
+      setTimeout(() => nav.style.display = "none", 300);
+    } else {
+      nav.style.display = "flex";
+      nav.style.opacity = 0;
+      setTimeout(() => nav.style.opacity = 1, 10);
+    }
+  }
+</script>
 </div>
 
  <footer class="footer">
