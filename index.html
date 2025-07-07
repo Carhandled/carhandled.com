@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CarHandled Toolkit</title>
+  <title>CarHandled Toolkit – Stop Overpaying for Cars</title>
   <meta name="description" content="Unlock smarter car deals with the CarHandled Toolkit. Templates, scripts, calculators — everything you need to buy with confidence." />
-    <meta name="keywords" content="car buying tools, lease calculator, dealership negotiation, car deal estimator, carhandled toolkit" />
+  <meta name="keywords" content="car buying tools, lease calculator, dealership negotiation, car deal estimator, carhandled toolkit" />
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.carhandled.com/toolkit.html" />
@@ -284,17 +284,18 @@
     </nav>
   </header>
 
-<section class="hero">
-  <h1>Stop Overpaying for Cars. Start Winning Every Deal.</h1>
-  <p>The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
-  <a href="#pricing" class="cta-button">Get the Toolkit — Save $1,000+</a>
-</section>
-  <section style="display: flex; justify-content: center; gap: 1rem; padding: 1rem; background: #111; font-size: 0.95rem; color: #C6A972; border-top: 1px solid #444; border-bottom: 1px solid #444;">
-    <div>✔️ Expert-Built Tools</div>
-    <div>✔️ Save $1,000+</div>
-    <div>✔️ Instant Access</div>
-    <div>✔️ No Dealership Games</div>
-  </section>
+ <main>
+    <section class="hero">
+      <h1>Stop Overpaying for Cars. Start Winning Every Deal.</h1>
+      <p>The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
+      <a href="#pricing" class="cta-button">Get the Toolkit — Save $1,000+</a>
+    </section>
+    <section style="display: flex; justify-content: center; gap: 1rem; padding: 1rem; background: #111; font-size: 0.95rem; color: #C6A972; border-top: 1px solid #444; border-bottom: 1px solid #444;">
+      <div>✔️ Expert-Built Tools</div>
+      <div>✔️ Save $1,000+</div>
+      <div>✔️ Instant Access</div>
+      <div>✔️ No Dealership Games</div>
+    </section>
    <section class="section" style="background-color: #111; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
     <h2>Our Promise</h2>
     <p>We built this Toolkit to make car buying less stressful — and way more effective. If you use it and don’t save at least $500 on your deal, email us. We’ll personally look at your plan and help you fix it. No scripts, no runaround. Just real help, from real experts.</p>
@@ -442,7 +443,7 @@
   }
 </script>
 </div>
-
+  </main>
  <footer class="footer">
   <p><strong>Contact us:</strong> info@carhandled.com</p>
   <p>
@@ -462,7 +463,6 @@
   <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
 </footer>
 
-<script>
     function toggleNav() {
       const nav = document.getElementById("mobileNav");
       if (nav.style.display === "flex") {
@@ -476,21 +476,19 @@
     }
 
     function scrollCarousel(direction) {
-  const carousel = document.getElementById('carousel');
-  const scrollAmount = carousel.offsetWidth;
+      const carousel = document.getElementById('carousel');
+      const scrollAmount = carousel.offsetWidth;
 
-  if (direction === 1 && (carousel.scrollLeft + scrollAmount >= carousel.scrollWidth)) {
-    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-  } else {
-    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-  }
-}
+      if (direction === 1 && (carousel.scrollLeft + scrollAmount >= carousel.scrollWidth)) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      }
+    }
 
-
-    // Auto-scroll every 2 seconds
+    // Auto-scroll every 5 seconds
     let autoScrollInterval = setInterval(() => scrollCarousel(1), 5000);
 
-    // Pause auto-scroll on interaction
     document.getElementById('carousel').addEventListener('scroll', () => {
       clearInterval(autoScrollInterval);
       autoScrollInterval = setInterval(() => scrollCarousel(1), 5000);
