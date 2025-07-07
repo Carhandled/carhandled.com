@@ -132,31 +132,36 @@
       font-size: 1.1rem;
     }
     .hero {
-      background: url('assets/img/toolkitbackground.jpg') center/cover no-repeat;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.7rem;
-      color: #C6A972;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #ddd;
-      max-width: 700px;
-      margin: 1.5rem auto;
-    }
-    .cta-button {
-      background: #C6A972;
-      color: #000;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      display: inline-block;
-      margin-top: 1.5rem;
-    }
+  background: url('assets/img/toolkitbackground.jpg') center/cover no-repeat;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem 2rem;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .cta-button {
+    margin-top: 1.2rem;
+  }
+}
+
     .section {
       padding: 4rem 1.5rem;
       max-width: 800px;
@@ -250,11 +255,11 @@
     </nav>
   </header>
 
-  <section class="hero" style="background: url('assets/img/toolkitbackground.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-    <h1 style="font-size: 3rem; color: #C6A972; max-width: 700px;">Stop Overpaying for Cars. Start Winning Every Deal.</h1>
-    <p style="font-size: 1.3rem; color: #eee; max-width: 700px; margin-top: 1rem;">The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
-    <a href="#pricing" class="cta-button" style="margin-top: 2rem;">Get the Toolkit — Save $1,000+</a>
-  </section>
+  <section class="hero">
+  <h1>Stop Overpaying for Cars. Start Winning Every Deal.</h1>
+  <p>The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
+  <a href="#pricing" class="cta-button">Get the Toolkit — Save $1,000+</a>
+</section>
   <section style="display: flex; justify-content: center; gap: 1rem; padding: 1rem; background: #111; font-size: 0.95rem; color: #C6A972; border-top: 1px solid #444; border-bottom: 1px solid #444;">
     <div>✔️ Expert-Built Tools</div>
     <div>✔️ Save $1,000+</div>
