@@ -3,116 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CarHandled Toolkit – Stop Overpaying for Cars</title>
+  <title>CarHandled Toolkit</title>
   <meta name="description" content="Unlock smarter car deals with the CarHandled Toolkit. Templates, scripts, calculators — everything you need to buy with confidence." />
-  <meta name="keywords" content="car buying tools, lease calculator, dealership negotiation, car deal estimator, carhandled toolkit" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.carhandled.com/toolkit.html" />
-  <meta property="og:title" content="CarHandled Toolkit – Buy Cars Smarter" />
-  <meta property="og:description" content="Stop overpaying. The CarHandled Toolkit gives you expert-built tools to negotiate better, calculate costs, and compare deals — like a pro." />
-  <meta property="og:image" content="https://www.carhandled.com/assets/img/toolkit-og-image.jpg" />
-  <meta property="og:site_name" content="CarHandled" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CarHandled Toolkit – Buy Cars Smarter" />
-  <meta name="twitter:description" content="Get real car buying tools built by experts — estimators, guides, scripts and more. $500+ savings guaranteed." />
-  <meta name="twitter:image" content="https://www.carhandled.com/assets/img/toolkit-og-image.jpg" />
+  <!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.carhandled.com/toolkit.html" />
+<meta property="og:title" content="CarHandled Toolkit – Buy Cars Smarter" />
+<meta property="og:description" content="Stop overpaying. The CarHandled Toolkit gives you expert-built tools to negotiate better, calculate costs, and compare deals — like a pro." />
+<meta property="og:image" content="https://www.carhandled.com/assets/img/toolkit-og-image.jpg" />
+<meta property="og:site_name" content="CarHandled" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CarHandled Toolkit – Buy Cars Smarter" />
+<meta name="twitter:description" content="Get real car buying tools built by experts — estimators, guides, scripts and more. $500+ savings guaranteed." />
+<meta name="twitter:image" content="https://www.carhandled.com/assets/img/toolkit-og-image.jpg" />
+
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="canonical" href="https://www.carhandled.com/toolkit.html" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "CarHandled Toolkit",
-    "image": "https://www.carhandled.com/assets/img/toolkit-og-image.jpg",
-    "description": "Expert-built car buying toolkit to negotiate better deals and save money.",
-    "brand": {
-      "@type": "Organization",
-      "name": "CarHandled"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "39",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>
-</head>
-<body style="margin:0; font-family:'Optima', sans-serif; background-color:#0f0f0f; color:#f5f5f5;">
+  <link rel="stylesheet" href="style.css">
+<style>
     body {
       margin: 0;
       font-family: 'Optima', sans-serif;
       background-color: #0f0f0f;
       color: #f5f5f5;
     }
-    .hero h1 {
-      color: #C6A972;
-      
     .carousel-container {
-      position: relative;
-      overflow: hidden;
-      min-height: 280px;
-      margin-top: 2rem;
-    }
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  min-height: 280px;
+}
     .carousel-wrapper {
       display: flex;
       width: 100%;
-      overflow-x: auto;
+      overflow: hidden;
       scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
     }
     .carousel-item {
-      flex: 0 0 85%;
-      max-width: 85%;
+      flex: 0 0 100%;
+      max-width: 100%;
       scroll-snap-align: center;
       background: #1a1a1a;
       border-radius: 20px;
       padding: 1rem;
-      margin-right: 1rem;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       transition: transform 0.2s ease;
-      text-align: center;
     }
     .carousel-item img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 12px;
+      display: block;
       filter: contrast(1.1) saturate(1.05);
-      margin-bottom: 1rem;
+    }
+    .tool-label {
+      text-align: center;
+      color: #c6a972;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
     }
     .carousel-arrow {
-      position: absolute;
-      top: 45%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      border: none;
-      font-size: 2rem;
-      padding: 0.3rem 0.7rem;
-      cursor: pointer;
-      z-index: 10;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .carousel-arrow.left {
+    left: 0.5rem;
+  }
+  .carousel-arrow.right {
+    right: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .carousel-arrow {
+      display: none;
     }
-    .carousel-arrow.left {
-      left: 0.5rem;
-    }
-    .carousel-arrow.right {
-      right: 0.5rem;
-    }
-    @media (max-width: 768px) {
-      .carousel-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-      }
-      .carousel-arrow {
-        display: none;
-      }
-    }
-  </style>
+  }
 
     header {
       background-color: #000;
@@ -156,48 +132,31 @@
       font-size: 1.1rem;
     }
     .hero {
-  background: url('assets/img/toolkitbackground.jpg') center/cover no-repeat;
-  padding: 4rem 2rem 3rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-}
-  .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #C6A972;
-      letter-spacing: 0.5px;
-      line-height: 1.2;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      background: url('assets/img/toolkitbackground.jpg') center/cover no-repeat;
+      padding: 6rem 2rem;
+      text-align: center;
     }
-
+    .hero h1 {
+      font-size: 2.7rem;
+      color: #C6A972;
+    }
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #ddd;
       max-width: 700px;
-      margin: 1.2rem auto 0;
-      line-height: 1.6;
+      margin: 1.5rem auto;
     }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-        text-shadow: none;
-      }
-
-      .hero p {
-        font-size: 1rem;
-        margin-top: 1rem;
-      }
-
-  .cta-button {
-    margin-top: 1.2rem;
-  }
-}
-
+    .cta-button {
+      background: #C6A972;
+      color: #000;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
     .section {
       padding: 4rem 1.5rem;
       max-width: 800px;
@@ -274,24 +233,6 @@
       text-decoration: none;
     }
   </style>
-  <style>
-  .cta-button {
-    background: #C6A972;
-    color: #000;
-    padding: 1rem 2rem;
-    font-weight: bold;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: inline-block;
-    margin-top: 2rem;
-    transition: all 0.3s ease-in-out;
-  }
-  .cta-button:hover {
-    background: #b8965c;
-    color: #fff;
-  }
-</style>
 </head>
 <body>
   <header>
@@ -309,56 +250,67 @@
     </nav>
   </header>
 
- <main>
-    <section class="hero">
-      <h1>Stop Overpaying for Cars. Start Winning Every Deal.</h1>
-      <p>The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
-      <a href="#pricing" class="cta-button">Get the Toolkit — Save $1,000+</a>
-    </section>
-    <section style="display: flex; justify-content: center; gap: 1rem; padding: 1rem; background: #111; font-size: 0.95rem; color: #C6A972; border-top: 1px solid #444; border-bottom: 1px solid #444;">
-      <div>✔️ Expert-Built Tools</div>
-      <div>✔️ Save $1,000+</div>
-      <div>✔️ Instant Access</div>
-      <div>✔️ No Dealership Games</div>
-    </section>
+  <section class="hero" style="background: url('assets/img/toolkitbackground.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1 style="font-size: 3rem; color: #C6A972; max-width: 700px;">Stop Overpaying for Cars. Start Winning Every Deal.</h1>
+    <p style="font-size: 1.3rem; color: #eee; max-width: 700px; margin-top: 1rem;">The CarHandled Toolkit gives you expert-built tools to buy smarter, negotiate better, and never get played at the dealership again.</p>
+    <a href="#pricing" class="cta-button" style="margin-top: 2rem;">Get the Toolkit — Save $1,000+</a>
+  </section>
+  <section style="display: flex; justify-content: center; gap: 1rem; padding: 1rem; background: #111; font-size: 0.95rem; color: #C6A972; border-top: 1px solid #444; border-bottom: 1px solid #444;">
+    <div>✔️ Expert-Built Tools</div>
+    <div>✔️ Save $1,000+</div>
+    <div>✔️ Instant Access</div>
+    <div>✔️ No Dealership Games</div>
+  </section>
    <section class="section" style="background-color: #111; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
     <h2>Our Promise</h2>
     <p>We built this Toolkit to make car buying less stressful — and way more effective. If you use it and don’t save at least $500 on your deal, email us. We’ll personally look at your plan and help you fix it. No scripts, no runaround. Just real help, from real experts.</p>
   </section>
 
 <section class="section">
-    <h2>Inside the Toolkit</h2>
-    <div class="carousel-container">
-      <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
-      <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#10095;</button>
-      <div class="carousel-wrapper" id="carousel" aria-label="Toolkit item carousel">
-        <div class="carousel-item">
-          <img src="assets/img/carhandled-buy-calculator.png" alt="Car Purchase Estimator">
-          <p><strong>Purchase Estimator</strong><br> Instantly see what your monthly payment should be — no surprises</p>
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/carhandled-lease-calculator.png" alt="Lease Calculator">
-          <p><strong>Lease Calculator</strong><br> Reverse-engineer the deal, spot inflated money factors, and avoid payment traps.</p>
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/carhandled-lease_vs_buy_comparison.png" alt="Lease vs Buy">
-          <p><strong>Lease vs Buy Sheet</strong><br> Compare real costs, ownership options, and flexibility in one simple view.</p>
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/carhandled-negotiation_script.png" alt="Negotiation Scripts">
-          <p><strong>Pro Negotiation Scripts</strong><br> Break down quotes and push back with confidence.</p>
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/carhandled-deal-comparison.png" alt="Deal Comparison">
-          <p><strong>Deal Comparison Sheet</strong><br> Compare quotes side by side with clarity.</p>
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/carhandled-step-by-step_buying_guide.png" alt="Buying Guide">
-          <p><strong>Step-by-Step Guide</strong><br> Full walkthrough of the modern buying process.</p>
-        </div>
+  <h2>Inside the Toolkit</h2>
+  <div class="carousel-container" style="position: relative; overflow: hidden; min-height: 280px;">
+    
+    <!-- Arrows -->
+    <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
+    <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#10095;</button>
+
+    <!-- Carousel -->
+    <div class="carousel-wrapper" id="carousel" style="display: flex; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+      
+      <div class="carousel-item" style="flex: 0 0 100%; max-width: 100%; scroll-snap-align: center; background: #1a1a1a; border-radius: 20px; padding: 1rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); transition: transform 0.2s ease;">
+        <img src="assets/img/carhandled-buy-calculator.png" alt="Car Purchase Estimator" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; filter: contrast(1.1) saturate(1.05);">
+        <p><strong>Purchase Estimator</strong><br> Instantly see what your monthly payment should be — no surprises</p>
       </div>
+
+      <div class="carousel-item">
+        <img src="assets/img/carhandled-lease-calculator.png" alt="Lease Calculator">
+        <p><strong>Lease Calculator</strong><br> Reverse-engineer the deal, spot inflated money factors, and avoid payment traps.</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/img/carhandled-lease_vs_buy_comparison.png" alt="Lease vs Buy">
+        <p><strong>Lease vs Buy Sheet</strong><br> Compare real costs, ownership options, and flexibility in one simple view.</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/img/carhandled-negotiation_script.png" alt="Negotiation Scripts">
+        <p><strong>Pro Negotiation Scripts</strong><br> Break down quotes and push back with confidence.</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/img/carhandled-deal-comparison.png" alt="Deal Comparison">
+        <p><strong>Deal Comparison Sheet</strong><br> Compare quotes side by side with clarity.</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/img/carhandled-step-by-step_buying_guide.png" alt="Buying Guide">
+        <p><strong>Step-by-Step Guide</strong><br> Full walkthrough of the modern buying process.</p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
 
  <section class="section">
@@ -372,13 +324,13 @@
     <div class="pricing">
       <div class="price-box">
         <h3>Starter Toolkit – $39</h3>
-<a href="https://buy.stripe.com/3cI28r4078Hhc2K7DDfIs02" class="cta-button" target="_blank">Buy Now</a>
-
+        <p>Includes Step by Step Buyer Guide, Negotiation Scripts, Final Checklist, Lease vs Buy Sheet, and instructions.</p>
+          <a href="#" class="cta-button" style="pointer-events: none; opacity: 0.5;">Coming Soon</a>
       </div>
       <div class="price-box">
         <h3>Full Toolkit – $97</h3>
-<a href="https://buy.stripe.com/5kQ8wPgMT2iTaYGaPPfIs03" class="cta-button" target="_blank">Buy Now</a>
-
+        <p>Everything in Starter plus: Estimators, Deal Comparison Sheet, and Lifetime Updates.</p>
+        <a href="#" class="cta-button" style="pointer-events: none; opacity: 0.5;">Coming Soon</a>
       </div>
     </div>
   </section>
@@ -416,30 +368,76 @@
     </li>
   </ul>
 </section>
+<div class="toolkit-capture">
+  <h2>Get Early Access</h2>
+  <p>Drop your email and we’ll notify you the moment it’s ready.</p>
+  <iframe id="tallyFrame"
+    data-tally-src="https://tally.so/embed/mVaZON?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    loading="lazy" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0"
+    title="Unlock Your Premium Toolkit"></iframe>
 
-  <script>
-    const carousel = document.getElementById('carousel');
-    const scrollAmount = carousel.offsetWidth;
+<script>
+  // --- Tally + UTM Tracking ---
+  function getUTMParams() {
+    const params = new URLSearchParams(window.location.search);
+    const utms = ['utm_source', 'utm_medium', 'utm_campaign'];
+    const result = [];
 
-    function scrollCarousel(direction) {
-      const scrollMax = carousel.scrollWidth - carousel.clientWidth;
-      if (direction === 1 && carousel.scrollLeft >= scrollMax - 10) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    utms.forEach(key => {
+      if (params.has(key)) {
+        result.push(`${key}=${encodeURIComponent(params.get(key))}`);
       }
+    });
+
+    return result.join('&');
+  }
+
+  const baseSrc = document.getElementById("tallyFrame").dataset.tallySrc;
+  const utmString = getUTMParams();
+  const finalSrc = utmString ? `${baseSrc}&${utmString}` : baseSrc;
+  document.getElementById("tallyFrame").src = finalSrc;
+
+  // Load Tally embed
+  var d = document,
+      w = "https://tally.so/widgets/embed.js",
+      v = function () {
+        if (typeof Tally !== "undefined") {
+          Tally.loadEmbeds();
+        }
+      };
+  if (typeof Tally !== "undefined") v();
+  else if (!d.querySelector('script[src="' + w + '"]')) {
+    var s = d.createElement("script");
+    s.src = w;
+    s.onload = v;
+    s.onerror = v;
+    d.body.appendChild(s);
+  }
+
+  // --- Carousel Arrows + Swipe + Autoscroll ---
+  const carousel = document.getElementById('carousel');
+  const scrollAmount = carousel.offsetWidth;
+
+  function scrollCarousel(direction) {
+    const scrollMax = carousel.scrollWidth - carousel.clientWidth;
+    if (direction === 1 && carousel.scrollLeft >= scrollMax - 10) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
+  }
 
-    let autoScroll = setInterval(() => scrollCarousel(1), 5000);
+  let autoScroll = setInterval(() => scrollCarousel(1), 2000);
 
-    carousel.addEventListener('touchstart', () => clearInterval(autoScroll));
-    carousel.addEventListener('touchend', () => {
-      autoScroll = setInterval(() => scrollCarousel(1), 5000);
-    });
-    carousel.addEventListener('wheel', () => {
-      clearInterval(autoScroll);
-      autoScroll = setInterval(() => scrollCarousel(1), 5000);
-    });
+  carousel.addEventListener('touchstart', () => clearInterval(autoScroll));
+  carousel.addEventListener('touchend', () => {
+    autoScroll = setInterval(() => scrollCarousel(1), 2000);
+  });
+  carousel.addEventListener('wheel', () => {
+    clearInterval(autoScroll);
+    autoScroll = setInterval(() => scrollCarousel(1), 2000);
+  });
+
   // --- Mobile Menu Toggle ---
   function toggleNav() {
     const nav = document.getElementById("mobileNav");
@@ -454,7 +452,7 @@
   }
 </script>
 </div>
-  </main>
+
  <footer class="footer">
   <p><strong>Contact us:</strong> info@carhandled.com</p>
   <p>
@@ -474,9 +472,8 @@
   <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
 </footer>
 
-  
-    <script> 
-      function toggleNav() {
+<script>
+    function toggleNav() {
       const nav = document.getElementById("mobileNav");
       if (nav.style.display === "flex") {
         nav.style.opacity = 0;
@@ -489,19 +486,21 @@
     }
 
     function scrollCarousel(direction) {
-      const carousel = document.getElementById('carousel');
-      const scrollAmount = carousel.offsetWidth;
+  const carousel = document.getElementById('carousel');
+  const scrollAmount = carousel.offsetWidth;
 
-      if (direction === 1 && (carousel.scrollLeft + scrollAmount >= carousel.scrollWidth)) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-      }
-    }
+  if (direction === 1 && (carousel.scrollLeft + scrollAmount >= carousel.scrollWidth)) {
+    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+  } else {
+    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+}
+
 
     // Auto-scroll every 5 seconds
     let autoScrollInterval = setInterval(() => scrollCarousel(1), 5000);
 
+    // Pause auto-scroll on interaction
     document.getElementById('carousel').addEventListener('scroll', () => {
       clearInterval(autoScrollInterval);
       autoScrollInterval = setInterval(() => scrollCarousel(1), 5000);
