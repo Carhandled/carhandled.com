@@ -144,6 +144,40 @@
       margin: 0 0.5rem;
       text-decoration: none;
     }
+    .blog-tile.image-only {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.blog-tile.image-only img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.blog-tile.image-only .image-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.blog-tile.image-only:hover img {
+  transform: scale(1.05);
+}
+
+.blog-tile.image-only:hover .image-overlay::after {
+  opacity: 1;
+}
   </style>
 </head>
 <body>
@@ -168,9 +202,11 @@
   </section>
 
 <section class="blog-container">
-  <div class="blog-tile">
-    <a href="blog1.html" style="display: block;">
-      <img src="assets/img/blog1.jpg" alt="What’s Inside the CarHandled Toolkit?" style="width: 100%; height: auto; display: block;">
+  <div class="blog-tile image-only">
+    <a href="blog1.html">
+      <div class="image-overlay">
+        <img src="assets/img/blog1.jpg" alt="What’s Inside the CarHandled Toolkit?">
+      </div>
     </a>
   </div>
 
