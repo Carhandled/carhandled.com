@@ -149,6 +149,57 @@
       display: none;
     }
   }
+    .blog-tile {
+  position: relative;
+  flex: 1 1 320px;
+  max-width: 420px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.blog-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.65);
+  transition: 0.3s ease;
+}
+
+.blog-tile:hover img {
+  filter: brightness(0.85);
+  transform: scale(1.03);
+}
+
+.blog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.blog-overlay h3 {
+  color: #C6A972;
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+}
+
+.blog-overlay p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
 
     header {
       background-color: #000;
@@ -528,15 +579,13 @@
   <h2 style="color: #C6A972; text-align: center;">From the Blog</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 2rem;">
 
-    <!-- Blog Tile 1 -->
-    <a href="blog1.html" style="position: relative; flex: 1 1 320px; max-width: 420px; height: 240px; overflow: hidden; border-radius: 14px; box-shadow: 0 8px 18px rgba(0,0,0,0.4); text-decoration: none;">
-      <img src="assets/img/blog1.jpg" alt="What's Inside Toolkit" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.65); transition: 0.3s ease;">
-      <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 1rem; background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));">
-        <h3 style="color: #C6A972; margin: 0 0 0.3rem; font-size: 1.2rem;">What’s Inside the Toolkit?</h3>
-        <p style="color: #ccc; font-size: 0.95rem; line-height: 1.3;">Breakdown of every tool inside — scripts, calculators, and more.</p>
-      </div>
-    </a>
-
+    <a href="blog1.html" class="blog-tile">
+  <img src="assets/img/blog1.jpg" alt="What's Inside Toolkit">
+  <div class="blog-overlay">
+    <h3>What’s Inside the Toolkit?</h3>
+    <p>Breakdown of every tool inside — scripts, calculators, and more.</p>
+  </div>
+</a>
   
 
   </div>
