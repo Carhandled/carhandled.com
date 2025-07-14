@@ -225,15 +225,31 @@
   white-space: nowrap;
 }
 
+.review-slider {
+  display: flex;
+  gap: 2rem;
+  animation: slideReviews 15s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
 .review-slide {
   flex: 0 0 auto;
   background: #111;
   padding: 1.5rem;
   border-radius: 12px;
   min-width: 300px;
-  max-width: 400px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  max-width: 350px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   color: #eee;
+  position: relative;
+}
+
+.review-stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
 .review-slide p {
@@ -247,9 +263,18 @@
   color: #C6A972;
 }
 
+/* Continuous loop */
 @keyframes slideReviews {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .review-slide {
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
 
 
@@ -552,28 +577,50 @@
   </div>
 </section>
    
-   <section class="section" style="background-color: #1a1a1a; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem;">
+  <section class="section" style="background-color: #1a1a1a; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem; overflow: hidden;">
   <h2 style="color: #C6A972; text-align: center; margin-bottom: 2rem;">Real Buyers, Real Results</h2>
   <div class="review-slider" id="reviewSlider">
     <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
       <p>"I saved $3,200 off MSRP using just the scripts. Honestly shocked how well it worked."</p>
       <span>— James T., Austin, TX</span>
     </div>
     <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
       <p>"The lease calculator exposed hidden fees my dealer wouldn’t admit. Toolkit paid for itself 10x."</p>
       <span>— Lisa M., Newark, NJ</span>
     </div>
     <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
       <p>"This should be required for anyone shopping for a car. No BS, just strategy."</p>
       <span>— Kevin R., San Diego, CA</span>
     </div>
     <div class="review-slide">
-      <p>"I felt confident walking into the dealership for the first time. Ended up getting a better deal than my friend who paid full price."</p>
+      <div class="review-stars">★★★★★</div>
+      <p>"I felt confident walking into the dealership. Got a better deal than my friend who paid full price."</p>
       <span>— Mia F., Chicago, IL</span>
     </div>
     <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
       <p>"I’ve bought cars for 20 years, but this toolkit made me feel like an insider. Well done."</p>
       <span>— Brian S., Tampa, FL</span>
+    </div>
+
+    <!-- Duplicate for smooth infinite scroll -->
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <p>"I saved $3,200 off MSRP using just the scripts. Honestly shocked how well it worked."</p>
+      <span>— James T., Austin, TX</span>
+    </div>
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <p>"The lease calculator exposed hidden fees my dealer wouldn’t admit. Toolkit paid for itself 10x."</p>
+      <span>— Lisa M., Newark, NJ</span>
+    </div>
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <p>"This should be required for anyone shopping for a car. No BS, just strategy."</p>
+      <span>— Kevin R., San Diego, CA</span>
     </div>
   </div>
 </section>
