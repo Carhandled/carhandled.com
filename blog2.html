@@ -182,18 +182,20 @@
       color: #aaa;
       margin: 0 0.5rem;
     }
-    @media (max-width: 600px) {
+@media (max-width: 600px) {
   .hero {
     height: 50vh;
     min-height: 300px;
   }
 }
+
 @media (min-width: 1024px) {
   .hero {
     height: 65vh;
     min-height: 500px;
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 
   .hero-content h1 {
@@ -206,6 +208,7 @@
     margin: 0 auto;
   }
 }
+
 
 
   </style>
