@@ -90,15 +90,22 @@
       text-decoration: none;
       font-size: 1.1rem;
     }
-    .hero {
+.hero {
   position: relative;
-  background: url('assets/img/blog1.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 60vh;
+  min-height: 400px;
+  max-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #f5f5f5;
+}
+.hero {
+  background-image: url('/assets/img/blog1.jpg');
 }
 
 .hero::after {
@@ -192,6 +199,13 @@
       margin: 0 0.5rem;
       text-decoration: none;
     }
+    @media (max-width: 600px) {
+  .hero {
+    height: 50vh;
+    min-height: 300px;
+  }
+}
+
   </style>
 </head>
 <body>
