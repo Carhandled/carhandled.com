@@ -22,7 +22,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Top 5 Car Buying Toolkits in 2025 – Why CarHandled Leads",
-    "image": "https://www.carhandled.com/assets/img/blog-toolkit-preview.jpg",
+    "image": "https://www.carhandled.com/assets/img/blog2.jpg",
     "author": {
       "@type": "Organization",
       "name": "CarHandled"
@@ -46,6 +46,14 @@
       font-family: 'Optima', sans-serif;
       background-color: #0f0f0f;
       color: #f5f5f5;
+    }
+    a {
+      color: #C6A972;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #aaa;
     }
     header {
       background-color: #000;
@@ -86,8 +94,39 @@
     #mobileNav a {
       color: #C6A972;
       margin: 0.8rem 0;
-      text-decoration: none;
       font-size: 1.1rem;
+    }
+    .hero {
+      position: relative;
+      background: url('/assets/img/blog2.jpg') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #f5f5f5;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+      color: #C6A972;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #ddd;
     }
     .blog-article {
       max-width: 720px;
@@ -97,17 +136,32 @@
       font-size: 1.1rem;
       color: #e6e6e6;
     }
-    .blog-article h2 {
+    .blog-article h1 {
+      font-size: 2.2rem;
       color: #C6A972;
-      margin-top: 2rem;
-      font-size: 1.4rem;
-    }
-    .blog-article ul {
-      margin-left: 1.2rem;
       margin-bottom: 1rem;
     }
+    .blog-article h2 {
+      font-size: 1.6rem;
+      color: #C6A972;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .blog-article h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: #C6A972;
+      margin-top: 0.5rem;
+    }
+    .blog-article ul {
+      padding-left: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
     .blog-article li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
+      line-height: 1.6;
     }
     footer.site-footer {
       background-color: #111;
@@ -119,134 +173,91 @@
     footer.site-footer a {
       color: #aaa;
       margin: 0 0.5rem;
-      text-decoration: none;
     }
-    .hero {
-  position: relative;
-  background: url('/assets/img/blog2.jpg') center/cover no-repeat;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #f5f5f5;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* overlay */
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 1rem;
-}
-
-.hero-content h1 {
-  font-size: 2.8rem;
-  color: #C6A972;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: #ddd;
-}
-
   </style>
 </head>
 <body>
   <header>
-    <a href="/index.html"><img src="/assets/img/logo.png" alt="CarHandled Logo"></a>
-    <div id="hamburger" onclick="toggleNav()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="mobileNav">
-      <a href="/index.html">Home</a>
-      <a href="/services.html">Concierge</a>
-      <a href="/about.html">About</a>
-      <a href="/intake.html">Get Started</a>
-    </nav>
-  </header>
-  <section class="hero">
+  <a href="/index.html"><img src="/assets/img/logo.png" alt="CarHandled Logo"></a>
+  <div id="hamburger" onclick="toggleNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="mobileNav">
+    <a href="/index.html">Home</a>
+    <a href="/services.html">Concierge</a>
+    <a href="/about.html">About</a>
+    <a href="/intake.html">Get Started</a>
+  </nav>
+</header>
+<section class="hero">
   <div class="hero-content">
     <h1>Top 5 Car Buying Toolkits in 2025</h1>
     <p>We compared them all — here's why CarHandled leads the pack.</p>
   </div>
 </section>
-
-  </div>
-</section>
-
-  <main class="blog-article">
-    <article class="blog-post">
-      <h1 style="color: #C6A972;">The 5 Best Car Buying Toolkits in 2025 (And Why We Beat Them)</h1>
-      <p><strong>1. <a href="/index.html">CarHandled Toolkit</a></strong><br>
-      Great for understanding buy vs. lease, total ownership costs, and comparing different car models. Ideal if you’re early in the process and want guidance without sales pressure.</p>
-      <p><strong>2. <a href="https://www.edmunds.com/">Edmunds</a></strong><br>
-      • Compare car prices and features<br>
-      • True Cost to Own calculator<br>
-      • Lease vs. Buy calculator</p>
-      <p><strong>3. <a href="https://www.kbb.com/">Kelley Blue Book (KBB)</a></strong><br>
-      • Get trade-in values<br>
-      • See market pricing trends<br>
-      • Research reliability and resale value</p>
-      <p><strong>4. <a href="https://www.consumerreports.org/cars/car-buying-guide/">Consumer Reports</a></strong><br>
-      (subscription may be needed)<br>
-      • In-depth vehicle reliability, safety, and satisfaction data</p>
-      <p><strong>5. <a href="https://www.autotrader.com/">Autotrader</a> & <a href="https://www.cargurus.com/">CarGurus</a></strong><br>
-      • Great for comparing prices across dealers<br>
-      • Set price alerts and use location filters</p>
-      <hr>
-      <h2>Why We’re First on the List</h2>
-      <p>We built the CarHandled Toolkit with actual car buyers in mind — not lead generation or affiliate sales. Our tools work for real-world scenarios and walk you through the process start to finish. No fluff, no sales calls. Just results.</p>
-      <p>And if you want someone to handle it all for you? <a href="/services.html">Our Concierge Service</a> is ready when you are.</p>
-    </article>
-  </main>
+<main class="blog-article">
+  <article class="blog-post">
+    <h1>The 5 Best Car Buying Toolkits in 2025 (And Why We Beat Them)</h1>
+    <p><strong>1. <a href="/index.html">CarHandled Toolkit</a></strong><br>
+    Great for understanding buy vs. lease, total ownership costs, and comparing different car models. Ideal if you’re early in the process and want guidance without sales pressure.</p>
+    <p><strong>2. <a href="https://www.edmunds.com/">Edmunds</a></strong><br>
+    • Compare car prices and features<br>
+    • True Cost to Own calculator<br>
+    • Lease vs. Buy calculator</p>
+    <p><strong>3. <a href="https://www.kbb.com/">Kelley Blue Book (KBB)</a></strong><br>
+    • Get trade-in values<br>
+    • See market pricing trends<br>
+    • Research reliability and resale value</p>
+    <p><strong>4. <a href="https://www.consumerreports.org/cars/car-buying-guide/">Consumer Reports</a></strong><br>
+    (subscription may be needed)<br>
+    • In-depth vehicle reliability, safety, and satisfaction data</p>
+    <p><strong>5. <a href="https://www.autotrader.com/">Autotrader</a> & <a href="https://www.cargurus.com/">CarGurus</a></strong><br>
+    • Great for comparing prices across dealers<br>
+    • Set price alerts and use location filters</p>
+    <hr>
+    <h2>Why We’re First on the List</h2>
+    <p>We built the CarHandled Toolkit with actual car buyers in mind — not lead generation or affiliate sales. Our tools work for real-world scenarios and walk you through the process start to finish. No fluff, no sales calls. Just results.</p>
+    <p>And if you want someone to handle it all for you? <a href="/services.html">Our Concierge Service</a> is ready when you are.</p>
+  </article>
+</main>
 <div style="text-align: center; margin: 3rem 0;">
   <a href="/index.html" style="display: inline-block; background-color: #C6A972; color: #000; padding: 0.9rem 1.8rem; font-size: 1.1rem; font-weight: bold; border-radius: 8px; text-decoration: none;">
     Get the Toolkit Now
   </a>
 </div>
-
-  <footer class="site-footer">
-    <p><strong>Contact us:</strong> info@carhandled.com</p>
-    <p>
-      <a href="/terms-of-use.html">Terms of Use</a>
-      <a href="/privacy-policy.html">Privacy Policy</a>
-      <a href="/refund-policy.html">Refund Policy</a>
-    </p>
-    <p>
-      <a href="https://www.instagram.com/carhandled" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-        <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2.2c3.2 0 3.6 0 4.9.1..."/>
-          <path d="M12 5.8A6.2 6.2 0 0 0 5.8 12..."/>
-        </svg>
-        Follow us on Instagram
-      </a>
-    </p>
-    <p>&copy; 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
-  </footer>
-
-  <script>
-    function toggleNav() {
-      const nav = document.getElementById("mobileNav");
-      if (nav.style.display === "flex") {
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.display = "none", 300);
-      } else {
-        nav.style.display = "flex";
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.opacity = 1, 10);
-      }
+<footer class="site-footer">
+  <p><strong>Contact us:</strong> info@carhandled.com</p>
+  <p>
+    <a href="/terms-of-use.html">Terms of Use</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="/refund-policy.html">Refund Policy</a>
+  </p>
+  <p>
+    <a href="https://www.instagram.com/carhandled" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+      <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.2c3.2 0 3.6 0 4.9.1..."/>
+        <path d="M12 5.8A6.2 6.2 0 0 0 5.8 12..."/>
+      </svg>
+      Follow us on Instagram
+    </a>
+  </p>
+  <p>&copy; 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
+</footer>
+<script>
+  function toggleNav() {
+    const nav = document.getElementById("mobileNav");
+    if (nav.style.display === "flex") {
+      nav.style.opacity = 0;
+      setTimeout(() => nav.style.display = "none", 300);
+    } else {
+      nav.style.display = "flex";
+      nav.style.opacity = 0;
+      setTimeout(() => nav.style.opacity = 1, 10);
     }
-  </script>
+  }
+</script>
 </body>
 </html>
+
