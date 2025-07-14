@@ -217,21 +217,22 @@
   font-size: 0.95rem;
   line-height: 1.3;
 }
-.review-slider-container {
-  overflow: hidden;
-  position: relative;
-}
-
-.review-slider {
+@keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .review-slider-container {
+      overflow: hidden;
+      position: relative;
+    }
+    .review-slider {
       display: flex;
       width: max-content;
       animation: scroll 50s linear infinite;
     }
-
-.review-slider:hover {
-  animation-play-state: paused;
-}
-
+    .review-slider:hover {
+      animation-play-state: paused;
+    }
     .review-slide {
       flex: 0 0 auto;
       width: 300px;
