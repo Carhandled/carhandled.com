@@ -30,14 +30,6 @@
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Optima', sans-serif;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-    }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -100,8 +92,7 @@
   }
   </script>
 </head>
-
-    <style>
+  <style>
   body {
     margin: 0;
     font-family: 'Optima', sans-serif;
@@ -298,6 +289,21 @@
     max-width: 85vw;
   }
 }
+      
+#activityNotification {
+  max-width: 90vw;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  #activityNotification {
+    font-size: 0.85rem;
+    left: 10px;
+    right: 10px;
+    bottom: 15px;
+    width: auto;
+  }
+}
 
 
 
@@ -492,7 +498,47 @@ header.shrink img {
   }
 </style>
 </head>
-<body>
+<div id="activityNotification" style="position: fixed; bottom: 20px; left: 20px; background: #1a1a1a; color: #fff; padding: 0.8rem 1.2rem; border-radius: 10px; box-shadow: 0 0 12px rgba(0,0,0,0.5); font-size: 0.9rem; display: none; z-index: 9999;">
+  <span id="activityText"></span>
+</div>
+
+<script>
+  const notificationEl = document.getElementById("activityNotification");
+  const textEl = document.getElementById("activityText");
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function showNotification() {
+    const type = Math.random() < 0.5 ? "viewing" : "purchases";
+    let message = "";
+
+    if (type === "viewing") {
+      const viewers = getRandomInt(3, 17);
+      message = `👀 ${viewers} people are looking at this page right now`;
+    } else {
+      const buyers = getRandomInt(2, 8);
+      const hours = getRandomInt(1, 6);
+      message = `✅ ${buyers} Toolkit buyers in the last ${hours} hours`;
+    }
+
+    textEl.textContent = message;
+    notificationEl.style.display = "block";
+    notificationEl.style.opacity = 1;
+
+    setTimeout(() => {
+      notificationEl.style.opacity = 0;
+      setTimeout(() => {
+        notificationEl.style.display = "none";
+      }, 500);
+    }, 5000);
+  }
+
+  setInterval(showNotification, 18000); // Every 18 seconds
+</script>
+
+  <body>
   <header>
     <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
     <div id="hamburger" onclick="toggleNav()">
