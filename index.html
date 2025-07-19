@@ -538,7 +538,7 @@ header.shrink img {
 </a>
   <h3 style="color: #fff; margin-bottom: 0.5rem;">Avoid These 7 Rookie Car Buying Mistakes</h3>
   <p style="color: #ccc; font-size: 0.95rem;">Get the free guide + smarter car buying tips in your inbox.</p>
-  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" style="margin-top: 1rem;">
+  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="hidden_iframe" style="margin-top: 1rem;">
     <input type="email" name="fields[email]" placeholder="Enter your email" required style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; margin-bottom: 1rem; font-size: 1rem;">
     <input type="hidden" name="ml-submit" value="1">
     <button type="submit" style="width: 100%; padding: 0.75rem; background: #C6A972; color: #1a1a1a; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">Send Me the Free Guide</button>
@@ -880,7 +880,7 @@ header.shrink img {
   <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem;">Avoid These 7 Rookie Car Buying Mistakes</h3>
   <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 1.5rem;">Get the free guide + smarter car buying tips in your inbox.</p>
 
-  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" rel="noopener" style="margin: 0 auto; max-width: 100%;">
+  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="hidden_iframe" rel="noopener" style="margin: 0 auto; max-width: 100%;">
     <input type="email" name="fields[email]" placeholder="Your email address" required style="width: 100%; padding: 0.75rem; border: none; border-radius: 6px; margin-bottom: 1rem; font-size: 1rem;">
 
     <input type="hidden" name="ml-submit" value="1">
@@ -994,5 +994,14 @@ header.shrink img {
 
   setInterval(showNotification, 18000); // Every 18 seconds
 </script>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  function closePopup() {
+    document.getElementById('emailPopup').style.display = 'none';
+    alert("Thanks! The guide is on its way to your inbox.");
+  }
+</script>
+
 </body>
 </html>
