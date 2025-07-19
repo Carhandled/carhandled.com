@@ -93,14 +93,14 @@
   </script>
 </head>
   <style>
-  body {
+
+    body {
     margin: 0;
     font-family: 'Optima', sans-serif;
-    background-color: #0f0f0f;
+    background-color: #121212;
     color: #f5f5f5;
   }
 
-    }
     .carousel-container {
   position: relative;
   overflow: hidden;
@@ -117,7 +117,7 @@
       flex: 0 0 100%;
       max-width: 100%;
       scroll-snap-align: center;
-      background: #1a1a1a;
+      background: #121212;
       border-radius: 20px;
       padding: 1rem;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -251,7 +251,7 @@
       width: 300px;
       margin-right: 2rem;
       padding: 1rem;
-      background: #1a1a1a;
+      background: #121212;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
@@ -431,7 +431,7 @@ header.shrink img {
       color: #C6A972;
     }
     .price-box {
-      background: #1a1a1a;
+      background: #121212;
       padding: 2rem;
       border-radius: 1rem;
       text-align: center;
@@ -449,7 +449,7 @@ header.shrink img {
     .toolkit-capture {
       text-align: center;
       padding: 3rem 1rem;
-      background-color: #1a1a1a;
+      background-color: #121212;
       border-top: 1px solid #444;
       border-radius: 12px;
       margin: 4rem auto 2rem;
@@ -478,8 +478,6 @@ header.shrink img {
       margin: 0 0.5rem;
       text-decoration: none;
     }
-  </style>
-  <style>
   .cta-button {
     background: #C6A972;
     color: #000;
@@ -498,54 +496,8 @@ header.shrink img {
   }
 </style>
 </head>
-<div id="activityNotification" style="position: fixed; bottom: 20px; left: 20px; background: #1a1a1a; color: #fff; padding: 0.8rem 1.2rem; border-radius: 10px; box-shadow: 0 0 12px rgba(0,0,0,0.5); font-size: 0.9rem; display: none; z-index: 9999;">
-  <span id="activityText"></span>
-</div>
-
-<script>
-  const notificationEl = document.getElementById("activityNotification");
-  const textEl = document.getElementById("activityText");
-
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  function showNotification() {
-    const type = Math.random() < 0.5 ? "viewing" : "purchases";
-    let message = "";
-
-    if (type === "viewing") {
-      const viewers = getRandomInt(3, 17);
-      message = `👀 ${viewers} people are looking at this page right now`;
-    } else {
-      const buyers = getRandomInt(2, 8);
-      const hours = getRandomInt(1, 6);
-      message = `✅ ${buyers} Toolkit buyers in the last ${hours} hours`;
-    }
-
-    textEl.textContent = message;
-    notificationEl.style.display = "block";
-    notificationEl.style.opacity = 1;
-
-    setTimeout(() => {
-      notificationEl.style.opacity = 0;
-      setTimeout(() => {
-        notificationEl.style.display = "none";
-      }, 500);
-    }, 5000);
-  }
-
-  setInterval(showNotification, 18000); // Every 18 seconds
-</script>
-
-  <body>
+<body>
   <header>
-    <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
-    <div id="hamburger" onclick="toggleNav()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <nav id="mobileNav">
     <a href="index.html#pricing">Buy Toolkit</a>
       <a href="services.html">Concierge</a>
@@ -553,6 +505,21 @@ header.shrink img {
       <a href="intake.html">Get Started</a>
     </nav>
   </header>
+<div id="emailPopup" style="display:none; position: fixed; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #1a1a1a; border: 2px solid #C6A972; border-radius: 16px; padding: 2rem; max-width: 400px; width: 90%; box-shadow: 0 0 30px rgba(198,169,114,0.3); text-align: center;">
+  
+  <button onclick="document.getElementById('emailPopup').style.display='none'" style="position: absolute; top: 8px; right: 12px; background: transparent; border: none; color: #C6A972; font-size: 20px; cursor: pointer;">×</button>
+
+  <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
+
+  <h3 style="color: #fff; margin-bottom: 0.5rem;">Avoid These 7 Rookie Car Buying Mistakes</h3>
+  <p style="color: #ccc; font-size: 0.95rem;">Get the free guide + smarter car buying tips in your inbox.</p>
+  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" style="margin-top: 1rem;">
+    <input type="email" name="fields[email]" placeholder="Enter your email" required style="width: 100%; padding: 0.75rem; border: none; border-radius: 8px; margin-bottom: 1rem; font-size: 1rem;">
+    <input type="hidden" name="ml-submit" value="1">
+    <button type="submit" style="width: 100%; padding: 0.75rem; background: #C6A972; color: #1a1a1a; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">Send Me the Free Guide</button>
+  </form>
+
+</div>
 
  <main>
     <section class="hero">
@@ -700,7 +667,7 @@ header.shrink img {
   </div>
 </section>
    
-<section class="section" style="background-color: #1a1a1a; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem;">
+<section class="section" style="background-color: #121212; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem;">
   <h2 style="color: #C6A972; text-align: center; margin-bottom: 2rem;">Real Buyers, Real Results</h2>
   <div class="review-slider-container">
     <div class="review-slider">
@@ -878,7 +845,6 @@ header.shrink img {
   });
 </script>
 
-</div>
   </main>
 
 
@@ -934,5 +900,69 @@ header.shrink img {
       autoScrollInterval = setInterval(() => scrollCarousel(1), 5000);
     });
   </script>
+    <script>
+  setTimeout(function() {
+    // Only show popup if not already submitted
+    if (!localStorage.getItem('popupDismissed')) {
+      document.getElementById('emailPopup').style.display = 'block';
+    }
+  }, 15000); // 15 seconds
+
+  // Save dismissal so it doesn't keep showing
+  document.querySelector('#emailPopup button').addEventListener('click', function() {
+    localStorage.setItem('popupDismissed', 'true');
+  });
+</script>
+    <!-- Email capture section at bottom -->
+<section style="background: linear-gradient(to right, #1b1b1b, #111); padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; margin: 4rem auto 2rem auto; max-width: 720px; box-shadow: 0 0 20px rgba(198, 169, 114, 0.15);">
+  <h3 style="color: #fff; font-size: 1.75rem; font-weight: 600; margin-bottom: 0.75rem;">
+    Avoid These 7 Rookie Car Buying Mistakes
+  </h3>
+  <p style="color: #bbb; font-size: 1rem; margin-bottom: 1.5rem;">
+    Join 1,000+ smarter buyers. Get the free guide + exclusive tips to negotiate better car deals.
+  </p>
+  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 500px; margin: 0 auto;">
+    <input type="email" name="fields[email]" placeholder="Enter your email" required style="padding: 0.75rem; font-size: 1rem; border: none; border-radius: 8px; background: #fff; color: #1a1a1a;">
+    <input type="hidden" name="ml-submit" value="1">
+    <button type="submit" style="background: #C6A972; color: #1a1a1a; font-weight: 700; font-size: 1rem; padding: 0.75rem; border: none; border-radius: 8px; cursor: pointer;">
+      Send Me the Free Guide
+    </button>
+  </form>
+</section>
+<script>
+  const notificationEl = document.getElementById("activityNotification");
+  const textEl = document.getElementById("activityText");
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function showNotification() {
+    const type = Math.random() < 0.5 ? "viewing" : "purchases";
+    let message = "";
+
+    if (type === "viewing") {
+      const viewers = getRandomInt(3, 17);
+      message = `👀 ${viewers} people are looking at this page right now`;
+    } else {
+      const buyers = getRandomInt(2, 8);
+      const hours = getRandomInt(1, 6);
+      message = `✅ ${buyers} Toolkit buyers in the last ${hours} hours`;
+    }
+
+    textEl.textContent = message;
+    notificationEl.style.display = "block";
+    notificationEl.style.opacity = 1;
+
+    setTimeout(() => {
+      notificationEl.style.opacity = 0;
+      setTimeout(() => {
+        notificationEl.style.display = "none";
+      }, 500);
+    }, 5000);
+  }
+
+  setInterval(showNotification, 18000); // Every 18 seconds
+</script>
 </body>
 </html>
