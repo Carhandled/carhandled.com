@@ -514,12 +514,28 @@ header.shrink img {
   </nav>
 </header>
 
-<div id="emailPopup" style="display:none; position: fixed; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #1a1a1a; border: 2px solid #C6A972; border-radius: 16px; padding: 2rem; max-width: 400px; width: 90%; box-shadow: 0 0 30px rgba(198,169,114,0.3); text-align: center;">
-  
+<div id="emailPopup" style="
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a1a;
+  border: 2px solid #C6A972;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(198,169,114,0.3);
+  text-align: center;
+">
+
   <button onclick="document.getElementById('emailPopup').style.display='none'" style="position: absolute; top: 8px; right: 12px; background: transparent; border: none; color: #C6A972; font-size: 20px; cursor: pointer;">×</button>
 
-  <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
-
+  <a href="index.html">
+  <img src="assets/img/logo.png" alt="CarHandled Logo" style="max-width: 140px; height: auto; margin-bottom: 1rem;">
+</a>
   <h3 style="color: #fff; margin-bottom: 0.5rem;">Avoid These 7 Rookie Car Buying Mistakes</h3>
   <p style="color: #ccc; font-size: 0.95rem;">Get the free guide + smarter car buying tips in your inbox.</p>
   <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" style="margin-top: 1rem;">
