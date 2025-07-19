@@ -498,13 +498,22 @@ header.shrink img {
 </head>
 <body>
   <header>
-    <nav id="mobileNav">
+  <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo" style="height: 48px;"></a>
+
+  <div id="hamburger" onclick="toggleNav()" style="display: flex; flex-direction: column; cursor: pointer;">
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+    <span style="background: #C6A972; height: 3px; width: 25px; margin: 4px 0;"></span>
+  </div>
+
+  <nav id="mobileNav" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 0; background-color: #000; width: 100%; padding: 1rem 2rem; text-align: right;">
     <a href="index.html#pricing">Buy Toolkit</a>
-      <a href="services.html">Concierge</a>
-      <a href="about.html">About</a>
-      <a href="intake.html">Get Started</a>
-    </nav>
-  </header>
+    <a href="services.html">Concierge</a>
+    <a href="about.html">About</a>
+    <a href="intake.html">Get Started</a>
+  </nav>
+</header>
+
 <div id="emailPopup" style="display:none; position: fixed; z-index: 9999; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #1a1a1a; border: 2px solid #C6A972; border-radius: 16px; padding: 2rem; max-width: 400px; width: 90%; box-shadow: 0 0 30px rgba(198,169,114,0.3); text-align: center;">
   
   <button onclick="document.getElementById('emailPopup').style.display='none'" style="position: absolute; top: 8px; right: 12px; background: transparent; border: none; color: #C6A972; font-size: 20px; cursor: pointer;">×</button>
@@ -846,7 +855,22 @@ header.shrink img {
 </script>
 
   </main>
-
+ <!-- Email capture section at bottom -->
+<section style="background: linear-gradient(to right, #1b1b1b, #111); padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; margin: 4rem auto 2rem auto; max-width: 720px; box-shadow: 0 0 20px rgba(198, 169, 114, 0.15);">
+  <h3 style="color: #fff; font-size: 1.75rem; font-weight: 600; margin-bottom: 0.75rem;">
+    Avoid These 7 Rookie Car Buying Mistakes
+  </h3>
+  <p style="color: #bbb; font-size: 1rem; margin-bottom: 1.5rem;">
+    Join 1,000+ smarter buyers. Get the free guide + exclusive tips to negotiate better car deals.
+  </p>
+  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 500px; margin: 0 auto;">
+    <input type="email" name="fields[email]" placeholder="Enter your email" required style="padding: 0.75rem; font-size: 1rem; border: none; border-radius: 8px; background: #fff; color: #1a1a1a;">
+    <input type="hidden" name="ml-submit" value="1">
+    <button type="submit" style="background: #C6A972; color: #1a1a1a; font-weight: 700; font-size: 1rem; padding: 0.75rem; border: none; border-radius: 8px; cursor: pointer;">
+      Send Me the Free Guide
+    </button>
+  </form>
+</section>
 
   <footer class="footer">
   <p><strong>Contact us:</strong> info@carhandled.com</p>
@@ -913,22 +937,6 @@ header.shrink img {
     localStorage.setItem('popupDismissed', 'true');
   });
 </script>
-    <!-- Email capture section at bottom -->
-<section style="background: linear-gradient(to right, #1b1b1b, #111); padding: 2.5rem 1.5rem; border-radius: 16px; text-align: center; margin: 4rem auto 2rem auto; max-width: 720px; box-shadow: 0 0 20px rgba(198, 169, 114, 0.15);">
-  <h3 style="color: #fff; font-size: 1.75rem; font-weight: 600; margin-bottom: 0.75rem;">
-    Avoid These 7 Rookie Car Buying Mistakes
-  </h3>
-  <p style="color: #bbb; font-size: 1rem; margin-bottom: 1.5rem;">
-    Join 1,000+ smarter buyers. Get the free guide + exclusive tips to negotiate better car deals.
-  </p>
-  <form action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 500px; margin: 0 auto;">
-    <input type="email" name="fields[email]" placeholder="Enter your email" required style="padding: 0.75rem; font-size: 1rem; border: none; border-radius: 8px; background: #fff; color: #1a1a1a;">
-    <input type="hidden" name="ml-submit" value="1">
-    <button type="submit" style="background: #C6A972; color: #1a1a1a; font-weight: 700; font-size: 1rem; padding: 0.75rem; border: none; border-radius: 8px; cursor: pointer;">
-      Send Me the Free Guide
-    </button>
-  </form>
-</section>
 <script>
   const notificationEl = document.getElementById("activityNotification");
   const textEl = document.getElementById("activityText");
