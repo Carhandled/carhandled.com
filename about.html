@@ -153,29 +153,36 @@ header.shrink img {
       margin: 0 0.5rem;
       text-decoration: none;
     }
-     .testimonial-carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 1.5rem;
-      scroll-snap-type: x mandatory;
-      padding: 2rem 0;
+.testimonial-carousel-wrapper {
+      overflow: hidden;
+      position: relative;
     }
-    .testimonial-carousel::-webkit-scrollbar {
-      display: none;
+    .testimonial-carousel {
+      display: flex;
+      gap: 1.5rem;
+      animation: scrollCarousel 60s linear infinite;
     }
     .testimonial {
       flex: 0 0 80%;
-      scroll-snap-align: start;
       background: #1a1a1a;
       padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 0 12px rgba(198,169,114,0.15);
       color: #eee;
+      position: relative;
     }
     .testimonial strong {
       color: #C6A972;
       display: block;
       margin-bottom: 0.5rem;
+    }
+    .stars {
+      color: gold;
+      margin-bottom: 0.5rem;
+    }
+    @keyframes scrollCarousel {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
@@ -221,16 +228,18 @@ header.shrink img {
 
    <section class="section">
     <h2>What Clients Said About Ali</h2>
-    <div class="testimonial-carousel">
-      <div class="testimonial"><strong>Samantha H.</strong>Ali was so helpful during the entire process of purchasing my new Defender. He was honest, responsive, and worked really hard to get us a good deal that made us feel good about the purchase and our commitment to the Land Rover brand.</div>
-      <div class="testimonial"><strong>Darin M.</strong>Ali was fantastic and the entire process was smooth and helpful.</div>
-      <div class="testimonial"><strong>Serhat C.</strong>This is, I believe, the third or fourth Range Rover I have purchased with Ali. Every time, he makes the process extremely easy for me, so I would like to thank him once again.</div>
-      <div class="testimonial"><strong>Sonya A.</strong>Excellent knowledge and service from Ali — and also helpful assistance from Alyssa.</div>
-      <div class="testimonial"><strong>Nina M.</strong>Ali is professional, highly knowledgeable, and genuinely committed to helping us find the right Range Rover. Seamless and enjoyable — no pressure, just great insights. Truly a five-star experience.</div>
-      <div class="testimonial"><strong>Janel S.</strong>Ali was very nice and knowledgeable. It was an out-of-state purchase which required more work — and they got it done quickly and easily.</div>
-      <div class="testimonial"><strong>Benjamin O.</strong>Very professional, very responsive, and a mature sales experience. Almost zero stress — I felt 100% comfortable throughout.</div>
-      <div class="testimonial"><strong>Matthew P.</strong>Very pleasant experience. Ali Camur was a key part of my decision to move forward with my deal. He has a good way about him and made the experience easier than normal.</div>
-      <div class="testimonial"><strong>James R.</strong>Ali made the purchase very easy. He even dropped off the vehicle at my place of business.</div>
+ <div class="testimonial-carousel-wrapper">
+      <div class="testimonial-carousel">
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Samantha H.</strong>Ali was so helpful during the entire process of purchasing my new Defender. He was honest, responsive, and worked really hard to get us a good deal that made us feel good about the purchase and our commitment to the Land Rover brand.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Darin M.</strong>Ali was fantastic and the entire process was smooth and helpful.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Serhat C.</strong>This is, I believe, the third or fourth Range Rover I have purchased with Ali. Every time, he makes the process extremely easy for me, so I would like to thank him once again.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Sonya A.</strong>Excellent knowledge and service from Ali — and also helpful assistance from Alyssa.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Nina M.</strong>Ali is professional, highly knowledgeable, and genuinely committed to helping us find the right Range Rover. Seamless and enjoyable — no pressure, just great insights. Truly a five-star experience.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Janel S.</strong>Ali was very nice and knowledgeable. It was an out-of-state purchase which required more work — and they got it done quickly and easily.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Benjamin O.</strong>Very professional, very responsive, and a mature sales experience. Almost zero stress — I felt 100% comfortable throughout.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>Matthew P.</strong>Very pleasant experience. Ali Camur was a key part of my decision to move forward with my deal. He has a good way about him and made the experience easier than normal.</div>
+        <div class="testimonial"><div class="stars">★★★★★</div><strong>James R.</strong>Ali made the purchase very easy. He even dropped off the vehicle at my place of business.</div>
+      </div>
     </div>
   </section>
 
