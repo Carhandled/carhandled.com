@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarHandled Starter Toolkit</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+      font-family: 'Optima', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(198,169,114,0.15);
+    }
+    img {
+      max-width: 180px;
+      margin-bottom: 1.5rem;
+    }
+    input[type="password"] {
+      padding: 0.8rem;
+      width: 80%;
+      margin: 1rem 0;
+      border-radius: 8px;
+      border: none;
+    }
+    .cta-button {
+      background: #C6A972;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    .downloads a {
+      display: block;
+      margin: 1rem 0;
+      color: #C6A972;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 1rem;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer a {
+      color: #C6A972;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="accessContainer">
+    <img src="assets/img/logo.png" alt="CarHandled Logo">
+    <h2>Welcome to Your Starter Toolkit</h2>
+    <p>Enter the password provided at purchase to unlock your materials.</p>
+    <input type="password" id="passwordInput" placeholder="Enter password...">
+    <div>
+      <button class="cta-button" onclick="checkPassword()">Unlock Toolkit</button>
+    </div>
+  </div>
+  <div id="downloadSection" class="container hidden">
+    <h2>You've Unlocked the Starter Toolkit</h2>
+    <p>Here are your downloads:</p>
+    <div class="downloads">
+      <a href="https://drive.google.com/drive/folders/11vSgWTe8HmIxqos38LMEXI2D8yTMCBQp?usp=drive_link" target="_blank">Access Starter Toolkit Files</a>
+    </div>
+  </div>
+  <footer>
+    <p><strong>Contact us:</strong> info@carhandled.com</p>
+    <p>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/carhandled" target="_blank">Follow us on Instagram</a>
+    </p>
+    <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
+  </footer>
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const correctPassword = "zK9v3X2p!gR1";
+      if (input === correctPassword) {
+        document.getElementById("accessContainer").classList.add("hidden");
+        document.getElementById("downloadSection").classList.remove("hidden");
+      } else {
+        alert("Incorrect password. Please check your email or contact support.");
+      }
+    }
+  </script>
+</body>
+</html>
