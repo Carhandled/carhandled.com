@@ -424,10 +424,7 @@ header.shrink img {
       border-bottom: 1px solid #C6A972;
       padding-bottom: 0.5rem;
     }
-    .section ul {
-      list-style: none;
-      padding: 0;
-    }
+   
     .section li {
       margin-bottom: 1rem;
       padding-left: 1.2rem;
@@ -503,6 +500,33 @@ header.shrink img {
     background: #b8965c;
     color: #fff;
   }
+    .faq-question {
+  width: 100%;
+  background: none;
+  color: #C6A972;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  padding: 1rem 0;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0.5rem 0 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+    .faq-item {
+  margin-bottom: 1.5rem;
+}
+.faq-answer {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+
 </style>
   <!-- MailerLite Universal -->
 <script>
@@ -574,6 +598,17 @@ header.shrink img {
   </div>
 </section>
 
+   <section class="section">
+  <h2>Why Smart Buyers Use the Toolkit</h2>
+  <p>Most buyers walk into a dealership unarmed. Our Toolkit flips the script — giving you the same insider logic dealers use, now working for you.</p>
+  <ul>
+  <li>Compare quotes and spot BS instantly</li>
+  <li>Use ready-to-send scripts to negotiate like a pro</li>
+  <li>Know exactly what to say, decline, and double-check</li>
+  <li>Avoid costly mistakes before you sign anything</li>
+  </ul>
+</section>
+
 
 
 <script>
@@ -604,19 +639,6 @@ header.shrink img {
     <h2>Our Guarantee: Save Money or Get Help Directly</h2>
     <p>We built this Toolkit to make car buying less stressful — and way more effective. If you use it and don’t save at least $500 on your deal, email us. We’ll personally look at your plan and help you fix it. No scripts, no runaround. Just real help, from real experts.</p>
   </section>
-
-
-<section class="section">
-  <h2>Why Smart Buyers Use the Toolkit</h2>
-  <p>Most buyers walk into a dealership unarmed. Our Toolkit flips the script — giving you the same insider logic dealers use, now working for you.</p>
-  <ul>
-    <li>Compare quotes and spot BS instantly</li>
-    <li>Use ready-to-send scripts to negotiate like a pro</li>
-    <li>Know exactly what to say, decline, and double-check</li>
-    <li>Save money — and regret — before you sign anything</li>
-  </ul>
-</section>
-
 
 
 <section class="section" id="pricing" style="padding-top: 4rem;">
@@ -727,11 +749,14 @@ header.shrink img {
   </div>
 </section>
 
-   <section class="section">
-  <p style="text-align: center;">Founded by a former dealership insider who walked away from the games. Now we help you win them.</p>
-  <p style="text-align: center;"><a href="about.html" class="cta-button">Meet the Founder</a></p>
+<section class="section">
+  <p style="text-align: center; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+    Built by an ex-dealer who saw how the game was played — and left to help buyers play smarter. Now we’re on your side.
+  </p>
+  <p style="text-align: center; margin-top: 1rem;">
+    <a href="about.html" class="cta-button">Meet the Founder</a>
+  </p>
 </section>
-
 
 
      <section class="section" style="background-color: #111; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem;">
@@ -766,29 +791,38 @@ header.shrink img {
 
 <section class="section">
   <h2>Frequently Asked Questions About the Toolkit</h2>
-  <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 1.7;">
-    <li style="margin-bottom: 1.5rem;">
-      <strong>What format is the Toolkit?</strong><br>
-      Google Sheets with templates, calculators, and guides — you’ll get a private link to make your own copy instantly.
-    </li>
-    <li style="margin-bottom: 1.5rem;">
-      <strong>How long do I have access?</strong><br>
-      You’ll have password-protected access for 7 days after purchase. Make sure to download or copy everything before it expires — we don’t reissue access.
-    </li>
-    <li style="margin-bottom: 1.5rem;">
-      <strong>Will it work if I’m not buying a car yet?</strong><br>
-      Yes. It’s built to help at every stage — from early planning to final negotiation.
-    </li>
-    <li style="margin-bottom: 1.5rem;">
-      <strong>Is this only for new cars?</strong><br>
-      No — it works for new, used, leases, or CPO deals. The strategy is universal.
-    </li>
-    <li style="margin-bottom: 1.5rem;">
-      <strong>Can I use this for someone else?</strong><br>
-      Definitely. It’s perfect for helping parents, friends, or anyone you care about buy smarter.
-    </li>
-  </ul>
+  <div class="faq-item">
+    <button class="faq-question">What format is the Toolkit?</button>
+    <div class="faq-answer">
+      Google Sheets with templates, calculators, and guides — you’ll get a link to make your own copy instantly.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Will it work if I’m not buying a car yet?</button>
+    <div class="faq-answer">
+      Yes. It’s designed to help at every stage — from planning and budgeting to negotiating the final price.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Is this only for new cars?</button>
+    <div class="faq-answer">
+      Nope. Whether it’s new, used, leased, or CPO — the Toolkit’s logic applies across the board.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Can I use this for someone else?</button>
+    <div class="faq-answer">
+      Definitely. Many of our buyers use it to help parents, partners, or kids buy smarter.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">What if I get stuck?</button>
+    <div class="faq-answer">
+      We’re here. Just reply to your access email and we’ll help you directly — no bots, no fluff.
+    </div>
+  </div>
 </section>
+
 
 
   <script>
@@ -1659,6 +1693,18 @@ header.shrink img {
 
   setInterval(showNotification, 18000); // Every 18 seconds
 <script>
+
+  <script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isOpen = answer.style.display === 'block';
+      document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+      answer.style.display = isOpen ? 'none' : 'block';
+    });
+  });
+</script>
+
 
 </body>
 </html>
