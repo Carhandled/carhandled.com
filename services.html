@@ -330,6 +330,16 @@
       lastScroll = currentScroll;
     });
   </script>
+ <!-- FAQ Toggle Script -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const answer = button.nextElementSibling;
+        answer.classList.toggle('open');
+      });
+    });
+  </script>
 
   <footer class="footer">
     <p><strong>Contact us:</strong> info@carhandled.com</p>
