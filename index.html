@@ -1263,49 +1263,6 @@ html, body, body * {
   </div>
 </section>
 
-   <section class="section">
-  <h2>Why Smart Buyers Use the Toolkit</h2>
-  <p>Most buyers walk into a dealership unarmed. Our Toolkit flips the script — giving you the same insider logic dealers use, now working for you.</p>
-  <ul class="no-bullets">
-  <li>Quickly compare quotes and uncover hidden fees”</li>
-  <li>Use ready-to-send scripts to negotiate like a pro</li>
-  <li>Know exactly what to say, decline, and double-check</li>
-  <li>Avoid costly mistakes before you sign anything</li>
-  </ul>
-</section>
-
-
-
-<script>
-  let base = 8725;
-  const savingsEl = document.getElementById('savingsCounter');
-
-  function updateSavings() {
-    const now = new Date();
-    const secondsToday = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-    const dynamic = base + Math.floor(secondsToday * 0.07); // ≈ $6/hr
-    savingsEl.textContent = "$" + dynamic.toLocaleString();
-  }
-
-  updateSavings();
-  setInterval(updateSavings, 3000); // refresh every 3 sec
-</script>
-<section class="section">
-    <h2>What Buyers Say</h2>
-    <blockquote>
-      “Dealer quoted $42,500 — we closed at $38,900 thanks to CarHandled.”
-    </blockquote>
-    <blockquote>
-      “Used the Toolkit and saved $1,800 vs initial offer. Worth every penny.”
-    </blockquote>
-  </section>
-
-   <section class="section" style="background-color: #111; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
-    <h2>Our Guarantee: Save Money or Get Help Directly</h2>
-    <p>Save at least $500—or we’ll personally step in.
-(Most Full Toolkit buyers save thousands.)</p>
-  </section>
-
 
 <section id="pricing" class="section">
   <h2 style="text-align: center; margin-bottom: 2rem;">Compare Toolkit Options &amp; Pricing</h2>
@@ -1377,6 +1334,14 @@ html, body, body * {
   </div>
 </section>
 
+   
+   <section class="section" style="background-color: #111; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+    <h2>Our Guarantee: Save Money or Get Help Directly</h2>
+    <p>Save at least $500—or your money is back.
+(Most Full Toolkit buyers save thousands.)</p>
+  </section>
+
+   
    
 <section class="section" style="background-color: #121212; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem;">
   <h2 style="color: #C6A972; text-align: center; margin-bottom: 2rem;">Real Buyers, Real Results</h2>
