@@ -372,7 +372,7 @@ header.shrink img {
     }
     .hero {
   background: url('assets/img/toolkitbackground.jpg') center/cover no-repeat;
-  padding: 4rem 2rem 3rem;
+  padding: 8rem 2rem 3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1112,6 +1112,16 @@ header.shrink img {
         .ml-form-formContent.horozintalForm .ml-button-horizontal.labelsOn { padding-top: 0px!important; }
 
       }
+    /* ↓ Put this at the end of style.css, after all other rules (including MailerLite, Hotjar, etc.) */
+html {
+  font-family: 'Optima', sans-serif;
+  font-size: 16px;        /* ← your “base” font size (adjust up/down as needed) */
+}
+
+html, body, body * {
+  font-family: inherit !important;
+}
+
     </style>
 
   <!-- MailerLite Universal -->
