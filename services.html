@@ -14,15 +14,10 @@
 <meta name="twitter:title" content="Concierge Car Buying – CarHandled">
 <meta name="twitter:description" content="Skip the dealership games. We’ll source, negotiate, and secure your next car — professionally.">
 <meta name="twitter:image" content="https://www.carhandled.com/assets/img/background.jpg">
-
-<title>CarHandled Concierge – White-Glove Car Buying Service</title>
-<meta name="description" content="Avoid dealership stress. CarHandled’s expert Concierge service sources, negotiates, and secures your next car — with confidence and clarity.">
   <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" />
   <link rel="canonical" href="https://www.carhandled.com/services.html" />
-
-  
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,41 +77,39 @@
   }
 }
 </script>
-
-
-
+  
+  
+  
   <style>
     body {
       margin: 0;
       font-family: 'Optima', sans-serif;
       background-color: #0f0f0f;
       color: #f5f5f5;
+      font-size: 17px;
+      line-height: 1.7;
     }
     header {
-  background-color: #000;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: padding 0.3s ease;
-}
-
-header img {
-  height: 48px;
-  transition: height 0.3s ease;
-}
-
-header.shrink {
-  padding: 0.5rem 1.2rem;
-}
-
-header.shrink img {
-  height: 36px;
-}
-
+      background-color: #000;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: padding 0.3s ease;
+    }
+    header img {
+      height: 48px;
+      transition: height 0.3s ease;
+    }
+    header.shrink {
+      padding: 0.5rem 1.2rem;
+    }
+    header.shrink img {
+      height: 36px;
+    }
     #hamburger {
       display: flex;
       flex-direction: column;
@@ -162,13 +155,13 @@ header.shrink img {
     }
     .section {
       padding: 3rem 1.5rem;
-      max-width: 800px;
+      max-width: 960px;
       margin: auto;
     }
     .section h2 {
       color: #C6A972;
       font-size: 1.8rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       border-bottom: 1px solid #C6A972;
       padding-bottom: 0.5rem;
     }
@@ -186,29 +179,41 @@ header.shrink img {
       font-size: 1.1rem;
       display: inline-block;
       margin-top: 2rem;
+      letter-spacing: 0.5px;
     }
+    .price-box {
+      border: 1px solid #C6A972;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+      background-color: #1a1a1a;
+    }
+    .price-box h3 {
+      color: #C6A972;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .price-box p {
+      margin-bottom: 1rem;
+    }
+    /* FAQ styles */
+    .faq-item { margin-bottom: 1.5rem; background-color: #1a1a1a; border: 1px solid #C6A972; border-radius: 8px; overflow: hidden; }
+    .faq-question { width: 100%; background: none; color: #C6A972; text-align: left; font-size: 1.1rem; font-weight: bold; border: none; padding: 1rem; cursor: pointer; position: relative; }
+    .faq-question::after { content: '+'; position: absolute; right: 1rem; font-size: 1.2rem; transition: transform 0.3s ease; }
+    .faq-question.active::after { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; padding: 0 1rem; color: #ccc; font-size: 1rem; line-height: 1.6; transition: max-height 0.3s ease, padding 0.3s ease; }
+    .faq-answer.open { max-height: 500px; padding: 0 1rem 1rem; }
+    /* Footer styles */
+    .footer { background-color: #111; text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }
+    .footer a { color: #aaa; margin: 0 0.5rem; text-decoration: none; }
   </style>
-  <!-- Hotjar Tracking Code for https://www.carhandled.com/ -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:6473373,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
 </head>
 <body>
   <header>
     <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
-    <div id="hamburger" onclick="toggleNav()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  <nav id="mobileNav">
+    <div id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    <nav id="mobileNav">
       <a href="index.html">Home</a>
       <a href="services.html">Concierge</a>
       <a href="about.html">About</a>
@@ -216,7 +221,7 @@ header.shrink img {
     </nav>
   </header>
 
-<section class="hero">
+  <section class="hero">
     <h1>Done-For-You Car Buying</h1>
     <p>Skip the sales games. We handle everything — so you get the car you want at the price you deserve.</p>
     <a href="intake.html" class="cta-button">Apply for Concierge</a>
@@ -234,19 +239,39 @@ header.shrink img {
 
   <section class="section">
     <h2>What’s Included</h2>
-    <h3>$129 — Deal Review</h3>
-    <p>Already have a quote? We’ll tear it apart and tell you where the BS is. Includes Loom video reply + one follow-up.</p>
-
-    <h3>$1,299 — Standard Concierge</h3>
-    <p>Vehicle shortlist, quote validation, trade-in advice, and exact negotiation scripts. You drive the deal — we guide every move.</p>
-
-    <h3>$2,999 — Premium Concierge</h3>
-    <p>We do it all: search, negotiate, verify, and coordinate. You get multiple quotes, dealer direct calls, trade-in review, delivery planning. All without lifting a finger.</p>
+    <div class="price-box">
+      <h3>$129 — Deal Review</h3>
+      <p>Already have a quote? We’ll tear it apart and tell you where the BS is. Includes:</p>
+      <ul style="list-style: disc inside; margin-top: 0.5rem;">
+        <li>Detailed quote analysis with video explanation</li>
+        <li>Highlighting hidden fees and markup</li>
+        <li>One follow-up consultation</li>
+      </ul>
+    </div>
+    <div class="price-box">
+      <h3>$1,299 — Standard Concierge</h3>
+      <p>Comprehensive support from start to finish. This package includes:</p>
+      <ul style="list-style: disc inside; margin-top: 0.5rem;">
+        <li>Personalized vehicle shortlist based on your criteria</li>
+        <li>Validated dealer quotes with fair market pricing</li>
+        <li>Trade-in valuation strategy</li>
+        <li>Custom negotiation scripts and email templates</li>
+      </ul>
+    </div>
+    <div class="price-box">
+      <h3>$2,999 — Premium Concierge</h3>
+      <p>Your white-glove, done-for-you service. Everything in Standard, plus:</p>
+      <ul style="list-style: disc inside; margin-top: 0.5rem;">
+        <li>Multiple quote solicitations across dealerships</li>
+        <li>Direct negotiation and phone calls on your behalf</li>
+        <li>In-depth trade-in inspection and consultation</li>
+        <li>Delivery coordination and paperwork assistance</li>
+      </ul>
+    </div>
   </section>
 
   <section class="section">
     <h2>Who It’s For</h2>
-    <p>This service is for buyers who:</p>
     <ul>
       <li>Want premium help from real pros</li>
       <li>Hate dealership pressure and confusion</li>
@@ -254,31 +279,39 @@ header.shrink img {
       <li>Don’t want to overpay, ever</li>
     </ul>
   </section>
-  
+
   <section class="section">
-  <h2 style="color: #C6A972; border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem;">What We Do (and Don’t)</h2>
-  <p>We’re not a dealership, broker, or lender — we don’t sell cars, and we don’t get kickbacks. We act purely as your advisor to help you navigate the process with confidence.</p>
-  <ul>
-    <li>Help you define your needs and shortlist the right vehicles</li>
-    <li>Research market pricing and validate dealer quotes</li>
-    <li>Support or handle negotiations to get you the best outcome</li>
-    <li>Guide trade-in strategy and assist with delivery coordination</li>
-  </ul>
-  <p>You always sign directly with the dealership and pay them — not us. We just make sure you’re informed, protected, and positioned to win.</p>
-</section>
+    <h2>What We Do (and Don’t)</h2>
+    <ul>
+      <li>Help you define your needs and shortlist the right vehicles</li>
+      <li>Research market pricing and validate dealer quotes</li>
+      <li>Support or handle negotiations to get you the best outcome</li>
+      <li>Guide trade-in strategy and assist with delivery coordination</li>
+    </ul>
+    <p>You always sign directly with the dealership and pay them — not us. We just make sure you’re informed, protected, and positioned to win.</p>
+  </section>
 
-<section class="section">
-  <h2 style="color: #C6A972; border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem;">Frequently Asked Questions</h2>
-  <ul>
-     <li><strong>Do you handle new or used?</strong> Both — plus leases and trade-ins.</li>
-      <li><strong>Do I still sign with the dealership?</strong> Yes. We guide — you stay the legal buyer.</li>
-      <li><strong>How long does it take?</strong> Usually 3–7 business days. Depends on your car and market.</li>
-      <li><strong>Can you beat the quote I already got?</strong> In most cases, yes. Worst case? We validate it for peace of mind.</li>
-  </ul>
-</section>
+  <section class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question">Do you handle new or used?</button>
+      <div class="faq-answer">Both — plus leases and trade-ins.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Do I still sign with the dealership?</button>
+      <div class="faq-answer">Yes. You remain the legal buyer.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How long does it take?</button>
+      <div class="faq-answer">Usually 3–7 business days. Depends on market conditions.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can you beat my existing quote?</button>
+      <div class="faq-answer">In most cases, yes — or we validate it for peace of mind.</div>
+    </div>
+  </section>
 
-
-<section class="section">
+  <section class="section" style="text-align: center;">
     <h2>Apply Now — Limited Spots Available</h2>
     <p>We only take a few clients at a time to keep quality high. If you're serious about getting the right deal without the grind, let's talk.</p>
     <a href="intake.html" class="cta-button">Apply for Concierge</a>
@@ -286,41 +319,34 @@ header.shrink img {
 
   <script>
     function toggleNav() {
-      const nav = document.getElementById("mobileNav");
-      if (nav.style.display === "flex") {
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.display = "none", 300);
-      } else {
-        nav.style.display = "flex";
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.opacity = 1, 10);
-      }
+      const nav = document.getElementById("mobileNav"); if (nav.style.display === "flex") { nav.style.opacity = 0; setTimeout(() => nav.style.display = "none", 300); } else { nav.style.display = "flex"; nav.style.opacity = 0; setTimeout(() => nav.style.opacity = 1, 10); }
     }
+    let lastScroll = 0;
+    const header = document.querySelector("header");
+    const mobileNav = document.getElementById("mobileNav");
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 50 && currentScroll > lastScroll) { header.classList.add("shrink"); if (mobileNav.style.display === "flex") mobileNav.style.display = "none"; } else if (currentScroll < 50) header.classList.remove("shrink");
+      lastScroll = currentScroll;
+    });
   </script>
-  <script>
-  let lastScroll = 0;
-  const header = document.querySelector("header");
-  const mobileNav = document.getElementById("mobileNav");
 
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-
-    // Shrink header on scroll down
-    if (currentScroll > 50 && currentScroll > lastScroll) {
-      header.classList.add("shrink");
-
-      // Auto-close mobile nav if open
-      if (mobileNav && mobileNav.style.display === "flex") {
-        mobileNav.style.display = "none";
-      }
-
-    } else if (currentScroll < 50) {
-      header.classList.remove("shrink");
-    }
-
-    lastScroll = currentScroll;
-  });
-</script>
-
+  <footer class="footer">
+    <p><strong>Contact us:</strong> info@carhandled.com</p>
+    <p>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/carhandled" target="_blank" style="color: #aaa; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+        <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">...
+        </svg>
+        Follow us on Instagram
+      </a>
+    </p>
+    <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
+  </footer>
 </body>
 </html>
+
