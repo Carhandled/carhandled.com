@@ -462,26 +462,37 @@ header.shrink img {
       left: 0;
       color: #C6A972;
     }
-    .pricing-row {
+   .pricing-row {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
   margin: 2rem 0;
 }
 
 .pricing-row .price-box {
-  display: flex;           /* ← make it a flex container */
-  flex-direction: column;  /* ← stack its children vertically */
+  flex: 1 1 320px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #C6A972;
   border-radius: 16px;
   padding: 2rem;
   background-color: #1a1a1a;
-  /* your existing flex: and max-width: rules… */
+  box-sizing: border-box;
 }
+
 .pricing-row .price-box .cta-button {
-  margin-top: auto;  /* ← pushes the button (the last child) to the bottom */
+  margin-top: auto;
 }
+
+@media (max-width: 767px) {
+  .pricing-row .price-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
 
 .popular-package {
   border: 2px solid #C6A972;
