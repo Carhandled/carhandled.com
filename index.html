@@ -407,6 +407,15 @@ header.shrink img {
         font-size: 1rem;
         margin-top: 1rem;
       }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+.hero {
+  position: relative;
+}
 
   .cta-button {
     margin-top: 1.2rem;
@@ -1115,7 +1124,7 @@ header.shrink img {
     /* ↓ Put this at the end of style.css, after all other rules (including MailerLite, Hotjar, etc.) */
 html {
   font-family: 'Optima', sans-serif;
-  font-size: 18px;        /* ← your “base” font size (adjust up/down as needed) */
+  font-size: 20px;        /* ← your “base” font size (adjust up/down as needed) */
 }
 
 html, body, body * {
@@ -1126,6 +1135,38 @@ html, body, body * {
   margin: 0;
   padding-left: 0;
 }
+    body {
+  font-size: 20px;
+  line-height: 1.7;
+}
+    .guarantee-section {
+  background-color: #1a1a1a;
+  border-left: 4px solid #C6A972;
+  padding: 2rem;
+}
+#mobileNav {
+  transition: opacity 0.3s ease-in-out;
+}
+    .popular-package {
+  border: 2px solid #C6A972;
+  box-shadow: 0 0 20px rgba(198,169,114,0.3);
+}
+
+.badge {
+  background-color: #C6A972;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 4px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
 
   </style>
 
@@ -1172,8 +1213,7 @@ html, body, body * {
       <section class="hero">
     <h1>Skip the Dealership. Keep Thousands.</h1>
     <p>We help smart people buy cars — better. Use our DIY Toolkit or let our Concierge team handle it all for you.</p>
-    <a href="index.html#pricing" class="cta-button">Explore the Toolkit</a>
-    <a href="services.html" class="cta-button" style="background: transparent; color: #C6A972; border: 2px solid #C6A972; margin-left: 1rem;">Done-For-You Service</a>
+    <a href="#toolkit-preview" class="cta-button">Explore the Toolkit</a>
   </section>
     <section style="display: flex; justify-content: center; gap: 1rem; padding: 1rem; background: #111; font-size: 0.95rem; color: #C6A972; border-top: 1px solid #444; border-bottom: 1px solid #444;">
       <div>Expert-Built Tools</div>
@@ -1182,7 +1222,7 @@ html, body, body * {
       <div>No Dealership Games</div>
     </section>
 
-   <section style="padding: 4rem 1.5rem; background: #111; border-radius: 16px; margin: 3rem auto; max-width: 960px; box-shadow: 0 0 16px rgba(198, 169, 114, 0.15); text-align: center;">
+     <section id="toolkit-preview" style="padding: 4rem 1.5rem; background: #111; border-radius: 16px; margin: 3rem auto; max-width: 960px; box-shadow: 0 0 16px rgba(198, 169, 114, 0.15); text-align: center;">
   <h2 style="color: #C6A972; font-size: 2rem; margin-bottom: 1rem;">Watch the Toolkit in Action</h2>
   <p style="color: #ccc; font-size: 1.05rem; max-width: 700px; margin: 0 auto 2rem;">
     See exactly what’s inside. From payment calculators to negotiation scripts, this video shows how the Toolkit helps you buy smarter.
@@ -1237,7 +1277,7 @@ html, body, body * {
 
    <section class="section" style="background-color: #111; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
     <h2>Our Guarantee: Save Money or Get Help Directly</h2>
-    <p>We built this Toolkit to make car buying less stressful — and way more effective. If you use it and don’t save at least $500 on your deal, email us. We’ll personally look at your plan and help you fix it. No scripts, no runaround. Just real help, from real experts.</p>
+    <p>We built this Toolkit to make car buying less stressful — and way more effective. If you use it and don’t save at least $1000 on your deal, email us. We’ll personally look at your plan and help you fix it. No scripts, no runaround. Just real help, from real experts.</p>
   </section>
 
 
@@ -1256,25 +1296,40 @@ html, body, body * {
         <li>Toolkit Access Instructions</li>
       </ul>
       <a href="https://buy.stripe.com/3cI28r4078Hhc2K7DDfIs02" class="cta-button" target="_blank">Get Starter – Save $500+</a>
+      <div style="margin-top: 1rem;">
+  <img src="https://images.ctfassets.net/fzn2n1nzq965/1Tm7UDYdyAUFqImh6EM4wM/61a1ac76d95ae390b3ff227430d9c31e/powered-by-stripe.svg" alt="Secure payments by Stripe" style="width:120px;">
+</div>
       <p style="font-size: 0.95rem; color: #aaa;"><em>*Access link valid for 7 days. Be sure to download your copy before it expires.</em></p>
 
     </div>
 
     <!-- Full Toolkit -->
-   <div class="price-box" style="flex: 1 1 320px; max-width: 400px; background-color: #1a1a1a; padding: 1.75rem; border-radius: 12px; box-shadow: 0 0 12px rgba(198,169,114,0.15);">
-  <h3 style="color: #C6A972; font-size: 1.5rem; border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">Full Toolkit – $97</h3>
+<div class="price-box popular-package" style="position: relative; flex: 1 1 320px; max-width: 400px; background-color: #1a1a1a; padding: 1.75rem; border-radius: 12px; box-shadow: 0 0 12px rgba(198,169,114,0.15);">
+  
+  <div class="badge">MOST POPULAR</div>
+
+  <h3 style="color: #C6A972; font-size: 1.5rem; border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+    Full Toolkit – $97
+  </h3>
   <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 1.5rem; line-height: 1.6; color: #ccc;">
-        <li>Everything in Starter</li>
-        <li>Purchase Estimator</li>
-        <li>Lease Calculator</li>
-        <li>Deal Comparison Sheet</li>
+    <li>Everything in Starter</li>
+    <li>Purchase Estimator</li>
+    <li>Lease Calculator</li>
+    <li>Deal Comparison Sheet</li>
+  </ul>
 
-      </ul>
-      <a href="https://buy.stripe.com/5kQ8wPgMT2iTaYGaPPfIs03" class="cta-button" target="_blank">Get Full Toolkit – Save $1,000+</a>
-      <p style="font-size: 0.95rem; color: #aaa;"><em>*Access link valid for 7 days. Be sure to download your copy before it expires.</em></p>
-    </div>
+  <a href="https://buy.stripe.com/5kQ8wPgMT2iTaYGaPPfIs03" class="cta-button" target="_blank">
+    Get Full Toolkit – Save $1,000+
+  </a>
+  <div style="margin-top: 1rem;">
+  <img src="https://images.ctfassets.net/fzn2n1nzq965/1Tm7UDYdyAUFqImh6EM4wM/61a1ac76d95ae390b3ff227430d9c31e/powered-by-stripe.svg" alt="Secure payments by Stripe" style="width:120px;">
+</div>
+  
+  <p style="font-size: 0.95rem; color: #aaa;">
+    <em>*Access link valid for 7 days. Be sure to download your copy before it expires.</em>
+  </p>
+</div>
 
-  </div>
 </section>
    
 <section class="section" style="background-color: #121212; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem;">
