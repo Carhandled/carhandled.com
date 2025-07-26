@@ -471,6 +471,9 @@ header.shrink img {
 }
 
 .pricing-row .price-box {
+  display: flex;
+  flex-direction: column;
+}
   border: 1px solid #C6A972;
   border-radius: 16px;
   padding: 2rem;
@@ -480,6 +483,10 @@ header.shrink img {
   flex: 1 1 calc(50% - 1rem);
   max-width: calc(50% - 1rem);
   box-sizing: border-box;
+}
+    .pricing-row .price-box .cta-button {
+  /* push the button (and everything below it) to the bottom */
+  margin-top: auto;
 }
 .popular-package {
   border: 2px solid #C6A972;
@@ -1329,6 +1336,9 @@ html, body, body * {
           <img src="/assets/google-pay.png" alt="Google Pay" style="height:24px; background:#fff; padding:2px 6px; border-radius:4px;">
         </div>
       </div>
+       <p style="font-size:0.95rem; color:#aaa; margin-top:1rem;">
+        <em>*Access link valid for 7 days. Download before it expires.</em>
+      </p>
     </div>
 
   </div>
