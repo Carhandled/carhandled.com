@@ -470,13 +470,16 @@ header.shrink img {
   margin: 2rem 0;
 }
 
-.price-box {
+.pricing-row .price-box {
   border: 1px solid #C6A972;
   border-radius: 16px;
   padding: 2rem;
   background-color: #1a1a1a;
-  max-width: 400px;
-  flex: 1 1 320px;
+
+  /* new responsive sizing: two per row minus half the gap */
+  flex: 1 1 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+  box-sizing: border-box;
 }
 .popular-package {
   border: 2px solid #C6A972;
@@ -1374,9 +1377,6 @@ html, body, body * {
   </div>
 </section>
 
-
-
-</section>
    
 <section class="section" style="background-color: #121212; border-radius: 12px; padding: 2.5rem 1.5rem; margin-top: 3rem;">
   <h2 style="color: #C6A972; text-align: center; margin-bottom: 2rem;">Real Buyers, Real Results</h2>
