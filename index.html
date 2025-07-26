@@ -462,22 +462,31 @@ header.shrink img {
       left: 0;
       color: #C6A972;
     }
-    .price-box {
-      background: #121212;
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .price-box h3 {
-      font-size: 1.5rem;
-      color: #C6A972;
-      margin-bottom: 1rem;
-    }
-    .price-box p {
-      font-size: 1rem;
-      color: #eee;
-    }
+    .pricing-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.price-box {
+  border: 1px solid #C6A972;
+  border-radius: 16px;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  max-width: 400px;
+  flex: 1 1 320px;
+}
+
+.price-box h3 {
+  color: #C6A972;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #C6A972;
+  padding-bottom: 0.5rem;
+}
+
     .toolkit-capture {
       text-align: center;
       padding: 3rem 1rem;
@@ -1302,92 +1311,87 @@ html, body, body * {
   <h2 style="text-align: center; margin-bottom: 2rem;">Compare Toolkit Options & Pricing</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
 
+
+<section id="pricing" class="section">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Compare Toolkit Options & Pricing</h2>
+
+  <div class="pricing-row">
     <!-- Starter Toolkit -->
-    <!-- Starter Toolkit -->
-<div class="price-box" style="flex: 1 1 320px; max-width: 400px;">
-  <h3 style="color: #C6A972; font-size: 1.5rem; border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">
-    Starter Toolkit – $39
-  </h3>
-  <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 1.5rem; line-height: 1.6; color: #ccc;">
-    <li>Step-by-Step Buying Guide</li>
-    <li>Negotiation Scripts</li>
-    <li>Final Step Checklist</li>
-    <li>Lease vs Buy Sheet</li>
-    <li>Toolkit Access Instructions</li>
-  </ul>
-  <a href="https://buy.stripe.com/3cI28r4078Hhc2K7DDfIs02" class="cta-button" target="_blank">
-    Get Starter – Save at Least $500
-  </a>
-
-  <div style="margin-top: 1rem; text-align: center;">
-    <p style="font-size: 0.85rem; color: #bbb; margin-bottom: 0.25rem;">Secure checkout powered by</p>
-    <img
-      src="https://stripe.com/img/v3/home/twitter.png"
-      alt="Powered by Stripe"
-      style="height: 24px; display: block; margin: 0 auto 0.5rem;"
-    />
-
-    <div
-      style="display: flex; justify-content: center; align-items: center; gap: 12px; opacity: 0.7; flex-wrap: wrap;"
-    >
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height: 22px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="height: 22px;">
-      <img src="/assets/apple-pay-white.png" alt="Apple Pay" style="height: 24px; background-color: #fff; padding: 2px 6px; border-radius: 4px;">
-      <img src="/assets/google-pay.png" alt="Google Pay" style="height: 24px; background-color: #fff; padding: 2px 6px; border-radius: 4px;">
-    </div>
-  </div>
-</div>
-
-
-
-</div>
-      <p style="font-size: 0.95rem; color: #aaa;"><em>*Access link valid for 7 days. Be sure to download your copy before it expires.</em></p>
-
+    <div class="price-box">
+      <h3>Starter Toolkit – $39</h3>
+      <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; line-height: 1.6; color: #ccc;">
+        <li>Step-by-Step Buying Guide</li>
+        <li>Negotiation Scripts</li>
+        <li>Final Step Checklist</li>
+        <li>Lease vs Buy Sheet</li>
+        <li>Toolkit Access Instructions</li>
+      </ul>
+      <a href="https://buy.stripe.com/3cI28r4078Hhc2K7DDfIs02"
+         class="cta-button"
+         target="_blank">
+        Get Starter – Save at Least $500
+      </a>
+      <div style="margin-top:1rem; text-align:center;">
+        <p style="font-size:0.85rem; color:#bbb; margin-bottom:0.25rem;">
+          Secure checkout powered by
+        </p>
+        <img src="https://stripe.com/img/v3/home/twitter.png"
+             alt="Powered by Stripe"
+             style="height:24px; display:block; margin:0 auto 0.5rem;" />
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; opacity:0.7; flex-wrap:wrap;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
+               alt="Visa" style="height:22px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"
+               alt="Mastercard" style="height:22px;">
+          <img src="/assets/apple-pay-white.png" alt="Apple Pay"
+               style="height:24px; background:#fff; padding:2px 6px; border-radius:4px;">
+          <img src="/assets/google-pay.png" alt="Google Pay"
+               style="height:24px; background:#fff; padding:2px 6px; border-radius:4px;">
+        </div>
+      </div>
     </div>
 
     <!-- Full Toolkit -->
-<div class="price-box popular-package" style="position: relative; flex: 1 1 320px; max-width: 400px; background-color: #1a1a1a; padding: 1.75rem; border-radius: 12px; box-shadow: 0 0 12px rgba(198,169,114,0.15);">
-  
-  <div class="badge">MOST POPULAR</div>
-
-  <h3 style="color: #C6A972; font-size: 1.5rem; border-bottom: 1px solid #C6A972; padding-bottom: 0.5rem; margin-bottom: 1rem;">
-    Full Toolkit – $97
-  </h3>
-  <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 1.5rem; line-height: 1.6; color: #ccc;">
-    <li>Everything in Starter</li>
-    <li>Purchase Estimator</li>
-    <li>Lease Calculator</li>
-    <li>Deal Comparison Sheet</li>
-  </ul>
-
-  <a href="https://buy.stripe.com/5kQ8wPgMT2iTaYGaPPfIs03" class="cta-button" target="_blank">
-    Get Full Toolkit – Save Up to Thousands
-  </a>
-  <div style="margin-top:1rem; text-align:center;">
-  <p style="font-size:0.85rem;color:#bbb;margin-bottom:0.25rem;">Secure checkout powered by</p>
-  <img src="https://stripe.com/img/v3/home/twitter.png"
-       alt="Powered by Stripe"
-       style="height:24px; display:block; margin:0 auto 0.5rem;" />
-
-  <div style="display:flex; justify-content:center; align-items:center; gap:12px; opacity:0.7; flex-wrap:wrap;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height:22px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="height:22px;">
-    <img src="/assets/apple-pay-white.png" alt="Apple Pay" 
-         style="height: 24px; background-color: #fff; padding: 2px 6px; border-radius: 4px;">
-    <img src="/assets/google-pay.png" alt="Google Pay" 
-         style="height: 24px; background-color: #fff; padding: 2px 6px; border-radius: 4px;">
+    <div class="price-box popular-package" style="position: relative;">
+      <div class="badge">MOST POPULAR</div>
+      <h3>Full Toolkit – $97</h3>
+      <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; line-height: 1.6; color: #ccc;">
+        <li>Everything in Starter</li>
+        <li>Purchase Estimator</li>
+        <li>Lease Calculator</li>
+        <li>Deal Comparison Sheet</li>
+      </ul>
+      <a href="https://buy.stripe.com/5kQ8wPgMT2iTaYGaPPfIs03"
+         class="cta-button"
+         target="_blank">
+        Get Full Toolkit – Save Up to Thousands
+      </a>
+      <div style="margin-top:1rem; text-align:center;">
+        <p style="font-size:0.85rem; color:#bbb; margin-bottom:0.25rem;">
+          Secure checkout powered by
+        </p>
+        <img src="https://stripe.com/img/v3/home/twitter.png"
+             alt="Powered by Stripe"
+             style="height:24px; display:block; margin:0 auto 0.5rem;" />
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; opacity:0.7; flex-wrap:wrap;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
+               alt="Visa" style="height:22px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"
+               alt="Mastercard" style="height:22px;">
+          <img src="/assets/apple-pay-white.png" alt="Apple Pay"
+               style="height:24px; background:#fff; padding:2px 6px; border-radius:4px;">
+          <img src="/assets/google-pay.png" alt="Google Pay"
+               style="height:24px; background:#fff; padding:2px 6px; border-radius:4px;">
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-
-
-
-</div>
-  
-  <p style="font-size: 0.95rem; color: #aaa;">
+  <p style="font-size:0.95rem; color:#aaa; text-align:center; margin-top:1rem;">
     <em>*Access link valid for 7 days. Be sure to download your copy before it expires.</em>
   </p>
-</div>
+</section>
+
 
 </section>
    
