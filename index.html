@@ -79,8 +79,8 @@
     }
 
     /* Anchor offset for sticky header */
-    #pricing, #proof, #outcomes { scroll-margin-top: 90px; }
-    @media (max-width:768px){ #pricing, #proof, #outcomes { scroll-margin-top: 70px; } }
+    #pricing { scroll-margin-top: 90px; }
+    @media (max-width:768px){ #pricing { scroll-margin-top: 70px; } }
 
     header{
       background:#000; padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between;
@@ -119,48 +119,38 @@
     /* Feature bar */
     #feature-bar{ display:flex; justify-content:center; gap:1rem; padding:1rem; background:#111; font-size:.95rem; color:var(--gold); border-top:1px solid #444; border-bottom:1px solid #444; }
 
-    /* PROOF images */
-    #proof .imgs{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 360px));
-      justify-content:center;
-      gap:1rem;
-      max-width:900px;
-      margin:0 auto;
+    /* ===== DARK WORKSHEET CARD (click to open full image) ===== */
+    .ch-w-link{ display:block; text-decoration:none; color:inherit; }
+    .ch-worksheet{
+      --gold:#C6A972; --ink:#f5f5f5; --panel:#151515; --stroke:#2b2b2b; --muted:#9aa;
+      --pop:#B9FFCF; --pop-bg:rgba(185,255,207,.12);
+      max-width:1100px; margin:1.25rem auto; padding:1.1rem;
+      background:var(--panel); border:1px solid var(--stroke);
+      border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);
     }
-    #proof figure{ margin:0; }
-    #proof a.thumb{ display:block; }
-    #proof img{
-      width:100%; height:auto;
-      border-radius:10px; border:1px solid #333; box-shadow:0 4px 16px rgba(0,0,0,.35);
-    }
-    #proof figcaption{
-      text-align:center; color:#9aa; font-size:.85rem; margin-top:.4rem;
-      letter-spacing:.02em;
-    }
-    /* Equal-size worksheet thumbnails */
-#proof a.thumb{
-  display:block;
-  aspect-ratio: 8.5 / 11;            /* letter page shape */
-  background:#0f0f0f;
-  border:1px solid #333;
-  border-radius:10px;
-  overflow:hidden;
-  padding:6px;                       /* small frame */
-  box-shadow:0 4px 16px rgba(0,0,0,.35);
-}
+    .ch-w-top{ display:flex; align-items:baseline; justify-content:space-between; gap:.8rem; padding:0 .2rem .4rem; border-bottom:1px solid var(--stroke); }
+    .ch-w-top h3{ margin:.2rem 0 .15rem; color:var(--ink); font-size:1.15rem; line-height:1.2; }
+    .ch-w-top p{ margin:0; color:var(--muted); font-size:.95rem; }
 
-/* Make the image fill that fixed box without cropping */
-#proof a.thumb img{
-  width:100%;
-  height:100%;
-  object-fit: contain;                /* use 'cover' if you prefer no letterboxing */
-  display:block;
-}
+    .ch-w-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem; }
+    .ch-w-scen{ background:#101010; border:1px solid var(--stroke); border-radius:10px; overflow:hidden; }
+    .ch-w-kicker{ padding:.65rem .8rem; font-weight:800; letter-spacing:.02em; color:#4ee27a; background:#0e1b13; border-bottom:1px solid var(--stroke); }
+    .ch-w-kicker.before{ color:#f0c77a; background:#1c180e; }  /* subtle difference */
 
-/* Override the older rule so borders/shadows live on the container */
-#proof img{ border:none; box-shadow:none; border-radius:6px; }
+    .ch-w-table{ width:100%; border-collapse:collapse; }
+    .ch-w-table th, .ch-w-table td{ border-top:1px solid var(--stroke); padding:.65rem .8rem; color:#e9e9e9; }
+    .ch-w-table thead th{ background:#0f0f0f; color:#ddd; font-weight:700; text-align:left; }
+    .ch-w-table .sub{ color:#bbb; font-size:.8rem; font-weight:600; margin-top:.15rem; }
+    .ch-w-table td.money{ font-weight:800; text-align:right; letter-spacing:.01em; }
+    .ch-w-table td.is-highlight{ background:var(--pop-bg); color:var(--pop); }
 
+    .ch-w-metrics{ display:grid; grid-template-columns:1fr 1fr; gap:.25rem 1rem; padding:.6rem .8rem 1rem; }
+    .ch-w-metrics dt{ color:#bbb; font-size:.85rem; }
+    .ch-w-metrics dd{ margin:0; font-weight:800; text-align:right; }
+
+    .ch-w-note{ text-align:center; color:#9aa; font-size:.85rem; margin-top:.5rem; }
+
+    .ch-worksheet:focus-within, .ch-worksheet:hover{ border-color:#3b3b3b; box-shadow:0 12px 26px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.03); }
 
     /* PRICING */
     .price-box{
@@ -168,38 +158,19 @@
       border-radius:16px; background:var(--panel); border:1px solid var(--gold);
       box-shadow:0 6px 22px rgba(0,0,0,.35);
     }
-    .price-box h3{ text-align:center; margin:.4rem 0 1rem; font-size:1.45rem; }
+    .price-box .badge{
+      position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+      background:var(--gold); color:#000; font-weight:700; letter-spacing:.06em;
+      padding:.5rem 1rem; border-radius:12px; text-transform:uppercase; box-shadow:0 6px 16px rgba(0,0,0,.35);
+    }
+    .price-head{ display:flex; align-items:baseline; justify-content:space-between; gap:.75rem; margin:.25rem 0 1rem; }
+    .price-title{ font-size:clamp(1.2rem, 2.5vw + .6rem, 1.45rem); margin:0; font-weight:700; text-wrap:balance; }
+    .price{ font-size:clamp(1.2rem, 3.5vw + .6rem, 1.7rem); font-weight:700; color:#fff; }
     .price-box ul{ list-style:none; margin:0 0 1.25rem; padding:0; line-height:1.55; font-size:1.05rem; }
-    .price-box ul li{
-      display:block; margin:.6rem 0; padding-left:1.4rem; position:relative;
-      word-break:normal; hyphens:auto;
-    }
+    .price-box ul li{ display:block; margin:.6rem 0; padding-left:1.4rem; position:relative; word-break:normal; hyphens:auto; }
     .price-box ul li::before{ content:"✓"; color:var(--gold); position:absolute; left:0; top:.15rem; font-weight:700; }
-    .price-box .cta-button{
-      display:block !important; width:100%; max-width:360px; margin:1rem auto 0;
-      text-align:center;
-    }
-    .price-box p em{ color:#aaa; display:block; text-align:center; }
-
-    /* Pricing header row */
-    .price-head{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap:.75rem;
-      margin:.25rem 0 1rem;
-    }
-    .price-title{
-      font-size:clamp(1.2rem, 2.5vw + .6rem, 1.45rem);
-      margin:0;
-      font-weight:700;
-      text-wrap:balance;
-    }
-    .price{
-      font-size:clamp(1.2rem, 3.5vw + .6rem, 1.7rem);
-      font-weight:700;
-      color:#fff;
-    }
+    .price-box .cta-button{ display:block !important; width:100%; max-width:360px; margin:1rem auto 0; text-align:center; }
+    .price-note{ font-size:.9rem; color:#aaa; margin-top:1rem; text-align:center; }
 
     /* Outcomes panel */
     .outcomes{
@@ -263,35 +234,27 @@
     #mlb2-28577420 .loading{ display:none !important; }
     #mlb2-28577420 .ml-form-embedWrapper, #mlb2-28577420 input, #mlb2-28577420 button{ font-family:inherit !important; font-size:1rem; }
 
-    /* Helpers */
-    .no-bullets{ list-style:none; padding-left:0; margin:0; }
-
     /* Mobile tweaks */
     @media (max-width:768px){
       .section{ padding:3rem 1rem; }
       #feature-bar{ flex-wrap:wrap; gap:.6rem 1rem; font-size:.9rem; }
       .price-box{ padding:1.25rem; margin:0 1rem; }
-      .price-box h3{ font-size:1.25rem; }
-      .price-box ul{ font-size:1rem; line-height:1.55; }
-      .price-box .cta-button{ max-width:100%; font-size:1.05rem; padding:.95rem 1rem; }
-      .review-slide{ min-width:85vw; max-width:85vw; }
-    }
-
-    /* Badge (desktop) — unified rule */
-    .price-box .badge{
-      position:absolute; top:-18px; left:50%; transform:translateX(-50%);
-      background:var(--gold); color:#000; font-weight:700; letter-spacing:.06em;
-      padding:.5rem 1rem; border-radius:12px; text-transform:uppercase; box-shadow:0 6px 16px rgba(0,0,0,.35);
-    }
-    /* Mobile: put badge inside */
-    @media (max-width:480px){
-      html { font-size:18px; }                 /* calm iOS auto-zoom */
-      .price-box{ padding:1.4rem 1rem 1.6rem; }
-      .price-box .badge{ position:relative; top:auto; left:auto; transform:none; margin:0 auto .6rem; }
-      .price-head{ margin:.25rem 0 1rem; }
       .price-title{ font-size:1.2rem; }
       .price{ font-size:1.4rem; }
-      .price-box .cta-button{ width:100%; margin-top:1.1rem; padding:.9rem 1.1rem; border-radius:12px; }
+      .price-box .cta-button{ max-width:100%; font-size:1.05rem; padding:.95rem 1rem; }
+      .review-slide{ min-width:85vw; max-width:85vw; }
+      .ch-w-grid{ grid-template-columns:1fr; }
+      .ch-w-metrics{ grid-template-columns:1fr 1fr; }
+    }
+
+    /* Mobile fixes for the badge */
+    @media (max-width: 480px){
+      html { font-size: 18px; }
+      .price-box{ padding:1.4rem 1rem 1.6rem; }
+      .price-box .badge{
+        position:relative; top:auto; left:auto; transform:none;
+        display:inline-block; margin:0 auto .6rem;
+      }
     }
   </style>
 
@@ -339,7 +302,7 @@
       <div>Clean OTD Emails</div><div>Kill Junk Fees</div><div>Instant Access</div><div>New • Used • Lease</div>
     </section>
 
-    <!-- PROOF -->
+    <!-- PROOF (dark worksheet card) -->
     <section id="proof" class="section" style="background:#111;border-radius:12px;">
       <h2 style="text-align:center;">Real Worksheet: Before → After</h2>
       <p style="text-align:center;color:#ccc;max-width:760px;margin:0 auto 1rem;">
@@ -347,20 +310,65 @@
         Result: <strong>less financed</strong> and a <strong>lower monthly payment</strong> at 60 months.
       </p>
 
-      <div class="imgs">
-        <figure>
-          <a class="thumb" href="/assets/img/proof-before.png" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/img/proof-before.png" loading="lazy" decoding="async" alt="Dealer worksheet with add-ons and inflated taxes">
-          </a>
-          <figcaption>Before: add-ons inflate total & taxes</figcaption>
-        </figure>
-        <figure>
-          <a class="thumb" href="/assets/img/proof-after.png" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/img/proof-after.png" loading="lazy" decoding="async" alt="Clean worksheet after removing add-ons; lower amount financed">
-          </a>
-          <figcaption>After: add-ons removed, lower amount financed</figcaption>
-        </figure>
-      </div>
+      <!-- Clickable summary card opens your combined image in a new tab -->
+      <a class="ch-w-link" href="/assets/img/worksheet-before-after.png" target="_blank" rel="noopener" aria-label="Open the actual (redacted) worksheets: before & after">
+        <div class="ch-worksheet">
+          <div class="ch-w-top">
+            <h3>2025 Honda CR-V — Body Type</h3>
+            <p>Color: Black</p>
+          </div>
+
+          <div class="ch-w-grid">
+            <!-- BEFORE -->
+            <div class="ch-w-scen">
+              <div class="ch-w-kicker before">Before: With Add-Ons</div>
+              <table class="ch-w-table">
+                <thead>
+                  <tr>
+                    <th>$ Down</th>
+                    <th>48 Months<div class="sub">@ 2.9%</div></th>
+                    <th>60 Months<div class="sub">@ 3.9%</div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>$0</td><td class="money">$962</td><td class="money is-highlight">$800</td></tr>
+                  <tr><td>$1,000</td><td class="money">$940</td><td class="money">$782</td></tr>
+                  <tr><td>$2,500</td><td class="money">$907</td><td class="money">$754</td></tr>
+                </tbody>
+              </table>
+              <dl class="ch-w-metrics">
+                <div><dt>Total Taxes</dt><dd>$2,426.22</dd></div>
+                <div><dt>Amount Financed</dt><dd>$43,567.92</dd></div>
+              </dl>
+            </div>
+
+            <!-- AFTER -->
+            <div class="ch-w-scen">
+              <div class="ch-w-kicker">After: Clean Deal</div>
+              <table class="ch-w-table">
+                <thead>
+                  <tr>
+                    <th>$ Down</th>
+                    <th>48 Months<div class="sub">@ 2.9%</div></th>
+                    <th>60 Months<div class="sub">@ 3.9%</div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>$0</td><td class="money">$881</td><td class="money is-highlight">$732</td></tr>
+                  <tr><td>$1,000</td><td class="money">$859</td><td class="money">$714</td></tr>
+                  <tr><td>$2,500</td><td class="money">$826</td><td class="money">$687</td></tr>
+                </tbody>
+              </table>
+              <dl class="ch-w-metrics">
+                <div><dt>Total Taxes</dt><dd>$2,217.00</dd></div>
+                <div><dt>Amount Financed</dt><dd>$39,871.70</dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="ch-w-note">Tap to view the actual redacted worksheet (opens in a new tab)</div>
+        </div>
+      </a>
 
       <p style="text-align:center;color:#888;margin-top:.75rem;font-size:.9rem;">Examples are real, redacted. Results vary by state taxes and fees.</p>
     </section>
@@ -437,7 +445,7 @@
     </section>
 
     <div style="margin:20px auto 0;max-width:760px;padding:14px 16px;background:#111;border:1px solid #2b2b2b;border-radius:10px;display:flex;gap:10px;align-items:center;justify-content:center;color:#ddd;text-align:center;">
-      <img src="/assets/img/founder.jpg" alt="CarHandled founder" style="width:48px;height:48px;border-radius:999px;border:1px solid #333;display:block;">
+      <img src="/assets/img/founder.jpg" alt="CarHandled founder" style="width:48px;height:48px;border-radius:999px;border:1px solid #333;display:show;">
       <span>Built by an ex-dealer who’s negotiated 500+ deals — now on the buyer’s side.</span>
       <a href="about.html" style="color:#C6A972;text-decoration:none;margin-left:.35rem;">Read the 2-minute story →</a>
     </div>
@@ -454,14 +462,14 @@
       <h2 style="color:#C6A972;text-align:center;">From the Blog</h2>
       <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-top:2rem;">
         <a href="blog1.html" class="blog-tile">
-          <img src="assets/img/blog1.jpg" loading="lazy" decoding="async" alt="What's Inside Toolkit">
+          <img src="assets/img/blog1.jpg" alt="What's Inside Toolkit">
           <div class="blog-overlay">
             <h3>How the CarHandled Toolkit Helps You Win at the Dealership</h3>
             <p>Breakdown of every tool inside — scripts, calculators, and more.</p>
           </div>
         </a>
         <a href="blog2.html" class="blog-tile">
-          <img src="assets/img/blog2.jpg" loading="lazy" decoding="async" alt="Toolkit Comparison">
+          <img src="assets/img/blog2.jpg" alt="Toolkit Comparison">
           <div class="blog-overlay">
             <h3>Top 5 Car Buying Toolkits in 2025</h3>
             <p>We compared the top tools. Here’s why CarHandled leads the pack.</p>
