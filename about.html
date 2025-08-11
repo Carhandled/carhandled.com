@@ -1,315 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About CarHandled</title>
-  <meta name="description" content="Get to know CarHandled — the team behind smarter, simpler car buying." />
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="About CarHandled">
-  <meta property="og:description" content="Learn more about the people, values, and purpose behind CarHandled — a smarter way to buy cars." />
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="About CarHandled">
-  <meta property="og:description" content="Learn more about the people, values, and purpose behind CarHandled — a smarter way to buy cars." />
-  <meta property="og:image" content="https://www.carhandled.com/assets/img/about-og.jpg">
-  <meta property="og:url" content="https://www.carhandled.com/about.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About CarHandled">
-  <meta name="twitter:description" content="We help car buyers move smarter — with tools, strategy, and real support from start to finish.">
-  <meta name="twitter:image" content="https://www.carhandled.com/assets/img/aboutbackground.jpg">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" />
-<link rel="stylesheet" href="style.css">
+  <!-- Analytics (same as homepage) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BP6Z06536"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-1BP6Z06536');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>About CarHandled — Our 2-Minute Story, Values & Reviews</title>
+  <meta name="description" content="Why CarHandled exists, the story behind it, and what buyers say. Built by an ex-dealer to help you win your next car deal." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url"  content="https://www.carhandled.com/about.html" />
+  <meta property="og:title" content="About CarHandled — Our 2-Minute Story, Values & Reviews" />
+  <meta property="og:description" content="Built by an ex-dealer to help buyers win. Read our story and what clients say." />
+  <meta property="og:image" content="https://www.carhandled.com/assets/img/aboutbackground.jpg" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="About CarHandled — Our 2-Minute Story, Values & Reviews" />
+  <meta name="twitter:description" content="Built by an ex-dealer to help buyers win. Read our story and what clients say." />
+  <meta name="twitter:image"       content="https://www.carhandled.com/assets/img/aboutbackground.jpg" />
+
+  <link rel="canonical" href="https://www.carhandled.com/about.html" />
+  <link rel="preload" as="image" href="/assets/img/aboutbackground.jpg" fetchpriority="high">
+
+  <!-- Nice default font stack with Optima first -->
   <style>
-    body {
-      margin: 0;
-      font-family: 'Optima', sans-serif;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-    }
-    header {
-  background-color: #000;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: padding 0.3s ease;
-}
+    :root{ --gold:#C6A972; --ink:#f5f5f5; --panel:#111; --bg:#0f0f0f; --muted:#bcbcbc; }
 
-header img {
-  height: 48px;
-  transition: height 0.3s ease;
-}
+    /* Typography + baseline */
+    html{
+      font-family: Optima, "URW Classico", "Segoe UI", Candara, "Noto Sans",
+                   "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+      font-size:20px; line-height:1.7; scroll-behavior:smooth; text-wrap:pretty;
+      -webkit-text-size-adjust:100%;
+    }
+    html,body,body *{ font-family:inherit !important; }
+    body{ margin:0; background:var(--bg); color:var(--ink);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
 
-header.shrink {
-  padding: 0.5rem 1.2rem;
-}
+    /* Header (matches homepage) */
+    header{
+      background:#000; padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between;
+      position:sticky; top:0; z-index:1000; transition:padding .3s ease;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    header img{ height:48px; transition:height .3s ease; }
+    header.shrink{ padding:.5rem 1.2rem; }
+    header.shrink img{ height:36px; }
+    #hamburger{ display:flex; flex-direction:column; cursor:pointer; }
+    #hamburger span{ background:var(--gold); height:3px; width:25px; margin:4px 0; }
+    #hamburger:focus{ outline:2px solid var(--gold); outline-offset:4px; }
+    #mobileNav{
+      display:none; flex-direction:column; position:absolute; top:60px; right:0; background:#000;
+      width:100%; padding:1rem 2rem; text-align:right; transition:opacity .25s ease-in-out;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    #mobileNav a{ color:var(--gold); margin:.8rem 0; text-decoration:none; font-size:1.05rem; }
 
-header.shrink img {
-  height: 36px;
-}
+    /* Hero with permanent overlay */
+    .hero{
+      position:relative; background:url('/assets/img/aboutbackground.jpg') center/cover no-repeat;
+      min-height:68vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center; padding:6rem 1.5rem 3rem;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .hero::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.45); z-index:0; }
+    .hero > *{ position:relative; z-index:1; }
+    .eyebrow{ color:var(--gold); text-transform:uppercase; letter-spacing:.18em; font-size:.9rem; margin:0 0 .35rem; }
+    .hero h1{ margin:.25rem 0 0; font-size:3rem; color:var(--gold); line-height:1.15; text-wrap:balance; }
+    .hero p{ margin:1rem auto 0; max-width:760px; color:#ddd; font-size:1.15rem; }
 
-    #hamburger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
+    /* Sections */
+    .section{ padding:3.2rem 1.25rem; max-width:880px; margin:0 auto; }
+    .section.narrow{ max-width:760px; }
+    .section h2{
+      color:var(--gold); font-size:1.8rem; margin:0 0 1rem;
+      border-bottom:1px solid var(--gold); padding-bottom:.5rem; text-wrap:balance;
     }
-    #hamburger span {
-      background: #C6A972;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
+    .muted{ color:#cfcfcf; }
+
+    /* Founder card */
+    .founder{
+      display:grid; grid-template-columns:88px 1fr; gap:14px; align-items:center;
+      padding:14px 16px; background:var(--panel); border:1px solid #2b2b2b; border-radius:12px;
+      box-shadow:0 10px 24px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.03);
+      margin:1rem 0 0;
     }
-    #mobileNav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #000;
-      width: 100%;
-      padding: 1rem 2rem;
-      text-align: right;
+    .founder img{ width:88px; height:88px; border-radius:999px; border:1px solid #333; object-fit:cover; }
+    .founder p{ margin:0; color:#ddd; }
+    .founder strong{ color:var(--gold); }
+
+    /* Story toggle (native details/summary) */
+    .story-more{ margin-top:.75rem; background:#0e0e0e; border:1px solid #242424; border-radius:12px; }
+    .story-more summary{
+      cursor:pointer; padding:1rem 1.1rem; list-style:none; position:relative; user-select:none;
+      color:var(--gold); font-weight:700;
     }
-    #mobileNav a {
-      color: #C6A972;
-      margin: 0.8rem 0;
-      text-decoration: none;
-      font-size: 1.1rem;
+    .story-more summary::-webkit-details-marker{ display:none; }
+    .story-more summary::after{
+      content:'▾'; position:absolute; right:1rem; top:1rem; transition:transform .2s ease;
     }
-    .hero {
-      background: url('assets/img/aboutbackground.jpg') center/cover no-repeat;
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-      color: #f5f5f5;
+    .story-more[open] summary::after{ transform:rotate(180deg); }
+    .story-more .content{ padding:0 1.1rem 1.1rem; color:#d9d9d9; }
+    .story-more p{ margin:.9rem 0; }
+
+    /* Values list */
+    .values{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:12px; margin-top:1rem; }
+    .value{
+      background:#121212; border:1px solid #262626; border-radius:12px; padding:1rem;
     }
-    .hero h1 {
-      font-size: 2.8rem;
-      color: #C6A972;
-      margin-bottom: 1rem;
+    .value h3{ margin:.2rem 0 .35rem; color:#fff; font-size:1.1rem; }
+    .value p{ margin:0; color:#c9c9c9; font-size:1rem; }
+
+    /* Reviews (matches homepage style) */
+    .review-slider-container{ overflow:hidden; position:relative; margin-top:.5rem; }
+    .review-slider{ display:flex; width:max-content; animation:scroll 45s linear infinite; }
+    .review-slider:hover{ animation-play-state:paused; }
+    .review-slide{
+      flex:0 0 auto; width:300px; margin-right:1.2rem; padding:1rem;
+      background:#121212; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,.35);
+      border:1px solid #242424; color:#eee;
     }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      color: #ddd;
+    .review-stars{ color:var(--gold); font-size:1.1rem; margin-bottom:.4rem; }
+    @keyframes scroll{ 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} }
+    @media (prefers-reduced-motion:reduce){ .review-slider{ animation:none; } }
+
+    /* CTA */
+    .cta-row{
+      display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; margin-top:1.25rem;
     }
-    .section {
-      padding: 4rem 1.5rem;
-      max-width: 800px;
-      margin: auto;
+    .cta-button{
+      background:var(--gold); color:#000; padding:.95rem 1.35rem; font-weight:700; border-radius:12px;
+      text-decoration:none; font-size:1.05rem; display:inline-flex; align-items:center; justify-content:center;
+      transition:transform .06s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow:0 10px 24px rgba(198,169,114,.18);
     }
-    .section h1, .section h2 {
-      color: #C6A972;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #C6A972;
-      padding-bottom: 0.5rem;
+    .cta-button:hover{ background:#b8965c; color:#fff; }
+    .cta-button:active{ transform:translateY(1px); }
+
+    /* Footer */
+    .footer{
+      background:#111; text-align:center; padding:2rem 1rem; font-size:.95rem; color:#aaa;
+      border-top:1px solid rgba(255,255,255,.06);
     }
-    .section p {
-      color: #ccc;
-      line-height: 1.7;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-    .founder-section {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .founder-section img {
-      border-radius: 100px;
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-    .cta-button {
-      background: #C6A972;
-      color: #000;
-      padding: 0.8rem 2rem;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      display: inline-block;
-      margin-top: 1.5rem;
-    }
-    .footer {
-      background-color: #111;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    .footer a {
-      color: #aaa;
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
-.testimonial-carousel-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-    .testimonial-carousel {
-      display: flex;
-      gap: 1.5rem;
-      animation: scrollCarousel 40s linear infinite;
-    }
-    .testimonial {
-      flex: 0 0 80%;
-      background: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(198,169,114,0.15);
-      color: #eee;
-      position: relative;
-    }
-    .testimonial strong {
-      color: #C6A972;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    .stars {
-      color: gold;
-      margin-bottom: 0.5rem;
-    }
-    @keyframes scrollCarousel {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-900%); }
+    .footer a{ color:#aaa; margin:0 .5rem; text-decoration:none; }
+
+    /* Spacing rhythm on mobile (tighter) */
+    @media (max-width:768px){
+      .hero{ padding:5.5rem 1rem 2.5rem; }
+      .hero h1{ font-size:2rem; }
+      .hero p{ font-size:1rem; }
+      .section{ padding:2.4rem 1rem; }
+      .review-slide{ min-width:82vw; max-width:82vw; margin-right:1rem; }
+      .founder{ grid-template-columns:64px 1fr; }
+      .founder img{ width:64px; height:64px; }
     }
   </style>
-   <!-- Hotjar Tracking Code for https://www.carhandled.com/ -->
-<script>
+
+  <!-- Hotjar (same as homepage) -->
+  <script>
     (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:6473373,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:6473373,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+  </script>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <a href="index.html"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
-    <div id="hamburger" onclick="toggleNav()">
-      <span></span>
-      <span></span>
-      <span></span>
+    <a href="index.html" aria-label="CarHandled home">
+      <img src="assets/img/logo.png" alt="CarHandled Logo">
+    </a>
+
+    <div id="hamburger" onclick="toggleNav()" role="button" aria-label="Toggle navigation" aria-controls="mobileNav" aria-expanded="false" tabindex="0">
+      <span></span><span></span><span></span>
     </div>
-  <nav id="mobileNav">
+
+    <nav id="mobileNav">
       <a href="index.html">Home</a>
       <a href="services.html">Concierge</a>
-      <a href="about.html">About</a>
+      <a href="about.html" aria-current="page">About</a>
       <a href="intake.html">Get Started</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Smarter Car Buying Starts Here</h1>
-    <p>We're here to help you feel confident from first quote to final signature — because we’ve been there too.</p>
-  </section>
+    <p class="eyebrow">About CarHandled</p>
+    <h1>Smarter car buying starts here</h1>
+    <p>Built by an ex-dealer who saw how the game is played—and left to help buyers win. Our goal: clarity, leverage, and zero regrets at signing.</p>
 
-  <section class="section">
-    <h2>Our Story</h2>
-    <p>I came to the United States with ambition and excitement — but like many, I quickly found myself needing a car. The process was confusing, the dealers were unhelpful, and I had no idea how anything worked. I finally found a car I liked and could afford — but I was taken advantage of. They charged me 18% interest just because I was new to the country and didn’t know better.</p>
-
-    <p>I remember sitting in that finance office, heart pounding, signing papers I didn’t fully understand. I walked out with a car — and a pit in my stomach. Later, when I learned how badly I’d been overcharged, I was furious. But mostly, I was disappointed. No one had my back.</p>
-
-    <p>A few years later, I got a chance to work inside a dealership. I wanted to give customers the experience I never got — honest, clear, and on their side. And for a while, I did. I helped people save thousands, avoided shady add-ons, and gave them clarity dealers didn’t offer. </p>
-
-    <p>My mission is always to help first-time buyers and anyone walking into a dealership without backup. That’s why I built CarHandled. To protect people like me. To make sure no one signs a deal they’ll regret later. To bring clarity and strategy to a process that’s stacked against the buyer.</p>
-
-    <p>Today, we combine real dealership insight, powerful buyer tools, and personal support to help you drive away smarter — and prouder. Whether you use our Toolkit or hire us as your Concierge, the goal is the same: give you the upper hand and peace of mind.</p>
-
-    <div class="founder-section">
-      <img src="assets/img/founder.jpg" alt="Ali Camur, Founder of CarHandled">
-      <p><strong>Ali Camur, Founder of CarHandled</strong><br />We’ve been on both sides of the table. Now we’re on yours.</p>
-      <a href="intake.html" class="cta-button">Work With Us</a>
+    <div class="cta-row">
+      <a class="cta-button" href="intake.html">Work With Us</a>
+      <a class="cta-button" href="index.html#pricing" style="background:#1c1c1c; color:#f5f5f5; border:1px solid #2b2b2b; box-shadow:none;">Get the Toolkit</a>
     </div>
   </section>
 
-   <section class="section">
-    <h2>What Clients Said About Ali</h2>
- <div class="testimonial-carousel-wrapper">
-      <div class="testimonial-carousel">
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Samantha H.</strong>Ali was so helpful during the entire process of purchasing my new Defender. He was honest, responsive, and worked really hard to get us a good deal that made us feel good about the purchase and our commitment to the Land Rover brand.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Darin M.</strong>Ali was fantastic and the entire process was smooth and helpful.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Serhat C.</strong>This is, I believe, the third or fourth Range Rover I have purchased with Ali. Every time, he makes the process extremely easy for me, so I would like to thank him once again.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Sonya A.</strong>Excellent knowledge and service from Ali — and also helpful assistance from Alyssa.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Nina M.</strong>Ali is professional, highly knowledgeable, and genuinely committed to helping us find the right Range Rover. Seamless and enjoyable — no pressure, just great insights. Truly a five-star experience.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Janel S.</strong>Ali was very nice and knowledgeable. It was an out-of-state purchase which required more work — and they got it done quickly and easily.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Benjamin O.</strong>Very professional, very responsive, and a mature sales experience. Almost zero stress — I felt 100% comfortable throughout.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>Matthew P.</strong>Very pleasant experience. Ali Camur was a key part of my decision to move forward with my deal. He has a good way about him and made the experience easier than normal.</div>
-        <div class="testimonial"><div class="stars">★★★★★</div><strong>James R.</strong>Ali made the purchase very easy. He even dropped off the vehicle at my place of business.</div>
+  <!-- Story -->
+  <section class="section narrow">
+    <h2>Our 2-minute story</h2>
+    <p class="muted">I needed a car in a new country and signed a deal at 18% APR because I didn’t know better. Years later inside a dealership, I learned the playbook—and realized how many people were getting treated like I was. CarHandled exists to flip the script.</p>
+
+    <details id="full-story" class="story-more">
+      <summary>Read the full story</summary>
+      <div class="content">
+        <p>I walked into a finance office confused and walked out with a payment I didn’t fully understand. That feeling stuck. I promised I wouldn’t let it happen to other people.</p>
+        <p>Inside the dealership, I learned what mattered: clean out-the-door quotes, disciplined negotiation, and avoiding junk add-ons. When buyers had the right info and a plan, everything changed.</p>
+        <p>CarHandled is the result—simple tools and clear steps to get a real number in writing, compare options apples-to-apples, and keep control through signing. If you want someone to run the whole play for you, our Concierge does that too.</p>
+      </div>
+    </details>
+
+    <!-- Founder card -->
+    <div class="founder">
+      <img src="assets/img/founder.jpg" alt="Ali, Founder of CarHandled" loading="lazy">
+      <p><strong>Ali</strong><br>We’ve sat on both sides of the desk. Now we sit on yours.</p>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section">
+    <h2>What we stand for</h2>
+    <div class="values">
+      <div class="value">
+        <h3>Clean numbers or no deal</h3>
+        <p>We chase written out-the-door quotes and compare like-for-like. No mystery fees. No games.</p>
+      </div>
+      <div class="value">
+        <h3>Email first, pressure last</h3>
+        <p>Control the process by inbox. Walk in to sign, not to be sold.</p>
+      </div>
+      <div class="value">
+        <h3>Simple beats clever</h3>
+        <p>Plain-English scripts and calculators. If it’s confusing, it’s not helping.</p>
       </div>
     </div>
   </section>
 
+  <!-- Reviews (matches homepage style) -->
+  <section class="section">
+    <h2>What clients say</h2>
+    <div class="review-slider-container">
+      <div class="review-slider">
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Ali made the purchase very easy. He even dropped off the vehicle at my business.”</p><span>— James R.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Professional, responsive, and a mature sales experience. Almost zero stress.”</p><span>— Benjamin O.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Out-of-state deal with extra steps—they got it done quickly and easily.”</p><span>— Janel S.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“We felt 100% comfortable throughout. Exactly what we needed.”</p><span>— Matthew P.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Five-star experience. No pressure—just real guidance.”</p><span>— Nina M.</span></div>
+
+        <!-- Duplicate for infinite loop -->
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Ali made the purchase very easy. He even dropped off the vehicle at my business.”</p><span>— James R.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Professional, responsive, and a mature sales experience. Almost zero stress.”</p><span>— Benjamin O.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Out-of-state deal with extra steps—they got it done quickly and easily.”</p><span>— Janel S.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“We felt 100% comfortable throughout. Exactly what we needed.”</p><span>— Matthew P.</span></div>
+        <div class="review-slide"><div class="review-stars">★★★★★</div><p>“Five-star experience. No pressure—just real guidance.”</p><span>— Nina M.</span></div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta-button" href="intake.html">Start Your Deal</a>
+      <a class="cta-button" href="index.html#pricing" style="background:#1c1c1c; color:#f5f5f5; border:1px solid #2b2b2b; box-shadow:none;">See the Toolkit</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    <p><strong>Contact us:</strong> info@carhandled.com</p>
+    <p><strong>Contact:</strong> info@carhandled.com</p>
     <p>
       <a href="terms-of-use.html">Terms of Use</a>
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="refund-policy.html">Refund Policy</a>
     </p>
     <p>
-      <a href="https://www.instagram.com/carhandled" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-        <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.5.3.9.7 1.2 1.2.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.5-.7.9-1.2 1.2-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.5-.3-.9-.7-1.2-1.2-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.5.7-.9 1.2-1.2.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1c-1.4.1-2.4.3-3.3.7C2.6 1.3 1.8 2 1.2 2.6.6 3.2-.1 4.1 0 5.6-.1 6.9 0 7.3 0 12s-.1 5.1.1 6.4c.1 1.5.7 2.4 1.3 3.1.6.6 1.4 1.3 3.1 1.3 1.3.1 1.7.1 6.4.1s5.1 0 6.4-.1c1.5-.1 2.4-.7 3.1-1.3.6-.6 1.3-1.4 1.3-3.1.1-1.3.1-1.7.1-6.4s0-5.1-.1-6.4c-.1-1.5-.7-2.4-1.3-3.1-.6-.6-1.4-1.3-3.1-1.3C15.7.1 15.3 0 12 0z"/>
-          <path d="M12 5.8A6.2 6.2 0 0 0 5.8 12 6.2 6.2 0 0 0 12 18.2 6.2 6.2 0 0 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8.1 4 4 0 0 1 0 8.1zM18.4 4.9a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/>
-        </svg>
+      <a href="https://www.instagram.com/carhandled" target="_blank" rel="noopener noreferrer" style="color:#aaa; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+        <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.5.3.9.7 1.2 1.2.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.5-.7.9-1.2 1.2-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.5-.3-.9-.7-1.2-1.2-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.5.7-.9 1.2-1.2.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1c-1.4.1-2.4.3-3.3.7C2.6 1.3 1.8 2 1.2 2.6.6 3.2-.1 4.1 0 5.6-.1 6.9 0 7.3 0 12s-.1 5.1.1 6.4c.1 1.5.7 2.4 1.3 3.1.6.6 1.4 1.3 3.1 1.3 1.3.1 1.7.1 6.4.1s5.1 0 6.4-.1c1.5-.1 2.4-.7 3.1-1.3.6-.6 1.3-1.4 1.3-3.1.1-1.3.1-1.7.1-6.4s0-5.1-.1-6.4c-.1-1.5-.7-2.4-1.3-3.1-.6-.6-1.4-1.3-3.1-1.3C15.7.1 15.3 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 0 0 5.8 12 6.2 6.2 0 0 0 12 18.2 6.2 6.2 0 0 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8.1 4 4 0 0 1 0 8.1zM18.4 4.9a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/></svg>
         Follow us on Instagram
       </a>
     </p>
     <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
   </footer>
 
+  <!-- Scripts (shared behaviors) -->
   <script>
-    function toggleNav() {
-      const nav = document.getElementById("mobileNav");
-      if (nav.style.display === "flex") {
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.display = "none", 300);
-      } else {
-        nav.style.display = "flex";
-        nav.style.opacity = 0;
-        setTimeout(() => nav.style.opacity = 1, 10);
-      }
-    }
-  </script>
-  <script>
-  let lastScroll = 0;
-  const header = document.querySelector("header");
-  const mobileNav = document.getElementById("mobileNav");
+    // Sticky header shrink + close mobile nav on scroll
+    let lastScroll = 0;
+    const header = document.querySelector("header");
+    const mobileNav = document.getElementById("mobileNav");
 
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
+    window.addEventListener("scroll", () => {
+      const y = window.pageYOffset;
+      if (y > 50 && y > lastScroll) header.classList.add("shrink");
+      else if (y < 50) header.classList.remove("shrink");
 
-    // Shrink header on scroll down
-    if (currentScroll > 50 && currentScroll > lastScroll) {
-      header.classList.add("shrink");
-
-      // Auto-close mobile nav if open
       if (mobileNav && mobileNav.style.display === "flex") {
         mobileNav.style.display = "none";
+        document.getElementById("hamburger").setAttribute("aria-expanded","false");
       }
+      lastScroll = y;
+    });
 
-    } else if (currentScroll < 50) {
-      header.classList.remove("shrink");
+    function toggleNav(){
+      const nav = document.getElementById("mobileNav");
+      const btn = document.getElementById("hamburger");
+      if (nav.style.display === "flex") {
+        nav.style.opacity = 0;
+        setTimeout(()=>{ nav.style.display="none"; btn.setAttribute("aria-expanded","false"); }, 250);
+      } else {
+        nav.style.display = "flex"; nav.style.opacity = 0;
+        setTimeout(()=>{ nav.style.opacity = 1; btn.setAttribute("aria-expanded","true"); }, 10);
+      }
     }
 
-    lastScroll = currentScroll;
-  });
-</script>
+    // Keyboard open for hamburger
+    document.getElementById("hamburger").addEventListener("keydown", (e)=>{
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleNav(); }
+    });
 
+    // Auto-open story if linked via #full-story
+    if (location.hash === '#full-story') {
+      const d = document.getElementById('full-story');
+      if (d) { d.open = true; d.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+  </script>
 </body>
 </html>
