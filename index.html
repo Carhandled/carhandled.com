@@ -63,7 +63,6 @@
   <style>
     :root { --gold:#C6A972; --ink:#f5f5f5; --panel:#1a1a1a; }
 
-    /* Typography + smoothing */
     html{
       font-family: Optima,"URW Classico","Segoe UI",Candara,"Noto Sans","Source Sans 3","Helvetica Neue",Arial,sans-serif;
       font-size:20px;
@@ -96,7 +95,7 @@
     #mobileNav{ display:none; flex-direction:column; position:absolute; top:60px; right:0; background:#000; width:100%; padding:1rem 2rem; text-align:right; transition:opacity .3s ease-in-out; }
     #mobileNav a{ color:var(--gold); margin:.8rem 0; text-decoration:none; font-size:1.1rem; }
 
-    /* HERO (permanent overlay) */
+    /* HERO */
     .hero{
       position:relative; background:url('/assets/img/toolkitbackground.jpg') center/cover no-repeat;
       padding:8rem 2rem 3rem; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:80vh;
@@ -111,48 +110,60 @@
       .hero p{ font-size:1rem; margin-top:1rem; }
     }
 
-    /* Global sections */
-    .section{ padding:3.25rem 1.5rem; max-width:800px; margin:auto; }
+    /* Sections */
+    .section{ padding:2.8rem 1.5rem; max-width:800px; margin:auto; }
     .section h2{ color:var(--gold); font-size:1.8rem; margin:0 0 1rem; border-bottom:1px solid var(--gold); padding-bottom:.5rem; text-wrap:balance; }
-    .section li{ margin-bottom:1rem; padding-left:1.2rem; position:relative; }
-    .section li::before{ content:"\2713"; position:absolute; left:0; color:var(--gold); }
 
     /* Feature bar */
     #feature-bar{ display:flex; justify-content:center; gap:1rem; padding:1rem; background:#111; font-size:.95rem; color:var(--gold); border-top:1px solid #444; border-bottom:1px solid #444; }
 
-    /* ---- Proof card (image + caption) ---- */
-    #proof .proof-card{
-      background:#0f0f0f; border:1px solid #2b2b2b; border-radius:12px;
-      padding:1rem; max-width:980px; margin:0 auto 1rem;
-      box-shadow:0 6px 18px rgba(0,0,0,.35);
+    /* CLICKABLE SUMMARY CARD (Proof) */
+    .ch-w-link{ text-decoration:none; color:inherit; display:block; }
+    .ch-worksheet{
+      background:#0f0f0f; border:1px solid #2b2b2b; border-radius:16px;
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+      padding:1.1rem 1.1rem 1.2rem;
+      transition:transform .18s ease, border-color .18s ease;
     }
-    #proof .proof-card img{ width:100%; height:auto; display:block; border-radius:8px; }
-    #proof .caption{ text-align:center; color:#9aa; font-size:.9rem; margin-top:.5rem; }
+    .ch-worksheet:hover{ transform:translateY(-2px); border-color:var(--gold); }
+    .ch-w-top{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; }
+    .ch-w-top h3{ margin:.15rem 0 .25rem; font-size:1.2rem; color:#e9e9e9; }
+    .ch-w-top p{ margin:0; color:#9aa; font-size:.95rem; }
 
-    /* ---- Proof: numeric summary table ---- */
-    .proof-table{
-      margin:1rem auto 0;
-      background:#0f0f0f;
-      border:1px solid #2b2b2b;
-      border-radius:12px;
-      overflow:hidden;
-      max-width:900px;
-      box-shadow:0 6px 18px rgba(0,0,0,.35);
+    .ch-w-grid{
+      margin-top:.8rem;
+      display:grid; grid-template-columns:1fr 1fr; gap:1rem;
     }
-    .proof-row{
-      display:grid;
-      grid-template-columns: 1.4fr .9fr .35fr .9fr .9fr;
-      gap:.6rem;
-      align-items:center;
-      padding:.75rem 1rem;
-      border-top:1px solid #1c1c1c;
+    .ch-w-scen{
+      background:#121212; border:1px solid #262626; border-radius:12px; padding:.9rem;
     }
-    .proof-row:first-child{ border-top:none; }
-    .proof-label{ color:#ddd; }
-    .proof-num{ font-variant-numeric: tabular-nums; color:#eee; }
-    .proof-arrow{ text-align:center; opacity:.7; }
-    .proof-delta{ text-align:right; color:#57c776; font-weight:700; }
-    .proof-muted{ color:#9aa; }
+    .ch-w-kicker{
+      display:inline-block; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
+      color:#cfd6cf; background:#171717; border:1px solid #262626; border-radius:999px;
+      padding:.25rem .6rem; margin-bottom:.5rem;
+    }
+    .ch-w-kicker.before{ color:#ffd5d5; border-color:#3a2828; background:#1a1313; }
+
+    .ch-w-table{ width:100%; border-collapse:separate; border-spacing:0; }
+    .ch-w-table th, .ch-w-table td{
+      padding:.5rem .55rem; text-align:center; border-bottom:1px solid #262626;
+      font-variant-numeric:tabular-nums;
+    }
+    .ch-w-table th{ color:#bfbfbf; font-weight:700; font-size:.92rem; }
+    .ch-w-table .sub{ font-weight:400; color:#8d8d8d; font-size:.8rem; }
+    .ch-w-table td{ color:#ddd; }
+    .money{ color:#57c776; font-weight:700; }
+    .is-highlight{ background:rgba(46, 125, 50,.18); border-radius:8px; }
+
+    .ch-w-metrics{
+      margin-top:.55rem;
+      display:grid; grid-template-columns:1fr 1fr; gap:.6rem;
+      color:#cfcfcf; font-size:.95rem;
+    }
+    .ch-w-metrics dt{ color:#9aa; font-weight:600; }
+    .ch-w-metrics dd{ margin:0; font-variant-numeric:tabular-nums; }
+
+    .ch-w-note{ margin-top:.8rem; text-align:center; color:#9aa; font-size:.95rem; }
 
     /* PRICING */
     .price-box{
@@ -160,31 +171,26 @@
       border-radius:16px; background:var(--panel); border:1px solid var(--gold);
       box-shadow:0 6px 22px rgba(0,0,0,.35);
     }
-    .price-head{
-      display:flex; align-items:baseline; justify-content:space-between;
-      gap:.75rem; margin:.25rem 0 1rem;
-    }
-    .price-title{ font-size:1.45rem; margin:0; font-weight:700; text-wrap:balance; }
+    .price-head{ display:flex; align-items:baseline; justify-content:space-between; gap:.75rem; margin:.25rem 0 1rem; }
+    .price-title{ font-size:1.45rem; margin:0; font-weight:700; }
     .price{ font-size:1.7rem; font-weight:700; color:#C6A972; }
 
     .price-box .badge{
       position:absolute; top:-18px; left:50%; transform:translateX(-50%);
       background:var(--gold); color:#000; font-weight:700; letter-spacing:.06em;
       padding:.5rem 1rem; border-radius:12px; text-transform:uppercase;
-      box-shadow:0 6px 16px rgba(0,0,0,.35);
-      border:1px solid #8f7a4a;
-      cursor:default; user-select:none;
+      box-shadow:0 6px 16px rgba(0,0,0,.35); border:1px solid #8f7a4a; cursor:default; user-select:none;
     }
 
     .price-box ul{ list-style:none; margin:0 0 1.25rem; padding:0; line-height:1.55; font-size:1.05rem; color:#ccc; }
-    .price-box ul li{ display:block; margin:.6rem 0; padding-left:1.4rem; position:relative; }
+    .price-box ul li{ margin:.6rem 0; padding-left:1.4rem; position:relative; }
     .price-box ul li::before{ content:"✓"; color:var(--gold); position:absolute; left:0; top:.15rem; font-weight:700; }
-    .price-box .cta-button{ display:block !important; width:100%; max-width:360px; margin:1rem auto 0; text-align:center; }
+    .price-box .cta-button{ display:block; width:100%; max-width:360px; margin:1rem auto 0; text-align:center; box-sizing:border-box; }
     .price-note{ font-size:.9rem; color:#aaa; margin-top:1rem; text-align:center; }
 
-    /* Outcomes panel */
+    /* Outcomes */
     .outcomes{
-      max-width:960px; margin:3rem auto; padding:2.2rem 1.6rem;
+      max-width:960px; margin:2.2rem auto; padding:2rem 1.6rem;
       background:#151515; border:1px solid #2b2b2b; border-radius:16px;
       box-shadow:0 10px 28px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);
       text-align:center;
@@ -225,51 +231,52 @@
     @keyframes scroll{ 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} }
     @media (prefers-reduced-motion:reduce){ .review-slider{ animation:none; } }
 
-    /* MailerLite — centered & styled */
+    /* MailerLite */
     #mlb2-28577420.ml-form-embedContainer{ display:block; max-width:520px; margin:2rem auto; }
-    #mlb2-28577420 .ml-form-embedWrapper.embedForm{
-      width:100% !important; max-width:520px; margin:0 auto; background:#111;
-      border:1px solid #2b2b2b; border-radius:12px;
-    }
+    #mlb2-28577420 .ml-form-embedWrapper.embedForm{ width:100% !important; max-width:520px; margin:0 auto; background:#111; border:1px solid #2b2b2b; border-radius:12px; }
     #mlb2-28577420 .ml-form-embedBody{ padding:20px; }
     #mlb2-28577420 .ml-form-embedContent{ text-align:center; margin-bottom:.5rem; }
-    #mlb2-28577420 .ml-form-fieldRow .form-control{
-      width:100% !important; box-sizing:border-box; padding:12px 14px !important; border-radius:8px !important;
-    }
+    #mlb2-28577420 .ml-form-fieldRow .form-control{ width:100% !important; box-sizing:border-box; padding:12px 14px !important; border-radius:8px !important; }
     #mlb2-28577420 .ml-form-embedSubmit{ margin-top:12px; }
-    #mlb2-28577420 .ml-form-embedSubmit .primary{
-      background:var(--gold) !important; color:#000 !important; border:none !important;
-      border-radius:10px !important; padding:.9rem 1rem !important; font-weight:700 !important; width:100% !important;
-    }
+    #mlb2-28577420 .ml-form-embedSubmit .primary{ background:var(--gold) !important; color:#000 !important; border:none !important; border-radius:10px !important; padding:.9rem 1rem !important; font-weight:700 !important; width:100% !important; }
     #mlb2-28577420 .loading{ display:none !important; }
     #mlb2-28577420 .ml-form-embedWrapper, #mlb2-28577420 input, #mlb2-28577420 button{ font-family:inherit !important; font-size:1rem; }
 
-    /* Mobile tweaks */
+    /* MOBILE TWEAKS */
     @media (max-width:768px){
-      .section{ padding:2.25rem 1rem; }                 /* tighter vertical rhythm */
+      .section{ padding:2rem 1rem; }             /* tighter spacing */
       #feature-bar{ flex-wrap:wrap; gap:.6rem 1rem; font-size:.9rem; padding:.85rem 1rem; }
-      .outcomes{ margin:1.75rem 1rem; padding:1.6rem 1rem; }
+      .outcomes{ margin:1.5rem 1rem; padding:1.4rem 1rem; }
       .review-slide{ min-width:85vw; max-width:85vw; }
 
-      .price-box{ padding:1.4rem 1rem 1.6rem; margin:0 1rem; }
+      .ch-w-grid{ grid-template-columns:1fr; }
+      .ch-w-top{ flex-direction:column; gap:.25rem; }
+
+      .price-box{ padding:1.3rem 1rem 1.4rem; margin:0 1rem; }
       .price-head{
         flex-direction:column; align-items:center; gap:.2rem;
-        border-bottom:1px solid #2b2b2b; padding-bottom:.6rem; margin:.25rem 0 1rem;
+        border-bottom:1px solid #2b2b2b; padding-bottom:.6rem; margin:.25rem 0 .9rem;
       }
-      .price-title{ font-size:1.2rem; text-align:center; }
-      .price{ font-size:1.4rem; color:#C6A972; }
+      .price-title{ font-size:1.15rem; text-align:center; }
+      .price{ font-size:1.25rem; color:#ddd; font-weight:600; }   /* blends in better */
 
-      /* Put badge inside the box; not overlapping & not a CTA */
+      /* Badge becomes subtle outline chip */
       .price-box .badge{
         position:relative; top:auto; left:auto; transform:none;
-        display:inline-block; margin:0 auto .6rem; border:1px solid #8f7a4a;
+        display:inline-block; margin:0 auto .6rem;
+        background:transparent; color:var(--gold);
+        border:1px solid #8f7a4a; border-radius:999px; box-shadow:none;
+        letter-spacing:.14em; padding:.35rem .6rem; font-weight:600;
+      }
+
+      .price-box .cta-button{
+        width:100%; max-width:none; margin:1rem 0 0;
+        padding:.95rem 1.05rem; border-radius:12px; box-sizing:border-box;
       }
     }
 
-    /* Hide blog on mobile, keep desktop */
-    @media (max-width:768px){
-      #blog{ display:none; }
-    }
+    /* Hide blog on mobile */
+    @media (max-width:768px){ #blog{ display:none; } }
   </style>
 
   <!-- MailerLite Universal -->
@@ -307,7 +314,7 @@
       <p>Copy the emails. Remove junk fees. Get a clean out-the-door price in writing—before you step inside.</p>
       <a href="#pricing" class="cta-button" aria-label="Get the CarHandled Toolkit with instant access">Get the Toolkit — Instant Access</a>
       <div style="margin-top:.75rem;font-size:.95rem;color:#ddd;">
-        <a href="#proof" style="color:#C6A972;text-decoration:none;">Real worksheet: $7.6k in add-ons removed →</a>
+        <a href="/assets/img/worksheet-before-after.png" target="_blank" rel="noopener" style="color:#C6A972;text-decoration:none;">Real worksheet: $7.6k in add-ons removed →</a>
         <span style="display:block;color:#aaa;margin-top:.35rem;">30-day refund — try it risk-free.</span>
       </div>
     </section>
@@ -324,50 +331,65 @@
         Result: <strong>less financed</strong> and a <strong>lower monthly payment</strong> at 60 months.
       </p>
 
-      <div class="proof-card">
-        <a href="/assets/img/proof-combined.png" target="_blank" rel="noopener">
-          <img src="/assets/img/proof-combined.png" alt="Before and After dealer worksheet comparison showing removed add-ons and lower amount financed">
-        </a>
-        <div class="caption">Tap to view full-size worksheet</div>
-      </div>
-
-      <!-- Numeric summary so the key wins are readable & indexable -->
-      <div class="proof-table" aria-label="Before and after numbers">
-        <div class="proof-row">
-          <div class="proof-label">Dealer add-ons</div>
-          <div class="proof-num">$3,487.00</div>
-          <div class="proof-arrow">→</div>
-          <div class="proof-num">$0.00</div>
-          <div class="proof-delta">−$3,487</div>
-        </div>
-        <div class="proof-row">
-          <div class="proof-label">Taxes</div>
-          <div class="proof-num">$2,426.22</div>
-          <div class="proof-arrow">→</div>
-          <div class="proof-num">$2,217.00</div>
-          <div class="proof-delta">−$209.22</div>
-        </div>
-        <div class="proof-row">
-          <div class="proof-label">Amount financed</div>
-          <div class="proof-num">$43,567.92</div>
-          <div class="proof-arrow">→</div>
-          <div class="proof-num">$39,871.70</div>
-          <div class="proof-delta">−$3,696.22</div>
-        </div>
-        <div class="proof-row">
-          <div class="proof-label">60-mo est. payment</div>
-          <div class="proof-num">$800</div>
-          <div class="proof-arrow">→</div>
-          <div class="proof-num">$732</div>
-          <div class="proof-delta">−$68/mo</div>
-        </div>
-        <div class="proof-row">
-          <div class="proof-label proof-muted">Notes</div>
-          <div class="proof-num proof-muted" style="grid-column:2 / -1">
-            Rates shown 48mo 2.9% / 60mo 3.9%. Examples are real, redacted; results vary by market, taxes/fees, credit, and vehicle selection.
+      <!-- Clickable summary card opens your combined image in a new tab -->
+      <a class="ch-w-link" href="/assets/img/worksheet-before-after.png" target="_blank" rel="noopener" aria-label="Open the actual (redacted) worksheets: before & after">
+        <div class="ch-worksheet">
+          <div class="ch-w-top">
+            <h3>2025 Honda CR-V — Body Type</h3>
+            <p>Color: Black</p>
           </div>
+
+          <div class="ch-w-grid">
+            <!-- BEFORE -->
+            <div class="ch-w-scen">
+              <div class="ch-w-kicker before">Before: With Add-Ons</div>
+              <table class="ch-w-table">
+                <thead>
+                  <tr>
+                    <th>$ Down</th>
+                    <th>48 Months<div class="sub">@ 2.9%</div></th>
+                    <th>60 Months<div class="sub">@ 3.9%</div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>$0</td><td class="money">$962</td><td class="money is-highlight">$800</td></tr>
+                  <tr><td>$1,000</td><td class="money">$940</td><td class="money">$782</td></tr>
+                  <tr><td>$2,500</td><td class="money">$907</td><td class="money">$754</td></tr>
+                </tbody>
+              </table>
+              <dl class="ch-w-metrics">
+                <div><dt>Total Taxes</dt><dd>$2,426.22</dd></div>
+                <div><dt>Amount Financed</dt><dd>$43,567.92</dd></div>
+              </dl>
+            </div>
+
+            <!-- AFTER -->
+            <div class="ch-w-scen">
+              <div class="ch-w-kicker">After: Clean Deal</div>
+              <table class="ch-w-table">
+                <thead>
+                  <tr>
+                    <th>$ Down</th>
+                    <th>48 Months<div class="sub">@ 2.9%</div></th>
+                    <th>60 Months<div class="sub">@ 3.9%</div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>$0</td><td class="money">$881</td><td class="money is-highlight">$732</td></tr>
+                  <tr><td>$1,000</td><td class="money">$859</td><td class="money">$714</td></tr>
+                  <tr><td>$2,500</td><td class="money">$826</td><td class="money">$687</td></tr>
+                </tbody>
+              </table>
+              <dl class="ch-w-metrics">
+                <div><dt>Total Taxes</dt><dd>$2,217.00</dd></div>
+                <div><dt>Amount Financed</dt><dd>$39,871.70</dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="ch-w-note">Tap to view the actual redacted worksheet (opens in a new tab)</div>
         </div>
-      </div>
+      </a>
     </section>
 
     <!-- OUTCOMES -->
@@ -385,7 +407,7 @@
 
     <!-- PRICING -->
     <section id="pricing" class="section">
-      <h2 style="text-align:center;margin-bottom:1.25rem;">Get the CarHandled Toolkit</h2>
+      <h2 style="text-align:center;margin-bottom:1.1rem;">Get the CarHandled Toolkit</h2>
       <div class="price-box">
         <div class="badge" aria-hidden="true">INSTANT DOWNLOAD</div>
 
@@ -414,13 +436,13 @@
       </div>
     </section>
 
-    <section class="section" style="background:#111;border-radius:12px;padding:2rem;margin-top:1.25rem;">
+    <section class="section" style="background:#111;border-radius:12px;padding:2rem;margin-top:1.1rem;">
       <h2>Our Guarantee: 30-Day Refund</h2>
       <p>Try it on your next deal. If you don’t find it valuable, email us within 30 days for a refund.</p>
     </section>
 
-    <section class="section" style="background:#121212;border-radius:12px;padding:2.2rem 1.5rem;margin-top:2rem;">
-      <h2 style="color:#C6A972;text-align:center;margin-bottom:1.4rem;">Real Buyers, Real Results</h2>
+    <section class="section" style="background:#121212;border-radius:12px;padding:2.2rem 1.5rem;margin-top:1.6rem;">
+      <h2 style="color:#C6A972;text-align:center;margin-bottom:1.2rem;">Real Buyers, Real Results</h2>
       <div class="review-slider-container">
         <div class="review-slider">
           <div class="review-slide"><div class="review-stars">★★★★★</div><p>"I negotiated below MSRP using just the scripts. Honestly shocked how well it worked."</p><span>— James T., Austin, TX</span></div>
@@ -449,7 +471,7 @@
     </div>
 
     <!-- Concierge -->
-    <section class="section" style="background:#111;border-radius:12px;padding:2rem;margin-top:2rem;">
+    <section class="section" style="background:#111;border-radius:12px;padding:2rem;margin-top:1.6rem;">
       <h2 style="color:#C6A972;">Want a Pro to Secure the Deal For You?</h2>
       <p style="color:#ccc; font-size:1.05rem;">
         If you'd rather skip the learning curve and let an expert secure the deal for you — we’ve got your back. Our white-glove Concierge Service handles sourcing, negotiating, and delivery coordination for you.
