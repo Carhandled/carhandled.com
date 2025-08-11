@@ -20,7 +20,6 @@
   <link rel="icon"          href="/assets/img/favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
-  <meta name="theme-color" content="#000000">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -107,12 +106,13 @@
     .hero h1{ font-size:3.2rem; font-weight:700; color:var(--gold); letter-spacing:.3px; line-height:1.15; text-shadow:0 2px 4px rgba(0,0,0,.6); text-wrap:balance; }
     .hero p{ font-size:1.2rem; color:#ddd; max-width:700px; margin:1.1rem auto 0; line-height:1.6; }
     @media (max-width:768px){
-      .hero{ padding:6.5rem 1.25rem 2.5rem; }
+      .hero{ padding:6.25rem 1.1rem 2.25rem; }
       .hero h1{ font-size:2rem; text-shadow:none; }
       .hero p{ font-size:1rem; margin-top:1rem; }
     }
 
-    .section{ padding:4rem 1.5rem; max-width:800px; margin:auto; }
+    /* Global sections */
+    .section{ padding:3.25rem 1.5rem; max-width:800px; margin:auto; }
     .section h2{ color:var(--gold); font-size:1.8rem; margin:0 0 1rem; border-bottom:1px solid var(--gold); padding-bottom:.5rem; text-wrap:balance; }
     .section li{ margin-bottom:1rem; padding-left:1.2rem; position:relative; }
     .section li::before{ content:"\2713"; position:absolute; left:0; color:var(--gold); }
@@ -120,19 +120,39 @@
     /* Feature bar */
     #feature-bar{ display:flex; justify-content:center; gap:1rem; padding:1rem; background:#111; font-size:.95rem; color:var(--gold); border-top:1px solid #444; border-bottom:1px solid #444; }
 
-    /* PROOF (combined static image that opens full size) */
-    #proof .imgs{
-      display:grid; justify-content:center;
-      grid-template-columns:minmax(260px, 900px);
-      gap:1rem; max-width:900px; margin:0 auto;
+    /* ---- Proof card (image + caption) ---- */
+    #proof .proof-card{
+      background:#0f0f0f; border:1px solid #2b2b2b; border-radius:12px;
+      padding:1rem; max-width:980px; margin:0 auto 1rem;
+      box-shadow:0 6px 18px rgba(0,0,0,.35);
     }
-    #proof figure{ margin:0; }
-    #proof img{
-      width:100%; height:auto;
-      border-radius:12px; border:1px solid #2b2b2b; box-shadow:0 8px 22px rgba(0,0,0,.45);
+    #proof .proof-card img{ width:100%; height:auto; display:block; border-radius:8px; }
+    #proof .caption{ text-align:center; color:#9aa; font-size:.9rem; margin-top:.5rem; }
+
+    /* ---- Proof: numeric summary table ---- */
+    .proof-table{
+      margin:1rem auto 0;
       background:#0f0f0f;
+      border:1px solid #2b2b2b;
+      border-radius:12px;
+      overflow:hidden;
+      max-width:900px;
+      box-shadow:0 6px 18px rgba(0,0,0,.35);
     }
-    #proof figcaption{ text-align:center; color:#9aa; font-size:.9rem; margin-top:.4rem; letter-spacing:.02em; }
+    .proof-row{
+      display:grid;
+      grid-template-columns: 1.4fr .9fr .35fr .9fr .9fr;
+      gap:.6rem;
+      align-items:center;
+      padding:.75rem 1rem;
+      border-top:1px solid #1c1c1c;
+    }
+    .proof-row:first-child{ border-top:none; }
+    .proof-label{ color:#ddd; }
+    .proof-num{ font-variant-numeric: tabular-nums; color:#eee; }
+    .proof-arrow{ text-align:center; opacity:.7; }
+    .proof-delta{ text-align:right; color:#57c776; font-weight:700; }
+    .proof-muted{ color:#9aa; }
 
     /* PRICING */
     .price-box{
@@ -140,19 +160,27 @@
       border-radius:16px; background:var(--panel); border:1px solid var(--gold);
       box-shadow:0 6px 22px rgba(0,0,0,.35);
     }
+    .price-head{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap:.75rem; margin:.25rem 0 1rem;
+    }
+    .price-title{ font-size:1.45rem; margin:0; font-weight:700; text-wrap:balance; }
+    .price{ font-size:1.7rem; font-weight:700; color:#C6A972; }
+
     .price-box .badge{
       position:absolute; top:-18px; left:50%; transform:translateX(-50%);
       background:var(--gold); color:#000; font-weight:700; letter-spacing:.06em;
-      padding:.5rem 1rem; border-radius:12px; text-transform:uppercase; box-shadow:0 6px 16px rgba(0,0,0,.35);
+      padding:.5rem 1rem; border-radius:12px; text-transform:uppercase;
+      box-shadow:0 6px 16px rgba(0,0,0,.35);
+      border:1px solid #8f7a4a;
+      cursor:default; user-select:none;
     }
-    .price-head{ display:flex; align-items:baseline; justify-content:space-between; gap:.75rem; margin:.25rem 0 1rem; }
-    .price-title{ font-size:clamp(1.2rem, 2.5vw + .6rem, 1.45rem); margin:0; font-weight:700; text-wrap:balance; }
-    .price{ font-size:clamp(1.2rem, 3.5vw + .6rem, 1.7rem); font-weight:700; color:#fff; }
-    .price-box ul{ list-style:none; margin:0 0 1.25rem; padding:0; line-height:1.55; font-size:1.05rem; }
-    .price-box ul li{ display:block; margin:.6rem 0; padding-left:1.4rem; position:relative; word-break:normal; hyphens:auto; }
+
+    .price-box ul{ list-style:none; margin:0 0 1.25rem; padding:0; line-height:1.55; font-size:1.05rem; color:#ccc; }
+    .price-box ul li{ display:block; margin:.6rem 0; padding-left:1.4rem; position:relative; }
     .price-box ul li::before{ content:"✓"; color:var(--gold); position:absolute; left:0; top:.15rem; font-weight:700; }
     .price-box .cta-button{ display:block !important; width:100%; max-width:360px; margin:1rem auto 0; text-align:center; }
-    .price-box p em{ color:#aaa; display:block; text-align:center; }
+    .price-note{ font-size:.9rem; color:#aaa; margin-top:1rem; text-align:center; }
 
     /* Outcomes panel */
     .outcomes{
@@ -175,7 +203,6 @@
       background:var(--gold); color:#000; padding:1rem 2rem; font-weight:700;
       border-radius:10px; text-decoration:none; font-size:1.1rem; display:inline-block;
       margin-top:2rem; transition:all .3s ease-in-out;
-      -webkit-text-size-adjust:100%;
     }
     .cta-button:hover{ background:#b8965c; color:#fff; }
 
@@ -199,7 +226,7 @@
     @media (prefers-reduced-motion:reduce){ .review-slider{ animation:none; } }
 
     /* MailerLite — centered & styled */
-    #mlb2-28577420.ml-form-embedContainer{ display:block; max-width:520px; margin:2.5rem auto; }
+    #mlb2-28577420.ml-form-embedContainer{ display:block; max-width:520px; margin:2rem auto; }
     #mlb2-28577420 .ml-form-embedWrapper.embedForm{
       width:100% !important; max-width:520px; margin:0 auto; background:#111;
       border:1px solid #2b2b2b; border-radius:12px;
@@ -217,51 +244,32 @@
     #mlb2-28577420 .loading{ display:none !important; }
     #mlb2-28577420 .ml-form-embedWrapper, #mlb2-28577420 input, #mlb2-28577420 button{ font-family:inherit !important; font-size:1rem; }
 
-    /* --- MOBILE POLISH PACK ------------------------------------------- */
-    @media (max-width: 480px){
-      html { font-size: 18px; }
-      body { line-height: 1.65; }
+    /* Mobile tweaks */
+    @media (max-width:768px){
+      .section{ padding:2.25rem 1rem; }                 /* tighter vertical rhythm */
+      #feature-bar{ flex-wrap:wrap; gap:.6rem 1rem; font-size:.9rem; padding:.85rem 1rem; }
+      .outcomes{ margin:1.75rem 1rem; padding:1.6rem 1rem; }
+      .review-slide{ min-width:85vw; max-width:85vw; }
 
-      .hero{ padding: 6.25rem 1rem 2.25rem; }
-      .hero p{ margin-top:.8rem; }
+      .price-box{ padding:1.4rem 1rem 1.6rem; margin:0 1rem; }
+      .price-head{
+        flex-direction:column; align-items:center; gap:.2rem;
+        border-bottom:1px solid #2b2b2b; padding-bottom:.6rem; margin:.25rem 0 1rem;
+      }
+      .price-title{ font-size:1.2rem; text-align:center; }
+      .price{ font-size:1.4rem; color:#C6A972; }
 
-      #feature-bar{ flex-wrap:wrap; gap:.4rem .8rem; padding:.8rem; }
-
-      #proof{ padding:2.2rem 1rem; }
-      #proof img{ border-radius:12px; }
-
-      .price-box{ padding:1.4rem 1rem 1.6rem; overflow:hidden; }
+      /* Put badge inside the box; not overlapping & not a CTA */
       .price-box .badge{
         position:relative; top:auto; left:auto; transform:none;
-        display:inline-block; margin:0 auto .6rem;
+        display:inline-block; margin:0 auto .6rem; border:1px solid #8f7a4a;
       }
-      .price-head{ margin:.25rem 0 1rem; }
-      .price-title{ font-size:1.2rem; }
-      .price{ font-size:1.4rem; }
-      .price-box ul{ font-size:1rem; line-height:1.55; }
-      .price-box ul li{ padding-left:1.25rem; }
-      .price-box ul li::before{ top:.2rem; }
-      .price-box .cta-button{
-        width:100%; box-sizing:border-box;
-        padding:.95rem 1.05rem; border-radius:12px;
-        font-size:clamp(1rem, 2.4vw + .65rem, 1.05rem);
-        margin-top:1rem;
-      }
-
-      .review-slider{ animation-duration:70s; }
-      .review-slide{ min-width:86vw; max-width:86vw; }
-
-      #mlb2-28577420 .form-control{ padding:13px 14px !important; }
-      #mlb2-28577420 .primary{ padding:13px !important; border-radius:12px !important; }
-
-      .footer{ padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }
-
-      /* Hide blog section on mobile */
-      #blog{ display:none; }
     }
 
-    /* Accessible focus ring */
-    :focus-visible{ outline:2px solid #C6A972; outline-offset:3px; border-radius:10px; }
+    /* Hide blog on mobile, keep desktop */
+    @media (max-width:768px){
+      #blog{ display:none; }
+    }
   </style>
 
   <!-- MailerLite Universal -->
@@ -280,7 +288,7 @@
 </head>
 <body>
   <header>
-    <a href="/"><img src="assets/img/logo.png" alt="CarHandled Logo" loading="eager" decoding="async"></a>
+    <a href="/"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
     <div id="hamburger" onclick="toggleNav()" role="button" aria-label="Toggle navigation" aria-controls="mobileNav" aria-expanded="false" tabindex="0" style="display:flex;flex-direction:column;cursor:pointer;">
       <span></span><span></span><span></span>
     </div>
@@ -309,23 +317,57 @@
     </section>
 
     <!-- PROOF -->
-    <section id="proof" class="section" style="background:#111;border-radius:12px;">
+    <section id="proof" class="section">
       <h2 style="text-align:center;">Real Worksheet: Before → After</h2>
       <p style="text-align:center;color:#ccc;max-width:760px;margin:0 auto 1rem;">
         We removed dealer add-ons (LoJack, ceramic, “pro packs”) and the tax on them.
         Result: <strong>less financed</strong> and a <strong>lower monthly payment</strong> at 60 months.
       </p>
 
-      <div class="imgs">
-        <figure>
-          <a class="thumb" href="/assets/img/proof-combined.png" target="_blank" rel="noopener">
-            <img src="/assets/img/proof-combined.png" alt="Before vs After dealership worksheet comparison" loading="lazy" decoding="async">
-          </a>
-          <figcaption>Tap to view full-size worksheet.</figcaption>
-        </figure>
+      <div class="proof-card">
+        <a href="/assets/img/proof-combined.png" target="_blank" rel="noopener">
+          <img src="/assets/img/proof-combined.png" alt="Before and After dealer worksheet comparison showing removed add-ons and lower amount financed">
+        </a>
+        <div class="caption">Tap to view full-size worksheet</div>
       </div>
 
-      <p style="text-align:center;color:#888;margin-top:.75rem;font-size:.9rem;">Examples are real, redacted. Results vary by state taxes and fees.</p>
+      <!-- Numeric summary so the key wins are readable & indexable -->
+      <div class="proof-table" aria-label="Before and after numbers">
+        <div class="proof-row">
+          <div class="proof-label">Dealer add-ons</div>
+          <div class="proof-num">$3,487.00</div>
+          <div class="proof-arrow">→</div>
+          <div class="proof-num">$0.00</div>
+          <div class="proof-delta">−$3,487</div>
+        </div>
+        <div class="proof-row">
+          <div class="proof-label">Taxes</div>
+          <div class="proof-num">$2,426.22</div>
+          <div class="proof-arrow">→</div>
+          <div class="proof-num">$2,217.00</div>
+          <div class="proof-delta">−$209.22</div>
+        </div>
+        <div class="proof-row">
+          <div class="proof-label">Amount financed</div>
+          <div class="proof-num">$43,567.92</div>
+          <div class="proof-arrow">→</div>
+          <div class="proof-num">$39,871.70</div>
+          <div class="proof-delta">−$3,696.22</div>
+        </div>
+        <div class="proof-row">
+          <div class="proof-label">60-mo est. payment</div>
+          <div class="proof-num">$800</div>
+          <div class="proof-arrow">→</div>
+          <div class="proof-num">$732</div>
+          <div class="proof-delta">−$68/mo</div>
+        </div>
+        <div class="proof-row">
+          <div class="proof-label proof-muted">Notes</div>
+          <div class="proof-num proof-muted" style="grid-column:2 / -1">
+            Rates shown 48mo 2.9% / 60mo 3.9%. Examples are real, redacted; results vary by market, taxes/fees, credit, and vehicle selection.
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- OUTCOMES -->
@@ -343,21 +385,21 @@
 
     <!-- PRICING -->
     <section id="pricing" class="section">
-      <h2 style="text-align:center;margin-bottom:1.5rem;">Get the CarHandled Toolkit</h2>
+      <h2 style="text-align:center;margin-bottom:1.25rem;">Get the CarHandled Toolkit</h2>
       <div class="price-box">
-        <div class="badge">INSTANT DOWNLOAD</div>
+        <div class="badge" aria-hidden="true">INSTANT DOWNLOAD</div>
 
         <div class="price-head">
           <h3 class="price-title">CarHandled Toolkit</h3>
           <span class="price">$29</span>
         </div>
 
-        <ul class="no-bullets" style="line-height:1.7;color:#ccc;">
+        <ul>
           <li>Step-by-step Buying Guide</li>
           <li>Negotiation Scripts (copy/paste emails)</li>
-          <li>Purchase & Lease Calculators</li>
+          <li>Purchase &amp; Lease Calculators</li>
           <li>Deal Comparison sheet</li>
-          <li>Delivery & Finance Office checklists</li>
+          <li>Delivery &amp; Finance Office checklists</li>
           <li>Free updates</li>
         </ul>
 
@@ -372,13 +414,13 @@
       </div>
     </section>
 
-    <section class="section" style="background:#111;padding:2rem;border-radius:12px;margin-top:2rem;">
+    <section class="section" style="background:#111;border-radius:12px;padding:2rem;margin-top:1.25rem;">
       <h2>Our Guarantee: 30-Day Refund</h2>
       <p>Try it on your next deal. If you don’t find it valuable, email us within 30 days for a refund.</p>
     </section>
 
-    <section class="section" style="background:#121212;border-radius:12px;padding:2.5rem 1.5rem;margin-top:3rem;">
-      <h2 style="color:#C6A972;text-align:center;margin-bottom:2rem;">Real Buyers, Real Results</h2>
+    <section class="section" style="background:#121212;border-radius:12px;padding:2.2rem 1.5rem;margin-top:2rem;">
+      <h2 style="color:#C6A972;text-align:center;margin-bottom:1.4rem;">Real Buyers, Real Results</h2>
       <div class="review-slider-container">
         <div class="review-slider">
           <div class="review-slide"><div class="review-stars">★★★★★</div><p>"I negotiated below MSRP using just the scripts. Honestly shocked how well it worked."</p><span>— James T., Austin, TX</span></div>
@@ -399,33 +441,35 @@
       </div>
     </section>
 
-    <div style="margin:20px auto 0;max-width:760px;padding:14px 16px;background:#111;border:1px solid #2b2b2b;border-radius:10px;display:flex;gap:10px;align-items:center;justify-content:center;color:#ddd;text-align:center;">
-      <img src="/assets/img/founder.jpg" alt="CarHandled founder" style="width:48px;height:48px;border-radius:999px;border:1px solid #333;display:show;" loading="lazy" decoding="async">
+    <!-- Founder mini bar -->
+    <div style="margin:18px auto 0;max-width:760px;padding:14px 16px;background:#111;border:1px solid #2b2b2b;border-radius:10px;display:flex;gap:10px;align-items:center;justify-content:center;color:#ddd;text-align:center;">
+      <img src="/assets/img/founder.jpg" alt="CarHandled founder" style="width:48px;height:48px;border-radius:999px;border:1px solid #333;display:block;">
       <span>Built by an ex-dealer who’s negotiated 500+ deals — now on the buyer’s side.</span>
       <a href="about.html" style="color:#C6A972;text-decoration:none;margin-left:.35rem;">Read the 2-minute story →</a>
     </div>
 
-    <section id="concierge" class="section" style="background:#111;border-radius:12px;padding:2.5rem 1.5rem;margin-top:3rem;">
+    <!-- Concierge -->
+    <section class="section" style="background:#111;border-radius:12px;padding:2rem;margin-top:2rem;">
       <h2 style="color:#C6A972;">Want a Pro to Secure the Deal For You?</h2>
-      <p style="color:#ccc;font-size:1.1rem;line-height:1.7;">
+      <p style="color:#ccc; font-size:1.05rem;">
         If you'd rather skip the learning curve and let an expert secure the deal for you — we’ve got your back. Our white-glove Concierge Service handles sourcing, negotiating, and delivery coordination for you.
       </p>
-      <a href="services.html" class="cta-button" style="margin-top:1.5rem;">Explore Concierge Service</a>
+      <a href="services.html" class="cta-button" style="margin-top:1.2rem;">Explore Concierge Service</a>
     </section>
 
-    <!-- BLOG (hidden on mobile via CSS) -->
-    <section id="blog" class="section" style="padding:3rem 1rem;background:#111;border-radius:12px;margin-bottom:2rem;">
-      <h2 style="color:#C6A972;text-align:center;">From the Blog</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-top:2rem;">
+    <!-- Blog (hidden on mobile) -->
+    <section id="blog" class="section" style="padding:3rem 1rem; background:#111; border-radius:12px; margin-bottom:2rem;">
+      <h2 style="color:#C6A972; text-align:center;">From the Blog</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; margin-top:2rem;">
         <a href="blog1.html" class="blog-tile">
-          <img src="assets/img/blog1.jpg" alt="What's Inside Toolkit" loading="lazy" decoding="async">
+          <img src="assets/img/blog1.jpg" alt="What's Inside Toolkit">
           <div class="blog-overlay">
             <h3>How the CarHandled Toolkit Helps You Win at the Dealership</h3>
             <p>Breakdown of every tool inside — scripts, calculators, and more.</p>
           </div>
         </a>
         <a href="blog2.html" class="blog-tile">
-          <img src="assets/img/blog2.jpg" alt="Toolkit Comparison" loading="lazy" decoding="async">
+          <img src="assets/img/blog2.jpg" alt="Toolkit Comparison">
           <div class="blog-overlay">
             <h3>Top 5 Car Buying Toolkits in 2025</h3>
             <p>We compared the top tools. Here’s why CarHandled leads the pack.</p>
