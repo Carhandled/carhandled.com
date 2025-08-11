@@ -256,6 +256,30 @@
         display:inline-block; margin:0 auto .6rem;
       }
     }
+    /* --- Mobile CTA fix (iOS friendly) --- */
+@media (max-width: 480px){
+  /* give the box a bit more side padding and clip contents cleanly */
+  .price-box{
+    padding: 1.25rem 1.25rem 1.5rem;
+    overflow: hidden; /* safe because badge is inside on mobile */
+  }
+
+  /* make the button truly full-width but not oversized */
+  .price-box .cta-button{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: clamp(1rem, 2.4vw + .65rem, 1.05rem);
+    line-height: 1.2;
+    padding: .95rem 1.05rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+  }
+}
+
+/* keep iOS from bumping the font and breaking the pill */
+.cta-button{ -webkit-text-size-adjust: 100%; }
+
   </style>
 
   <!-- MailerLite Universal -->
