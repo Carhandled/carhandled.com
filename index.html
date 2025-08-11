@@ -271,6 +271,29 @@
       .price{ font-size:1.45rem; }
       .price-box .cta-button{ max-width:100%; font-size:1.05rem; padding:.95rem 1rem; border-radius:12px; }
     }
+    /* --- Fix mobile CTA overflow & alignment --- */
+.price-box .cta-button{
+  display:block;
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;        /* include padding inside width */
+  margin:1rem 0 0;
+  text-align:center;
+  padding:1rem 1.05rem;
+  border-radius:12px;
+}
+
+/* Keep the card clipping clean and spacing tighter on small screens */
+@media (max-width: 768px){
+  .price-box{
+    padding:1rem 1rem 1.2rem;
+    overflow:hidden;            /* prevents any tiny bleed on iOS */
+  }
+  .price-head{ margin:.25rem 0 .85rem; }
+  .price-title{ font-size:1.22rem; }
+  .price{ font-size:1.38rem; }
+}
+
   </style>
 
   <!-- MailerLite Universal -->
