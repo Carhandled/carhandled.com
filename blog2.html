@@ -3,13 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
 <title>The 5 Best Car Buying Toolkits in 2025 (And Why CarHandled Wins)</title>
 <meta name="description" content="Compare the top car buying toolkits of 2025 including CarHandled, Edmunds, KBB, and more. Find out which saves you the most and why CarHandled stands out." />
 <meta name="robots" content="index, follow" />
 
+<link rel="canonical" href="https://www.carhandled.com/blog2.html" />
+<link rel="preload" as="image" href="/assets/img/blog2.jpg" fetchpriority="high">
+
 <!-- Open Graph / Twitter -->
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.carhandled.com/blog/toolkits-comparison.html" />
+<meta property="og:url" content="https://www.carhandled.com/blog2.html" />
 <meta property="og:title" content="Top 5 Car Buying Toolkits in 2025 – Why CarHandled Leads" />
 <meta property="og:description" content="We compared the 5 most popular car buying toolkits of 2025. See why CarHandled leads the way and how it stacks up to major names like Edmunds, KBB, and more." />
 <meta property="og:image" content="https://www.carhandled.com/assets/img/blog2.jpg" />
@@ -39,8 +43,12 @@
 
 <style>
   :root{ --gold:#C6A972; --ink:#f5f5f5; --bg:#0f0f0f; --panel:#121212; --muted:#bcbcbc; }
+
   /* Base */
-  html{ font-family: Optima,"URW Classico","Segoe UI",Candara,"Noto Sans","Source Sans 3","Helvetica Neue",Arial,sans-serif; font-size:20px; line-height:1.75; scroll-behavior:smooth; text-wrap:pretty; -webkit-text-size-adjust:100%;}
+  html{
+    font-family: Optima,"URW Classico","Segoe UI",Candara,"Noto Sans","Source Sans 3","Helvetica Neue",Arial,sans-serif;
+    font-size:20px; line-height:1.75; scroll-behavior:smooth; text-wrap:pretty; -webkit-text-size-adjust:100%;
+  }
   html,body,body *{ font-family:inherit !important; }
   body{ margin:0; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
   a{ color:var(--gold); text-decoration:none; }
@@ -61,21 +69,34 @@
   }
   #mobileNav a{ color:var(--gold); margin:.8rem 0; font-size:1.05rem; }
 
-  /* Hero */
+  /* Hero (crop to clean upper area + overlays) */
   .hero{
-    position:relative; background:url('/assets/img/blog2.jpg') center/cover no-repeat;
-    min-height:58vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:5rem 1.25rem 3rem;
+    position:relative;
+    background:url('/assets/img/blog2.jpg') center 12% / cover no-repeat;
+    min-height:58vh; display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:5rem 1.25rem 3rem; overflow:hidden;
   }
-  .hero::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.5); z-index:0; }
-  .hero > *{ position:relative; z-index:1; }
+  /* dark overlay */
+  .hero::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); z-index:0; }
+  /* bottom fade into page background */
+  .hero::after{
+    content:''; position:absolute; left:0; right:0; bottom:0; height:46%;
+    background:linear-gradient(to bottom, rgba(15,15,15,0) 0%, #0f0f0f 75%);
+    z-index:1;
+  }
+  .hero > *{ position:relative; z-index:2; }
   .hero h1{ font-size:2.4rem; color:var(--gold); line-height:1.15; margin:.2rem 0 .5rem; text-wrap:balance; }
   .hero p{ color:#ddd; font-size:1.15rem; max-width:820px; margin:0 auto; }
+  .eyebrow{ color:var(--gold); text-transform:uppercase; letter-spacing:.18em; font-size:.9rem; }
 
   /* Article shell */
   .prose{ max-width:820px; margin:3rem auto; padding:0 1.25rem; }
-  .eyebrow{ color:var(--gold); text-transform:uppercase; letter-spacing:.18em; font-size:.9rem; }
-  .prose h2{ color:var(--gold); font-size:1.6rem; margin:2rem 0 .75rem; border-bottom:1px solid var(--gold); padding-bottom:.4rem; }
-  .prose h3{ color:#fff; font-size:1.2rem; margin:1.2rem 0 .4rem; }
+  .prose h2{
+    color:var(--gold); font-size:1.6rem; margin:2rem 0 .75rem;
+    border-bottom:1px solid var(--gold); padding-bottom:.4rem;
+    scroll-margin-top:90px; /* anchor offset for sticky header */
+  }
+  .prose h3{ color:#fff; font-size:1.2rem; margin:1.2rem 0 .4rem; scroll-margin-top:90px; }
   .prose p{ color:#e6e6e6; margin:.8rem 0; }
   .prose ul{ margin:.4rem 0 1.2rem 1.2rem; }
   .muted{ color:#cfcfcf; }
@@ -97,7 +118,7 @@
   table.compare td{ color:#ddd; }
   .chip{ display:inline-block; padding:.18rem .5rem; border:1px solid #2b2b2b; border-radius:999px; font-size:.85rem; color:#bbb; margin-left:.4rem; }
 
-  /* Inline callouts / images */
+  /* Inline callouts / optional images */
   .callout{
     background:#101010; border:1px solid #242424; border-radius:12px; padding:1rem 1rem 1.1rem; margin:1.2rem 0;
   }
@@ -105,7 +126,7 @@
   figure.wide img{ width:100%; height:auto; display:block; border-radius:12px; border:1px solid #2b2b2b; box-shadow:0 4px 16px rgba(0,0,0,.35); }
   figure.wide figcaption{ color:#a9a9a9; font-size:.9rem; margin-top:.35rem; text-align:center; }
 
-  /* CTA box (soft) */
+  /* CTA box */
   .cta-box{
     margin:2rem 0 0; padding:1rem; background:#121212; border:1px solid #2b2b2b; border-radius:12px; text-align:center;
   }
@@ -119,9 +140,9 @@
   footer{ background:#111; text-align:center; padding:2rem 1rem; font-size:.95rem; color:#aaa; border-top:1px solid rgba(255,255,255,.06); }
   footer a{ color:#aaa; margin:0 .5rem; }
 
-  /* Mobile spacing */
+  /* Mobile */
   @media (max-width:768px){
-    .hero{ padding:5rem 1rem 2.2rem; }
+    .hero{ padding:5rem 1rem 2.2rem; background-position:center 8%; min-height:50vh; }
     .hero h1{ font-size:1.95rem; }
     .hero p{ font-size:1rem; }
     .prose{ margin:2.2rem auto; padding:0 1rem; }
@@ -148,7 +169,7 @@
     <div>
       <div class="eyebrow">2025 Buyer’s Guide</div>
       <h1>The 5 Best Car Buying Toolkits in 2025</h1>
-      <p>We tested the most popular toolkits and calculators. Here’s what actually helps you save money—and what just sells ads.</p>
+      <p>We tested the most popular toolkits and calculators. Here’s what actually helps you save money — and what just sells ads.</p>
     </div>
   </section>
 
@@ -214,10 +235,9 @@
     </div>
 
     <!-- Optional illustrative image -->
-    <!-- Replace src with a relevant graphic if you have one -->
     <!--
     <figure class="wide">
-      <img loading="lazy" src="/assets/img/blog-toolkit-preview.jpg" alt="Side-by-side comparison graphic of toolkit categories">
+      <img loading="lazy" src="/assets/img/blog-toolkit-preview.jpg" alt="Graphic showing how to combine research and execution tools">
       <figcaption>Use research tools to pick targets, then execution tools to win your deal.</figcaption>
     </figure>
     -->
@@ -284,17 +304,26 @@
     const mobileNav=document.getElementById("mobileNav");
     window.addEventListener("scroll",()=>{
       const y=window.pageYOffset;
-      if(y>50 && y>lastScroll) headerEl.classList.add("shrink"); else if(y<50) headerEl.classList.remove("shrink");
-      if(mobileNav && mobileNav.style.display==="flex"){ mobileNav.style.display="none"; document.getElementById("hamburger").setAttribute("aria-expanded","false"); }
+      if(y>50 && y>lastScroll){ headerEl.classList.add("shrink"); }
+      else if(y<50){ headerEl.classList.remove("shrink"); }
+      if(mobileNav && mobileNav.style.display==="flex"){
+        mobileNav.style.display="none";
+        document.getElementById("hamburger").setAttribute("aria-expanded","false");
+      }
       lastScroll=y;
     });
     function toggleNav(){
       const nav=document.getElementById("mobileNav");
       const btn=document.getElementById("hamburger");
-      if(nav.style.display==="flex"){ nav.style.opacity=0; setTimeout(()=>{ nav.style.display="none"; btn.setAttribute("aria-expanded","false"); },250); }
-      else { nav.style.display="flex"; nav.style.opacity=0; setTimeout(()=>{ nav.style.opacity=1; btn.setAttribute("aria-expanded","true"); },10); }
+      if(nav.style.display==="flex"){
+        nav.style.opacity=0; setTimeout(()=>{ nav.style.display="none"; btn.setAttribute("aria-expanded","false"); },250);
+      }else{
+        nav.style.display="flex"; nav.style.opacity=0; setTimeout(()=>{ nav.style.opacity=1; btn.setAttribute("aria-expanded","true"); },10);
+      }
     }
-    document.getElementById("hamburger").addEventListener("keydown",(e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggleNav(); }});
+    document.getElementById("hamburger").addEventListener("keydown",(e)=>{
+      if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggleNav(); }
+    });
   </script>
 </body>
 </html>
