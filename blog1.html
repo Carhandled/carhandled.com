@@ -36,8 +36,10 @@
   <style>
     :root{ --gold:#C6A972; --ink:#f5f5f5; --bg:#0f0f0f; --panel:#121212; --line:#262626; --muted:#cfcfcf; }
 
-    html{ font-family: Optima,"URW Classico","Segoe UI",Candara,"Noto Sans","Source Sans 3","Helvetica Neue",Arial,sans-serif;
-          font-size:20px; line-height:1.8; -webkit-text-size-adjust:100%; text-wrap:pretty; scroll-behavior:smooth; }
+    html{
+      font-family: Optima,"URW Classico","Segoe UI",Candara,"Noto Sans","Source Sans 3","Helvetica Neue",Arial,sans-serif;
+      font-size:20px; line-height:1.8; -webkit-text-size-adjust:100%; text-wrap:pretty; scroll-behavior:smooth;
+    }
     html,body,body *{ font-family:inherit !important; }
     body{ margin:0; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
 
@@ -50,27 +52,43 @@
     header.shrink{ padding:.5rem 1.2rem; } header.shrink img{ height:36px; }
     #hamburger{ display:flex; flex-direction:column; cursor:pointer; }
     #hamburger span{ background:var(--gold); height:3px; width:25px; margin:4px 0; }
-    #mobileNav{ display:none; flex-direction:column; position:absolute; top:60px; right:0; background:#000; width:100%;
-                padding:1rem 2rem; text-align:right; border-top:1px solid rgba(255,255,255,.06); }
+    #mobileNav{
+      display:none; flex-direction:column; position:absolute; top:60px; right:0; background:#000; width:100%;
+      padding:1rem 2rem; text-align:right; border-top:1px solid rgba(255,255,255,.06);
+    }
     #mobileNav a{ color:var(--gold); margin:.8rem 0; text-decoration:none; font-size:1.05rem; }
 
     /* Reading progress */
     .progress{ position:fixed; top:0; left:0; height:3px; width:0; background:var(--gold); z-index:1500; }
 
-    /* Hero */
+    /* Hero (new image: crop high + overlays + bottom fade) */
     .hero{
-      position:relative; background:url('/assets/img/blog1.jpg') center/cover no-repeat;
+      position:relative;
+      background:url('/assets/img/blog1.jpg') center 10% / cover no-repeat; /* show the clean upper area */
       min-height:52vh; display:flex; align-items:center; justify-content:center; text-align:center;
       padding:6rem 1.2rem 3rem; border-bottom:1px solid rgba(255,255,255,.06);
+      overflow:hidden;
     }
-    .hero::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); z-index:0; }
-    .hero > *{ position:relative; z-index:1; }
+    /* dark cinematic overlay */
+    .hero::before{
+      content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); z-index:0;
+    }
+    /* bottom fade into page bg to hide any busy lower bits */
+    .hero::after{
+      content:''; position:absolute; left:0; right:0; bottom:0; height:46%;
+      background:linear-gradient(to bottom, rgba(15,15,15,0) 0%, #0f0f0f 75%);
+      z-index:1;
+    }
+    .hero > *{ position:relative; z-index:2; }
     .hero h1{ color:var(--gold); margin:0; font-size:2.6rem; line-height:1.15; text-wrap:balance; }
     .hero p.dek{ color:#ddd; max-width:760px; margin:.8rem auto 0; font-size:1.15rem; }
     .meta{ color:#b9b9b9; font-size:.95rem; margin-top:.6rem; }
 
     /* Layout */
-    .wrap{ display:grid; grid-template-columns: 260px 1fr; gap:24px; max-width:1080px; margin:0 auto; padding:2.2rem 1.2rem 3.2rem; }
+    .wrap{
+      display:grid; grid-template-columns: 260px 1fr; gap:24px; max-width:1080px;
+      margin:0 auto; padding:2.2rem 1.2rem 3.2rem;
+    }
     .toc{
       position:sticky; top:84px; align-self:start; background:#111; border:1px solid #1f1f1f; border-radius:12px; padding:12px;
     }
@@ -79,8 +97,12 @@
     .toc a:hover{ background:#161616; color:#fff; }
 
     .article{ max-width:760px; }
-    .article h2{ color:var(--gold); font-size:1.6rem; margin:2rem 0 .6rem; border-bottom:1px solid var(--gold); padding-bottom:.45rem; }
-    .article h3{ color:#fff; font-size:1.2rem; margin:1.2rem 0 .4rem; }
+    .article h2{
+      color:var(--gold); font-size:1.6rem; margin:2rem 0 .6rem;
+      border-bottom:1px solid var(--gold); padding-bottom:.45rem;
+      scroll-margin-top:90px; /* anchor offset for sticky header */
+    }
+    .article h3{ color:#fff; font-size:1.2rem; margin:1.2rem 0 .4rem; scroll-margin-top:90px; }
     .article p{ color:#e9e9e9; margin:.85rem 0; }
     .article ul{ margin:.6rem 0 .8rem 1.2rem; color:#ddd; }
     .article li{ margin:.4rem 0; }
@@ -129,7 +151,7 @@
       .toc{ position:relative; top:0; order:2; }
     }
     @media (max-width:768px){
-      .hero{ padding:5rem 1rem 2rem; }
+      .hero{ padding:5rem 1rem 2rem; background-position:center 0%; min-height:50vh; }
       .hero h1{ font-size:2rem; }
       .hero p.dek{ font-size:1rem; }
       html{ font-size:19px; }
@@ -201,7 +223,7 @@
       <section class="email" id="tmpl-new">
         <header>
           <h4>New purchase — initial OTD request</h4>
-          <button class="copy-btn" data-copy="#code-new">Copy</button>
+          <button class="copy-btn" data-copy="#code-new" aria-label="Copy new purchase template">Copy</button>
         </header>
 <pre id="code-new">Subject: Out-the-door quote for &lt;year make model trim&gt;
 
@@ -218,7 +240,7 @@ Best email reply works. Thanks!</pre>
       <section class="email" id="tmpl-used">
         <header>
           <h4>Used/CPO — initial OTD request</h4>
-          <button class="copy-btn" data-copy="#code-used">Copy</button>
+          <button class="copy-btn" data-copy="#code-used" aria-label="Copy used/CPO template">Copy</button>
         </header>
 <pre id="code-used">Subject: Written OTD for &lt;year/make/model&gt; (VIN &lt;VIN&gt;)
 
@@ -231,7 +253,7 @@ Thanks!</pre>
       <section class="email" id="tmpl-lease">
         <header>
           <h4>Lease — OTD & full lease math</h4>
-          <button class="copy-btn" data-copy="#code-lease">Copy</button>
+          <button class="copy-btn" data-copy="#code-lease" aria-label="Copy lease template">Copy</button>
         </header>
 <pre id="code-lease">Subject: Lease worksheet for &lt;year make model trim&gt;
 
@@ -247,7 +269,7 @@ No add-ons unless optional & itemized. If you can provide this today, I’ll dec
       <section class="email" id="tmpl-follow">
         <header>
           <h4>Follow-up / “clean numbers only”</h4>
-          <button class="copy-btn" data-copy="#code-follow">Copy</button>
+          <button class="copy-btn" data-copy="#code-follow" aria-label="Copy follow-up template">Copy</button>
         </header>
 <pre id="code-follow">Thanks for the quote. To compare apples-to-apples, please confirm:
 • No add-ons included by default (etch, LoJack, tint, nitrogen, “pro pack”, etc.)
@@ -338,15 +360,24 @@ Please reply with a clean OTD in writing. I’m finalizing by &lt;date&gt;.</pre
       out.textContent= mins + ' min read';
     })();
 
-    // Copy buttons
+    // Copy buttons (with fallback)
     document.querySelectorAll('.copy-btn').forEach(btn=>{
       btn.addEventListener('click',()=>{
         const sel = document.querySelector(btn.getAttribute('data-copy'));
         if(!sel) return;
-        navigator.clipboard.writeText(sel.textContent).then(()=>{
+        const text = sel.textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(notify, notify);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try{ document.execCommand('copy'); }catch(e){}
+          document.body.removeChild(ta); notify();
+        }
+        function notify(){
           const old=btn.textContent; btn.textContent='Copied!';
           setTimeout(()=>btn.textContent=old,1200);
-        });
+        }
       });
     });
   </script>
