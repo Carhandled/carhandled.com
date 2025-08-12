@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BP6Z06536"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-1BP6Z06536');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Car Buying Guides — Scripts, Math & Playbooks | CarHandled</title>
+  <meta name="description" content="No-fluff guides to get clean out-the-door quotes, compare deals, and avoid junk fees. Built by an ex-dealer for real buyers." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.carhandled.com/guides.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.carhandled.com/guides.html" />
+  <meta property="og:title" content="Car Buying Guides — Scripts, Math & Playbooks" />
+  <meta property="og:description" content="No-fluff guides to get clean out-the-door quotes, compare deals, and avoid junk fees." />
+  <meta property="og:image" content="https://www.carhandled.com/assets/img/aboutbackground.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Car Buying Guides — Scripts, Math & Playbooks" />
+  <meta name="twitter:description" content="No-fluff guides to get clean OTD quotes, compare deals, and avoid junk fees." />
+  <meta name="twitter:image" content="https://www.carhandled.com/assets/img/aboutbackground.jpg" />
+
+  <link rel="preload" as="image" href="/assets/img/aboutbackground.jpg" fetchpriority="high">
+
+  <style>
+    :root{ --gold:#C6A972; --ink:#f5f5f5; --bg:#0f0f0f; --panel:#121212; --line:#262626; --muted:#cfcfcf; }
+
+    /* Base */
+    html{
+      font-family: Optima,"URW Classico","Segoe UI",Candara,"Noto Sans","Source Sans 3","Helvetica Neue",Arial,sans-serif;
+      font-size:20px; line-height:1.7; -webkit-text-size-adjust:100%; text-wrap:pretty; scroll-behavior:smooth;
+    }
+    html,body,body *{ font-family:inherit !important; }
+    body{ margin:0; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+    /* Header (match site) */
+    header{
+      background:#000; padding:1rem 1.25rem; display:flex; align-items:center; justify-content:space-between;
+      position:sticky; top:0; z-index:1000; transition:padding .3s ease; border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    header img{ height:48px; transition:height .3s ease; }
+    header.shrink{ padding:.55rem 1rem; } header.shrink img{ height:36px; }
+    #hamburger{ display:flex; flex-direction:column; cursor:pointer; }
+    #hamburger span{ background:var(--gold); height:3px; width:25px; margin:4px 0; }
+    #hamburger:focus{ outline:2px solid var(--gold); outline-offset:4px; }
+    #mobileNav{
+      display:none; flex-direction:column; position:absolute; top:60px; right:0; background:#000;
+      width:100%; padding:1rem 1.25rem; text-align:right; transition:opacity .25s ease-in-out; border-top:1px solid rgba(255,255,255,.06);
+    }
+    #mobileNav a{ color:var(--gold); margin:.8rem 0; text-decoration:none; font-size:1.05rem; }
+
+    /* Hero */
+    .hero{
+      position:relative; background:url('/assets/img/aboutbackground.jpg') center/cover no-repeat;
+      min-height:64vh; display:flex; align-items:center; justify-content:center; text-align:center;
+      padding:6rem 1.25rem 3rem; border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .hero::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.48); z-index:0; }
+    .hero > *{ position:relative; z-index:1; }
+    .hero h1{ margin:0; font-size:2.8rem; color:var(--gold); line-height:1.15; text-wrap:balance; }
+    .hero p{ margin:.8rem auto 0; font-size:1.15rem; color:#dddddd; max-width:760px; }
+
+    /* Grid */
+    .section{ padding:3rem 1.25rem; max-width:1100px; margin:0 auto; }
+    .grid{
+      display:grid; grid-template-columns:repeat(12,1fr); gap:16px;
+    }
+    .card{
+      grid-column:span 6; background:#151515; border:1px solid #2b2b2b; border-radius:14px; overflow:hidden;
+      box-shadow:0 8px 22px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .2s ease;
+    }
+    .card:hover{ transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,.45); border-color:#3a3a3a; }
+    .thumb{ width:100%; aspect-ratio:16/9; object-fit:cover; display:block; filter:brightness(.82); }
+    .card-body{ padding:1rem 1rem 1.15rem; }
+    .tags{ display:flex; gap:.4rem; flex-wrap:wrap; margin-bottom:.55rem; }
+    .tag{ display:inline-block; font-size:.82rem; color:#bfbfbf; border:1px solid #2b2b2b; border-radius:999px; padding:.16rem .55rem; }
+    .card h2{ margin:.15rem 0 .45rem; font-size:1.3rem; color:#fff; text-wrap:balance; }
+    .card p{ margin:0; color:#cfcfcf; }
+    .card-cta{
+      display:flex; justify-content:flex-start; margin-top:.9rem;
+    }
+    .btn{
+      background:var(--gold); color:#000; font-weight:700; text-decoration:none; padding:.75rem 1.1rem; border-radius:12px;
+      display:inline-block; transition:background .2s ease, transform .06s ease; box-shadow:0 10px 22px rgba(198,169,114,.18);
+    }
+    .btn:hover{ background:#b8965c; color:#fff; } .btn:active{ transform:translateY(1px); }
+
+    /* Footer */
+    .footer{ background:#111; text-align:center; padding:2rem 1rem; font-size:.95rem; color:#aaa; border-top:1px solid rgba(255,255,255,.06); }
+    .footer a{ color:#aaa; margin:0 .5rem; text-decoration:none; }
+
+    /* Responsive */
+    @media (max-width:1024px){
+      .hero{ padding:5.2rem 1rem 2.6rem; }
+    }
+    @media (max-width:900px){
+      .card{ grid-column:span 12; }
+    }
+    @media (max-width:768px){
+      .hero h1{ font-size:2rem; }
+      .hero p{ font-size:1rem; }
+      html{ font-size:19px; }
+    }
+  </style>
+
+  <!-- Hotjar (same as other pages) -->
+  <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:6473373,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <!-- Schema: CollectionPage of guides (no dates shown) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"CarHandled Guides",
+    "about":"Guides to get clean out-the-door quotes, compare deals, and avoid junk fees.",
+    "hasPart":[
+      {"@type":"BlogPosting","headline":"How to Get a Real Out-the-Door Price (with Copy/Paste Emails)","url":"https://www.carhandled.com/blog1.html","image":"https://www.carhandled.com/assets/img/blog1.jpg"},
+      {"@type":"BlogPosting","headline":"The 5 Best Car Buying Toolkits in 2025","url":"https://www.carhandled.com/blog2.html","image":"https://www.carhandled.com/assets/img/blog2.jpg"}
+    ],
+    "publisher":{"@type":"Organization","name":"CarHandled"}
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" aria-label="CarHandled home"><img src="assets/img/logo.png" alt="CarHandled Logo"></a>
+
+    <div id="hamburger" onclick="toggleNav()" role="button" aria-label="Toggle navigation" aria-controls="mobileNav" aria-expanded="false" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+
+    <nav id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Concierge</a>
+      <a href="guides.html" aria-current="page">Guides</a>
+      <a href="about.html">About</a>
+      <a href="intake.html">Get Started</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Car Buying Guides</h1>
+      <p>No fluff. Just the exact scripts, math, and checklists to get clean OTD quotes and avoid junk fees.</p>
+    </div>
+  </section>
+
+  <!-- Guides grid -->
+  <section class="section">
+    <div class="grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <a href="blog1.html" aria-label="Read: How to Get a Real Out-the-Door Price">
+          <img class="thumb" src="/assets/img/blog1.jpg" alt="Flat-lay desk with car key, calculator and pen on a dark background">
+        </a>
+        <div class="card-body">
+          <div class="tags">
+            <span class="tag">Negotiation</span>
+            <span class="tag">Email Scripts</span>
+          </div>
+          <h2><a href="blog1.html" style="color:inherit; text-decoration:none;">How to Get a Real Out-the-Door Price (with Copy/Paste Emails)</a></h2>
+          <p>Send these emails to get a written OTD in your inbox, compare apples-to-apples, and avoid add-on traps.</p>
+          <div class="card-cta">
+            <a class="btn" href="blog1.html">Read Guide</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <a href="blog2.html" aria-label="Read: The 5 Best Car Buying Toolkits in 2025">
+          <img class="thumb" src="/assets/img/blog2.jpg" alt="Premium flat-lay with calculator and papers on matte black desk">
+        </a>
+        <div class="card-body">
+          <div class="tags">
+            <span class="tag">Tools</span>
+            <span class="tag">Comparison</span>
+          </div>
+          <h2><a href="blog2.html" style="color:inherit; text-decoration:none;">The 5 Best Car Buying Toolkits in 2025</a></h2>
+          <p>What actually helps you save money—and what just sells ads. Our short list, and how to combine them.</p>
+          <div class="card-cta">
+            <a class="btn" href="blog2.html">Read Guide</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><strong>Contact:</strong> info@carhandled.com</p>
+    <p>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/carhandled" target="_blank" rel="noopener noreferrer" style="color:#aaa;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+        <svg width="20" height="20" fill="#aaa" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.5.3.9.7 1.2 1.2.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.5-.7.9-1.2 1.2-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.5-.3-.9-.7-1.2-1.2-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.5.7-.9 1.2-1.2.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1c-1.4.1-2.4.3-3.3.7C2.6 1.3 1.8 2 1.2 2.6.6 3.2-.1 4.1 0 5.6-.1 6.9 0 7.3 0 12s-.1 5.1.1 6.4c.1 1.5.7 2.4 1.3 3.1.6.6 1.4 1.3 3.1 1.3 1.3.1 1.7.1 6.4.1s5.1 0 6.4-.1c1.5-.1 2.4-.7 3.1-1.3.6-.6 1.3-1.4 1.3-3.1.1-1.3.1-1.7.1-6.4s0-5.1-.1-6.4c-.1-1.5-.7-2.4-1.3-3.1-.6-.6-1.4-1.3-3.1-1.3C15.7.1 15.3 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 0 0 5.8 12 6.2 6.2 0 0 0 12 18.2 6.2 6.2 0 0 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8.1 4 4 0 0 1 0 8.1zM18.4 4.9a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/></svg>
+        Follow us on Instagram
+      </a>
+    </p>
+    <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
+  </footer>
+
+  <!-- Shared scripts -->
+  <script>
+    // Sticky header + close mobile nav on scroll
+    let lastScroll = 0;
+    const headerEl = document.querySelector("header");
+    const mobileNav = document.getElementById("mobileNav");
+    window.addEventListener("scroll", () => {
+      const y = window.pageYOffset;
+      if (y > 50 && y > lastScroll) headerEl.classList.add("shrink");
+      else if (y < 50) headerEl.classList.remove("shrink");
+
+      if (mobileNav && mobileNav.style.display === "flex") {
+        mobileNav.style.display = "none";
+        document.getElementById("hamburger").setAttribute("aria-expanded","false");
+      }
+      lastScroll = y;
+    });
+
+    function toggleNav(){
+      const nav = document.getElementById("mobileNav");
+      const btn = document.getElementById("hamburger");
+      if (nav.style.display === "flex") {
+        nav.style.opacity = 0;
+        setTimeout(()=>{ nav.style.display="none"; btn.setAttribute("aria-expanded","false"); }, 250);
+      } else {
+        nav.style.display = "flex"; nav.style.opacity = 0;
+        setTimeout(()=>{ nav.style.opacity = 1; btn.setAttribute("aria-expanded","true"); }, 10);
+      }
+    }
+    document.getElementById("hamburger").addEventListener("keydown", (e)=>{
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleNav(); }
+    });
+  </script>
+</body>
+</html>
