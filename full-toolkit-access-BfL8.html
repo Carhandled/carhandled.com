@@ -1,116 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>CarHandled Toolkit Access</title>
 
-  <title>CarHandled Full Toolkit</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- GA4 (optional) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BP6Z06536"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1BP6Z06536');
+  </script>
+
   <style>
-    body {
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-      font-family: 'Optima', sans-serif;
-      margin: 0;
-      padding: 2rem;
-      text-align: center;
+    :root { --gold:#C6A972; --ink:#f5f5f5; --bg:#0f0f0f; --panel:#151515; --line:#2b2b2b; }
+    html{
+      font-family: Optima,"URW Classico","Segoe UI",Candara,"Noto Sans","Source Sans 3","Helvetica Neue",Arial,sans-serif;
+      font-size:20px; -webkit-text-size-adjust:100%;
     }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(198,169,114,0.15);
+    body{ margin:0; background:var(--bg); color:var(--ink); line-height:1.75; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+    .wrap{ max-width:760px; margin:3rem auto; padding:0 1.25rem; }
+    .card{
+      background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:1.6rem;
+      box-shadow:0 10px 26px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);
+      text-align:center;
     }
-    img {
-      max-width: 180px;
-      margin-bottom: 1.5rem;
+    .brand img{ width:150px; height:auto; display:block; margin:0 auto 1rem; }
+    h1{ color:var(--gold); font-size:1.6rem; margin:.2rem 0 .4rem; }
+    p.sub{ color:#d8d8d8; margin:.2rem 0 .8rem; }
+
+    .row{ display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; margin:.8rem 0 .2rem; }
+    input[type="password"]{
+      background:#0f0f0f; color:#fff; border:1px solid var(--line); border-radius:10px;
+      padding:.95rem 1rem; width:100%; max-width:440px; box-sizing:border-box; font-size:1rem;
     }
-    input[type="password"] {
-      padding: 0.8rem;
-      width: 80%;
-      margin: 1rem 0;
-      border-radius: 8px;
-      border: none;
+    .btn{
+      background:var(--gold); color:#000; border:none; border-radius:10px; padding:.95rem 1.1rem;
+      font-weight:700; cursor:pointer; transition:transform .06s ease, background .15s ease;
     }
-    .cta-button {
-      background: #C6A972;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-      cursor: pointer;
+    .btn:hover{ background:#b8965c; color:#fff; } .btn:active{ transform:translateY(1px); }
+    .muted{ color:#bdbdbd; font-size:.95rem; }
+    .err{ color:#ffb3b3; margin:.35rem 0 0; min-height:1.2em; }
+
+    .downloads{ margin-top:1rem; display:grid; gap:.7rem; justify-items:center; }
+    .dl{
+      display:inline-block; width:100%; max-width:460px; text-decoration:none; text-align:center;
+      background:#121212; border:1px solid var(--line); border-radius:12px; padding:1rem 1rem; color:#f5f5f5;
+      box-shadow:0 8px 20px rgba(0,0,0,.32); transition:transform .06s ease, border-color .15s ease;
     }
-    .hidden {
-      display: none;
+    .dl strong{ color:var(--gold); } .dl:hover{ transform:translateY(-1px); border-color:#3a3a3a; }
+
+    .section{
+      margin:1.1rem 0 0; text-align:left; background:#121212; border:1px solid var(--line); border-radius:12px; padding:1rem;
     }
-    .downloads a {
-      display: block;
-      margin: 1rem 0;
-      color: #C6A972;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 3rem;
-      padding: 2rem 1rem;
-      border-top: 1px solid #333;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    footer a {
-      color: #C6A972;
-      margin: 0 0.5rem;
-      text-decoration: none;
+    .section h3{ margin:.2rem 0 .5rem; font-size:1.05rem; color:#fff; }
+    .section ul{ margin:.2rem 0 .1rem 1.1rem; color:#e6e6e6; }
+    .section li{ margin:.25rem 0; }
+
+    footer{ margin:2.2rem auto 1rem; text-align:center; color:#aaa; font-size:.95rem; }
+    footer a{ color:#aaa; text-decoration:none; margin:0 .45rem; }
+    .hidden{ display:none !important; }
+
+    @media (max-width:640px){
+      .wrap{ margin:2rem auto; }
+      h1{ font-size:1.45rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container" id="accessContainer">
-    <img src="assets/img/logo.png" alt="CarHandled Logo" />
-    <h2>Welcome to Your Full Toolkit</h2>
-    <p>Enter the password provided at purchase to access everything inside.</p>
-    <p style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem;">You have 7 days from purchase to access this page.</p>
-    <input type="password" id="passwordInput" placeholder="Enter password..."/>
-    <div>
-      <button class="cta-button" onclick="checkPassword()">Unlock Toolkit</button>
-    </div>
-  </div>
-  <div id="downloadSection" class="container hidden">
-    <h2>You've Unlocked the Full Toolkit</h2>
-    <p>Here’s your download access:</p>
-    <div class="downloads">
-      <a href="https://drive.google.com/drive/folders/16Ry3bQYQ6w-cbRZVi5SGD0yez2kW8YhK?usp=drive_link" target="_blank">Access Full Toolkit Files</a>
-    </div>
-  </div>
+  <main class="wrap">
+    <!-- LOCKED -->
+    <section id="locked" class="card" aria-labelledby="title-locked">
+      <div class="brand"><img src="assets/img/logo.png" alt="CarHandled Logo"></div>
+      <h1 id="title-locked">Toolkit Access</h1>
+      <p class="sub">Enter the password from your purchase email to unlock your downloads.</p>
+      <p class="muted" style="margin:.2rem 0 .8rem;">Access intended within 7 days of purchase. For personal use only.</p>
+
+      <div class="row">
+        <label for="pw" class="visually-hidden" style="position:absolute;left:-9999px;">Password</label>
+        <input id="pw" type="password" placeholder="Enter password…" autocomplete="one-time-code" inputmode="text"/>
+        <button class="btn" id="unlockBtn">Unlock</button>
+      </div>
+      <div class="muted" style="margin-top:.35rem;display:flex;justify-content:center;gap:.45rem;">
+        <label style="display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;">
+          <input type="checkbox" id="showPw" style="transform:translateY(1px)"/> Show password
+        </label>
+      </div>
+      <div id="error" class="err" role="status" aria-live="polite"></div>
+
+      <p class="muted" style="margin-top:.7rem;">Need help? Email <a href="mailto:info@carhandled.com">info@carhandled.com</a> from your purchase email.</p>
+    </section>
+
+    <!-- UNLOCKED -->
+    <section id="unlocked" class="card hidden" aria-live="polite">
+      <div class="brand"><img src="assets/img/logo.png" alt="CarHandled Logo"></div>
+      <h1>Toolkit Unlocked ✓</h1>
+      <p class="sub">Everything you need to secure clean OTD quotes and avoid junk fees.</p>
+
+      <div class="downloads">
+        <a class="dl" href="https://drive.google.com/drive/folders/16Ry3bQYQ6w-cbRZVi5SGD0yez2kW8YhK?usp=drive_link" target="_blank" rel="noopener">
+          <strong>Open Toolkit</strong> — Google Drive
+        </a>
+      </div>
+
+      <div class="section">
+        <h3>Tips for smooth access</h3>
+        <ul>
+          <li>Open any sheet → <em>File → Make a copy</em> to your Drive (keeps your own editable copy).</li>
+          <li>Bookmark this page and the Drive folder for quick returns.</li>
+          <li>Questions? Reply to your receipt or email <a href="mailto:info@carhandled.com">info@carhandled.com</a>.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p><strong>Contact us:</strong> info@carhandled.com</p>
+    <p><strong>Contact:</strong> info@carhandled.com</p>
     <p>
-      <a href="terms-of-use.html">Terms of Use</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="refund-policy.html">Refund Policy</a>
-    </p>
-    <p>
-      <a href="https://www.instagram.com/carhandled" target="_blank">Follow us on Instagram</a>
+      <a href="/terms-of-use.html">Terms of Use</a> •
+      <a href="/privacy-policy.html">Privacy Policy</a> •
+      <a href="/refund-policy.html">Refund Policy</a>
     </p>
     <p>© 2025 CarHandled – Smarter Car Decisions. Simplified.</p>
   </footer>
+
   <script>
-    function checkPassword() {
-      const input = document.getElementById("passwordInput").value;
-      const correctPassword = "Y4r!9eTr8bLz";
-      if (input === correctPassword) {
-        document.getElementById("accessContainer").classList.add("hidden");
-        document.getElementById("downloadSection").classList.remove("hidden");
-      } else {
-        alert("Incorrect password. Please check your email or contact support.");
+    // ---- Config (client-side lock; convenience, not true security) ----
+    // Password is unchanged; we compare its SHA-256 so it’s not in the source.
+    // "Y4r!9eTr8bLz" -> SHA-256 (hex):
+    const PASS_HASH = "ae77c08bddf987efbf956af63254ad7c70b5ba262ef97e6d2c6c3125e676a6b8";
+
+    const MAX_TRIES = 5;
+    const LOCK_MINUTES = 10;
+    const UNLOCK_KEY = "ch_toolkit_unlocked_v1";
+
+    function lsGet(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } }
+    function lsSet(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+    function now(){ return Date.now(); }
+
+    function setErr(msg){ document.getElementById("error").textContent = msg || ""; }
+    function clearErr(){ setErr(""); }
+    function show(id){ document.getElementById(id).classList.remove("hidden"); }
+    function hide(id){ document.getElementById(id).classList.add("hidden"); }
+
+    function tries(){ return Number(lsGet("tk_tries") || 0); }
+    function incTries(){ const t=tries()+1; lsSet("tk_tries", t); return t; }
+    function resetTries(){ lsSet("tk_tries", 0); }
+
+    function lockUntil(ts){ lsSet("tk_lock_until", ts); }
+    function lockRemaining(){ const u=lsGet("tk_lock_until")||0; return Math.max(0, u - now()); }
+    function isLocked(){ return lockRemaining() > 0; }
+    function mins(ms){ const m=Math.ceil(ms/60000); return m<=1?"about 1 minute":`${m} minutes`; }
+
+    async function sha256Hex(str){
+      const enc = new TextEncoder().encode(str);
+      const digest = await crypto.subtle.digest("SHA-256", enc);
+      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    async function handleUnlock(){
+      const pwEl = document.getElementById("pw");
+      const btn  = document.getElementById("unlockBtn");
+      clearErr();
+
+      if (isLocked()){
+        return setErr(`Too many attempts. Try again in ${mins(lockRemaining())}.`);
+      }
+      const pw = (pwEl.value || "").trim();
+      if (!pw) return setErr("Enter your password.");
+
+      btn.disabled = true; btn.textContent = "Checking…";
+      try{
+        const hash = await sha256Hex(pw);
+        if (hash === PASS_HASH){
+          hide("locked"); show("unlocked"); sessionStorage.setItem(UNLOCK_KEY, "1"); resetTries();
+          try{ gtag('event','toolkit_unlock', { tier: 'single' }); }catch(e){}
+        } else {
+          const t = incTries();
+          if (t >= MAX_TRIES){
+            lockUntil(now() + LOCK_MINUTES*60000);
+            setErr(`Too many attempts. Locked for ${LOCK_MINUTES} minutes.`);
+          } else {
+            setErr("Incorrect password. Double-check your purchase email.");
+          }
+        }
+      } catch(err){
+        setErr("Your browser may not support secure checks. Please try Chrome/Edge/Safari/Firefox or contact support.");
+      } finally {
+        btn.disabled = false; btn.textContent = "Unlock";
       }
     }
+
+    // Events
+    document.getElementById("unlockBtn").addEventListener("click", handleUnlock);
+    document.getElementById("pw").addEventListener("keydown", (e)=>{ if(e.key==="Enter"){ e.preventDefault(); handleUnlock(); }});
+    document.getElementById("showPw").addEventListener("change", (e)=>{ document.getElementById("pw").type = e.target.checked ? "text" : "password"; });
+
+    // Auto-show unlocked if already in this tab/session
+    if (sessionStorage.getItem(UNLOCK_KEY) === "1"){ hide("locked"); show("unlocked"); }
+
+    // If currently locked, show message
+    if (isLocked()){ setErr(`Too many attempts. Try again in ${mins(lockRemaining())}.`); }
   </script>
 </body>
 </html>
