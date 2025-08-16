@@ -205,6 +205,26 @@
     .price-box ul li::before{ content:"✓"; color:var(--gold); position:absolute; left:0; top:.05rem; font-weight:700; }
     .price-box .cta-button{ display:block; width:100%; max-width:360px; margin:1rem auto 0; text-align:center; }
     .price-note{ font-size:.92rem; color:#aaa; margin-top:.9rem; text-align:center; }
+    /* --- Discount price styles --- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.price-box{ position:relative; }
+.save-badge{
+  position:absolute; top:14px; right:14px;
+  background:#0f0f0f; color:#d8c7a1; border:1px solid #3b3526;
+  border-radius:999px; padding:.28rem .6rem; font-size:.82rem; font-weight:700;
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+}
+.price-compare{
+  display:flex; align-items:baseline; gap:.5rem;
+}
+.price-was{
+  color:#9c9c9c; text-decoration:line-through; font-weight:600;
+}
+.price-now{
+  font-size:1.9rem; font-weight:800; color:#fff; line-height:1;
+}
+
 
     /* Reviews slider */
     .review-slider-container{ overflow:hidden; position:relative; }
@@ -431,15 +451,23 @@
     </section>
 
     <!-- PRICING -->
-    <section id="pricing" class="section price-wrap narrow">
-      <h2 style="text-align:center;margin-bottom:1.1rem;">Get the CarHandled Toolkit</h2>
-      <div class="price-box">
-        <span class="price-tag">Instant download</span>
+   <section id="pricing" class="section price-wrap narrow">
+  <h2 style="text-align:center;margin-bottom:1.1rem;">Get the CarHandled Toolkit</h2>
 
-        <div class="price-head">
-          <h3 class="price-title">CarHandled Toolkit</h3>
-          <span class="price">$29</span>
-        </div>
+  <div class="price-box">
+    <span class="save-badge" aria-hidden="true">Save $10</span>
+    <span class="price-tag">Instant download</span>
+
+    <div class="price-head">
+      <h3 class="price-title">CarHandled Toolkit</h3>
+      <div class="price-compare" aria-label="Discounted price">
+        <span class="price-was">
+          <del aria-hidden="true">$39</del>
+          <span class="sr-only">Regular price $39</span>
+        </span>
+        <span class="price-now">$29</span>
+      </div>
+    </div>
 
         <ul class="no-bullets">
           <li>Copy-paste emails that get clean OTD quotes</li>
