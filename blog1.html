@@ -61,19 +61,15 @@
     /* Reading progress */
     .progress{ position:fixed; top:0; left:0; height:3px; width:0; background:var(--gold); z-index:1500; }
 
-    /* Hero (new image: crop high + overlays + bottom fade) */
+    /* Hero */
     .hero{
       position:relative;
-      background:url('/assets/img/blog1.jpg') center 10% / cover no-repeat; /* show the clean upper area */
+      background:url('/assets/img/blog1.jpg') center 10% / cover no-repeat;
       min-height:52vh; display:flex; align-items:center; justify-content:center; text-align:center;
       padding:6rem 1.2rem 3rem; border-bottom:1px solid rgba(255,255,255,.06);
       overflow:hidden;
     }
-    /* dark cinematic overlay */
-    .hero::before{
-      content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); z-index:0;
-    }
-    /* bottom fade into page bg to hide any busy lower bits */
+    .hero::before{ content:''; position:absolute; inset:0; background:rgba(0,0,0,.55); z-index:0; }
     .hero::after{
       content:''; position:absolute; left:0; right:0; bottom:0; height:46%;
       background:linear-gradient(to bottom, rgba(15,15,15,0) 0%, #0f0f0f 75%);
@@ -85,13 +81,8 @@
     .meta{ color:#b9b9b9; font-size:.95rem; margin-top:.6rem; }
 
     /* Layout */
-    .wrap{
-      display:grid; grid-template-columns: 260px 1fr; gap:24px; max-width:1080px;
-      margin:0 auto; padding:2.2rem 1.2rem 3.2rem;
-    }
-    .toc{
-      position:sticky; top:84px; align-self:start; background:#111; border:1px solid #1f1f1f; border-radius:12px; padding:12px;
-    }
+    .wrap{ display:grid; grid-template-columns: 260px 1fr; gap:24px; max-width:1080px; margin:0 auto; padding:2.2rem 1.2rem 3.2rem; }
+    .toc{ position:sticky; top:84px; align-self:start; background:#111; border:1px solid #1f1f1f; border-radius:12px; padding:12px; }
     .toc h3{ color:#fff; font-size:1rem; margin:.2rem 0 .5rem; }
     .toc a{ display:block; color:#cfcfcf; text-decoration:none; font-size:.98rem; padding:.3rem .2rem; border-radius:8px; }
     .toc a:hover{ background:#161616; color:#fff; }
@@ -100,7 +91,7 @@
     .article h2{
       color:var(--gold); font-size:1.6rem; margin:2rem 0 .6rem;
       border-bottom:1px solid var(--gold); padding-bottom:.45rem;
-      scroll-margin-top:90px; /* anchor offset for sticky header */
+      scroll-margin-top:90px;
     }
     .article h3{ color:#fff; font-size:1.2rem; margin:1.2rem 0 .4rem; scroll-margin-top:90px; }
     .article p{ color:#e9e9e9; margin:.85rem 0; }
@@ -117,10 +108,7 @@
     .warn strong{ color:#ffb3b3; }
 
     /* Templates */
-    .email{
-      position:relative; background:#0e0e0e; border:1px solid var(--line); border-radius:12px; margin:.8rem 0 1.1rem;
-      overflow:hidden;
-    }
+    .email{ position:relative; background:#0e0e0e; border:1px solid var(--line); border-radius:12px; margin:.8rem 0 1.1rem; overflow:hidden; }
     .email header{
       position:relative; padding:.65rem .9rem; background:#121212; border-bottom:1px solid var(--line);
       display:flex; align-items:center; justify-content:space-between;
@@ -362,61 +350,88 @@ Please reply with a clean OTD in writing. I’m finalizing by &lt;date&gt;.</pre
       out.textContent= mins + ' min read';
     })();
 
-    // Mobile-safe copy buttons (iOS + Android + Desktop)
+    // ------- Robust mobile-safe copy buttons (iOS/Android/Desktop) -------
     (function () {
-      function legacyCopy(text) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        ta.setAttribute('readonly', '');
-        ta.style.position = 'fixed';
-        ta.style.top = '-1000px';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-
-        // iOS Safari needs focus + setSelectionRange
-        ta.focus();
-        ta.select();
-        try { ta.setSelectionRange(0, ta.value.length); } catch (e) {}
-
-        // Preserve existing selection
-        const sel = document.getSelection();
-        const range = sel && sel.rangeCount ? sel.getRangeAt(0) : null;
-
+      function copyViaEvent(str) {
         let ok = false;
-        try { ok = document.execCommand('copy'); } catch (e) {}
-
-        document.body.removeChild(ta);
-        try { sel && sel.removeAllRanges(); range && sel && sel.addRange(range); } catch (e) {}
-
+        const onCopy = (e) => {
+          e.clipboardData.setData('text/plain', str);
+          e.preventDefault();
+          ok = true;
+        };
+        document.addEventListener('copy', onCopy);
+        try { document.execCommand('copy'); } catch (e) {}
+        document.removeEventListener('copy', onCopy);
         return ok;
       }
 
-      async function copyText(text) {
+      function copyViaTextArea(str) {
+        const ta = document.createElement('textarea');
+        ta.value = str;
+        ta.setAttribute('readonly','');
+        ta.style.position='absolute';
+        ta.style.left='-9999px';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      function copyBySelectingNode(node) {
+        try {
+          const sel = window.getSelection();
+          if (!sel) return false;
+          sel.removeAllRanges();
+          const range = document.createRange();
+          range.selectNodeContents(node);
+          sel.addRange(range);
+          const ok = document.execCommand('copy');
+          sel.removeAllRanges();
+          return ok;
+        } catch (e) { return false; }
+      }
+
+      async function copyTextSmart(text, fallbackNode) {
+        // 1) Modern API (works on iOS 16+ under HTTPS with user gesture)
         if (navigator.clipboard && window.isSecureContext) {
           try { await navigator.clipboard.writeText(text); return true; } catch (e) {}
         }
-        return legacyCopy(text);
+        // 2) Copy event injection (very reliable on Safari/WebKit)
+        if (copyViaEvent(text)) return true;
+        // 3) Hidden textarea fallback
+        if (copyViaTextArea(text)) return true;
+        // 4) As a last resort, select the PRE contents and copy
+        if (fallbackNode && copyBySelectingNode(fallbackNode)) return true;
+        return false;
       }
 
-      document.querySelectorAll('.copy-btn').forEach((btn) => {
-        // Ensure tap triggers on iOS
-        btn.addEventListener('touchend', (e) => { e.preventDefault(); btn.click(); }, { passive: false });
+      function wireCopyButtons() {
+        document.querySelectorAll('.copy-btn').forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            const targetSel = btn.getAttribute('data-copy');
+            const src = document.querySelector(targetSel);
+            if (!src) return;
+            const text = (src.innerText || src.textContent || '').trim();
+            const ok = await copyTextSmart(text, src);
+            const old = btn.textContent;
+            btn.textContent = ok ? 'Copied!' : 'Select & Copy';
+            btn.disabled = true;
+            setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 1300);
+          });
+        });
+      }
 
-        btn.addEventListener('click', async () => {
-          const targetSel = btn.getAttribute('data-copy');
-          const src = document.querySelector(targetSel);
-          if (!src) return;
-
-          const text = (src.innerText || src.textContent || '').trim();
-          const ok = await copyText(text);
-
-          const old = btn.textContent;
-          btn.textContent = ok ? 'Copied!' : 'Select & Copy';
-          btn.disabled = true;
-          setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 1300);
-        }, { passive: true });
-      });
+      // Run after DOM is interactive
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireCopyButtons);
+      } else {
+        wireCopyButtons();
+      }
     })();
+    // --------------------------------------------------------------------
   </script>
 </body>
 </html>
