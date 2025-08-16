@@ -128,10 +128,12 @@
     .email header h4{ margin:0; font-size:1rem; color:#fff; }
     .copy-btn{
       font:inherit; background:var(--gold); color:#000; border:none; border-radius:8px; padding:.4rem .6rem; cursor:pointer; font-weight:700;
+      -webkit-tap-highlight-color: transparent; touch-action: manipulation;
     }
     pre{
       margin:0; padding:1rem; overflow:auto; font-size:.98rem; line-height:1.6; color:#eaeaea;
       white-space:pre-wrap; word-wrap:break-word; background:#0e0e0e;
+      user-select:text; -webkit-user-select:text;
     }
 
     /* End box */
@@ -360,26 +362,61 @@ Please reply with a clean OTD in writing. I’m finalizing by &lt;date&gt;.</pre
       out.textContent= mins + ' min read';
     })();
 
-    // Copy buttons (with fallback)
-    document.querySelectorAll('.copy-btn').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const sel = document.querySelector(btn.getAttribute('data-copy'));
-        if(!sel) return;
-        const text = sel.textContent;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(notify, notify);
-        } else {
-          const ta = document.createElement('textarea');
-          ta.value = text; document.body.appendChild(ta); ta.select();
-          try{ document.execCommand('copy'); }catch(e){}
-          document.body.removeChild(ta); notify();
+    // Mobile-safe copy buttons (iOS + Android + Desktop)
+    (function () {
+      function legacyCopy(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-1000px';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+
+        // iOS Safari needs focus + setSelectionRange
+        ta.focus();
+        ta.select();
+        try { ta.setSelectionRange(0, ta.value.length); } catch (e) {}
+
+        // Preserve existing selection
+        const sel = document.getSelection();
+        const range = sel && sel.rangeCount ? sel.getRangeAt(0) : null;
+
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+
+        document.body.removeChild(ta);
+        try { sel && sel.removeAllRanges(); range && sel && sel.addRange(range); } catch (e) {}
+
+        return ok;
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          try { await navigator.clipboard.writeText(text); return true; } catch (e) {}
         }
-        function notify(){
-          const old=btn.textContent; btn.textContent='Copied!';
-          setTimeout(()=>btn.textContent=old,1200);
-        }
+        return legacyCopy(text);
+      }
+
+      document.querySelectorAll('.copy-btn').forEach((btn) => {
+        // Ensure tap triggers on iOS
+        btn.addEventListener('touchend', (e) => { e.preventDefault(); btn.click(); }, { passive: false });
+
+        btn.addEventListener('click', async () => {
+          const targetSel = btn.getAttribute('data-copy');
+          const src = document.querySelector(targetSel);
+          if (!src) return;
+
+          const text = (src.innerText || src.textContent || '').trim();
+          const ok = await copyText(text);
+
+          const old = btn.textContent;
+          btn.textContent = ok ? 'Copied!' : 'Select & Copy';
+          btn.disabled = true;
+          setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 1300);
+        }, { passive: true });
       });
-    });
+    })();
   </script>
 </body>
 </html>
