@@ -111,17 +111,18 @@
     .email{ position:relative; background:#0e0e0e; border:1px solid var(--line); border-radius:12px; margin:.8rem 0 1.1rem; overflow:hidden; }
     .email header{
       position:relative; padding:.65rem .9rem; background:#121212; border-bottom:1px solid var(--line);
-      display:flex; align-items:center; justify-content:space-between;
+      display:flex; align-items:center; gap:.75rem; justify-content:space-between; flex-wrap:wrap;
     }
     .email header h4{ margin:0; font-size:1rem; color:#fff; }
     .copy-btn{
       font:inherit; background:var(--gold); color:#000; border:none; border-radius:8px; padding:.4rem .6rem; cursor:pointer; font-weight:700;
       -webkit-tap-highlight-color: transparent; touch-action: manipulation;
     }
+    .tap-hint{ display:none; color:#cfcfcf; font-size:.92rem; }
     pre{
       margin:0; padding:1rem; overflow:auto; font-size:.98rem; line-height:1.6; color:#eaeaea;
       white-space:pre-wrap; word-wrap:break-word; background:#0e0e0e;
-      user-select:text; -webkit-user-select:text;
+      user-select:text; -webkit-user-select:text; -webkit-touch-callout:text;
     }
 
     /* End box */
@@ -145,7 +146,8 @@
       .hero h1{ font-size:2rem; }
       .hero p.dek{ font-size:1rem; }
       html{ font-size:19px; }
-      .copy-btn{ padding:.46rem .7rem; }
+      .copy-btn{ display:none; }      /* HIDE COPY BUTTONS ON MOBILE */
+      .tap-hint{ display:inline; }    /* SHOW MOBILE HINT INSTEAD */
     }
   </style>
 </head>
@@ -214,6 +216,7 @@
         <header>
           <h4>New purchase — initial OTD request</h4>
           <button class="copy-btn" data-copy="#code-new" aria-label="Copy new purchase template">Copy</button>
+          <span class="tap-hint" aria-hidden="true">Tap & hold the text to copy</span>
         </header>
 <pre id="code-new">Subject: Out-the-door quote for &lt;year make model trim&gt;
 
@@ -231,6 +234,7 @@ Best email reply works. Thanks!</pre>
         <header>
           <h4>Used/CPO — initial OTD request</h4>
           <button class="copy-btn" data-copy="#code-used" aria-label="Copy used/CPO template">Copy</button>
+          <span class="tap-hint" aria-hidden="true">Tap & hold the text to copy</span>
         </header>
 <pre id="code-used">Subject: Written OTD for &lt;year/make/model&gt; (VIN &lt;VIN&gt;)
 
@@ -244,6 +248,7 @@ Thanks!</pre>
         <header>
           <h4>Lease — OTD & full lease math</h4>
           <button class="copy-btn" data-copy="#code-lease" aria-label="Copy lease template">Copy</button>
+          <span class="tap-hint" aria-hidden="true">Tap & hold the text to copy</span>
         </header>
 <pre id="code-lease">Subject: Lease worksheet for &lt;year make model trim&gt;
 
@@ -260,6 +265,7 @@ No add-ons unless optional & itemized. If you can provide this today, I’ll dec
         <header>
           <h4>Follow-up / “clean numbers only”</h4>
           <button class="copy-btn" data-copy="#code-follow" aria-label="Copy follow-up template">Copy</button>
+          <span class="tap-hint" aria-hidden="true">Tap & hold the text to copy</span>
         </header>
 <pre id="code-follow">Thanks for the quote. To compare apples-to-apples, please confirm:
 • No add-ons included by default (etch, LoJack, tint, nitrogen, “pro pack”, etc.)
@@ -350,88 +356,49 @@ Please reply with a clean OTD in writing. I’m finalizing by &lt;date&gt;.</pre
       out.textContent= mins + ' min read';
     })();
 
-    // ------- Robust mobile-safe copy buttons (iOS/Android/Desktop) -------
+    // Copy buttons (keep logic for desktop; mobile buttons are hidden)
     (function () {
       function copyViaEvent(str) {
         let ok = false;
-        const onCopy = (e) => {
-          e.clipboardData.setData('text/plain', str);
-          e.preventDefault();
-          ok = true;
-        };
+        const onCopy = (e) => { e.clipboardData.setData('text/plain', str); e.preventDefault(); ok = true; };
         document.addEventListener('copy', onCopy);
         try { document.execCommand('copy'); } catch (e) {}
         document.removeEventListener('copy', onCopy);
         return ok;
       }
-
       function copyViaTextArea(str) {
         const ta = document.createElement('textarea');
-        ta.value = str;
-        ta.setAttribute('readonly','');
-        ta.style.position='absolute';
-        ta.style.left='-9999px';
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        let ok = false;
-        try { ok = document.execCommand('copy'); } catch (e) {}
-        document.body.removeChild(ta);
-        return ok;
+        ta.value = str; ta.setAttribute('readonly',''); ta.style.position='absolute'; ta.style.left='-9999px';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        let ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+        document.body.removeChild(ta); return ok;
       }
-
       function copyBySelectingNode(node) {
-        try {
-          const sel = window.getSelection();
-          if (!sel) return false;
-          sel.removeAllRanges();
-          const range = document.createRange();
-          range.selectNodeContents(node);
-          sel.addRange(range);
-          const ok = document.execCommand('copy');
-          sel.removeAllRanges();
-          return ok;
-        } catch (e) { return false; }
+        try{ const sel=window.getSelection(); if(!sel) return false;
+          sel.removeAllRanges(); const r=document.createRange(); r.selectNodeContents(node); sel.addRange(r);
+          const ok=document.execCommand('copy'); sel.removeAllRanges(); return ok;
+        }catch(e){ return false; }
       }
-
-      async function copyTextSmart(text, fallbackNode) {
-        // 1) Modern API (works on iOS 16+ under HTTPS with user gesture)
-        if (navigator.clipboard && window.isSecureContext) {
-          try { await navigator.clipboard.writeText(text); return true; } catch (e) {}
-        }
-        // 2) Copy event injection (very reliable on Safari/WebKit)
-        if (copyViaEvent(text)) return true;
-        // 3) Hidden textarea fallback
-        if (copyViaTextArea(text)) return true;
-        // 4) As a last resort, select the PRE contents and copy
-        if (fallbackNode && copyBySelectingNode(fallbackNode)) return true;
+      async function copyTextSmart(text, node){
+        if(navigator.clipboard && window.isSecureContext){ try{ await navigator.clipboard.writeText(text); return true; }catch(e){} }
+        if(copyViaEvent(text)) return true;
+        if(copyViaTextArea(text)) return true;
+        if(node && copyBySelectingNode(node)) return true;
         return false;
       }
-
-      function wireCopyButtons() {
-        document.querySelectorAll('.copy-btn').forEach((btn) => {
-          btn.addEventListener('click', async () => {
-            const targetSel = btn.getAttribute('data-copy');
-            const src = document.querySelector(targetSel);
-            if (!src) return;
-            const text = (src.innerText || src.textContent || '').trim();
-            const ok = await copyTextSmart(text, src);
-            const old = btn.textContent;
-            btn.textContent = ok ? 'Copied!' : 'Select & Copy';
-            btn.disabled = true;
-            setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 1300);
+      function wireCopyButtons(){
+        document.querySelectorAll('.copy-btn').forEach((btn)=>{
+          btn.addEventListener('click', async ()=>{
+            const tgt=btn.getAttribute('data-copy'); const src=document.querySelector(tgt); if(!src) return;
+            const text=(src.innerText||src.textContent||'').trim();
+            const ok=await copyTextSmart(text, src);
+            const old=btn.textContent; btn.textContent = ok ? 'Copied!' : 'Select & Copy';
+            btn.disabled=true; setTimeout(()=>{ btn.textContent=old; btn.disabled=false; }, 1300);
           });
         });
       }
-
-      // Run after DOM is interactive
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', wireCopyButtons);
-      } else {
-        wireCopyButtons();
-      }
+      if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', wireCopyButtons); } else { wireCopyButtons(); }
     })();
-    // --------------------------------------------------------------------
   </script>
 </body>
 </html>
