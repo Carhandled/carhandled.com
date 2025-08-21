@@ -1,0 +1,15 @@
+# Force HTTPS + www
+RewriteEngine On
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.carhandled\.com$ [NC]
+RewriteRule ^ https://www.carhandled.com%{REQUEST_URI} [L,R=301]
+
+# Security / caching (optional)
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "interest-cohort=()"
+FileETag None
+
+# Redirect any old paths
+Redirect 301 /toolkit.html /
+Redirect 301 /faq.html /guides.html
