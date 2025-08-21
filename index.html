@@ -309,14 +309,13 @@
       .price{ font-size:1.38rem; }
     }
     /* FAQ (match services) */
-.faq{max-width:820px;margin:0 auto;}
 .faq-item{margin-bottom:1rem;background:#121212;border:1px solid #262626;border-radius:12px;overflow:hidden;}
 .faq-question{
   width:100%;background:none;color:var(--gold);text-align:left;font-size:1.05rem;font-weight:700;
   border:none;padding:1rem;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent;
 }
 .faq-question::after{content:'+';position:absolute;right:1rem;top:1rem;font-size:1.2rem;transition:transform .2s;}
-.faq-question[aria-expanded="true"]::after{transform:rotate(45deg);}
+.faq-question.active::after{ transform:rotate(45deg); }
 .faq-answer{max-height:0;padding:0 1rem;color:#d0d0d0;transition:max-height .25s ease,padding .25s ease;}
 .faq-answer.open{max-height:460px;padding:0 1rem 1rem;}
 @media (max-width:768px){ .faq-question{font-size:1rem;padding:.9rem 1rem;} }
@@ -501,29 +500,28 @@
     </section>
 
     <!-- FAQ (compact, matches JSON-LD) -->
-    <section id="faq" class="section narrow">
-  <h2>FAQs</h2>
-  <div class="faq">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">What is the Toolkit?</button>
-      <div class="faq-answer">A step-by-step guide, copy/paste emails, calculators, and checklists to get a clean out-the-door price and avoid junk fees.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">What’s inside?</button>
-      <div class="faq-answer">Buying guide, OTD email templates, negotiation flows, purchase & lease calculators, deal comparison sheet, and delivery/finance office checklists.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">How do I access it?</button>
-      <div class="faq-answer">Instant Google Sheets + PDF links after checkout. Make your own copy and start.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">Refund policy?</button>
-      <div class="faq-answer">30-day refund — no questions asked.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">Is the CarHandled toolkit legit?</button>
-      <div class="faq-answer">Yes — built by a former dealer, includes copy-paste scripts and calculators, and backed by a 30-day refund.</div>
-    </div>
+  <section id="faq" class="section">
+  <h2>Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">What is the Toolkit?</button>
+    <div class="faq-answer">A step-by-step guide, copy/paste emails, calculators, and checklists to get a clean out-the-door price and avoid junk fees.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">What’s inside?</button>
+    <div class="faq-answer">Buying guide, OTD email templates, negotiation flows, purchase & lease calculators, deal comparison sheet, and delivery/finance office checklists.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">How do I access it?</button>
+    <div class="faq-answer">Instant Google Sheets + PDF links after checkout. Make your own copy and start.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Refund policy?</button>
+    <div class="faq-answer">30-day refund — no questions asked.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Is the CarHandled toolkit legit?</button>
+    <div class="faq-answer">Yes — built by a former dealer, includes copy-paste scripts and calculators, and backed by a 30-day refund.</div>
   </div>
 </section>
 
@@ -701,15 +699,14 @@
     }
   </script>
   <script>
-  // FAQ toggles (match services)
   document.querySelectorAll('.faq-question').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      btn.nextElementSibling.classList.toggle('open', !open);
+    btn.addEventListener('click', ()=>{
+      btn.classList.toggle('active');
+      btn.nextElementSibling.classList.toggle('open');
     });
   });
 </script>
+
 
 
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
