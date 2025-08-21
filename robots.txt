@@ -2,3 +2,9 @@ User-agent: *
 Allow: /
 
 Sitemap: https://carhandled.com/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
