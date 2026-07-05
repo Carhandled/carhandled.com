@@ -1533,6 +1533,84 @@
       </div>
     </section>
 
+    <!-- ══ WHAT'S INSIDE ═════════════════════════════════════════ -->
+    <section class="inside-section" id="whats-inside">
+      <style>
+        .inside-section { padding: 4rem 1.25rem; background: var(--dark); border-top: 1px solid var(--border); }
+        .inside-grid {
+          display: grid; grid-template-columns: repeat(3, 1fr);
+          gap: 0.9rem; margin-top: 2rem;
+        }
+        .inside-card {
+          background: var(--card); border: 1px solid var(--border);
+          border-radius: 12px; padding: 1.25rem;
+          display: flex; flex-direction: column; gap: 0.75rem;
+          transition: border-color 0.15s, transform 0.15s;
+        }
+        .inside-card:hover { border-color: var(--gold-dim, #8A7248); transform: translateY(-2px); }
+        .inside-badge {
+          font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em;
+          padding: 0.25rem 0.5rem; border-radius: 5px; width: fit-content;
+        }
+        .inside-badge.pdf { background: rgba(224,82,82,0.1); color: #E05252; border: 1px solid rgba(224,82,82,0.2); }
+        .inside-badge.xls { background: rgba(76,175,112,0.1); color: #4CAF70; border: 1px solid rgba(76,175,112,0.2); }
+        .inside-card h3 { font-size: 0.98rem; color: var(--white); margin: 0; line-height: 1.35; }
+        .inside-card p { font-size: 0.82rem; color: var(--ink-mute); margin: 0; line-height: 1.55; }
+        .inside-note {
+          text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--ink-mute);
+        }
+        .inside-note strong { color: var(--gold); font-weight: 500; }
+        @media (max-width: 800px) { .inside-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .inside-grid { grid-template-columns: 1fr; } }
+      </style>
+      <div class="container container--narrow">
+        <div class="section-header reveal" style="text-align:center;">
+          <div class="section-label" style="justify-content:center;">
+            <span class="eyebrow">What's inside</span>
+          </div>
+          <h2>9 files. Delivered to your inbox instantly.</h2>
+          <p>No fluff, no filler — every file does a job in the deal.</p>
+        </div>
+
+        <div class="inside-grid reveal">
+          <div class="inside-card">
+            <span class="inside-badge pdf">PDF</span>
+            <h3>The Toolkit Guide</h3>
+            <p>The full playbook: OTD scripts, negotiation flows, delivery & finance-office checklists.</p>
+          </div>
+          <div class="inside-card">
+            <span class="inside-badge xls">XLS</span>
+            <h3>Buy Estimator</h3>
+            <p>See your true monthly payment and total cost before any dealer does the math for you.</p>
+          </div>
+          <div class="inside-card">
+            <span class="inside-badge xls">XLS</span>
+            <h3>Lease Estimator</h3>
+            <p>Dealer-style lease calculator — money factor, residual, and drive-off, decoded.</p>
+          </div>
+          <div class="inside-card">
+            <span class="inside-badge xls">XLS</span>
+            <h3>Deal Comparison Sheet</h3>
+            <p>Put every dealer quote side by side and spot the cleanest out-the-door number instantly.</p>
+          </div>
+          <div class="inside-card">
+            <span class="inside-badge xls">XLS</span>
+            <h3>Lease vs Buy</h3>
+            <p>Total-cost comparison over the term so you know which option actually wins.</p>
+          </div>
+          <div class="inside-card">
+            <span class="inside-badge pdf">PDF</span>
+            <h3>Setup & README Guides</h3>
+            <p>Step-by-step instructions for every calculator, plus your toolkit license.</p>
+          </div>
+        </div>
+
+        <p class="inside-note">
+          Plus the real <strong>before/after worksheet</strong> — same car, <strong>$3,696 difference</strong>.
+        </p>
+      </div>
+    </section>
+
     <!-- ══ PRICING ══════════════════════════════════════════════ -->
     <section class="pricing-section" id="pricing">
       <div class="container container--narrow">
