@@ -99,16 +99,7 @@
           "@type": "Answer",
           "text": "Politely steer it back to email: 'Thanks for calling — I'm comparing a few dealers, so please send the out-the-door breakdown by email and I'll review it.' Getting it in writing protects you from numbers changing later."
         }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Hotjar -->
-  <script>
-    (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:6473373,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-
+      },
       {
         "@type": "Question",
         "name": "What should be included in an OTD number?",
@@ -362,6 +353,12 @@
     }
     .prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
     .prose a:hover { color: var(--gold-lite); }
+    /* Keep CTA buttons styled correctly even when nested inside .prose */
+    .prose a.btn { text-decoration: none; }
+    .prose a.btn--gold, .mid-cta a.btn--gold, .final-cta a.btn--gold { color: var(--black); }
+    .prose a.btn--gold:hover, .mid-cta a.btn--gold:hover { color: var(--black); }
+    .prose a.btn--ghost, .mid-cta a.btn--ghost { color: var(--ink-dim); }
+    .prose a.btn--ghost:hover, .mid-cta a.btn--ghost:hover { color: var(--gold); }
     .prose strong { color: var(--white); font-weight: 500; }
 
     /* ── Callouts ───────────────────────────────────────────── */
