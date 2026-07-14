@@ -1,0 +1,18 @@
+—{
+  "name": "CarHandled — Car Buying Toolkit",
+    "short_name": "CarHandled",
+      "description": "Negotiate a clean out-the-door price and avoid junk fees. Copy-paste dealer emails, calculators, and checklists built by a former car dealer.",
+        "start_url": "/",
+          "display": "standalone",
+            "background_color": "#0D0D0D",
+              "theme_color": "#0D0D0D",
+                "icons": [
+                    {
+                          "src": "/assets/img/logo.png",
+                                "sizes": "512x512",
+                                      "type": "image/png",
+                                            "purpose": "any"
+                                                }
+                                                  ]
+                                                  }
+                                                  
