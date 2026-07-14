@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Page Not Found | CarHandled</title>
+<meta name="robots" content="noindex, follow" />
+<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+<link rel="manifest" href="/manifest.json" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--gold: #C6A972;
+--gold-lite: #E8C97A;
+--dark: #0D0D0D;
+--ink: #F0EEE9;
+--ink-dim: #C0BDB7;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'DM Sans', -apple-system, sans-serif;
+background: var(--dark);
+color: var(--ink);
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 2rem 1.5rem;
+text-align: center;
+}
+.wrap { max-width: 560px; }
+.eyebrow {
+font-size: 0.78rem;
+font-weight: 500;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--gold);
+margin-bottom: 1.2rem;
+}
+h1 {
+font-family: 'Playfair Display', Georgia, serif;
+font-size: clamp(2rem, 5vw, 2.8rem);
+line-height: 1.2;
+margin-bottom: 1rem;
+}
+h1 em { font-style: normal; color: var(--gold); }
+p.sub {
+color: var(--ink-dim);
+font-size: 1.02rem;
+line-height: 1.6;
+margin-bottom: 2.2rem;
+}
+.actions { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+.btn {
+display: inline-block;
+font-weight: 500;
+font-size: 0.95rem;
+padding: 0.85rem 1.6rem;
+border-radius: 10px;
+text-decoration: none;
+transition: all 0.2s ease;
+}
+.btn--gold { background: var(--gold); color: #080808; border: 1px solid var(--gold); }
+.btn--gold:hover { background: var(--gold-lite); }
+.btn--outline { background: transparent; color: var(--gold); border: 1px solid #8A7248; }
+.btn--outline:hover { border-color: var(--gold); background: rgba(198,169,114,0.06); }
+img.logo { height: 40px; margin-bottom: 2rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<img class="logo" src="/assets/img/logo.png" alt="CarHandled">
+<div class="eyebrow">404</div>
+<h1>This page rode off <em>without a clean OTD.</em></h1>
+<p class="sub">The page you're looking for doesn't exist or moved. Let's get you back to the toolkit that actually saves money.</p>
+<div class="actions">
+<a href="/" class="btn btn--gold">Back to Home</a>
+<a href="/guides.html" class="btn btn--outline">Browse Guides</a>
+</div>
+</div>
+</body>
+</html>
