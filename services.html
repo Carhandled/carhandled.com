@@ -47,9 +47,9 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"Do you work with new, used, or leases?","acceptedAnswer":{"@type":"Answer","text":"All of the above. We support new purchases, used/CPO, and leases."}},
     {"@type":"Question","name":"Do I sign with you or the dealer?","acceptedAnswer":{"@type":"Answer","text":"You always sign directly with the dealership and pay them — we guide, negotiate, and coordinate."}},
-    {"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"Typical timelines: Deal Review 24–48 hours, Standard Concierge 5–10 business days, Premium 3–7 business days depending on inventory."}},
+    {"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"Deal Review: 24–48 hours. Concierge: 3–7 business days depending on inventory and vehicle availability."}},
     {"@type":"Question","name":"Can you beat my existing quote?","acceptedAnswer":{"@type":"Answer","text":"Often, yes. If a quote is already excellent, we'll validate it so you can sign with confidence."}},
-    {"@type":"Question","name":"How much does a car buying concierge cost?","acceptedAnswer":{"@type":"Answer","text":"CarHandled offers three tiers: a Deal Review for a fast second opinion on a quote, a Standard Concierge that handles negotiation end to end, and a Premium Concierge that manages sourcing, negotiation, and delivery for harder or higher-value buys. Each tier has a flat fee — no percentage of the car price."}},
+    {"@type":"Question","name":"How much does a car buying concierge cost?","acceptedAnswer":{"@type":"Answer","text":"Deal Review is $129 for a fast second opinion on a quote. Concierge service starts from $2,999 and is by application — we handle sourcing, negotiation, and delivery end to end. Flat fees — no percentage of the car price."}},
     {"@type":"Question","name":"Is there a car buying concierge near me?","acceptedAnswer":{"@type":"Answer","text":"CarHandled works with buyers nationwide across the US. Because dealers send out-the-door quotes by email and you sign directly with your local dealership, the service works the same whether you're across town or across the country."}},
     {"@type":"Question","name":"Can someone negotiate a car price for me?","acceptedAnswer":{"@type":"Answer","text":"Yes. That's exactly what the Concierge service does — an ex-dealer who has negotiated 500+ deals requests quotes, negotiates the out-the-door price, and strips junk fees on your behalf. You review and sign the final deal directly with the dealer."}}
   ]}
@@ -1050,16 +1050,16 @@
           <span class="eyebrow">Concierge packages</span>
         </div>
         <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2rem); color:var(--white);">
-          Three ways to work with us.
+          Choose your path.
         </h2>
 
-        <div class="packages-grid">
+        <div class="packages-grid" style="grid-template-columns: 1fr;">
 
           <!-- Deal Review -->
           <div class="pkg-card reveal">
             <div class="pkg-header">
-              <div class="pkg-badge pkg-badge--fastest">Fastest</div>
-              <div class="pkg-name">Quote Clean-Up</div>
+              <div class="pkg-badge pkg-badge--fastest">Quick Audit</div>
+              <div class="pkg-name">Deal Review</div>
               <div class="pkg-price"><sup>$</sup>129</div>
               <div class="pkg-timeline">Turnaround: 24–48 hours</div>
             </div>
@@ -1073,89 +1073,34 @@
               </ul>
               <a href="intake.html" class="btn btn--ghost btn--full"
                 onclick="gtag('event','click',{event_category:'CTA',event_label:'Pkg - Deal Review'})">
-                Start Deal Review
-              </a>
-            </div>
-          </div>
-
-          <!-- Standard — featured -->
-          <div class="pkg-card featured reveal" style="transition-delay:0.08s">
-            <div class="pkg-header">
-              <div class="pkg-badge pkg-badge--popular">Most Popular</div>
-              <div class="pkg-name">Standard Concierge</div>
-              <div class="pkg-price"><sup>$</sup>1,299</div>
-              <div class="pkg-timeline">Typically 5–10 business days</div>
-            </div>
-            <div class="pkg-body">
-              <ul class="pkg-includes">
-                <li>Discovery call + needs analysis</li>
-                <li>Shortlist of 3–5 matches with target OTDs</li>
-                <li>Dealer outreach — OTD roundup sheet</li>
-                <li>Negotiation by email (we run it or ghostwrite)</li>
-                <li>Trade-in valuation strategy</li>
-                <li>Finance office prep: what to accept/decline</li>
-                <li>Final buyer's-order review before you sign</li>
-              </ul>
-              <a href="intake.html" class="btn btn--gold btn--full"
-                onclick="gtag('event','click',{event_category:'CTA',event_label:'Pkg - Standard'})">
-                Apply for Standard
-              </a>
-            </div>
-          </div>
-
-          <!-- Premium -->
-          <div class="pkg-card reveal" style="transition-delay:0.16s">
-            <div class="pkg-header">
-              <div class="pkg-badge pkg-badge--premium">White-Glove</div>
-              <div class="pkg-name">Premium Concierge</div>
-              <div class="pkg-price"><sup>$</sup>2,999</div>
-              <div class="pkg-timeline">Typically 3–7 business days</div>
-            </div>
-            <div class="pkg-body">
-              <ul class="pkg-includes">
-                <li class="divider">Everything in Standard, plus:</li>
-                <li>Phone negotiation + escalation to wider markets</li>
-                <li>Test-drive scheduling & delivery coordination</li>
-                <li>Shipping quotes and timing management</li>
-                <li>Dedicated text thread, same-day responses</li>
-                <li>Final buyer's-order review line by line</li>
-              </ul>
-              <a href="intake.html" class="btn btn--ghost btn--full"
-                onclick="gtag('event','click',{event_category:'CTA',event_label:'Pkg - Premium'})">
-                Apply for Premium
+                Get Deal Review
               </a>
             </div>
           </div>
 
         </div>
 
-        <!-- Compare table -->
-        <div class="compare-wrap reveal">
-          <table class="compare-table" aria-label="Package comparison">
-            <thead>
-              <tr>
-                <th>What's included</th>
-                <th>Review<br><span style="font-weight:400; color:var(--gold); font-size:0.9em;">$129</span></th>
-                <th>Standard<br><span style="font-weight:400; color:var(--gold); font-size:0.9em;">$1,299</span></th>
-                <th>Premium<br><span style="font-weight:400; color:var(--gold); font-size:0.9em;">$2,999</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Quote audit &amp; counter-email</td><td class="check-gold">✓</td><td class="check-gold">✓</td><td class="check-gold">✓</td></tr>
-              <tr><td>Shortlist + target pricing</td><td class="check-no">—</td><td class="check-gold">✓</td><td class="check-gold">✓</td></tr>
-              <tr><td>Dealer outreach &amp; OTD roundup</td><td class="check-no">—</td><td class="check-gold">✓</td><td class="check-gold">✓</td></tr>
-              <tr><td>Negotiation by email</td><td class="check-no">—</td><td class="check-gold">✓</td><td class="check-gold">✓</td></tr>
-              <tr><td>Trade-in strategy</td><td class="check-no">—</td><td class="check-gold">✓</td><td class="check-gold">✓</td></tr>
-              <tr><td>Final paperwork review</td><td class="check-no">—</td><td class="check-gold">✓</td><td class="check-gold">✓</td></tr>
-              <tr><td>Phone negotiation &amp; escalation</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-gold">✓</td></tr>
-              <tr><td>Delivery coordination / shipping</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-gold">✓</td></tr>
-              <tr><td>Dedicated text thread</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-gold">✓</td></tr>
-            </tbody>
-          </table>
-          <div class="compare-disclaimer">
-            You always sign and pay the dealership directly. We are not a dealer or broker and do not mark up rates or products.
-          </div>
+        <!-- Concierge offer -->
+        <div class="reveal" style="margin-top: 3rem; text-align: center; padding: 2.5rem 1.5rem; background: rgba(198,169,114,0.08); border: 1px solid rgba(198,169,114,0.2); border-radius: 14px;">
+          <div class="eyebrow">Full-Service Concierge</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--white); margin: 0.5rem 0;">Concierge</h3>
+          <p style="font-size: 1.4rem; color: var(--gold); margin: 0.5rem 0; font-weight: 700;">from $2,999 · By application</p>
+          <p style="font-size: 0.95rem; color: var(--ink-dim); max-width: 540px; margin: 1.25rem auto; line-height: 1.7;">
+            We source, negotiate, and coordinate delivery end to end. Email-first process with phone calls and market escalation as needed. Founder-run — we take on a small number of clients at a time.
+          </p>
+          <a href="intake.html" class="btn btn--gold"
+            onclick="gtag('event','click',{event_category:'CTA',event_label:'Pkg - Concierge'})">
+            Request a Spot
+          </a>
         </div>
+
+        <!-- Prefer DIY -->
+        <div class="reveal" style="margin-top: 2rem; text-align: center; padding: 1.5rem;">
+          <p style="color: var(--ink-mute); margin: 0;">
+            <a href="/index.html#pricing" style="color: var(--gold); text-decoration: underline;">Prefer DIY? Get the Toolkit — $29</a>
+          </p>
+        </div>
+
       </div>
     </section>
 
