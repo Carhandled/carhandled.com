@@ -41,12 +41,13 @@
   <!-- SEO -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.carhandled.com/"/>
-  <link rel="preload" as="image" href="/assets/img/toolkitbackground.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/img/toolkitbackground-mobile.jpg" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/img/toolkitbackground-opt.jpg" media="(min-width: 769px)" fetchpriority="high">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://assets.mlcdn.com/fonts.css?version=1752738">
 
   <!-- Structured Data -->
@@ -325,11 +326,16 @@
       overflow: hidden;
     }
 
+    /* Mobile-first: 43KB image. Desktop swaps to the larger file below. */
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('/assets/img/toolkitbackground.jpg') center/cover no-repeat;
+      background: url('/assets/img/toolkitbackground-mobile.jpg') center/cover no-repeat;
+      background-color: #0a0a0a;
       z-index: 0;
+    }
+    @media (min-width: 769px) {
+      .hero-bg { background-image: url('/assets/img/toolkitbackground-opt.jpg'); }
     }
 
     /* Diagonal stripe overlay — matches PDF aesthetic */
@@ -367,41 +373,41 @@
       width: 100%;
     }
 
-    .hero-badge {
-      display: inline-flex;
+    /* Proof line — scannable, sits above the headline */
+    .hero-proof {
+      display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(198,169,114,0.1);
-      border: 1px solid rgba(198,169,114,0.3);
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      margin-bottom: 1.6rem;
-      font-size: 0.78rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.1rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
+      letter-spacing: 0.03em;
+      color: var(--ink-dim);
     }
-    .hero-badge span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .hero-stars { color: var(--gold); letter-spacing: 0.1em; }
 
     .hero h1 {
       color: var(--white);
       max-width: 680px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       text-shadow: 0 2px 24px rgba(0,0,0,0.4);
     }
     .hero h1 em {
+      display: block;
       font-style: normal;
       color: var(--gold);
+      font-size: 0.66em;
+      line-height: 1.25;
+      margin-top: 0.5rem;
     }
 
     .hero-sub {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--ink-dim);
-      max-width: 520px;
-      margin-bottom: 2.2rem;
-      line-height: 1.65;
+      max-width: 500px;
+      margin-bottom: 1.6rem;
+      line-height: 1.6;
     }
     .hero-sub a { color: var(--gold); }
 
@@ -412,16 +418,46 @@
       flex-wrap: wrap;
     }
 
-    .hero-meta {
-      margin-top: 1rem;
-      font-size: 0.82rem;
-      color: var(--ink-mute);
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
+    /* Primary CTA — visually dominant */
+    .btn--hero {
+      font-size: 1.08rem;
+      font-weight: 700;
+      padding: 1.05rem 2.4rem;
+      box-shadow: 0 6px 28px rgba(198,169,114,0.28);
+      letter-spacing: 0.01em;
     }
-    .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
-    .hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold-dim); }
+
+    /* Guarantee badge — sits directly under the CTA */
+    .hero-guarantee {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.95rem;
+      padding: 0.5rem 0.9rem;
+      border: 1px solid rgba(198,169,114,0.32);
+      background: rgba(198,169,114,0.09);
+      border-radius: 999px;
+      font-size: 0.83rem;
+      color: var(--ink-dim);
+      line-height: 1.3;
+    }
+    .hero-guarantee svg { color: var(--gold); flex-shrink: 0; }
+    .hero-guarantee strong { color: var(--white); font-weight: 600; white-space: nowrap; }
+    .hero-guarantee .g-sub { white-space: nowrap; }
+
+    .hero-quote {
+      margin-top: 1rem;
+      max-width: 460px;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--ink-mute);
+      line-height: 1.5;
+    }
+    .hero-quote span {
+      font-style: normal;
+      white-space: nowrap;
+      color: var(--gold-dim);
+    }
 
     /* Trust strip — bottom of hero */
     .hero-trust {
@@ -1166,14 +1202,16 @@
       .header-nav { display: none; }
       .hamburger { display: flex; }
 
-      .hero { min-height: 88vh; }
-      .hero h1 { font-size: 2.1rem; }
-      .hero-sub { font-size: 0.98rem; }
-      .hero-trust { gap: 1.2rem; }
-      .trust-item:nth-child(3) { display: none; }
+      /* Compact hero so headline + $29 + CTA + guarantee all sit above the fold */
+      .hero { min-height: auto; align-items: flex-start; }
+      .hero-content { padding: 2.25rem 1.25rem 2.75rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero-sub { font-size: 0.98rem; margin-bottom: 1.4rem; }
+      .hero-trust { display: none; }
 
       .hero-actions { flex-direction: column; align-items: stretch; }
       .hero-actions .btn { width: 100%; text-align: center; }
+      .hero-guarantee { justify-content: center; text-align: left; }
 
       .worksheet-grid { grid-template-columns: 1fr; }
       .worksheet-scenario:first-child { border-right: none; border-bottom: 1px solid var(--border); }
@@ -1199,7 +1237,14 @@
     @media (max-width: 480px) {
       h1 { font-size: 1.9rem; }
       .hero-trust { display: none; }
-      .hero-meta { flex-direction: column; gap: 0.4rem; }
+
+      .hero-content { padding: 1.9rem 1.15rem 2.4rem; }
+      .hero h1 { font-size: 1.85rem; }
+      .hero-proof { font-size: 0.75rem; margin-bottom: 0.9rem; }
+      .hero-sub { margin-bottom: 1.25rem; }
+      .btn--hero { font-size: 1.02rem; padding: 0.95rem 1.5rem; }
+      .hero-guarantee { font-size: 0.78rem; padding: 0.45rem 0.8rem; margin-top: 0.8rem; }
+      .hero-quote { font-size: 0.83rem; margin-top: 0.85rem; }
     }
   </style>
 
@@ -1252,48 +1297,36 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <div class="hero-badge">
-          <span></span>
-          500+ deals. Former dealer. Your side now.
+        <div class="hero-proof">
+          <span class="hero-stars" aria-hidden="true">★★★★★</span>
+          500+ deals negotiated · Built by a former dealer
         </div>
 
         <h1>
-          The dealer knew something<br>
-          <em>you didn't.</em><br>
-          Now you do.
+          Stop overpaying at the dealership.
+          <em>$29 gets you the scripts that do it.</em>
         </h1>
 
         <p class="hero-sub">
-          Copy-paste emails that get dealers to send clean OTD quotes in writing —
-          before you set foot in a showroom. Save $1,000+ on your next car.
-          Built by a <a href="#pricing"><strong>former dealer</strong></a>. Now on your side.
+          Copy-paste emails that make dealers send clean out-the-door numbers in
+          writing — plus the calculators that catch junk fees before you sign.
         </p>
 
         <div class="hero-actions">
-          <a href="#pricing" class="btn btn--gold" aria-label="Get the CarHandled Toolkit for $29">
+          <a href="#pricing" class="btn btn--gold btn--hero" aria-label="Get the CarHandled Toolkit for $29">
             Get the Toolkit — $29
-          </a>
-          <a href="#proof" class="btn btn--outline">
-            See a Real Example →
           </a>
         </div>
 
-        <div class="hero-meta">
-          <span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            Instant access
-          </span>
-          <span class="dot"></span>
-          <span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            30-day refund
-          </span>
-          <span class="dot"></span>
-          <span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            New · Used · Lease
-          </span>
+        <div class="hero-guarantee">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span><strong>30-day money-back guarantee</strong> <span class="g-sub">· No questions asked</span></span>
         </div>
+
+        <p class="hero-quote">
+          "I negotiated below MSRP using just the scripts."
+          <span>— James T., Austin TX</span>
+        </p>
       </div>
 
       <div class="hero-trust" aria-label="Trust signals">
