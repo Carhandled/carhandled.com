@@ -360,6 +360,28 @@
       flex-shrink: 0;
     }
 
+    /* ── Save & print box ───────────────────────────────── */
+    .print-box {
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .print-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.86rem;
+      color: var(--ink-mute);
+      line-height: 1.55;
+    }
+    .print-row:last-child { border-bottom: none; }
+    .print-row svg { color: var(--gold); flex-shrink: 0; margin-top: 0.15rem; }
+    .print-row strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 0.15rem; }
+
     /* ── How to start ───────────────────────────────────── */
     .howto-label {
       font-size: 0.7rem;
@@ -612,7 +634,9 @@
             </svg>
             <p>
               <strong>Check your inbox</strong> — the email with all attachments usually arrives within 60 seconds.
-              If you don't see it, check your spam folder or reply to the confirmation email.
+              If you don't see it, check your spam and promotions folders, then email
+              <a href="mailto:info@carhandled.com?subject=Toolkit%20files%20didn't%20arrive">info@carhandled.com</a>
+              and we'll send them straight over.
             </p>
           </div>
 
@@ -669,6 +693,37 @@
               <div class="file-badge pdf">PDF</div>
               <span class="file-name">README — Lease vs Buy</span>
               <span class="file-type">Guide</span>
+            </div>
+          </div>
+
+          <!-- How to save & print -->
+          <div class="howto-label">How to save &amp; print them</div>
+
+          <div class="print-box">
+            <div class="print-row">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+              <div>
+                <strong>The 5 PDFs are built to print.</strong>
+                Open the email, tap the attachment, then Print — on iPhone use Share → Print,
+                on Android tap ⋮ → Print, on a computer press Ctrl+P (Cmd+P on Mac).
+                The scripts and checklists are formatted for standard letter paper.
+              </div>
+            </div>
+            <div class="print-row">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <div>
+                <strong>The 4 calculators are spreadsheets.</strong>
+                They open in Excel, Numbers, or Google Sheets — in Sheets use
+                File → Import → Upload. Best used on a computer, not printed.
+              </div>
+            </div>
+            <div class="print-row">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>
+              <div>
+                <strong>Save them before you go.</strong>
+                Download the attachments to your phone or drive so you have them at the
+                dealership without needing signal.
+              </div>
             </div>
           </div>
 

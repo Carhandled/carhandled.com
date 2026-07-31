@@ -79,7 +79,7 @@
     "mainEntity":[
       {"@type":"Question","name":"What is the Toolkit?","acceptedAnswer":{"@type":"Answer","text":"A step-by-step guide, copy/paste emails, calculators, and checklists to get a clean out-the-door price and avoid junk fees."}},
       {"@type":"Question","name":"What's inside?","acceptedAnswer":{"@type":"Answer","text":"Buying guide, OTD email templates, negotiation flows, purchase & lease calculators, deal comparison sheet, delivery & finance office checklists."}},
-      {"@type":"Question","name":"How do I access it?","acceptedAnswer":{"@type":"Answer","text":"Instant Google Sheets + PDF links after checkout. Make your own copy and start."}},
+      {"@type":"Question","name":"How do I access it?","acceptedAnswer":{"@type":"Answer","text":"All 9 files are emailed to you as attachments right after checkout, usually within 60 seconds. You get 5 printable PDFs plus 4 spreadsheet calculators that open in Excel, Numbers, or Google Sheets. Print the PDFs or use them from your phone."}},
       {"@type":"Question","name":"Refund policy?","acceptedAnswer":{"@type":"Answer","text":"30-day refund—no questions asked."}},
       {"@type":"Question","name":"What is a car buying toolkit?","acceptedAnswer":{"@type":"Answer","text":"A bundle of templates, calculators, and checklists that help you request clean out-the-door quotes, compare offers, and avoid junk fees. CarHandled's toolkit focuses on action-first email scripts and OTD math."}},
       {"@type":"Question","name":"Is the CarHandled car buying toolkit legit?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's built by a former dealer, includes copy-paste email templates and calculators, and comes with a 30-day refund."}}
@@ -445,19 +445,20 @@
     .hero-guarantee strong { color: var(--white); font-weight: 600; white-space: nowrap; }
     .hero-guarantee .g-sub { white-space: nowrap; }
 
-    .hero-quote {
-      margin-top: 1rem;
+    /* Format + delivery — answers "what do I actually get?" before the buy */
+    .hero-format {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: 0.85rem;
       max-width: 460px;
-      font-size: 0.88rem;
-      font-style: italic;
-      color: var(--ink-mute);
+      font-size: 0.82rem;
+      color: var(--ink-dim);
       line-height: 1.5;
     }
-    .hero-quote span {
-      font-style: normal;
-      white-space: nowrap;
-      color: var(--gold-dim);
-    }
+    .hero-format svg { color: var(--gold); flex-shrink: 0; margin-top: 0.18rem; }
+    .hero-format strong { color: var(--white); font-weight: 600; }
+
 
     /* Trust strip — bottom of hero */
     .hero-trust {
@@ -777,8 +778,24 @@
       margin-top: 0.05rem;
     }
 
-    .price-guarantee {
+    /* Delivery + format, directly under the buy button */
+    .price-delivery {
       margin-top: 1rem;
+      padding: 0.75rem 0.9rem;
+      background: rgba(198,169,114,0.07);
+      border: 1px solid rgba(198,169,114,0.2);
+      border-radius: 9px;
+      font-size: 0.82rem;
+      color: var(--ink-dim);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .price-delivery svg { color: var(--gold); flex-shrink: 0; margin-top: 0.2rem; }
+
+    .price-guarantee {
+      margin-top: 0.85rem;
       text-align: center;
       font-size: 0.8rem;
       color: var(--ink-mute);
@@ -1244,7 +1261,8 @@
       .hero-sub { margin-bottom: 1.25rem; }
       .btn--hero { font-size: 1.02rem; padding: 0.95rem 1.5rem; }
       .hero-guarantee { font-size: 0.78rem; padding: 0.45rem 0.8rem; margin-top: 0.8rem; }
-      .hero-quote { font-size: 0.83rem; margin-top: 0.85rem; }
+      .hero-format { font-size: 0.78rem; margin-top: 0.7rem; }
+      .hero-quote { font-size: 0.82rem; margin-top: 0.7rem; }
     }
   </style>
 
@@ -1308,8 +1326,8 @@
         </h1>
 
         <p class="hero-sub">
-          Copy-paste emails that make dealers send clean out-the-door numbers in
-          writing — plus the calculators that catch junk fees before you sign.
+          Copy-paste emails that make dealers send clean out-the-door numbers
+          in writing — before you set foot in a showroom.
         </p>
 
         <div class="hero-actions">
@@ -1323,9 +1341,9 @@
           <span><strong>30-day money-back guarantee</strong> <span class="g-sub">· No questions asked</span></span>
         </div>
 
-        <p class="hero-quote">
-          "I negotiated below MSRP using just the scripts."
-          <span>— James T., Austin TX</span>
+        <p class="hero-format">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+          <span><strong>Emailed instantly</strong> — 5 printable PDFs + 4 calculators.</span>
         </p>
       </div>
 
@@ -1344,7 +1362,7 @@
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          Instant download
+          Emailed in 60 seconds
         </div>
       </div>
     </section>
@@ -1387,6 +1405,60 @@
         <span class="feature-item feature-sep">·</span>
       </div>
     </div>
+
+    <!-- ══ WHAT YOU GET & HOW IT WORKS ══════════════════════════ -->
+    <section class="howget-section" aria-label="What you get and how it works">
+      <style>
+        .howget-section { padding: 2.5rem 1.25rem; background: var(--panel); border-bottom: 1px solid var(--border); }
+        .howget-inner { max-width: 940px; margin: 0 auto; }
+        .howget-title {
+          text-align: center; font-size: 0.72rem; font-weight: 600;
+          letter-spacing: 0.16em; text-transform: uppercase;
+          color: var(--gold); margin-bottom: 1.4rem;
+        }
+        .howget-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .howget-step {
+          display: flex; align-items: flex-start; gap: 0.75rem;
+          background: var(--card); border: 1px solid var(--border2);
+          border-radius: 10px; padding: 1rem 1.1rem;
+        }
+        .howget-num {
+          width: 24px; height: 24px; border-radius: 50%; background: var(--gold);
+          color: var(--black); font-size: 0.72rem; font-weight: 700;
+          display: flex; align-items: center; justify-content: center;
+          flex-shrink: 0; margin-top: 1px;
+        }
+        .howget-step strong { display: block; color: var(--white); font-size: 0.92rem; font-weight: 500; margin-bottom: 0.2rem; }
+        .howget-step p { font-size: 0.82rem; color: var(--ink-mute); line-height: 1.5; margin: 0; }
+        @media (max-width: 760px) { .howget-steps { grid-template-columns: 1fr; gap: 0.65rem; } }
+      </style>
+      <div class="howget-inner">
+        <div class="howget-title">What you get &amp; how it works</div>
+        <div class="howget-steps">
+          <div class="howget-step">
+            <div class="howget-num">1</div>
+            <div>
+              <strong>Buy — $29, one time</strong>
+              <p>Card payment through Stripe. No subscription, no account to create.</p>
+            </div>
+          </div>
+          <div class="howget-step">
+            <div class="howget-num">2</div>
+            <div>
+              <strong>9 files hit your inbox</strong>
+              <p>Usually within 60 seconds — 5 PDFs and 4 spreadsheet calculators, attached to the email.</p>
+            </div>
+          </div>
+          <div class="howget-step">
+            <div class="howget-num">3</div>
+            <div>
+              <strong>Print them or use your phone</strong>
+              <p>The PDFs are built to print — scripts and checklists on paper. The calculators open in Excel, Numbers, or Google Sheets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ══ PROOF ════════════════════════════════════════════════ -->
     <section class="proof-section" id="proof">
@@ -1592,6 +1664,15 @@
         }
         .inside-badge.pdf { background: rgba(224,82,82,0.1); color: #E05252; border: 1px solid rgba(224,82,82,0.2); }
         .inside-badge.xls { background: rgba(76,175,112,0.1); color: #4CAF70; border: 1px solid rgba(76,175,112,0.2); }
+        .inside-badges { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+        .inside-tag {
+          display: inline-flex; align-items: center; gap: 0.28rem;
+          font-size: 0.66rem; font-weight: 500; letter-spacing: 0.04em;
+          padding: 0.2rem 0.45rem; border-radius: 5px;
+          background: rgba(198,169,114,0.1); color: var(--gold);
+          border: 1px solid rgba(198,169,114,0.22);
+        }
+        .inside-tag svg { flex-shrink: 0; }
         .inside-card h3 { font-size: 0.98rem; color: var(--white); margin: 0; line-height: 1.35; }
         .inside-card p { font-size: 0.82rem; color: var(--ink-mute); margin: 0; line-height: 1.55; }
         .inside-note {
@@ -1612,32 +1693,32 @@
 
         <div class="inside-grid reveal">
           <div class="inside-card">
-            <span class="inside-badge pdf">PDF</span>
+            <div class="inside-badges"><span class="inside-badge pdf">PDF</span><span class="inside-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>Printable</span></div>
             <h3>The Toolkit Guide</h3>
             <p>The full playbook: OTD scripts, negotiation flows, delivery & finance-office checklists.</p>
           </div>
           <div class="inside-card">
-            <span class="inside-badge xls">XLS</span>
+            <div class="inside-badges"><span class="inside-badge xls">XLS</span><span class="inside-tag">Excel · Sheets · Numbers</span></div>
             <h3>Buy Estimator</h3>
             <p>See your true monthly payment and total cost before any dealer does the math for you.</p>
           </div>
           <div class="inside-card">
-            <span class="inside-badge xls">XLS</span>
+            <div class="inside-badges"><span class="inside-badge xls">XLS</span><span class="inside-tag">Excel · Sheets · Numbers</span></div>
             <h3>Lease Estimator</h3>
             <p>Dealer-style lease calculator — money factor, residual, and drive-off, decoded.</p>
           </div>
           <div class="inside-card">
-            <span class="inside-badge xls">XLS</span>
+            <div class="inside-badges"><span class="inside-badge xls">XLS</span><span class="inside-tag">Excel · Sheets · Numbers</span></div>
             <h3>Deal Comparison Sheet</h3>
             <p>Put every dealer quote side by side and spot the cleanest out-the-door number instantly.</p>
           </div>
           <div class="inside-card">
-            <span class="inside-badge xls">XLS</span>
+            <div class="inside-badges"><span class="inside-badge xls">XLS</span><span class="inside-tag">Excel · Sheets · Numbers</span></div>
             <h3>Lease vs Buy</h3>
             <p>Total-cost comparison over the term so you know which option actually wins.</p>
           </div>
           <div class="inside-card">
-            <span class="inside-badge pdf">PDF</span>
+            <div class="inside-badges"><span class="inside-badge pdf">PDF</span><span class="inside-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>Printable</span></div>
             <h3>Setup & README Guides</h3>
             <p>Step-by-step instructions for every calculator, plus your toolkit license.</p>
           </div>
@@ -1661,7 +1742,7 @@
 
         <div class="price-card reveal">
           <div class="price-card-top">
-            <span class="price-tag">Instant download · Free updates</span>
+            <span class="price-tag">Emailed instantly · Free updates</span>
             <div class="price-title">The playbook dealers hope you never find.</div>
             <div class="price-row">
               <span class="price-now">$29</span>
@@ -1678,7 +1759,7 @@
               <li>Lease vs buy math that actually makes sense</li>
               <li>Delivery Day checklist — nothing gets slipped past you</li>
               <li>Real before/after example — $3,696 saved, same car</li>
-              <li>Google Sheets + PDF · Free updates for life</li>
+              <li>5 printable PDFs + 4 calculators (Excel · Sheets · Numbers) · Free updates for life</li>
             </ul>
 
             <a
@@ -1690,6 +1771,12 @@
             >
               Get the Toolkit — $29 · 30-Day Refund
             </a>
+
+            <div class="price-delivery">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+              <span>All 9 files land in your inbox in about 60 seconds. Print the PDFs,
+              or open them on your phone at the dealership.</span>
+            </div>
 
             <div class="price-guarantee">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
