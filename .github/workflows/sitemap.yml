@@ -21,8 +21,13 @@ jobs:
           set -e
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-          for file in $(find . -name '*.html'); do
+          for file in $(find . -name '*.html' | sort); do
             path="${file#./}"
+            # Skip anything marked noindex — redirect stubs, 404, post-purchase pages
+            if grep -qi '<meta name="robots" content="noindex' "$file"; then
+              echo "Skipping noindex page: $path"
+              continue
+            fi
             url="https://carhandled.com/${path/index.html/}"
             echo "  <url><loc>$url</loc><priority>0.80</priority></url>" >> sitemap.xml
           done

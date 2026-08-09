@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Started – CarHandled Concierge Intake</title>
+  <title>Get Started — Car Buying Concierge Intake | CarHandled</title>
   <meta name="description" content="Tell us your goals, budget, and timeline — so we can help you buy smarter, faster." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://www.carhandled.com/intake.html" />
@@ -88,10 +88,19 @@ header.shrink img {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .intake-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      text-align: center;
+      color: #FFFFFF;
+      margin: 3rem 1rem 0;
+      line-height: 1.2;
+    }
     .form-wrapper {
       display: flex;
       justify-content: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem 3rem;
     }
     iframe {
       width: 100%;
@@ -111,6 +120,19 @@ header.shrink img {
       text-decoration: none;
     }
   </style>
+  <!-- Organization entity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.carhandled.com/#organization",
+    "name": "CarHandled",
+    "url": "https://www.carhandled.com/",
+    "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"},
+    "email": "info@carhandled.com",
+    "founder": {"@id": "https://www.carhandled.com/about.html#ali-camur"}
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -131,8 +153,10 @@ header.shrink img {
 </nav>
   </header>
 
+  <h1 class="intake-title">Get Started — Car Buying Concierge Intake</h1>
+
   <div class="form-wrapper">
-    <iframe 
+    <iframe
       data-tally-src="https://tally.so/embed/mR1yZQ?hideTitle=1&transparentBackground=1&dynamicHeight=1"
       loading="lazy"
       title="CarHandled Intake Form 🚗 So we can help you better.">
