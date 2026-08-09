@@ -39,6 +39,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.carhandled.com/about.html#ali-camur",
+    "name": "Ali Camur",
+    "givenName": "Ali",
+    "familyName": "Camur",
+    "jobTitle": "Founder",
+    "image": "https://www.carhandled.com/assets/img/founder.jpg",
+    "description": "Founder of CarHandled. Eight years in the auto industry, six of them in the luxury segment, now working on the buyer's side of the desk.",
+    "knowsAbout": [
+      "Car buying negotiation",
+      "Out-the-door pricing",
+      "Dealer add-ons and finance office products",
+      "Auto lease and finance structuring"
+    ],
+    "worksFor": {"@id": "https://www.carhandled.com/#organization"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.carhandled.com/about.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.carhandled.com/#organization",
+    "name": "CarHandled",
+    "url": "https://www.carhandled.com/",
+    "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"},
+    "email": "info@carhandled.com",
+    "founder": {"@id": "https://www.carhandled.com/about.html#ali-camur"}
+  }
+  </script>
+
   <!-- Hotjar -->
   <script>
     (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:6473373,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
@@ -395,6 +430,12 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+    .founder-cred {
+      font-size: 0.85rem;
+      color: var(--ink-mute);
+      line-height: 1.5;
       margin-bottom: 0.9rem;
     }
     .founder-quote {
@@ -730,11 +771,12 @@
           <div class="reveal" style="transition-delay:0.1s">
             <div class="founder-card">
               <div class="founder-img-wrap">
-                <img src="assets/img/founder.jpg" alt="Ali, Founder of CarHandled" loading="lazy">
+                <img src="/assets/img/founder.jpg" alt="Ali Camur, Founder of CarHandled" loading="lazy">
               </div>
               <div class="founder-info">
-                <div class="founder-name">Ali</div>
+                <div class="founder-name">Ali Camur</div>
                 <div class="founder-title">Founder · CarHandled</div>
+                <div class="founder-cred">8 years in the auto industry, 6 in luxury</div>
                 <p class="founder-quote">
                   "I sat on both sides of that desk. I know what the manager says when you leave the room. Now I'm on your side."
                 </p>

@@ -1,25 +1,25 @@
 # CarHandled
 
-> CarHandled helps car buyers get a clean out-the-door (OTD) price and avoid junk fees. It was built by a former car dealer who negotiated 500+ deals and now works on the buyer's side. CarHandled offers a $29 self-service toolkit and a done-for-you concierge service.
+> CarHandled helps car buyers get a clean out-the-door (OTD) price and avoid junk fees. It was built by Ali Camur, a former car dealer with 8 years in the auto industry, 6 of them in the luxury segment, who now works on the buyer's side. CarHandled offers a $29 self-service toolkit and a done-for-you concierge service.
 
 ## What CarHandled offers
 
 - [Car Buying Toolkit ($29)](https://www.carhandled.com/#pricing): Copy-paste dealer emails, buy and lease calculators, a deal comparison sheet, a lease-vs-buy worksheet, and delivery/finance-office checklists. Instant download.
 - [Concierge Service](https://www.carhandled.com/services.html): A car buying concierge that sources the vehicle, negotiates the out-the-door price, and coordinates delivery. The buyer signs directly with the dealer. Multiple tiers, from a single deal review to full end-to-end handling.
 
-## Key guides (free)
+## Key guides (free) — all at https://www.carhandled.com/guides/
 
-- [How to Get a Real Out-the-Door Price](https://www.carhandled.com/guides/out-the-door-price-email-guide.html): What an OTD price is, what belongs in it, and copy-paste emails to get one in writing.
+- [How to Get a Real Out-the-Door Price by Email](https://www.carhandled.com/guides/out-the-door-price-email-guide.html): What an OTD price is, what belongs in it, and copy-paste emails to get one in writing.
 - [What is Out-the-Door Price? OTD Explained](https://www.carhandled.com/guides/what-is-out-the-door-price.html): A plain-English breakdown of the only car price that matters.
-- [How to Email a Dealer for the Best Car Price](https://www.carhandled.com/guides/how-to-get-most-for-trade-in.html): Templates and a process to get dealers competing by email.
-- [Best Car Buying Toolkits & Negotiation Tools in 2026](https://www.carhandled.com/guides/best-car-buying-toolkits-2026.html): An honest comparison of car buying tools.
+- [How to Get the Most for Your Trade-In](https://www.carhandled.com/guides/how-to-get-most-for-trade-in.html): How to find your car's real value, get outside offers as leverage, and keep the trade from being used against you.
+- [Best Car Buying Toolkits in 2026: What to Look For](https://www.carhandled.com/guides/best-car-buying-toolkits-2026.html): The eight things a car buying toolkit has to do before it is worth paying for, and the red flags to avoid.
 
 ## Key facts
 
 - An out-the-door (OTD) price is the total a buyer pays to drive away: negotiated vehicle price, dealer doc fee, sales tax, and title/registration/DMV fees.
 - Add-ons like VIN etching, nitrogen, paint protection, and market adjustments (ADM) are typically optional and negotiable.
 - CarHandled recommends requesting a written, line-item OTD quote from 4-6 dealers by email before visiting a dealership.
-- Founder: Ali, a former car dealer. Contact: info@carhandled.com
+- Founder: Ali Camur, a former car dealer with 8 years in the auto industry, 6 of them in luxury. Contact: info@carhandled.com
 
 ## Policies
 

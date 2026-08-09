@@ -52,11 +52,28 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Product","name":"CarHandled Toolkit",
+    "@context":"https://schema.org","@type":"Product","name":"CarHandled Car Buying Toolkit",
     "image":"https://www.carhandled.com/assets/img/toolkitbackground.jpg",
-    "description":"Emails, scripts, calculators, and checklists to get a clean out-the-door price and avoid junk fees.",
-    "sku":"toolkit-v1","brand":{"@type":"Organization","name":"CarHandled"},
-    "offers":{"@type":"Offer","priceCurrency":"USD","price":"29.00","availability":"https://schema.org/InStock","url":"https://www.carhandled.com/"}
+    "description":"The dealer-side material — which add-ons are pure margin, the Finance Office guide, buy and lease calculators, the deal comparison sheet, delivery checklists, and copy-paste out-the-door email scripts.",
+    "sku":"toolkit-v1",
+    "brand":{"@id":"https://www.carhandled.com/#organization"},
+    "offers":{
+      "@type":"Offer",
+      "priceCurrency":"USD",
+      "price":"29.00",
+      "availability":"https://schema.org/InStock",
+      "itemCondition":"https://schema.org/NewCondition",
+      "url":"https://www.carhandled.com/#pricing",
+      "seller":{"@id":"https://www.carhandled.com/#organization"},
+      "hasMerchantReturnPolicy":{
+        "@type":"MerchantReturnPolicy",
+        "applicableCountry":"US",
+        "returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays":30,
+        "returnMethod":"https://schema.org/ReturnByMail",
+        "returnFees":"https://schema.org/FreeReturn"
+      }
+    }
   }</script>
 
   <!-- Organization / brand entity for Google + AI recognition -->
@@ -68,7 +85,8 @@
     "url":"https://www.carhandled.com/",
     "logo":"https://www.carhandled.com/assets/img/logo.png",
     "description":"CarHandled helps car buyers get a clean out-the-door price and avoid junk fees, using tools and negotiation help built by a former car dealer.",
-    "founder":{"@type":"Person","name":"Ali"},
+    "@id":"https://www.carhandled.com/#organization",
+    "founder":{"@id":"https://www.carhandled.com/about.html#ali-camur"},
     "sameAs":["https://www.instagram.com/carhandled"],
     "contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"info@carhandled.com"}
   }
@@ -82,7 +100,7 @@
       {"@type":"Question","name":"How do I access it?","acceptedAnswer":{"@type":"Answer","text":"All 9 files are emailed to you as attachments right after checkout, usually within 60 seconds. You get 5 printable PDFs plus 4 spreadsheet calculators that open in Excel, Numbers, or Google Sheets. Print the PDFs or use them from your phone."}},
       {"@type":"Question","name":"Refund policy?","acceptedAnswer":{"@type":"Answer","text":"30-day refund—no questions asked."}},
       {"@type":"Question","name":"What is a car buying toolkit?","acceptedAnswer":{"@type":"Answer","text":"A bundle of templates, calculators, and checklists that help you request clean out-the-door quotes, compare offers, and avoid junk fees. CarHandled's toolkit focuses on action-first email scripts and OTD math."}},
-      {"@type":"Question","name":"Is the CarHandled car buying toolkit legit?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's built by a former dealer, includes copy-paste email templates and calculators, and comes with a 30-day refund."}}
+      {"@type":"Question","name":"Is the CarHandled car buying toolkit legit?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's built by Ali Camur, who spent 8 years in the auto industry and 6 in the luxury segment. It includes the add-on margin breakdown, the Finance Office guide, calculators, and copy-paste email templates, and comes with a 30-day refund."}}
     ]
   }</script>
 
@@ -770,6 +788,34 @@
       font-size: 0.95rem;
     }
     .price-includes li:last-child { border-bottom: none; }
+
+    /* Founder, directly above the buy button — stays adjacent on mobile */
+    .price-founder {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0 0 1.1rem;
+      padding: 0.8rem 0.9rem;
+      background: rgba(198,169,114,0.06);
+      border: 1px solid rgba(198,169,114,0.18);
+      border-radius: 10px;
+    }
+    .price-founder img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--gold-dim);
+    }
+    .price-founder p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--ink-dim);
+      margin: 0;
+    }
+    .price-founder strong { color: var(--white); font-weight: 500; }
+    .price-founder a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
     .price-includes li::before {
       content: '✓';
       color: var(--gold);
@@ -1317,17 +1363,18 @@
       <div class="hero-content">
         <div class="hero-proof">
           <span class="hero-stars" aria-hidden="true">★★★★★</span>
-          500+ deals negotiated · Built by a former dealer
+          Built by Ali Camur — 8 years in the auto industry, 6 in luxury
         </div>
 
         <h1>
           Stop overpaying at the dealership.
-          <em>$29 gets you the scripts that do it.</em>
+          <em>$29 gets you the dealer's side of the desk.</em>
         </h1>
 
         <p class="hero-sub">
-          Copy-paste emails that make dealers send clean out-the-door numbers
-          in writing — before you set foot in a showroom.
+          Which add-ons are pure margin. What the manager says the moment you
+          leave the room. The Finance Office guide, the calculators, and the
+          deal comparison sheet that price the whole thing before you walk in.
         </p>
 
         <div class="hero-actions">
@@ -1350,7 +1397,7 @@
       <div class="hero-trust" aria-label="Trust signals">
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
-          500+ deals negotiated
+          8 years in the industry, 6 in luxury
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -1358,7 +1405,7 @@
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Built by a former dealer
+          Built by an ex-dealer, Ali Camur
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1752,15 +1799,21 @@
 
           <div class="price-card-body">
             <ul class="price-includes">
-              <li>Dealers send you written OTD quotes — before you ever negotiate</li>
-              <li>Scripts for every dealer response, including the walk-away line</li>
-              <li>Know exactly what you'll pay before you sign anything</li>
-              <li>Spot junk fees instantly — and know exactly what to say</li>
+              <li>Which add-ons are pure margin — and what each one really costs the dealer</li>
+              <li>The Finance Office guide: what gets presented, in what order, and why</li>
+              <li>What the manager says to your salesperson the moment you leave the room</li>
+              <li>Buy and lease calculators, plus the deal comparison sheet that flattens every quote to one number</li>
               <li>Lease vs buy math that actually makes sense</li>
+              <li>Copy-paste scripts for every dealer response, including the walk-away line</li>
               <li>Delivery Day checklist — nothing gets slipped past you</li>
               <li>Real before/after example — $3,696 saved, same car</li>
               <li>5 printable PDFs + 4 calculators (Excel · Sheets · Numbers) · Free updates for life</li>
             </ul>
+
+            <div class="price-founder">
+              <img src="/assets/img/founder.jpg" alt="Ali Camur, Founder of CarHandled" loading="lazy" width="52" height="52">
+              <p><strong>Built by Ali Camur</strong> — 8 years in the auto industry, 6 in luxury. <a href="/about.html">Read the story</a></p>
+            </div>
 
             <a
               href="https://buy.stripe.com/3cIaEXfIP9Ll4Ai0bbfIs05"
@@ -1816,7 +1869,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-question">Is the CarHandled toolkit legit?</button>
-            <div class="faq-answer">Yes — built by a former dealer who has negotiated 500+ deals, now working on the buyer's side. Includes copy-paste scripts and calculators, backed by a 30-day refund guarantee.</div>
+            <div class="faq-answer">Yes — built by Ali Camur, who spent 8 years in the auto industry, 6 of them in luxury, and now works on the buyer's side. Includes copy-paste scripts and calculators, backed by a 30-day refund guarantee.</div>
           </div>
           <div class="faq-item">
             <button class="faq-question">What's the refund policy?</button>
