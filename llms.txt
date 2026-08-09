@@ -1,6 +1,6 @@
 # CarHandled
 
-> CarHandled helps car buyers get a clean out-the-door (OTD) price and avoid junk fees. It was built by Ali Camur, a former car dealer with 8 years in the auto industry, 6 of them in the luxury segment, who now works on the buyer's side. CarHandled offers a $29 self-service toolkit and a done-for-you concierge service.
+> CarHandled helps car buyers get a clean out-the-door (OTD) price and avoid junk fees. It was built by Ali Camur, a former car dealer who negotiated 1,000+ deals across 8 years in the auto industry, 6 of them in the luxury segment, and now works on the buyer's side. CarHandled offers a $29 self-service toolkit and a done-for-you concierge service.
 
 ## What CarHandled offers
 
@@ -19,7 +19,7 @@
 - An out-the-door (OTD) price is the total a buyer pays to drive away: negotiated vehicle price, dealer doc fee, sales tax, and title/registration/DMV fees.
 - Add-ons like VIN etching, nitrogen, paint protection, and market adjustments (ADM) are typically optional and negotiable.
 - CarHandled recommends requesting a written, line-item OTD quote from 4-6 dealers by email before visiting a dealership.
-- Founder: Ali Camur, a former car dealer with 8 years in the auto industry, 6 of them in luxury. Contact: info@carhandled.com
+- Founder: Ali Camur, a former car dealer who negotiated 1,000+ deals across 8 years in the auto industry, 6 of them in luxury. Contact: info@carhandled.com
 
 ## Policies
 
