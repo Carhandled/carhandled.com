@@ -40,6 +40,7 @@
 
 header img {
   height: 48px;
+  width: auto;
   transition: height 0.3s ease;
 }
 
@@ -48,8 +49,7 @@ header.shrink {
 }
 
 header.shrink img {
-  height: 36px;
-}
+  height: 36px; width: auto;}
 
     #hamburger {
       display: flex;
@@ -137,7 +137,7 @@ header.shrink img {
 <body>
   <header>
     <a href="/">
-      <img src="/assets/img/logo.png" alt="CarHandled Logo">
+      <img src="/assets/img/logo.png" alt="CarHandled Logo" width="200" height="200">
     </a>
     <div id="hamburger" onclick="toggleNav()">
       <span></span>
