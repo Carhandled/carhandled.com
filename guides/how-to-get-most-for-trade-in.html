@@ -13,21 +13,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>How to Get the Most for Your Trade-In (2026) | CarHandled</title>
-  <meta name="description" content="How to get the most money for your car trade-in: how to get its real value, why to negotiate price and trade-in separately, and the dealer tricks that lowball you. From an ex-dealer." />
+  <meta name="description" content="Find your car's real trade-in value, get outside offers as leverage, and stop the dealer using your trade against you." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.carhandled.com/guides/how-to-get-most-for-trade-in.html" />
-  <link rel="preload" as="image" href="/assets/img/blog1.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/img/promise-bg.jpg" fetchpriority="high">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="article" />
   <meta property="og:url"         content="https://www.carhandled.com/guides/how-to-get-most-for-trade-in.html" />
   <meta property="og:title"       content="How to Get the Most for Your Trade-In (Ex-Dealer's Guide)" />
   <meta property="og:description" content="How dealers lowball trade-ins, how to find your car's real value, and why you should never mix the trade into the new-car price." />
-  <meta property="og:image"       content="https://www.carhandled.com/assets/img/blog1.jpg" />
+  <meta property="og:image"       content="https://www.carhandled.com/assets/img/promise-bg.jpg" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="How to Get the Most for Your Trade-In" />
   <meta name="twitter:description" content="Find your car's real value, avoid the lowball, and keep the trade separate from the deal. From an ex-dealer." />
-  <meta name="twitter:image"       content="https://www.carhandled.com/assets/img/blog1.jpg" />
+  <meta name="twitter:image"       content="https://www.carhandled.com/assets/img/promise-bg.jpg" />
 
   <!-- Favicons -->
   <link rel="icon"             href="/assets/img/favicon.ico" type="image/x-icon" />
@@ -45,7 +45,7 @@
     "@type": "HowTo",
     "name": "How to Get the Most for Your Car Trade-In",
     "description": "A step-by-step process to get top dollar for your trade-in: find its real value, get multiple offers, and keep the trade separate from the new-car negotiation.",
-    "image": "https://www.carhandled.com/assets/img/blog1.jpg",
+    "image": "https://www.carhandled.com/assets/img/promise-bg.jpg",
     "totalTime": "P3D",
     "step": [
       {"@type":"HowToStep","name":"Find your car's real value","text":"Check KBB, Edmunds, and Carvana/CarMax instant offers to establish a realistic range before talking to any dealer."},
@@ -61,7 +61,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How to Get the Most for Your Trade-In (Ex-Dealer's Guide)",
-    "image": "https://www.carhandled.com/assets/img/blog1.jpg",
+    "image": "https://www.carhandled.com/assets/img/promise-bg.jpg",
     "author": {"@type": "Person", "@id": "https://www.carhandled.com/about.html#ali-camur", "name": "Ali Camur", "jobTitle": "Founder", "image": "https://www.carhandled.com/assets/img/founder.jpg", "description": "Founder of CarHandled. Negotiated over 1,000 car deals across eight years in the auto industry, six of them in the luxury segment, and now works on the buyer's side of the desk.", "url": "https://www.carhandled.com/about.html"},
     "publisher": {"@type": "Organization", "@id": "https://www.carhandled.com/#organization", "name": "CarHandled", "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"}},
     "description": "How to get the most money for your car trade-in, from a former dealer: real value, outside offers, and why to keep the trade separate from the new-car price.",
@@ -226,7 +226,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('/assets/img/blog1.jpg') center 10% / cover no-repeat;
+      background: url('/assets/img/promise-bg.jpg') center 10% / cover no-repeat;
     }
     .hero-bg::before {
       content: ''; position: absolute; inset: 0;
@@ -565,7 +565,73 @@
       .footer-top { grid-template-columns: 1fr; gap: 1.75rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; }
     }
+
+    /* Breadcrumbs */
+    .breadcrumbs { max-width: 760px; margin: 0 auto; padding: 1rem 1.5rem 0; font-size: 0.78rem; color: var(--ink-mute); }
+    .breadcrumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; }
+    .breadcrumbs li { display: flex; align-items: center; gap: 0.4rem; }
+    .breadcrumbs li:not(:last-child)::after { content: '›'; color: var(--border2); }
+    .breadcrumbs a { color: var(--ink-mute); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--gold); }
+    .breadcrumbs [aria-current="page"] { color: var(--ink-dim); }
+
+    /* ── Floating CTA bar ───────────────────────────────────── */
+    .float-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+      background: rgba(8,8,8,0.94);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border2);
+      transform: translateY(110%); opacity: 0;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+      pointer-events: none;
+    }
+    .float-cta.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .float-cta-text { flex: 1; min-width: 0; line-height: 1.25; }
+    .float-cta-text strong { display: block; color: var(--white); font-size: 0.92rem; font-weight: 500; }
+    .float-cta-text span { display: block; color: var(--ink-mute); font-size: 0.75rem; margin-top: 0.1rem; }
+    .float-cta a.float-cta-btn {
+      flex-shrink: 0; background: var(--gold); color: var(--black);
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.9rem;
+      padding: 0.7rem 1.15rem; border-radius: 9px; white-space: nowrap;
+      text-decoration: none; transition: background 0.18s ease;
+    }
+    .float-cta a.float-cta-btn:hover { background: var(--gold-lite); }
+    @media (max-width: 380px) {
+      .float-cta-text span { display: none; }
+      .float-cta a.float-cta-btn { padding: 0.7rem 0.9rem; font-size: 0.85rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .float-cta { transition: none; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.carhandled.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Car Buying Guides",
+        "item": "https://www.carhandled.com/guides/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Get the Most for Your Trade-In",
+        "item": "https://www.carhandled.com/guides/how-to-get-most-for-trade-in.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
 <body>
   <!-- Reading progress bar -->
   <div class="progress-bar" id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -581,6 +647,7 @@
         <a href="/services.html">Concierge</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
         <a href="/#pricing" class="nav-cta">Get the Toolkit — $29</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -592,9 +659,18 @@
       <a href="/services.html">Concierge</a>
       <a href="/guides/">Guides</a>
       <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
       <a href="/#pricing">Get the Toolkit — $29 →</a>
     </nav>
   </header>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Car Buying Guides</a></li>
+      <li><span aria-current="page">How to Get the Most for Your Trade-In</span></li>
+    </ol>
+  </nav>
+
 
   <!-- ══ HERO ════════════════════════════════════════════════ -->
   <section class="hero">
@@ -769,6 +845,7 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="/about.html">About</a>
+          <a href="/faq.html">FAQ</a>
           <a href="/terms-of-use.html">Terms of Use</a>
           <a href="/privacy-policy.html">Privacy Policy</a>
           <a href="/refund-policy.html">Refund Policy</a>
@@ -903,5 +980,44 @@
     })();
   </script>
 
+
+  <!-- ══ FLOATING CTA ═════════════════════════════════════════ -->
+  <div class="float-cta" id="floatCta" role="complementary" aria-label="Get the toolkit">
+    <div class="float-cta-text">
+      <strong>Car Buying Toolkit — $29</strong>
+      <span>30-day refund · Emailed instantly</span>
+    </div>
+    <a href="/#pricing" class="float-cta-btn"
+       onclick="gtag('event','click',{event_category:'Floating CTA',event_label:'Trade-in guide'})">Get it now</a>
+  </div>
+
+  <script>
+    /* Floating CTA: appears after the hero, hides when a real buy CTA is on screen */
+    (function () {
+      var bar = document.getElementById('floatCta');
+      if (!bar) return;
+      var hero = document.querySelector('.hero');
+      var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
+      var suppress = 0;
+      var watched = document.querySelectorAll('#pricing, .final-cta, .mid-cta, .site-footer, .faq-cta');
+      if ('IntersectionObserver' in window && watched.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { suppress += e.isIntersecting ? 1 : -1; });
+          if (suppress < 0) suppress = 0;
+          update();
+        }, { rootMargin: '0px 0px -20% 0px' });
+        watched.forEach(function (el) { io.observe(el); });
+      }
+      function update() {
+        var past = window.pageYOffset > heroBottom - 120;
+        bar.classList.toggle('show', past && suppress === 0);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', function () {
+        heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400; update();
+      }, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>

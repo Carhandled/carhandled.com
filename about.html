@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About CarHandled: Built by Ex-Dealer Ali Camur</title>
-  <meta name="description" content="Why CarHandled exists, the story behind it, and what buyers say. Built by an ex-dealer to help you win your next car deal." />
+  <meta name="description" content="Why CarHandled exists, told by Ali Camur — 1,000+ deals negotiated over 8 years in the auto industry, 6 of them in luxury." />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
@@ -675,7 +675,56 @@
       .footer-top { grid-template-columns: 1fr; gap: 1.75rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; }
     }
+
+    /* ── Floating CTA bar ───────────────────────────────────── */
+    .float-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+      background: rgba(8,8,8,0.94);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border2);
+      transform: translateY(110%); opacity: 0;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+      pointer-events: none;
+    }
+    .float-cta.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .float-cta-text { flex: 1; min-width: 0; line-height: 1.25; }
+    .float-cta-text strong { display: block; color: var(--white); font-size: 0.92rem; font-weight: 500; }
+    .float-cta-text span { display: block; color: var(--ink-mute); font-size: 0.75rem; margin-top: 0.1rem; }
+    .float-cta a.float-cta-btn {
+      flex-shrink: 0; background: var(--gold); color: var(--black);
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.9rem;
+      padding: 0.7rem 1.15rem; border-radius: 9px; white-space: nowrap;
+      text-decoration: none; transition: background 0.18s ease;
+    }
+    .float-cta a.float-cta-btn:hover { background: var(--gold-lite); }
+    @media (max-width: 380px) {
+      .float-cta-text span { display: none; }
+      .float-cta a.float-cta-btn { padding: 0.7rem 0.9rem; font-size: 0.85rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .float-cta { transition: none; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.carhandled.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://www.carhandled.com/about.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -691,6 +740,7 @@
         <a href="/services.html">Concierge</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
         <a href="/#pricing" class="nav-cta">Get the Toolkit — $29</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -702,6 +752,7 @@
       <a href="/services.html">Concierge</a>
       <a href="/guides/">Guides</a>
       <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
       <a href="/intake.html">Get Started</a>
       <a href="/#pricing">Get the Toolkit — $29 →</a>
     </nav>
@@ -946,6 +997,7 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="/about.html">About</a>
+          <a href="/faq.html">FAQ</a>
           <a href="/terms-of-use.html">Terms of Use</a>
           <a href="/privacy-policy.html">Privacy Policy</a>
           <a href="/refund-policy.html">Refund Policy</a>
@@ -1005,5 +1057,44 @@
     }
   </script>
 
+
+  <!-- ══ FLOATING CTA ═════════════════════════════════════════ -->
+  <div class="float-cta" id="floatCta" role="complementary" aria-label="Get the toolkit">
+    <div class="float-cta-text">
+      <strong>Car Buying Toolkit — $29</strong>
+      <span>30-day refund · Emailed instantly</span>
+    </div>
+    <a href="/#pricing" class="float-cta-btn"
+       onclick="gtag('event','click',{event_category:'Floating CTA',event_label:'About'})">Get it now</a>
+  </div>
+
+  <script>
+    /* Floating CTA: appears after the hero, hides when a real buy CTA is on screen */
+    (function () {
+      var bar = document.getElementById('floatCta');
+      if (!bar) return;
+      var hero = document.querySelector('.hero');
+      var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
+      var suppress = 0;
+      var watched = document.querySelectorAll('#pricing, .final-cta, .mid-cta, .site-footer, .faq-cta');
+      if ('IntersectionObserver' in window && watched.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { suppress += e.isIntersecting ? 1 : -1; });
+          if (suppress < 0) suppress = 0;
+          update();
+        }, { rootMargin: '0px 0px -20% 0px' });
+        watched.forEach(function (el) { io.observe(el); });
+      }
+      function update() {
+        var past = window.pageYOffset > heroBottom - 120;
+        bar.classList.toggle('show', past && suppress === 0);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', function () {
+        heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400; update();
+      }, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>
