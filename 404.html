@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Page Not Found | CarHandled</title>
+  <link rel="canonical" href="https://www.carhandled.com/404.html" />
 <meta name="robots" content="noindex, follow" />
 <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
 <link rel="manifest" href="/manifest.json" />
@@ -64,18 +65,32 @@ transition: all 0.2s ease;
 .btn--gold:hover { background: var(--gold-lite); }
 .btn--outline { background: transparent; color: var(--gold); border: 1px solid #8A7248; }
 .btn--outline:hover { border-color: var(--gold); background: rgba(198,169,114,0.06); }
-img.logo { height: 40px; margin-bottom: 2rem; }
+img.logo { height: 40px; margin-bottom: 2rem; width: auto;}
 </style>
+  <!-- Organization entity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.carhandled.com/#organization",
+    "name": "CarHandled",
+    "url": "https://www.carhandled.com/",
+    "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"},
+    "email": "info@carhandled.com",
+    "founder": {"@id": "https://www.carhandled.com/about.html#ali-camur"}
+  }
+  </script>
 </head>
 <body>
 <div class="wrap">
-<img class="logo" src="/assets/img/logo.png" alt="CarHandled">
+<img class="logo" src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
 <div class="eyebrow">404</div>
 <h1>This page rode off <em>without a clean OTD.</em></h1>
 <p class="sub">The page you're looking for doesn't exist or moved. Let's get you back to the toolkit that actually saves money.</p>
 <div class="actions">
 <a href="/" class="btn btn--gold">Back to Home</a>
-<a href="/guides.html" class="btn btn--outline">Browse Guides</a>
+<a href="/guides/" class="btn btn--outline">Browse Guides</a>
+<a href="/faq.html" class="btn btn--outline">FAQ</a>
 </div>
 </div>
 </body>

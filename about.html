@@ -12,18 +12,18 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>About CarHandled — Our 2-Minute Story, Values & Reviews</title>
-  <meta name="description" content="Why CarHandled exists, the story behind it, and what buyers say. Built by an ex-dealer to help you win your next car deal." />
+  <title>About CarHandled: Built by Ex-Dealer Ali Camur</title>
+  <meta name="description" content="Why CarHandled exists, told by Ali Camur — 1,000+ deals negotiated over 8 years in the auto industry, 6 of them in luxury." />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://www.carhandled.com/about.html" />
-  <meta property="og:title"       content="About CarHandled — Our 2-Minute Story, Values & Reviews" />
+  <meta property="og:title"       content="About CarHandled: Built by Ex-Dealer Ali Camur" />
   <meta property="og:description" content="Built by an ex-dealer to help buyers win. Read our story and what clients say." />
   <meta property="og:image"       content="https://www.carhandled.com/assets/img/aboutbackground.jpg" />
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="About CarHandled — Our 2-Minute Story, Values & Reviews" />
+  <meta name="twitter:title"       content="About CarHandled: Built by Ex-Dealer Ali Camur" />
   <meta name="twitter:description" content="Built by an ex-dealer to help buyers win. Read our story and what clients say." />
   <meta name="twitter:image"       content="https://www.carhandled.com/assets/img/aboutbackground.jpg" />
   <link rel="canonical" href="https://www.carhandled.com/about.html" />
@@ -38,6 +38,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.carhandled.com/about.html#ali-camur",
+    "name": "Ali Camur",
+    "givenName": "Ali",
+    "familyName": "Camur",
+    "jobTitle": "Founder",
+    "image": "https://www.carhandled.com/assets/img/founder.jpg",
+    "description": "Founder of CarHandled. Negotiated over 1,000 car deals across eight years in the auto industry, six of them in the luxury segment, and now works on the buyer's side of the desk.",
+    "knowsAbout": [
+      "Car buying negotiation",
+      "Out-the-door pricing",
+      "Dealer add-ons and finance office products",
+      "Auto lease and finance structuring"
+    ],
+    "worksFor": {"@id": "https://www.carhandled.com/#organization"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.carhandled.com/about.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.carhandled.com/#organization",
+    "name": "CarHandled",
+    "url": "https://www.carhandled.com/",
+    "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"},
+    "email": "info@carhandled.com",
+    "founder": {"@id": "https://www.carhandled.com/about.html#ali-camur"}
+  }
+  </script>
 
   <!-- Hotjar -->
   <script>
@@ -179,7 +214,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .header-logo img { height: 42px; transition: height 0.3s ease; }
+    .header-logo img { height: 42px; transition: height 0.3s ease; width: auto;}
     .header-nav {
       display: flex;
       align-items: center;
@@ -395,6 +430,12 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+    .founder-cred {
+      font-size: 0.85rem;
+      color: var(--ink-mute);
+      line-height: 1.5;
       margin-bottom: 0.9rem;
     }
     .founder-quote {
@@ -572,7 +613,7 @@
       border-bottom: 1px solid var(--border);
       margin-bottom: 2rem;
     }
-    .footer-brand img { height: 36px; margin-bottom: 0.75rem; }
+    .footer-brand img { height: 36px; margin-bottom: 0.75rem; width: auto;}
     .footer-brand p { color: var(--ink-mute); font-size: 0.85rem; line-height: 1.6; margin-top: 0.5rem; }
     .footer-col h4 {
       font-family: 'DM Sans', sans-serif;
@@ -634,7 +675,56 @@
       .footer-top { grid-template-columns: 1fr; gap: 1.75rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; }
     }
+
+    /* ── Floating CTA bar ───────────────────────────────────── */
+    .float-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+      background: rgba(8,8,8,0.94);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border2);
+      transform: translateY(110%); opacity: 0;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+      pointer-events: none;
+    }
+    .float-cta.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .float-cta-text { flex: 1; min-width: 0; line-height: 1.25; }
+    .float-cta-text strong { display: block; color: var(--white); font-size: 0.92rem; font-weight: 500; }
+    .float-cta-text span { display: block; color: var(--ink-mute); font-size: 0.75rem; margin-top: 0.1rem; }
+    .float-cta a.float-cta-btn {
+      flex-shrink: 0; background: var(--gold); color: var(--black);
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.9rem;
+      padding: 0.7rem 1.15rem; border-radius: 9px; white-space: nowrap;
+      text-decoration: none; transition: background 0.18s ease;
+    }
+    .float-cta a.float-cta-btn:hover { background: var(--gold-lite); }
+    @media (max-width: 380px) {
+      .float-cta-text span { display: none; }
+      .float-cta a.float-cta-btn { padding: 0.7rem 0.9rem; font-size: 0.85rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .float-cta { transition: none; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.carhandled.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://www.carhandled.com/about.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -643,26 +733,28 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="assets/img/logo.png" alt="CarHandled">
+        <img src="assets/img/logo.png" alt="CarHandled" width="200" height="200">
       </a>
       <nav class="header-nav" aria-label="Main navigation">
-        <a href="index.html#pricing">Toolkit</a>
-        <a href="services.html">Concierge</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-        <a href="index.html#pricing" class="nav-cta">Get the Toolkit — $29</a>
+        <a href="/#pricing">Toolkit</a>
+        <a href="/services.html">Concierge</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/#pricing" class="nav-cta">Get the Toolkit — $29</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-      <a href="index.html#pricing">Toolkit</a>
-      <a href="services.html">Concierge</a>
-      <a href="guides.html">Guides</a>
-      <a href="about.html">About</a>
-      <a href="intake.html">Get Started</a>
-      <a href="index.html#pricing">Get the Toolkit — $29 →</a>
+      <a href="/#pricing">Toolkit</a>
+      <a href="/services.html">Concierge</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/intake.html">Get Started</a>
+      <a href="/#pricing">Get the Toolkit — $29 →</a>
     </nav>
   </header>
 
@@ -682,8 +774,8 @@
           Built by an ex-dealer who saw how the game is played — and left to help buyers win. Our goal: clarity, leverage, and zero regrets at signing.
         </p>
         <div class="hero-actions">
-          <a href="intake.html" class="btn btn--gold">Work With Us</a>
-          <a href="index.html#pricing" class="btn btn--ghost">Get the Toolkit — $29</a>
+          <a href="/intake.html" class="btn btn--gold">Work With Us</a>
+          <a href="/#pricing" class="btn btn--ghost">Get the Toolkit — $29</a>
         </div>
       </div>
     </section>
@@ -730,11 +822,12 @@
           <div class="reveal" style="transition-delay:0.1s">
             <div class="founder-card">
               <div class="founder-img-wrap">
-                <img src="assets/img/founder.jpg" alt="Ali, Founder of CarHandled" loading="lazy">
+                <img src="/assets/img/founder.jpg" alt="Ali Camur, Founder of CarHandled" loading="lazy" width="600" height="900">
               </div>
               <div class="founder-info">
-                <div class="founder-name">Ali</div>
+                <div class="founder-name">Ali Camur</div>
                 <div class="founder-title">Founder · CarHandled</div>
+                <div class="founder-cred">1,000+ deals negotiated · 8 years in the auto industry, 6 in luxury</div>
                 <p class="founder-quote">
                   "I sat on both sides of that desk. I know what the manager says when you leave the room. Now I'm on your side."
                 </p>
@@ -873,10 +966,10 @@
             Pick up the toolkit and run the process yourself — or hand it off entirely and let us handle the deal from start to finish.
           </p>
           <div class="cta-buttons">
-            <a href="intake.html" class="btn btn--gold">
+            <a href="/intake.html" class="btn btn--gold">
               Work With Us — Concierge
             </a>
-            <a href="index.html#pricing" class="btn btn--ghost">
+            <a href="/#pricing" class="btn btn--ghost">
               Get the Toolkit — $29
             </a>
           </div>
@@ -891,22 +984,23 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/img/logo.png" alt="CarHandled">
+          <img src="assets/img/logo.png" alt="CarHandled" width="200" height="200">
           <p>Smarter car buying, simplified. Built by an ex-dealer who's now on your side.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
-          <a href="index.html#pricing">Car Buying Toolkit — $29</a>
-          <a href="services.html">Concierge Service</a>
-          <a href="guides.html">Guides</a>
-          <a href="intake.html">Get Started</a>
+          <a href="/#pricing">Car Buying Toolkit — $29</a>
+          <a href="/services.html">Concierge Service</a>
+          <a href="/guides/">Guides</a>
+          <a href="/intake.html">Get Started</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="about.html">About</a>
-          <a href="terms-of-use.html">Terms of Use</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="refund-policy.html">Refund Policy</a>
+          <a href="/about.html">About</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/refund-policy.html">Refund Policy</a>
           <a href="mailto:info@carhandled.com">info@carhandled.com</a>
         </div>
       </div>
@@ -914,11 +1008,11 @@
         <div class="footer-legal">
           <span>© 2026 CarHandled</span>
           <span class="sep">·</span>
-          <a href="index.html#pricing">Car buying toolkit</a>
+          <a href="/#pricing">Car buying toolkit</a>
           <span class="sep">·</span>
-          <a href="index.html#faq">FAQ</a>
+          <a href="/#faq">FAQ</a>
           <span class="sep">·</span>
-          <a href="blog1.html">Get a Real OTD Price</a>
+          <a href="/guides/out-the-door-price-email-guide.html">Get a Real OTD Price</a>
         </div>
         <a href="https://www.instagram.com/carhandled" target="_blank" rel="noopener noreferrer" class="footer-instagram">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.5.3.9.7 1.2 1.2.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.5-.7.9-1.2 1.2-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.5-.3-.9-.7-1.2-1.2-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.5.7-.9 1.2-1.2.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1c-1.4.1-2.4.3-3.3.7C2.6 1.3 1.8 2 1.2 2.6.6 3.2 0 4.1 0 5.6 0 6.9 0 7.3 0 12s0 5.1.1 6.4c.1 1.5.7 2.4 1.3 3.1.6.6 1.4 1.3 3.1 1.3C5.7 23.9 6.1 24 12 24s6.3 0 6.4-.1c1.5-.1 2.4-.7 3.1-1.3.6-.6 1.3-1.4 1.3-3.1.1-1.3.1-1.7.1-6.4s0-5.1-.1-6.4c-.1-1.5-.7-2.4-1.3-3.1-.6-.6-1.4-1.3-3.1-1.3C18.3.1 17.9 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 105.8 12 6.2 6.2 0 0012 5.8zm0 10.2a4 4 0 110-8 4 4 0 010 8zM18.4 4.9a1.4 1.4 0 11-2.8 0 1.4 1.4 0 012.8 0z"/></svg>
@@ -963,5 +1057,44 @@
     }
   </script>
 
+
+  <!-- ══ FLOATING CTA ═════════════════════════════════════════ -->
+  <div class="float-cta" id="floatCta" role="complementary" aria-label="Get the toolkit">
+    <div class="float-cta-text">
+      <strong>Car Buying Toolkit — $29</strong>
+      <span>30-day refund · Emailed instantly</span>
+    </div>
+    <a href="/#pricing" class="float-cta-btn"
+       onclick="gtag('event','click',{event_category:'Floating CTA',event_label:'About'})">Get it now</a>
+  </div>
+
+  <script>
+    /* Floating CTA: appears after the hero, hides when a real buy CTA is on screen */
+    (function () {
+      var bar = document.getElementById('floatCta');
+      if (!bar) return;
+      var hero = document.querySelector('.hero');
+      var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
+      var suppress = 0;
+      var watched = document.querySelectorAll('#pricing, .final-cta, .mid-cta, .site-footer, .faq-cta');
+      if ('IntersectionObserver' in window && watched.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { suppress += e.isIntersecting ? 1 : -1; });
+          if (suppress < 0) suppress = 0;
+          update();
+        }, { rootMargin: '0px 0px -20% 0px' });
+        watched.forEach(function (el) { io.observe(el); });
+      }
+      function update() {
+        var past = window.pageYOffset > heroBottom - 120;
+        bar.classList.toggle('show', past && suppress === 0);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', function () {
+        heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400; update();
+      }, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>

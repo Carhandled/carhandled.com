@@ -12,15 +12,15 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Car Buying Concierge Service — We Negotiate Your Car Deal for You</title>
-  <meta name="description" content="A car buying concierge service that sources, negotiates, and coordinates delivery for you. Get someone to negotiate your car price and handle the dealer — run by an ex-dealer. Nationwide, US." />
+  <title>Car Buying Concierge Service — We Negotiate For You</title>
+  <meta name="description" content="A car buying concierge that sources the vehicle, negotiates the out-the-door price, and coordinates delivery. You sign direct with the dealer." />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://www.carhandled.com/services.html" />
-  <meta property="og:title"       content="Car Buying Concierge Service — We Negotiate Your Car Deal for You" />
-  <meta property="og:description" content="Get someone to source, negotiate, and handle your car deal end to end. Run by an ex-dealer who's negotiated 500+ deals. You sign direct with the dealer." />
+  <meta property="og:title"       content="Car Buying Concierge Service — We Negotiate For You" />
+  <meta property="og:description" content="Get someone to source, negotiate, and handle your car deal end to end. Run by Ali Camur — 1,000+ deals negotiated over 8 years in the auto industry, 6 in luxury. You sign direct with the dealer." />
   <meta property="og:image"       content="https://www.carhandled.com/assets/img/background.jpg" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Car Buying Concierge — We Negotiate Your Car Deal for You" />
@@ -41,7 +41,7 @@
 
   <!-- Schema -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Service","name":"Car Buying Concierge Service","alternateName":["Car Buying Service","Auto Buying Concierge","Car Negotiation Service"],"description":"A car buying concierge service that sources vehicles, negotiates the out-the-door price, and coordinates delivery for you. Run by an ex-dealer.","provider":{"@type":"Organization","name":"CarHandled"},"serviceType":"Car Buying Concierge Service","areaServed":{"@type":"Country","name":"United States"}}
+  {"@context":"https://schema.org","@type":"Service","name":"Car Buying Concierge Service","alternateName":["Car Buying Service","Auto Buying Concierge","Car Negotiation Service"],"description":"A car buying concierge service that sources vehicles, negotiates the out-the-door price, and coordinates delivery for you. Run by an ex-dealer.","provider":{"@id":"https://www.carhandled.com/#organization"},"serviceType":"Car Buying Concierge Service","areaServed":{"@type":"Country","name":"United States"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -51,7 +51,7 @@
     {"@type":"Question","name":"Can you beat my existing quote?","acceptedAnswer":{"@type":"Answer","text":"Often, yes. If a quote is already excellent, we'll validate it so you can sign with confidence."}},
     {"@type":"Question","name":"How much does a car buying concierge cost?","acceptedAnswer":{"@type":"Answer","text":"Deal Review is $129 for a fast second opinion on a quote. Concierge service starts from $2,999 and is by application — we handle sourcing, negotiation, and delivery end to end. Flat fees — no percentage of the car price."}},
     {"@type":"Question","name":"Is there a car buying concierge near me?","acceptedAnswer":{"@type":"Answer","text":"CarHandled works with buyers nationwide across the US. Because dealers send out-the-door quotes by email and you sign directly with your local dealership, the service works the same whether you're across town or across the country."}},
-    {"@type":"Question","name":"Can someone negotiate a car price for me?","acceptedAnswer":{"@type":"Answer","text":"Yes. That's exactly what the Concierge service does — an ex-dealer who has negotiated 500+ deals requests quotes, negotiates the out-the-door price, and strips junk fees on your behalf. You review and sign the final deal directly with the dealer."}}
+    {"@type":"Question","name":"Can someone negotiate a car price for me?","acceptedAnswer":{"@type":"Answer","text":"Yes. That's exactly what the Concierge service does — Ali Camur, who has negotiated 1,000+ deals across 8 years in the auto industry and 6 in luxury, requests quotes, negotiates the out-the-door price, and strips junk fees on your behalf. You review and sign the final deal directly with the dealer."}}
   ]}
   </script>
 
@@ -190,7 +190,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .header-logo img { height: 42px; }
+    .header-logo img { height: 42px; width: auto;}
     .header-nav { display: flex; align-items: center; gap: 0.25rem; }
     .header-nav a {
       font-size: 0.88rem;
@@ -833,7 +833,7 @@
       border-bottom: 1px solid var(--border);
       margin-bottom: 2rem;
     }
-    .footer-brand img { height: 36px; margin-bottom: 0.75rem; }
+    .footer-brand img { height: 36px; margin-bottom: 0.75rem; width: auto;}
     .footer-brand p { color: var(--ink-mute); font-size: 0.85rem; line-height: 1.6; margin-top: 0.5rem; }
     .footer-col h4 {
       font-family: 'DM Sans', sans-serif;
@@ -880,6 +880,38 @@
       .footer-bottom { flex-direction: column; gap: 0.75rem; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.carhandled.com/#organization",
+    "name": "CarHandled",
+    "url": "https://www.carhandled.com/",
+    "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"},
+    "email": "info@carhandled.com",
+    "founder": {"@id": "https://www.carhandled.com/about.html#ali-camur"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.carhandled.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Concierge Service",
+        "item": "https://www.carhandled.com/services.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -888,25 +920,27 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="assets/img/logo.png" alt="CarHandled">
+        <img src="assets/img/logo.png" alt="CarHandled" width="200" height="200">
       </a>
       <nav class="header-nav" aria-label="Main navigation">
-        <a href="index.html#pricing">Toolkit</a>
-        <a href="services.html">Concierge</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-        <a href="intake.html" class="nav-cta">Request a Spot</a>
+        <a href="/#pricing">Toolkit</a>
+        <a href="/services.html">Concierge</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/intake.html" class="nav-cta">Request a Spot</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-      <a href="index.html#pricing">Toolkit</a>
-      <a href="services.html">Concierge</a>
-      <a href="guides.html">Guides</a>
-      <a href="about.html">About</a>
-      <a href="intake.html">Request a Spot →</a>
+      <a href="/#pricing">Toolkit</a>
+      <a href="/services.html">Concierge</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/intake.html">Request a Spot →</a>
     </nav>
   </header>
 
@@ -926,11 +960,11 @@
           CarHandled is a car buying concierge service — we source the right car, negotiate clean out-the-door numbers, and coordinate delivery, so you skip the grind and sign with confidence. If you've ever wished someone could just negotiate the car price for you, that's exactly what we do.
         </p>
         <div class="hero-actions">
-          <a href="intake.html" class="btn btn--gold"
+          <a href="/intake.html" class="btn btn--gold"
             onclick="gtag('event','click',{event_category:'CTA',event_label:'Hero - Apply Concierge'})">
             Request a Spot
           </a>
-          <a href="index.html#pricing" class="btn btn--ghost">
+          <a href="/#pricing" class="btn btn--ghost">
             Prefer DIY? Toolkit — $29
           </a>
         </div>
@@ -950,7 +984,7 @@
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
-          500+ deals negotiated
+          1,000+ deals negotiated
         </div>
       </div>
     </section>
@@ -1071,7 +1105,7 @@
                 <li>Exact counter-email to send</li>
                 <li>1 follow-up within 72 hours</li>
               </ul>
-              <a href="intake.html" class="btn btn--ghost btn--full"
+              <a href="/intake.html" class="btn btn--ghost btn--full"
                 onclick="gtag('event','click',{event_category:'CTA',event_label:'Pkg - Deal Review'})">
                 Get Deal Review
               </a>
@@ -1088,7 +1122,7 @@
           <p style="font-size: 0.95rem; color: var(--ink-dim); max-width: 540px; margin: 1.25rem auto; line-height: 1.7;">
             We source, negotiate, and coordinate delivery end to end. Email-first process with phone calls and market escalation as needed. Founder-run — we take on a small number of clients at a time.
           </p>
-          <a href="intake.html" class="btn btn--gold"
+          <a href="/intake.html" class="btn btn--gold"
             onclick="gtag('event','click',{event_category:'CTA',event_label:'Pkg - Concierge'})">
             Request a Spot
           </a>
@@ -1097,7 +1131,7 @@
         <!-- Prefer DIY -->
         <div class="reveal" style="margin-top: 2rem; text-align: center; padding: 1.5rem;">
           <p style="color: var(--ink-mute); margin: 0;">
-            <a href="/index.html#pricing" style="color: var(--gold); text-decoration: underline;">Prefer DIY? Get the Toolkit — $29</a>
+            <a href="/#pricing" style="color: var(--gold); text-decoration: underline;">Prefer DIY? Get the Toolkit — $29</a>
           </p>
         </div>
 
@@ -1241,11 +1275,11 @@
             We keep our client load intentionally small so every deal gets full attention. If you're serious about getting the right car at a clean number — let's talk.
           </p>
           <div class="final-cta-buttons">
-            <a href="intake.html" class="btn btn--gold"
+            <a href="/intake.html" class="btn btn--gold"
               onclick="gtag('event','click',{event_category:'CTA',event_label:'Final CTA - Apply'})">
               Request a Spot
             </a>
-            <a href="index.html#pricing" class="btn btn--ghost">
+            <a href="/#pricing" class="btn btn--ghost">
               Or get the Toolkit — $29
             </a>
           </div>
@@ -1263,22 +1297,23 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/img/logo.png" alt="CarHandled">
+          <img src="assets/img/logo.png" alt="CarHandled" width="200" height="200">
           <p>Smarter car buying, simplified. Built by an ex-dealer who's now on your side.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
-          <a href="index.html#pricing">Car Buying Toolkit — $29</a>
-          <a href="services.html">Concierge Service</a>
-          <a href="guides.html">Guides</a>
-          <a href="intake.html">Get Started</a>
+          <a href="/#pricing">Car Buying Toolkit — $29</a>
+          <a href="/services.html">Concierge Service</a>
+          <a href="/guides/">Guides</a>
+          <a href="/intake.html">Get Started</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="about.html">About</a>
-          <a href="terms-of-use.html">Terms of Use</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="refund-policy.html">Refund Policy</a>
+          <a href="/about.html">About</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/refund-policy.html">Refund Policy</a>
           <a href="mailto:info@carhandled.com">info@carhandled.com</a>
         </div>
       </div>
@@ -1286,11 +1321,11 @@
         <div class="footer-legal">
           <span>© 2026 CarHandled</span>
           <span class="sep">·</span>
-          <a href="index.html#pricing">Car buying toolkit</a>
+          <a href="/#pricing">Car buying toolkit</a>
           <span class="sep">·</span>
-          <a href="index.html#faq">FAQ</a>
+          <a href="/#faq">FAQ</a>
           <span class="sep">·</span>
-          <a href="about.html">About</a>
+          <a href="/about.html">About</a>
         </div>
         <a href="https://www.instagram.com/carhandled" target="_blank" rel="noopener noreferrer" class="footer-instagram">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.5.6.5.3.9.7 1.2 1.2.3.5.5 1.3.6 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.6 2.5-.3.5-.7.9-1.2 1.2-.5.3-1.3.5-2.5.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.5-.6-.5-.3-.9-.7-1.2-1.2-.3-.5-.5-1.3-.6-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .6-2.5.3-.5.7-.9 1.2-1.2.5-.3 1.3-.5 2.5-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1c-1.4.1-2.4.3-3.3.7C2.6 1.3 1.8 2 1.2 2.6.6 3.2 0 4.1 0 5.6 0 6.9 0 7.3 0 12s0 5.1.1 6.4c.1 1.5.7 2.4 1.3 3.1.6.6 1.4 1.3 3.1 1.3C5.7 23.9 6.1 24 12 24s6.3 0 6.4-.1c1.5-.1 2.4-.7 3.1-1.3.6-.6 1.3-1.4 1.3-3.1.1-1.3.1-1.7.1-6.4s0-5.1-.1-6.4c-.1-1.5-.7-2.4-1.3-3.1-.6-.6-1.4-1.3-3.1-1.3C18.3.1 17.9 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 105.8 12 6.2 6.2 0 0012 5.8zm0 10.2a4 4 0 110-8 4 4 0 010 8zM18.4 4.9a1.4 1.4 0 11-2.8 0 1.4 1.4 0 012.8 0z"/></svg>

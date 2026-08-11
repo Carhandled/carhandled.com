@@ -12,8 +12,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Car Buying Toolkit for Smarter Deals – Negotiation Scripts, Calculators & More | CarHandled</title>
-  <meta name="description" content="The CarHandled Toolkit helps you buy or lease smarter. Negotiate confidently and avoid junk fees with expert-built calculators, scripts, checklists, and step-by-step guidance." />
+  <title>Car Buying Toolkit — Dealer Scripts & OTD Math | CarHandled</title>
+  <meta name="description" content="The dealer's side of a car deal for $29: which add-ons are pure margin, the Finance Office guide, calculators, and copy-paste OTD email scripts." />
   <meta name="keywords" content="car buying toolkit, negotiate car price, lease vs buy calculator, car buying guide, dealership negotiation scripts, car payment estimator" />
 
   <!-- Favicons -->
@@ -52,11 +52,28 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Product","name":"CarHandled Toolkit",
+    "@context":"https://schema.org","@type":"Product","name":"CarHandled Car Buying Toolkit",
     "image":"https://www.carhandled.com/assets/img/toolkitbackground.jpg",
-    "description":"Emails, scripts, calculators, and checklists to get a clean out-the-door price and avoid junk fees.",
-    "sku":"toolkit-v1","brand":{"@type":"Organization","name":"CarHandled"},
-    "offers":{"@type":"Offer","priceCurrency":"USD","price":"29.00","availability":"https://schema.org/InStock","url":"https://www.carhandled.com/"}
+    "description":"The dealer-side material — which add-ons are pure margin, the Finance Office guide, buy and lease calculators, the deal comparison sheet, delivery checklists, and copy-paste out-the-door email scripts.",
+    "sku":"toolkit-v1",
+    "brand":{"@id":"https://www.carhandled.com/#organization"},
+    "offers":{
+      "@type":"Offer",
+      "priceCurrency":"USD",
+      "price":"29.00",
+      "availability":"https://schema.org/InStock",
+      "itemCondition":"https://schema.org/NewCondition",
+      "url":"https://www.carhandled.com/#pricing",
+      "seller":{"@id":"https://www.carhandled.com/#organization"},
+      "hasMerchantReturnPolicy":{
+        "@type":"MerchantReturnPolicy",
+        "applicableCountry":"US",
+        "returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays":30,
+        "returnMethod":"https://schema.org/ReturnByMail",
+        "returnFees":"https://schema.org/FreeReturn"
+      }
+    }
   }</script>
 
   <!-- Organization / brand entity for Google + AI recognition -->
@@ -68,7 +85,8 @@
     "url":"https://www.carhandled.com/",
     "logo":"https://www.carhandled.com/assets/img/logo.png",
     "description":"CarHandled helps car buyers get a clean out-the-door price and avoid junk fees, using tools and negotiation help built by a former car dealer.",
-    "founder":{"@type":"Person","name":"Ali"},
+    "@id":"https://www.carhandled.com/#organization",
+    "founder":{"@id":"https://www.carhandled.com/about.html#ali-camur"},
     "sameAs":["https://www.instagram.com/carhandled"],
     "contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"info@carhandled.com"}
   }
@@ -82,7 +100,7 @@
       {"@type":"Question","name":"How do I access it?","acceptedAnswer":{"@type":"Answer","text":"All 9 files are emailed to you as attachments right after checkout, usually within 60 seconds. You get 5 printable PDFs plus 4 spreadsheet calculators that open in Excel, Numbers, or Google Sheets. Print the PDFs or use them from your phone."}},
       {"@type":"Question","name":"Refund policy?","acceptedAnswer":{"@type":"Answer","text":"30-day refund—no questions asked."}},
       {"@type":"Question","name":"What is a car buying toolkit?","acceptedAnswer":{"@type":"Answer","text":"A bundle of templates, calculators, and checklists that help you request clean out-the-door quotes, compare offers, and avoid junk fees. CarHandled's toolkit focuses on action-first email scripts and OTD math."}},
-      {"@type":"Question","name":"Is the CarHandled car buying toolkit legit?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's built by a former dealer, includes copy-paste email templates and calculators, and comes with a 30-day refund."}}
+      {"@type":"Question","name":"Is the CarHandled car buying toolkit legit?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's built by Ali Camur, who negotiated 1,000+ deals across 8 years in the auto industry, 6 of them in the luxury segment. It includes the add-on margin breakdown, the Finance Office guide, calculators, and copy-paste email templates, and comes with a 30-day refund."}}
     ]
   }</script>
 
@@ -247,8 +265,7 @@
 
     .header-logo img {
       height: 42px;
-      transition: height 0.3s ease;
-    }
+      transition: height 0.3s ease; width: auto;}
 
     .header-nav {
       display: flex;
@@ -633,7 +650,15 @@
     }
 
     /* ── Outcomes ──────────────────────────────────────────── */
-    .outcomes-section { background: var(--panel); }
+    /* Merged proof: outcomes strip + reviews */
+    .proof-outcomes { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .proof-outcomes h3 { font-size: 1.15rem; color: var(--white); margin-bottom: 1rem; text-align: center; }
+    .proof-outcomes ul { list-style: none; padding: 0; margin: 0 auto; max-width: 860px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.5rem 1.5rem; }
+    .proof-outcomes li { display: flex; gap: 0.6rem; color: var(--ink-dim); font-size: 0.92rem; line-height: 1.55; padding: 0.35rem 0; }
+    .proof-outcomes li::before { content: '\2713'; color: var(--gold); flex-shrink: 0; font-weight: 700; }
+    .proof-disclaimer { text-align: center; color: var(--ink-mute); font-size: 0.78rem; margin-top: 1.25rem; }
+    .proof-reviews { margin-top: 2.5rem; }
 
     .outcomes-grid {
       display: grid;
@@ -770,6 +795,34 @@
       font-size: 0.95rem;
     }
     .price-includes li:last-child { border-bottom: none; }
+
+    /* Founder, directly above the buy button — stays adjacent on mobile */
+    .price-founder {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0 0 1.1rem;
+      padding: 0.8rem 0.9rem;
+      background: rgba(198,169,114,0.06);
+      border: 1px solid rgba(198,169,114,0.18);
+      border-radius: 10px;
+    }
+    .price-founder img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--gold-dim);
+    }
+    .price-founder p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--ink-dim);
+      margin: 0;
+    }
+    .price-founder strong { color: var(--white); font-weight: 500; }
+    .price-founder a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
     .price-includes li::before {
       content: '✓';
       color: var(--gold);
@@ -807,6 +860,8 @@
 
     /* ── FAQ ───────────────────────────────────────────────── */
     .faq-section { background: var(--panel); }
+    .faq-more { text-align: center; margin-top: 1.75rem; }
+    .faq-more a { color: var(--gold); font-size: 0.92rem; }
 
     .faq-list { max-width: 720px; margin: 0 auto; }
 
@@ -949,6 +1004,11 @@
       color: var(--ink-dim);
       font-size: 0.95rem;
       line-height: 1.6;
+    }
+    .founder-text .founder-byline {
+      color: var(--ink-mute);
+      font-size: 0.83rem;
+      margin-top: 0.6rem;
     }
     .founder-text a {
       color: var(--gold);
@@ -1142,7 +1202,7 @@
       margin-bottom: 2rem;
     }
 
-    .footer-brand img { height: 38px; margin-bottom: 0.75rem; }
+    .footer-brand img { height: 38px; margin-bottom: 0.75rem; width: auto;}
     .footer-brand p { color: var(--ink-mute); font-size: 0.85rem; line-height: 1.6; margin-top: 0.5rem; }
 
     .footer-col h4 {
@@ -1264,6 +1324,35 @@
       .hero-format { font-size: 0.78rem; margin-top: 0.7rem; }
       .hero-quote { font-size: 0.82rem; margin-top: 0.7rem; }
     }
+
+    /* ── Floating CTA bar ───────────────────────────────────── */
+    .float-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+      background: rgba(8,8,8,0.94);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border2);
+      transform: translateY(110%); opacity: 0;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+      pointer-events: none;
+    }
+    .float-cta.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .float-cta-text { flex: 1; min-width: 0; line-height: 1.25; }
+    .float-cta-text strong { display: block; color: var(--white); font-size: 0.92rem; font-weight: 500; }
+    .float-cta-text span { display: block; color: var(--ink-mute); font-size: 0.75rem; margin-top: 0.1rem; }
+    .float-cta a.float-cta-btn {
+      flex-shrink: 0; background: var(--gold); color: var(--black);
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.9rem;
+      padding: 0.7rem 1.15rem; border-radius: 9px; white-space: nowrap;
+      text-decoration: none; transition: background 0.18s ease;
+    }
+    .float-cta a.float-cta-btn:hover { background: var(--gold-lite); }
+    @media (max-width: 380px) {
+      .float-cta-text span { display: none; }
+      .float-cta a.float-cta-btn { padding: 0.7rem 0.9rem; font-size: 0.85rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .float-cta { transition: none; } }
   </style>
 
   <!-- MailerLite Universal -->
@@ -1284,13 +1373,14 @@
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="assets/img/logo.png" alt="CarHandled">
+        <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
       </a>
       <nav class="header-nav" aria-label="Main navigation">
         <a href="#pricing">Toolkit</a>
-        <a href="services.html">Concierge</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
+        <a href="/services.html">Concierge</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
         <a href="#pricing" class="header-cta">Get the Toolkit — $29</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -1299,10 +1389,11 @@
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="#pricing">Toolkit</a>
-      <a href="services.html">Concierge</a>
-      <a href="guides.html">Guides</a>
-      <a href="about.html">About</a>
-      <a href="intake.html">Get Started</a>
+      <a href="/services.html">Concierge</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/intake.html">Get Started</a>
       <a href="#pricing" class="mobile-cta">Get the Toolkit — $29 →</a>
     </nav>
   </header>
@@ -1317,22 +1408,24 @@
       <div class="hero-content">
         <div class="hero-proof">
           <span class="hero-stars" aria-hidden="true">★★★★★</span>
-          500+ deals negotiated · Built by a former dealer
+          Ali Camur · 1,000+ deals negotiated
         </div>
 
         <h1>
-          Stop overpaying at the dealership.
-          <em>$29 gets you the scripts that do it.</em>
+          I sold cars for 8 years.
+          <em>Here's what we counted on you not knowing.</em>
         </h1>
 
         <p class="hero-sub">
-          Copy-paste emails that make dealers send clean out-the-door numbers
-          in writing — before you set foot in a showroom.
+          Which add-ons are pure margin. What the manager says the moment you
+          leave the room. What the finance office is paid to put in front of
+          you — and the emails, calculators, and comparison sheet that put you
+          ahead of all of it.
         </p>
 
         <div class="hero-actions">
           <a href="#pricing" class="btn btn--gold btn--hero" aria-label="Get the CarHandled Toolkit for $29">
-            Get the Toolkit — $29
+            Show me the playbook — $29
           </a>
         </div>
 
@@ -1350,7 +1443,7 @@
       <div class="hero-trust" aria-label="Trust signals">
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
-          500+ deals negotiated
+          1,000+ deals negotiated
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -1358,7 +1451,7 @@
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Built by a former dealer
+          Built by an ex-dealer, Ali Camur
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -1534,50 +1627,21 @@
             This is what the toolkit helps you build — before you step into a dealership.
           </div>
         </a>
-      </div>
-    </section>
 
-    <!-- ══ OUTCOMES ═════════════════════════════════════════════ -->
-    <section class="outcomes-section" id="outcomes">
-      <div class="container">
-        <div class="section-header reveal" style="text-align:center; max-width:600px; margin:0 auto 2rem;">
-          <div class="section-label" style="justify-content:center;">
-            <span class="eyebrow">Common Outcomes</span>
-          </div>
-          <h2>What buyers typically report after using the Toolkit</h2>
+        <div class="proof-outcomes reveal">
+          <h3>What buyers report afterwards</h3>
+          <ul>
+            <li>Cleaner out-the-door offers in writing — before they ever step into a dealership.</li>
+            <li>Fewer add-ons and surprise fees showing up on the contract at delivery.</li>
+            <li>Clear payment math — apples-to-apples comparisons across multiple dealers.</li>
+            <li>More confidence negotiating by email or in-store — knowing exactly what to say.</li>
+          </ul>
+          <p class="proof-disclaimer">Experiences vary by market, taxes/fees, credit profile, and vehicle selection.</p>
         </div>
-
-        <div class="outcomes-grid">
-          <div class="outcome-card reveal">
-            <p>Cleaner out-the-door offers in writing — before they ever step into a dealership.</p>
-          </div>
-          <div class="outcome-card reveal" style="transition-delay:0.08s">
-            <p>Fewer add-ons and surprise fees showing up on the contract at delivery.</p>
-          </div>
-          <div class="outcome-card reveal" style="transition-delay:0.14s">
-            <p>Clear payment math — apples-to-apples comparisons across multiple dealers.</p>
-          </div>
-          <div class="outcome-card reveal" style="transition-delay:0.20s">
-            <p>More confidence negotiating by email or in-store — knowing exactly what to say.</p>
-          </div>
-        </div>
-
-        <p style="text-align:center; color:var(--ink-mute); font-size:0.8rem; margin-top:1.5rem;">
-          Experiences vary by market, taxes/fees, credit profile, and vehicle selection.
-        </p>
       </div>
-    </section>
-
-    <!-- ══ REVIEWS ══════════════════════════════════════════════ -->
-    <section class="reviews-section" aria-label="Customer reviews">
+      <div class="proof-reviews">
       <div class="container" style="margin-bottom:2.5rem;">
-        <div class="section-header reveal">
-          <div class="section-label">
-            <span class="eyebrow">Real Buyers</span>
-          </div>
-          <h2>Real Results</h2>
-        </div>
-      </div>
+        
 
       <div class="review-track-wrap">
         <div class="review-track" aria-label="Scrolling customer reviews">
@@ -1641,6 +1705,7 @@
 
         </div>
       </div>
+    </div>
     </section>
 
     <!-- ══ WHAT'S INSIDE ═════════════════════════════════════════ -->
@@ -1752,15 +1817,21 @@
 
           <div class="price-card-body">
             <ul class="price-includes">
-              <li>Dealers send you written OTD quotes — before you ever negotiate</li>
-              <li>Scripts for every dealer response, including the walk-away line</li>
-              <li>Know exactly what you'll pay before you sign anything</li>
-              <li>Spot junk fees instantly — and know exactly what to say</li>
+              <li>Which add-ons are pure margin — and what each one really costs the dealer</li>
+              <li>The Finance Office guide: what gets presented, in what order, and why</li>
+              <li>What the manager says to your salesperson the moment you leave the room</li>
+              <li>Buy and lease calculators, plus the deal comparison sheet that flattens every quote to one number</li>
               <li>Lease vs buy math that actually makes sense</li>
+              <li>Copy-paste scripts for every dealer response, including the walk-away line</li>
               <li>Delivery Day checklist — nothing gets slipped past you</li>
               <li>Real before/after example — $3,696 saved, same car</li>
               <li>5 printable PDFs + 4 calculators (Excel · Sheets · Numbers) · Free updates for life</li>
             </ul>
+
+            <div class="price-founder">
+              <img src="/assets/img/founder.jpg" alt="Ali Camur, Founder of CarHandled" loading="lazy" width="52" height="52">
+              <p><strong>Built by Ali Camur</strong> — 8 years in the auto industry, 6 in luxury. <a href="/about.html">Read the story</a></p>
+            </div>
 
             <a
               href="https://buy.stripe.com/3cIaEXfIP9Ll4Ai0bbfIs05"
@@ -1799,43 +1870,22 @@
 
         <div class="faq-list reveal">
           <div class="faq-item">
-            <button class="faq-question">What is the Toolkit?</button>
-            <div class="faq-answer">A step-by-step guide, copy/paste emails, calculators, and checklists to get a clean out-the-door price and avoid junk fees.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">What's inside?</button>
-            <div class="faq-answer">Buying guide, OTD email templates, negotiation flows, purchase &amp; lease calculators, deal comparison sheet, delivery and Finance Office checklists, and a real before/after example.</div>
+            <button class="faq-question">What exactly do I get for $29?</button>
+            <div class="faq-answer">Nine files — five printable PDFs and four spreadsheet calculators (Excel, Numbers, or Google Sheets). The add-on margin breakdown, the Finance Office guide, buy and lease estimators, the deal comparison sheet, the lease-vs-buy worksheet, delivery checklists, and the copy-paste email scripts. Free updates for life.</div>
           </div>
           <div class="faq-item">
             <button class="faq-question">How do I access it?</button>
-            <div class="faq-answer">Instant Google Sheets + PDF links after checkout — delivered directly to your email. Make your own copy of the Sheets and start right away.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">What is a car buying toolkit?</button>
-            <div class="faq-answer">A bundle of templates, calculators, and checklists that help you request clean out-the-door quotes, compare offers, and avoid junk fees. CarHandled's toolkit focuses on action-first email scripts and OTD math.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Is the CarHandled toolkit legit?</button>
-            <div class="faq-answer">Yes — built by a former dealer who has negotiated 500+ deals, now working on the buyer's side. Includes copy-paste scripts and calculators, backed by a 30-day refund guarantee.</div>
+            <div class="faq-answer">All nine files are emailed to you as attachments right after checkout, usually within about 60 seconds. No login, no app. Print the PDFs or open them on your phone at the dealership.</div>
           </div>
           <div class="faq-item">
             <button class="faq-question">What's the refund policy?</button>
-            <div class="faq-answer">30-day refund — no questions asked. If it doesn't help, email info@carhandled.com and we'll make it right.</div>
+            <div class="faq-answer">30 days, no questions asked. If it doesn't help, email info@carhandled.com and we'll refund you in full.</div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ══ FOUNDER ══════════════════════════════════════════════ -->
-    <section class="founder-section">
-      <div class="container">
-        <div class="founder-card reveal">
-          <img src="/assets/img/founder.jpg" alt="Ali, CarHandled founder" class="founder-photo" loading="lazy">
-          <div class="founder-text">
-            <p>I sat on that side of the desk for years. I know what the manager says when you leave the room. I know which add-ons are pure margin. I know the exact email that makes dealers give you their real number. That's what's in this toolkit.</p>
-            <a href="about.html">Read the 2-minute story →</a>
-          </div>
-        </div>
+        <p class="faq-more">
+          <a href="/faq.html">See all 12 questions answered →</a>
+        </p>
       </div>
     </section>
 
@@ -1848,7 +1898,7 @@
             <p>Skip the learning curve. Our white-glove Concierge Service handles sourcing, negotiating, and delivery coordination — done for you.</p>
           </div>
           <div class="concierge-card-action">
-            <a href="services.html" class="btn btn--outline">Explore Concierge →</a>
+            <a href="/services.html" class="btn btn--outline">Explore Concierge →</a>
           </div>
         </div>
       </div>
@@ -1862,22 +1912,36 @@
             <span class="eyebrow">Guides</span>
           </div>
           <h2 style="display:inline;">Learn the System</h2>
-          <a href="guides.html" style="color:var(--gold); font-size:0.9rem; margin-left:1.5rem; font-weight:500;">View all →</a>
+          <a href="/guides/" style="color:var(--gold); font-size:0.9rem; margin-left:1.5rem; font-weight:500;">View all →</a>
         </div>
 
         <div class="guides-grid">
-          <a href="blog1.html" class="guide-tile reveal">
-            <img src="assets/img/blog1.jpg" alt="How to get a real OTD price" loading="lazy">
+          <a href="/guides/out-the-door-price-email-guide.html" class="guide-tile reveal">
+            <img src="/assets/img/blog1.jpg" alt="How to get a real out-the-door price by email" loading="lazy" width="1536" height="1024">
             <div class="guide-overlay">
-              <h3>How to Get a Real OTD Price</h3>
+              <h3>Get a Real OTD Price by Email</h3>
               <p>Copy/paste emails + quick math checks.</p>
             </div>
           </a>
-          <a href="blog2.html" class="guide-tile reveal" style="transition-delay:0.1s">
-            <img src="assets/img/blog2.jpg" alt="Top 5 car buying toolkits 2026" loading="lazy">
+          <a href="/guides/what-is-out-the-door-price.html" class="guide-tile reveal" style="transition-delay:0.06s">
+            <img src="/assets/img/background.jpg" alt="What an out-the-door price includes" loading="lazy" width="1536" height="1024">
             <div class="guide-overlay">
-              <h3>Top 5 Car Buying Toolkits</h3>
-              <p>What actually helps you save in 2026.</p>
+              <h3>What Is an OTD Price?</h3>
+              <p>What belongs in the number — and what doesn't.</p>
+            </div>
+          </a>
+          <a href="/guides/how-to-get-most-for-trade-in.html" class="guide-tile reveal" style="transition-delay:0.12s">
+            <img src="/assets/img/promise-bg.jpg" alt="How to get the most for your car trade-in" loading="lazy" width="1536" height="1024">
+            <div class="guide-overlay">
+              <h3>Get the Most for Your Trade-In</h3>
+              <p>Find real value, then use it as leverage.</p>
+            </div>
+          </a>
+          <a href="/guides/best-car-buying-toolkits-2026.html" class="guide-tile reveal" style="transition-delay:0.18s">
+            <img src="/assets/img/blog2.jpg" alt="What to look for in a car buying toolkit" loading="lazy" width="1536" height="1024">
+            <div class="guide-overlay">
+              <h3>Best Car Buying Toolkits 2026</h3>
+              <p>The 8 things one has to do to be worth it.</p>
             </div>
           </a>
         </div>
@@ -1890,9 +1954,11 @@
         <div class="mobile-guides">
           <h3>Guides</h3>
           <div class="mobile-guide-links">
-            <a href="guides.html">All Guides →</a>
-            <a href="blog1.html">Get a Real OTD Price</a>
-            <a href="blog2.html">Top 5 Toolkits (2026)</a>
+            <a href="/guides/">All Guides →</a>
+            <a href="/guides/out-the-door-price-email-guide.html">Get a Real OTD Price by Email</a>
+            <a href="/guides/what-is-out-the-door-price.html">What Is an OTD Price?</a>
+            <a href="/guides/how-to-get-most-for-trade-in.html">Get the Most for Your Trade-In</a>
+            <a href="/guides/best-car-buying-toolkits-2026.html">Best Toolkits 2026</a>
           </div>
         </div>
       </div>
@@ -1949,24 +2015,25 @@
 
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/img/logo.png" alt="CarHandled">
+          <img src="assets/img/logo.png" alt="CarHandled" width="200" height="200">
           <p>Smarter car buying, simplified. Built by an ex-dealer who's now on your side.</p>
         </div>
 
         <div class="footer-col">
           <h4>Product</h4>
           <a href="#pricing">Car Buying Toolkit — $29</a>
-          <a href="services.html">Concierge Service</a>
-          <a href="guides.html">Guides</a>
-          <a href="intake.html">Get Started</a>
+          <a href="/services.html">Concierge Service</a>
+          <a href="/guides/">Guides</a>
+          <a href="/intake.html">Get Started</a>
         </div>
 
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="about.html">About</a>
-          <a href="terms-of-use.html">Terms of Use</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="refund-policy.html">Refund Policy</a>
+          <a href="/about.html">About</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/refund-policy.html">Refund Policy</a>
           <a href="mailto:info@carhandled.com">info@carhandled.com</a>
         </div>
       </div>
@@ -1979,9 +2046,9 @@
           <span class="sep">·</span>
           <a href="#faq">FAQ</a>
           <span class="sep">·</span>
-          <a href="blog1.html">Get a Real OTD Price</a>
+          <a href="/guides/out-the-door-price-email-guide.html">Get a Real OTD Price</a>
           <span class="sep">·</span>
-          <a href="/blog2.html">Best car buying toolkits (2026)</a>
+          <a href="/guides/best-car-buying-toolkits-2026.html">Best car buying toolkits (2026)</a>
         </div>
 
         <a href="https://www.instagram.com/carhandled" target="_blank" rel="noopener noreferrer" class="footer-instagram">
@@ -2058,5 +2125,44 @@
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
   <script>fetch("https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/takel")</script>
 
+
+  <!-- ══ FLOATING CTA ═════════════════════════════════════════ -->
+  <div class="float-cta" id="floatCta" role="complementary" aria-label="Get the toolkit">
+    <div class="float-cta-text">
+      <strong>Car Buying Toolkit — $29</strong>
+      <span>30-day refund · Emailed instantly</span>
+    </div>
+    <a href="#pricing" class="float-cta-btn"
+       onclick="gtag('event','click',{event_category:'Floating CTA',event_label:'Home'})">Get it now</a>
+  </div>
+
+  <script>
+    /* Floating CTA: appears after the hero, hides when a real buy CTA is on screen */
+    (function () {
+      var bar = document.getElementById('floatCta');
+      if (!bar) return;
+      var hero = document.querySelector('.hero');
+      var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
+      var suppress = 0;
+      var watched = document.querySelectorAll('#pricing, .final-cta, .mid-cta, .site-footer, .faq-cta');
+      if ('IntersectionObserver' in window && watched.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { suppress += e.isIntersecting ? 1 : -1; });
+          if (suppress < 0) suppress = 0;
+          update();
+        }, { rootMargin: '0px 0px -20% 0px' });
+        watched.forEach(function (el) { io.observe(el); });
+      }
+      function update() {
+        var past = window.pageYOffset > heroBottom - 120;
+        bar.classList.toggle('show', past && suppress === 0);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', function () {
+        heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400; update();
+      }, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>

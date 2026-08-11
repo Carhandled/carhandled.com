@@ -22,11 +22,11 @@
   <meta property="og:url"         content="https://www.carhandled.com/terms-of-use.html" />
   <meta property="og:title"       content="Terms of Use — CarHandled" />
   <meta property="og:description" content="Plain-English terms for the CarHandled Toolkit and Concierge services." />
-  <meta property="og:image"       content="https://www.carhandled.com/assets/img/toolkit-og.jpg" />
+  <meta property="og:image"       content="https://www.carhandled.com/assets/img/toolkitbackground.jpg" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Terms of Use — CarHandled" />
   <meta name="twitter:description" content="Clear terms for our Toolkit and Concierge services." />
-  <meta name="twitter:image"       content="https://www.carhandled.com/assets/img/toolkit-og.jpg" />
+  <meta name="twitter:image"       content="https://www.carhandled.com/assets/img/toolkitbackground.jpg" />
 
   <!-- Favicons -->
   <link rel="manifest" href="/manifest.json" />
@@ -67,7 +67,7 @@
     /* Header */
     .site-header { position: sticky; top: 0; z-index: 100; background: rgba(8,8,8,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
     .header-inner { max-width: 1020px; margin: 0 auto; padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
-    .header-logo img { height: 42px; }
+    .header-logo img { height: 42px; width: auto;}
     .header-nav { display: flex; align-items: center; gap: 0.25rem; }
     .header-nav a { font-size: 0.88rem; color: var(--ink-dim); padding: 0.45rem 0.8rem; border-radius: 6px; transition: color 0.15s, background 0.15s; text-decoration: none; }
     .header-nav a:hover { color: var(--gold); background: rgba(198,169,114,0.07); }
@@ -247,7 +247,7 @@
     .site-footer { background: var(--black); border-top: 1px solid var(--border); padding: 3rem 1.5rem 2rem; }
     .footer-inner { max-width: 1020px; margin: 0 auto; }
     .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
-    .footer-brand img { height: 36px; margin-bottom: 0.75rem; }
+    .footer-brand img { height: 36px; margin-bottom: 0.75rem; width: auto;}
     .footer-brand p { color: var(--ink-mute); font-size: 0.85rem; line-height: 1.6; margin-top: 0.5rem; }
     .footer-col h4 { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
     .footer-col a { display: block; color: var(--ink-mute); font-size: 0.88rem; margin-bottom: 0.55rem; transition: color 0.15s; text-decoration: none; }
@@ -271,6 +271,39 @@
       .footer-bottom { flex-direction: column; gap: 0.75rem; }
     }
   </style>
+  <!-- Organization entity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.carhandled.com/#organization",
+    "name": "CarHandled",
+    "url": "https://www.carhandled.com/",
+    "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"},
+    "email": "info@carhandled.com",
+    "founder": {"@id": "https://www.carhandled.com/about.html#ali-camur"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.carhandled.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terms of Use",
+        "item": "https://www.carhandled.com/terms-of-use.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -279,25 +312,27 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="/assets/img/logo.png" alt="CarHandled">
+        <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
       </a>
       <nav class="header-nav">
-        <a href="/index.html#pricing">Toolkit</a>
+        <a href="/#pricing">Toolkit</a>
         <a href="/services.html">Concierge</a>
-        <a href="/guides.html">Guides</a>
+        <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
-        <a href="/index.html#pricing" class="nav-cta">Get the Toolkit — $29</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/#pricing" class="nav-cta">Get the Toolkit — $29</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
     <nav class="mobile-nav" id="mobile-nav">
-      <a href="/index.html#pricing">Toolkit</a>
+      <a href="/#pricing">Toolkit</a>
       <a href="/services.html">Concierge</a>
-      <a href="/guides.html">Guides</a>
+      <a href="/guides/">Guides</a>
       <a href="/about.html">About</a>
-      <a href="/index.html#pricing">Get the Toolkit — $29 →</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/#pricing">Get the Toolkit — $29 →</a>
     </nav>
   </header>
 
@@ -562,19 +597,20 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="/assets/img/logo.png" alt="CarHandled">
+          <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
           <p>Smarter car buying, simplified. Built by an ex-dealer who's now on your side.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
-          <a href="/index.html#pricing">Car Buying Toolkit — $29</a>
+          <a href="/#pricing">Car Buying Toolkit — $29</a>
           <a href="/services.html">Concierge Service</a>
-          <a href="/guides.html">Guides</a>
+          <a href="/guides/">Guides</a>
           <a href="/intake.html">Get Started</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <a href="/about.html">About</a>
+          <a href="/faq.html">FAQ</a>
           <a href="/terms-of-use.html">Terms of Use</a>
           <a href="/privacy-policy.html">Privacy Policy</a>
           <a href="/refund-policy.html">Refund Policy</a>
@@ -585,7 +621,7 @@
         <div class="footer-legal">
           <span>© 2026 CarHandled</span>
           <span class="sep">·</span>
-          <a href="/index.html#pricing">Car buying toolkit</a>
+          <a href="/#pricing">Car buying toolkit</a>
           <span class="sep">·</span>
           <a href="/services.html">Concierge</a>
           <span class="sep">·</span>

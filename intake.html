@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Started – CarHandled Concierge Intake</title>
+  <title>Get Started — Car Buying Concierge Intake | CarHandled</title>
   <meta name="description" content="Tell us your goals, budget, and timeline — so we can help you buy smarter, faster." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://www.carhandled.com/intake.html" />
@@ -11,12 +11,12 @@
   <meta property="og:description" content="Tell us your goals, budget, and timeline — so we can help you buy smarter, faster.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.carhandled.com/intake.html">
-  <meta property="og:image" content="https://www.carhandled.com/assets/img/toolkit-og.jpg">
+  <meta property="og:image" content="https://www.carhandled.com/assets/img/toolkitbackground.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CarHandled Intake Form">
   <meta name="twitter:description" content="Tell us your goals, budget, and timeline — so we can help you buy smarter, faster.">
-  <meta name="twitter:image" content="https://www.carhandled.com/assets/img/toolkit-og.jpg">
-  <link rel="icon" href="favicon.ico" />
+  <meta name="twitter:image" content="https://www.carhandled.com/assets/img/toolkitbackground.jpg">
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="/manifest.json" />
   <style>
     body {
@@ -40,6 +40,7 @@
 
 header img {
   height: 48px;
+  width: auto;
   transition: height 0.3s ease;
 }
 
@@ -48,8 +49,7 @@ header.shrink {
 }
 
 header.shrink img {
-  height: 36px;
-}
+  height: 36px; width: auto;}
 
     #hamburger {
       display: flex;
@@ -88,10 +88,19 @@ header.shrink img {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .intake-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      text-align: center;
+      color: #FFFFFF;
+      margin: 3rem 1rem 0;
+      line-height: 1.2;
+    }
     .form-wrapper {
       display: flex;
       justify-content: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem 3rem;
     }
     iframe {
       width: 100%;
@@ -111,11 +120,44 @@ header.shrink img {
       text-decoration: none;
     }
   </style>
+  <!-- Organization entity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.carhandled.com/#organization",
+    "name": "CarHandled",
+    "url": "https://www.carhandled.com/",
+    "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"},
+    "email": "info@carhandled.com",
+    "founder": {"@id": "https://www.carhandled.com/about.html#ali-camur"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.carhandled.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Get Started",
+        "item": "https://www.carhandled.com/intake.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="assets/img/logo.png" alt="CarHandled Logo">
+    <a href="/">
+      <img src="/assets/img/logo.png" alt="CarHandled Logo" width="200" height="200">
     </a>
     <div id="hamburger" onclick="toggleNav()">
       <span></span>
@@ -123,16 +165,19 @@ header.shrink img {
       <span></span>
     </div>
    <nav id="mobileNav">
-  <a href="#pricing">Buy Toolkit</a>
-  <a href="services.html">Concierge</a>
-  <a href="guides.html">Guides</a>
-  <a href="about.html">About</a>
-  <a href="intake.html">Get Started</a>
+  <a href="/#pricing">Buy Toolkit</a>
+  <a href="/services.html">Concierge</a>
+  <a href="/guides/">Guides</a>
+  <a href="/about.html">About</a>
+  <a href="/faq.html">FAQ</a>
+  <a href="/intake.html">Get Started</a>
 </nav>
   </header>
 
+  <h1 class="intake-title">Get Started — Car Buying Concierge Intake</h1>
+
   <div class="form-wrapper">
-    <iframe 
+    <iframe
       data-tally-src="https://tally.so/embed/mR1yZQ?hideTitle=1&transparentBackground=1&dynamicHeight=1"
       loading="lazy"
       title="CarHandled Intake Form 🚗 So we can help you better.">
@@ -175,9 +220,9 @@ header.shrink img {
   <footer class="footer">
     <p><strong>Contact us:</strong> info@carhandled.com</p>
     <p>
-      <a href="terms-of-use.html">Terms of Use</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="refund-policy.html">Refund Policy</a>
+      <a href="/terms-of-use.html">Terms of Use</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/refund-policy.html">Refund Policy</a>
     </p>
     <p>
       <a href="https://www.instagram.com/carhandled" target="_blank" style="color: #aaa; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
