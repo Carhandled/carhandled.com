@@ -351,6 +351,25 @@
       .float-cta a.float-cta-btn { padding: 0.7rem 0.9rem; font-size: 0.85rem; }
     }
     @media (prefers-reduced-motion: reduce) { .float-cta { transition: none; } }
+
+    /* ── Free guide email capture (MailerLite form 28577420) ── */
+    .guide-capture { margin: 2.5rem 0; padding: 1.75rem; border: 1px solid var(--border2); border-left: 3px solid var(--gold); border-radius: 10px; background: var(--card); }
+    .guide-capture .eyebrow { display:block; margin-bottom:0.4rem; }
+    .guide-capture h2 { font-family:'Playfair Display', Georgia, serif; font-size:1.35rem; color: var(--white); margin: 0 0 0.4rem; }
+    .guide-capture p { color: var(--ink-mute); font-size: 0.9rem; margin: 0 0 1.1rem; line-height: 1.6; }
+    #mlb2-28577420.ml-form-embedContainer { display:block; max-width:100%; margin:0; }
+    #mlb2-28577420 .ml-form-embedWrapper.embedForm { width:100% !important; max-width:100%; margin:0; background:transparent !important; border:none !important; border-radius:0 !important; box-shadow:none !important; }
+    #mlb2-28577420 .ml-form-embedBody { padding:0 !important; }
+    #mlb2-28577420 .ml-form-embedContent { display:none !important; }
+    #mlb2-28577420 .ml-block-form { display:flex; gap:0.6rem; flex-wrap:wrap; }
+    #mlb2-28577420 .ml-form-formContent { flex:1 1 240px; }
+    #mlb2-28577420 .ml-form-fieldRow .form-control { width:100% !important; box-sizing:border-box !important; padding:0.85rem 1rem !important; border-radius:8px !important; background:var(--black) !important; border:1px solid var(--border2) !important; color:var(--ink) !important; font-family:'DM Sans', sans-serif !important; font-size:0.95rem !important; }
+    #mlb2-28577420 .ml-form-fieldRow .form-control:focus { outline:none !important; border-color:var(--gold-dim) !important; }
+    #mlb2-28577420 .ml-form-embedSubmit { flex:0 0 auto; }
+    #mlb2-28577420 .ml-form-embedSubmit .primary { background:var(--gold) !important; color:var(--black) !important; border:none !important; border-radius:8px !important; padding:0.85rem 1.25rem !important; font-weight:600 !important; font-size:0.95rem !important; font-family:'DM Sans', sans-serif !important; cursor:pointer !important; }
+    #mlb2-28577420 .ml-form-embedSubmit .primary:hover { background:var(--gold-lite) !important; }
+    #mlb2-28577420 .loading { display:none !important; }
+    @media (max-width: 560px) { #mlb2-28577420 .ml-form-embedSubmit, #mlb2-28577420 .ml-form-embedSubmit .primary { width:100% !important; } }
   </style>
   <script type="application/ld+json">
   {
@@ -637,6 +656,43 @@
 
 
 
+      <!-- Free guide email capture -->
+      <section class="guide-capture" id="free-guide">
+        <span class="eyebrow">Free · not ready to buy yet?</span>
+        <h2>Get the free OTD email script</h2>
+        <p>The copy and paste email that gets dealers to put a real out the door price in writing, plus the 7 mistakes first-time buyers make. No spam, unsubscribe anytime.</p>
+        <div id="mlb2-28577420" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28577420">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent" style="display:none;"></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/subscribe" method="post" target="_blank" rel="noopener" onsubmit="if(window.gtag){gtag('event','generate_lead',{form_name:'free_guide',form_location:'guide_page'})}">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="Email address" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Your email address" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">Send me the script</button>
+                    <button disabled class="loading"><span class="ml-form-embedSubmitLoad"></span>Loading…</button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none">
+                <div class="ml-form-successContent">
+                  <p style="color:var(--gold); font-weight:500; font-size:1rem; margin:0;">You're in. Check your inbox.</p>
+                  <p style="margin:0.25rem 0 0;">The script is on its way.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Related guides -->
       <h2 class="related-heading">Related guides</h2>
       <div class="related">
@@ -830,5 +886,15 @@
       update();
     })();
   </script>
+  <!-- MailerLite free guide form -->
+  <script>
+    function ml_webform_success_28577420() {
+      var $ = window.ml_jQuery || window.jQuery;
+      $('.ml-subscribe-form-28577420 .row-success').show();
+      $('.ml-subscribe-form-28577420 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+  <script>fetch("https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/takel")</script>
 </body>
 </html>
