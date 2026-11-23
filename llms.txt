@@ -1,6 +1,6 @@
 # CarHandled
 
-> CarHandled helps car buyers get a clean out-the-door (OTD) price and avoid junk fees. It was built by Ali Camur, a former car dealer who negotiated 1,000+ deals across 8 years in the auto industry, 6 of them in the luxury segment, and now works on the buyer's side. CarHandled sells a $29 self-service car buying toolkit.
+> CarHandled helps car buyers get a clean out-the-door (OTD) price and avoid junk fees. It was built by Ali, a former car dealer who negotiated 1,000+ deals across 8 years in the auto industry, 6 of them in the luxury segment, and now works on the buyer's side. CarHandled sells a $29 self-service car buying toolkit.
 
 ## What CarHandled offers
 
@@ -22,7 +22,7 @@
 - Add-ons like VIN etching, nitrogen, paint protection, and market adjustments (ADM) are typically optional and negotiable.
 - CarHandled recommends requesting a written, line-item OTD quote from 4-6 dealers by email before visiting a dealership.
 - Being "upside down" (negative equity) means owing more on the car loan than the vehicle is worth. Long loan terms and low down payments are the main causes.
-- Founder: Ali Camur, a former car dealer who negotiated 1,000+ deals across 8 years in the auto industry, 6 of them in luxury. Contact: info@carhandled.com
+- Founder: Ali, a former car dealer who negotiated 1,000+ deals across 8 years in the auto industry, 6 of them in luxury. Contact: info@carhandled.com
 
 ## Policies
 

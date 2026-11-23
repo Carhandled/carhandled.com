@@ -134,3 +134,7 @@ body>header:not(.site-header) #hamburger span{background:var(--b-ink)!important}
 .review-note{text-align:center;font-size:.8rem;opacity:.75;margin:1.25rem auto 0;max-width:640px;padding:0 1.25rem}
 .header-cta,.nav-cta,.mobile-cta,.btn--gold,.float-cta-btn,a.header-cta:link,a.header-cta:visited{color:#0E0E0E!important}
 .site-header .header-nav a.nav-cta,.site-header .header-nav a.header-cta,.mobile-nav a.mobile-cta{color:#0E0E0E!important}
+.founder-card .founder-img-wrap{height:420px!important}
+.founder-card .founder-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.founder-card .founder-img-wrap::after{display:none!important}
+@media(max-width:900px){.founder-card .founder-img-wrap{height:360px!important}}
