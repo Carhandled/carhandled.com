@@ -1,5 +1,5 @@
 CarHandled.com – Smart Car Buying, Simplified
-This repository powers the CarHandled website and Toolkit experience — designed to help car buyers make smarter, stress-free decisions through expert concierge services and powerful digital tools.
+This repository powers the CarHandled website and Toolkit experience — designed to help car buyers make smarter, stress-free decisions with practical digital tools.
 
 🚗 Live Site
 👉 carhandled.com

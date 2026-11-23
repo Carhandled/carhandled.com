@@ -124,3 +124,13 @@ p,li{color:inherit}
 body>header:not(.site-header){background:var(--b-paper)!important;border-bottom:2px solid var(--b-ink)}
 body>header:not(.site-header) img[src*="wordmark"]{height:30px!important;width:auto!important}
 body>header:not(.site-header) #hamburger span{background:var(--b-ink)!important}
+
+/* No-face, toolkit-only (Nov 2026) */
+.price-founder--noimg{display:block}
+.price-founder--noimg p{margin:0}
+.founder-img-wrap.founder-mono{display:flex;align-items:center;justify-content:center;background:#0E0E0E;height:260px}
+.founder-img-wrap.founder-mono img{width:140px;height:140px;object-fit:contain;position:static;filter:none}
+.founder-img-wrap.founder-mono::after{display:none}
+.review-note{text-align:center;font-size:.8rem;opacity:.75;margin:1.25rem auto 0;max-width:640px;padding:0 1.25rem}
+.header-cta,.nav-cta,.mobile-cta,.btn--gold,.float-cta-btn,a.header-cta:link,a.header-cta:visited{color:#0E0E0E!important}
+.site-header .header-nav a.nav-cta,.site-header .header-nav a.header-cta,.mobile-nav a.mobile-cta{color:#0E0E0E!important}
