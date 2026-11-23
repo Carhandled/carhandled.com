@@ -35,9 +35,6 @@
   <link rel="manifest" href="/manifest.json" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -450,6 +447,8 @@
     ]
   }
   </script>
+  <link rel="preload" href="/assets/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style/brand.css">
 </head>
 
 <body>
@@ -458,11 +457,10 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+        <img src="/assets/img/wordmark-ink.svg" alt="CarHandled" width="300" height="60" class="brand-logo-img">
       </a>
       <nav class="header-nav" aria-label="Main navigation">
         <a href="/#pricing">Toolkit</a>
-        <a href="/services.html">Concierge</a>
         <a href="/guides/" aria-current="page">Guides</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
@@ -474,7 +472,6 @@
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="/#pricing">Toolkit</a>
-      <a href="/services.html">Concierge</a>
       <a href="/guides/">Guides</a>
       <a href="/about.html">About</a>
       <a href="/faq.html">FAQ</a>
@@ -733,9 +730,6 @@
             <a href="/#pricing" class="btn btn--gold">
               Get the Toolkit — $29
             </a>
-            <a href="/services.html" class="btn btn--ghost">
-              Done for you →
-            </a>
           </div>
         </div>
 
@@ -749,15 +743,13 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+          <img src="/assets/img/wordmark-white.svg" alt="CarHandled" width="300" height="60">
           <p>Smarter car buying, simplified. Built by Ali Camur — 8 years in the auto industry, 6 in luxury.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
           <a href="/#pricing">Car Buying Toolkit — $29</a>
-          <a href="/services.html">Concierge Service</a>
           <a href="/guides/">Guides</a>
-          <a href="/intake.html">Get Started</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>

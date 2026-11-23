@@ -34,9 +34,6 @@
   <link rel="manifest" href="/manifest.json" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -335,6 +332,8 @@
     ]
   }
   </script>
+  <link rel="preload" href="/assets/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style/brand.css">
 </head>
 
 <body>
@@ -343,11 +342,10 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+        <img src="/assets/img/wordmark-ink.svg" alt="CarHandled" width="300" height="60" class="brand-logo-img">
       </a>
       <nav class="header-nav">
         <a href="/#pricing">Toolkit</a>
-        <a href="/services.html">Concierge</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
@@ -359,7 +357,6 @@
     </div>
     <nav class="mobile-nav" id="mobile-nav">
       <a href="/#pricing">Toolkit</a>
-      <a href="/services.html">Concierge</a>
       <a href="/guides/">Guides</a>
       <a href="/about.html">About</a>
       <a href="/faq.html">FAQ</a>
@@ -377,7 +374,7 @@
         <p>
           Plain-English privacy policy. We never sell or rent your data. Every third-party tool we use is disclosed below by name.
         </p>
-        <div class="hero-meta">Effective: May 8, 2026</div>
+        <div class="hero-meta">Effective: November 23, 2026</div>
       </div>
     </section>
 
@@ -424,9 +421,8 @@
 
           <h3>Information you give us</h3>
           <ul>
-            <li><strong>Contact info</strong> — name and email address when you sign up for our free guide, purchase the Toolkit, or apply for Concierge service</li>
+            <li><strong>Contact info</strong> — name and email address when you sign up for our free guide, or purchase the Toolkit</li>
             <li><strong>Purchase info</strong> — billing details and transaction records when you buy the Toolkit (handled by Stripe; we never see your full card number)</li>
-            <li><strong>Concierge intake details</strong> — vehicle preferences, budget, timeline, and other information you share when applying for our Concierge service</li>
             <li><strong>Email correspondence</strong> — any messages you send us at info@carhandled.com</li>
           </ul>
 
@@ -443,7 +439,7 @@
           <h2>2. How we use it</h2>
           <p>We use your information for these specific purposes:</p>
           <ul>
-            <li><strong>Deliver what you bought</strong> — sending the Toolkit files, processing your Concierge intake, fulfilling your order</li>
+            <li><strong>Deliver what you bought</strong> — sending the Toolkit files and fulfilling your order</li>
             <li><strong>Communicate with you</strong> — order confirmations, follow-up emails, responses to your questions, and educational content if you've subscribed to our list</li>
             <li><strong>Improve the site and product</strong> — understanding which guides are read, where users drop off, and what to fix</li>
             <li><strong>Provide customer support</strong> — looking up your order, processing refunds, helping you access your files</li>
@@ -469,7 +465,7 @@
               <tr>
                 <td class="tool-name">Stripe<span class="small">Payment processor</span></td>
                 <td>
-                  Processes Toolkit and Concierge payments. Stripe sees your name, email, billing address, and payment card details. We never store your card number — only a transaction reference.
+                  Processes Toolkit payments. Stripe sees your name, email, billing address, and payment card details. We never store your card number — only a transaction reference.
                   <br><a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe privacy policy →</a>
                 </td>
               </tr>
@@ -598,7 +594,6 @@
           <ul>
             <li><strong>Email subscribers</strong> — until you unsubscribe (one click in any email)</li>
             <li><strong>Toolkit purchases</strong> — kept indefinitely for support and refund eligibility, but you can request deletion at any time</li>
-            <li><strong>Concierge clients</strong> — kept for 7 years to comply with US tax and business record requirements</li>
             <li><strong>Analytics data</strong> — Google Analytics retains aggregate data for 14 months by default; Hotjar retains session recordings for 365 days</li>
           </ul>
         </div>
@@ -635,15 +630,13 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+          <img src="/assets/img/wordmark-white.svg" alt="CarHandled" width="300" height="60">
           <p>Smarter car buying, simplified. Built by an ex-dealer who's now on your side.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
           <a href="/#pricing">Car Buying Toolkit — $29</a>
-          <a href="/services.html">Concierge Service</a>
           <a href="/guides/">Guides</a>
-          <a href="/intake.html">Get Started</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
@@ -661,7 +654,6 @@
           <span class="sep">·</span>
           <a href="/#pricing">Car buying toolkit</a>
           <span class="sep">·</span>
-          <a href="/services.html">Concierge</a>
           <span class="sep">·</span>
           <a href="/about.html">About</a>
         </div>

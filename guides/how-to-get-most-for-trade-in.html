@@ -34,9 +34,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -62,7 +59,7 @@
     "@type": "Article",
     "headline": "How to Get the Most for Your Trade-In (Ex-Dealer's Guide)",
     "image": "https://www.carhandled.com/assets/img/promise-bg.jpg",
-    "author": {"@type": "Person", "@id": "https://www.carhandled.com/about.html#ali-camur", "name": "Ali Camur", "jobTitle": "Founder", "image": "https://www.carhandled.com/assets/img/founder.jpg", "description": "Founder of CarHandled. Negotiated over 1,000 car deals across eight years in the auto industry, six of them in the luxury segment, and now works on the buyer's side of the desk.", "url": "https://www.carhandled.com/about.html"},
+    "author": {"@type": "Person", "@id": "https://www.carhandled.com/about.html#ali-camur", "name": "Ali Camur", "jobTitle": "Founder", "description": "Founder of CarHandled. Negotiated over 1,000 car deals across eight years in the auto industry, six of them in the luxury segment, and now works on the buyer's side of the desk.", "url": "https://www.carhandled.com/about.html"},
     "publisher": {"@type": "Organization", "@id": "https://www.carhandled.com/#organization", "name": "CarHandled", "logo": {"@type": "ImageObject", "url": "https://www.carhandled.com/assets/img/logo.png"}},
     "description": "How to get the most money for your car trade-in, from a former dealer: real value, outside offers, and why to keep the trade separate from the new-car price.",
     "datePublished": "2026-07-05",
@@ -649,6 +646,8 @@
     ]
   }
   </script>
+  <link rel="preload" href="/assets/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style/brand.css">
 </head>
 
 <body>
@@ -659,11 +658,10 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+        <img src="/assets/img/wordmark-ink.svg" alt="CarHandled" width="300" height="60" class="brand-logo-img">
       </a>
       <nav class="header-nav" aria-label="Main navigation">
         <a href="/#pricing">Toolkit</a>
-        <a href="/services.html">Concierge</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
@@ -675,7 +673,6 @@
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="/#pricing">Toolkit</a>
-      <a href="/services.html">Concierge</a>
       <a href="/guides/">Guides</a>
       <a href="/about.html">About</a>
       <a href="/faq.html">FAQ</a>
@@ -764,9 +761,6 @@
               onclick="gtag('event','click',{event_category:'CTA',event_label:'blog4 mid - Toolkit'})">
               Get the Toolkit — $29
             </a>
-            <a href="/services.html" class="btn btn--ghost">
-              Or have us handle it →
-            </a>
           </div>
         </div>
 
@@ -790,7 +784,7 @@
 
         <h2 id="next-steps">Next steps</h2>
         <p>Getting top dollar for your trade is one half of a good deal; getting a clean price on the car you're buying is the other. And if your payoff is higher than the car is worth, read <a href="/guides/upside-down-car-loan.html">what being upside down means and how to get out of it</a> before you trade at all. Once you know your trade's real value, make sure the new-car side is just as tight — start with <a href="/guides/what-is-out-the-door-price.html">what an out-the-door price is</a> and <a href="/guides/out-the-door-price-email-guide.html">how to get a real one in writing</a>.</p>
-        <p>The CarHandled Toolkit includes a deal comparison sheet that lets you check a trade-in deal against a no-trade deal side by side, so you can see exactly where every dollar goes. Or if you'd rather hand the whole thing off, the <a href="/services.html">Concierge service</a> handles the car negotiation and the trade for you — an ex-dealer working your side of the desk.</p>
+        <p>The CarHandled Toolkit includes a deal comparison sheet that lets you check a trade-in deal against a no-trade deal side by side, so you can see exactly where every dollar goes.</p>
 
       </div>
 
@@ -803,9 +797,6 @@
           <a href="/#pricing" class="btn btn--gold"
             onclick="gtag('event','click',{event_category:'CTA',event_label:'blog4 final - Toolkit'})">
             Get the Toolkit — $29
-          </a>
-          <a href="/services.html" class="btn btn--ghost">
-            Have us handle it →
           </a>
         </div>
       </div>
@@ -899,15 +890,13 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+          <img src="/assets/img/wordmark-white.svg" alt="CarHandled" width="300" height="60">
           <p>Smarter car buying, simplified. Built by an ex-dealer who's now on your side.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
           <a href="/#pricing">Car Buying Toolkit — $29</a>
-          <a href="/services.html">Concierge Service</a>
           <a href="/guides/">Guides</a>
-          <a href="/intake.html">Get Started</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>

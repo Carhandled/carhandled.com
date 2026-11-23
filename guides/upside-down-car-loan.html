@@ -35,9 +35,6 @@
   <link rel="manifest" href="/manifest.json" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Schema -->
 
@@ -53,7 +50,6 @@
       "@id": "https://www.carhandled.com/about.html#ali-camur",
       "name": "Ali Camur",
       "jobTitle": "Founder",
-      "image": "https://www.carhandled.com/assets/img/founder.jpg",
       "description": "Founder of CarHandled. Negotiated over 1,000 car deals across eight years in the auto industry, six of them in the luxury segment, and now works on the buyer's side of the desk.",
       "url": "https://www.carhandled.com/about.html"
     },
@@ -470,6 +466,8 @@
     #mlb2-28577420 .loading { display:none !important; }
     @media (max-width: 560px) { #mlb2-28577420 .ml-form-embedSubmit, #mlb2-28577420 .ml-form-embedSubmit .primary { width:100% !important; } }
   </style>
+  <link rel="preload" href="/assets/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style/brand.css">
 </head>
 
 <body>
@@ -480,11 +478,10 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="header-logo" aria-label="CarHandled home">
-        <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+        <img src="/assets/img/wordmark-ink.svg" alt="CarHandled" width="300" height="60" class="brand-logo-img">
       </a>
       <nav class="header-nav">
         <a href="/#pricing">Toolkit</a>
-        <a href="/services.html">Concierge</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
@@ -496,7 +493,6 @@
     </div>
     <nav class="mobile-nav" id="mobile-nav">
       <a href="/#pricing">Toolkit</a>
-      <a href="/services.html">Concierge</a>
       <a href="/guides/">Guides</a>
       <a href="/about.html">About</a>
       <a href="/faq.html">FAQ</a>
@@ -893,15 +889,13 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="/assets/img/logo.png" alt="CarHandled" width="200" height="200">
+          <img src="/assets/img/wordmark-white.svg" alt="CarHandled" width="300" height="60">
           <p>Smarter car buying, simplified. Built by an ex-dealer who's now on your side.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
           <a href="/#pricing">Car Buying Toolkit — $29</a>
-          <a href="/services.html">Concierge Service</a>
           <a href="/guides/">Guides</a>
-          <a href="/intake.html">Get Started</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>

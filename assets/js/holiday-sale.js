@@ -53,7 +53,7 @@
       bar.innerHTML = 'Holiday sale: Toolkit <s style="opacity:.6">$29</s> <strong>$9</strong> thru Dec 31&nbsp;&rarr;';
       bar.style.cssText = [
         'display:block', 'text-align:center', 'padding:9px 16px',
-        'background:var(--gold,#c9a24a)', 'color:#0b0b0b', 'font-size:14px', 'line-height:1.35',
+        'background:#D7FF3A','border-bottom:2px solid #0E0E0E', 'color:#0b0b0b', 'font-size:14px', 'line-height:1.35',
         'font-weight:500', 'text-decoration:none', 'position:relative', 'z-index:101'
       ].join(';');
       bar.addEventListener('click', function () {
