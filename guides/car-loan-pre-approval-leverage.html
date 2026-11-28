@@ -305,7 +305,7 @@
     .footer-instagram:hover { color: var(--gold); }
 
     /* Responsive */
-    @media (max-width: 900px) { .article-outer { grid-template-columns: 1fr; } .toc-sidebar { position: static; order: -1; } }
+    @media (max-width: 900px) { .article-outer { grid-template-columns: 1fr; } .toc-sidebar { display: none; } }
     @media (max-width: 768px) {
       .header-nav { display: none; } .hamburger { display: flex; }
       .hero { min-height: 50vh; } .hero-content { padding: 4.5rem 1.25rem 3.5rem; } .hero-content h1 { font-size: 1.8rem; }
@@ -479,6 +479,20 @@
         <p>
           Most buyers walk into the finance office with no idea what interest rate they qualify for. That makes it hard to know whether the rate you're offered is a good one. A pre-approval from your own bank or credit union changes it: you walk in with a real number in writing, and the dealer can match or beat it to earn your loan.
         </p>
+
+        <div id="rebateCalc" style="margin:1.6rem 0 2rem;padding:1.3rem 1.4rem;border-radius:14px;border:2px solid var(--gold);background:var(--card);">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">Quick calculator</div>
+          <h2 style="margin:0 0 0.4rem;font-size:1.25rem;">0% APR or the rebate? Run your numbers.</h2>
+          <p style="margin:0 0 1rem;font-size:0.92rem;color:var(--ink-mute);">Use the rate from your bank or credit union for the rebate side.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0.7rem;margin-bottom:1rem;">
+            <label style="font-size:0.8rem;color:var(--ink-mute);">Amount to finance ($)<input id="rcAmount" type="number" inputmode="decimal" value="30000" style="display:block;width:100%;margin-top:0.3rem;padding:0.55rem;border-radius:8px;border:1px solid var(--border2);background:var(--panel);color:var(--white);font-size:1rem;"></label>
+            <label style="font-size:0.8rem;color:var(--ink-mute);">Rebate ($)<input id="rcRebate" type="number" inputmode="decimal" value="2500" style="display:block;width:100%;margin-top:0.3rem;padding:0.55rem;border-radius:8px;border:1px solid var(--border2);background:var(--panel);color:var(--white);font-size:1rem;"></label>
+            <label style="font-size:0.8rem;color:var(--ink-mute);">Your rate (%)<input id="rcRate" type="number" inputmode="decimal" step="0.1" value="6" style="display:block;width:100%;margin-top:0.3rem;padding:0.55rem;border-radius:8px;border:1px solid var(--border2);background:var(--panel);color:var(--white);font-size:1rem;"></label>
+            <label style="font-size:0.8rem;color:var(--ink-mute);">Months<input id="rcTerm" type="number" inputmode="numeric" value="60" style="display:block;width:100%;margin-top:0.3rem;padding:0.55rem;border-radius:8px;border:1px solid var(--border2);background:var(--panel);color:var(--white);font-size:1rem;"></label>
+          </div>
+          <p id="rcOut" style="margin:0;font-size:0.98rem;line-height:1.55;color:var(--ink);"></p>
+          <p style="margin:0.8rem 0 0;font-size:0.8rem;color:var(--ink-mute);">Estimates only. Taxes and fees are the same either way, so they're left out.</p>
+        </div>
 
         <h2 id="why">Why a pre-approval works</h2>
         <p>When a dealer arranges your loan, the lender approves you at a <strong>buy rate</strong>. The dealer can write your contract at a higher rate and keep part of the difference. Lenders often cap that markup at around 2 to 2.5 percentage points, and on a $30,000 loan over 60 months, each point costs you roughly $800.</p>
@@ -828,5 +842,6 @@
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
   <script>fetch("https://assets.mailerlite.com/jsonp/1676265/forms/160309964311627177/takel")</script>
   <script src="/assets/js/holiday-sale.js" defer></script>
+  <script src="/assets/js/engage.js" defer></script>
 </body>
 </html>
