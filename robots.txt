@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://carhandled.com/sitemap.xml
+Sitemap: https://www.carhandled.com/sitemap.xml
 
 User-agent: GPTBot
 Allow: /
