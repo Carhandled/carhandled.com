@@ -28,7 +28,7 @@ jobs:
               echo "Skipping noindex page: $path"
               continue
             fi
-            url="https://carhandled.com/${path/index.html/}"
+            url="https://www.carhandled.com/${path/index.html/}"
             echo "  <url><loc>$url</loc><priority>0.80</priority></url>" >> sitemap.xml
           done
           echo '</urlset>' >> sitemap.xml
@@ -43,9 +43,9 @@ jobs:
       - name: Notify Google
         run: |
           echo "Pinging Google..."
-          curl -s -o /dev/null -w "Google Response: %{http_code}\n" "http://www.google.com/ping?sitemap=https://carhandled.com/sitemap.xml"
+          curl -s -o /dev/null -w "Google Response: %{http_code}\n" "http://www.google.com/ping?sitemap=https://www.carhandled.com/sitemap.xml"
 
       - name: Notify Bing via IndexNow
         run: |
           echo "Pinging Bing..."
-          curl -s -o /dev/null -w "Bing Response: %{http_code}\n" "https://www.bing.com/indexnow?url=https://carhandled.com/sitemap.xml"
+          curl -s -o /dev/null -w "Bing Response: %{http_code}\n" "https://www.bing.com/indexnow?url=https://www.carhandled.com/sitemap.xml"
